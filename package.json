@@ -21,7 +21,7 @@
     "lint:js": "jshint",
     "lint:sass": "stylelint ./src/**/*.scss",
     "start": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --watch --coverage"
   },
   "devDependencies": {
     "babel": "^6.5.2",
