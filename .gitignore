@@ -1,5 +1,3 @@
 node_modules/
 dist/
 .idea/
-src/**/*.jsx
-__tests__/**/*.jsx
