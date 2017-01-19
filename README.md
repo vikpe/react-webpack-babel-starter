@@ -15,11 +15,6 @@ Minimal starter kit with hot module replacement for fast development.
   * JavaScript - [JSHint](http://jshint.com/docs/)
   * SASS/CSS - [stylelint](http://stylelint.io/) (rules: [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard))
 
-## TODO
-* [ ] Build script
-  * [ ] Asset revisioning / cache bursting
-* [ ] React router
-
 ## Installation
 1. Clone/download repo
 2. `npm install`
@@ -38,6 +33,11 @@ Minimal starter kit with hot module replacement for fast development.
 * `npm run lint:js` - Run JavaScript linter
 * `npm run lint:sass` - Run SASS linter
 * `npm run test` - Run tests (Jest)
+
+## TODO
+* [ ] Build script
+  * [ ] Asset revisioning / cache bursting
+* [ ] React router
 
 ## Resources
 * [Create React App (by FaceBook)](https://github.com/facebookincubator/create-react-app) - Good starting point when learning React
