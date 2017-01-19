@@ -10,7 +10,7 @@ const renderComponent = (Component) => {
         <AppContainer>
             <Component/>
         </AppContainer>,
-        document.getElementById('root')
+        rootEl
     );
 };
 
@@ -20,12 +20,6 @@ renderComponent(App);
 if (module.hot) {
     module.hot.accept("./components/App", () => {
         const NewApp = require("./components/App").default;
-
-        renderComponent(
-            <AppContainer>
-                <NewApp/>
-            </AppContainer>,
-            rootEl
-        );
+        renderComponent(NewApp);
     });
 }
