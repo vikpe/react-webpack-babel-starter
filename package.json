@@ -13,13 +13,8 @@
   ],
   "author": "Viktor Persson",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vikpe/react-webpack-babel-starter/issues"
-  },
+  "repository": {"type": "git", "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"},
+  "bugs": {"url": "https://github.com/vikpe/react-webpack-babel-starter/issues"},
   "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
   "scripts": {
     "lint": "npm run lint:js && npm run lint:sass",
@@ -55,14 +50,11 @@
   },
   "dependencies": {},
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
+    "moduleFileExtensions": ["js", "jsx"],
+    "transform": {"^.+\\.(js|jsx)$": "<rootDir>/config/jest/jest.preprocessor.js"},
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "testRegex": "/__tests__/.*\\.(js|jsx)$",
-    "moduleDirectories": [
-      "node_modules"
-    ],
+    "moduleDirectories": ["node_modules"],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy",
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js"
