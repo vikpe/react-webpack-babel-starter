@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 require("!style-loader!css-loader!sass-loader!./App.scss");
 
