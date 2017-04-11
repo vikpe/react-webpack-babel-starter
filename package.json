@@ -13,8 +13,13 @@
   ],
   "author": "Viktor Persson",
   "license": "MIT",
-  "repository": {"type": "git", "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"},
-  "bugs": {"url": "https://github.com/vikpe/react-webpack-babel-starter/issues"},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vikpe/react-webpack-babel-starter/issues"
+  },
   "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
   "scripts": {
     "lint": "npm run lint:js && npm run lint:sass",
@@ -24,37 +29,47 @@
     "test": "jest --watch --coverage"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-2": "^6.13.0",
-    "css-loader": "^0.23.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "file-loader": "^0.11.1",
     "identity-obj-proxy": "^3.0.0",
-    "image-webpack-loader": "^3.1.0",
-    "jest": "^18.1.0",
+    "image-webpack-loader": "^3.3.0",
+    "jest": "^19.0.2",
     "jshint": "^2.9.4",
-    "node-sass": "^4.2.0",
-    "postcss-loader": "^0.9.1",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "node-sass": "^4.5.2",
+    "postcss-loader": "^1.3.3",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.6",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "stylelint-config-standard": "^15.0.1",
-    "stylelint-webpack-plugin": "^0.5.1",
-    "webpack": "^2.1.0-beta.28",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {},
   "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "transform": {"^.+\\.(js|jsx)$": "<rootDir>/config/jest/jest.preprocessor.js"},
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/config/jest/jest.preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "testRegex": "/__tests__/.*\\.(js|jsx)$",
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy",
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js"
