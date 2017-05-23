@@ -4,7 +4,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     resolve: {
-        extensions: [".webpack.js", ".web.js", ".js", ".jsx"],
+        extensions: [".webpack.js", ".web.js", ".js", ".jsx", ".tsx", ".ts"],
     },
     entry:   [
         "react-hot-loader/patch", // activate HMR for React
@@ -48,6 +48,11 @@ module.exports = {
                     'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
                     'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
                 ]
+            },
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
             }
         ],
     },
