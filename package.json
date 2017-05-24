@@ -25,8 +25,10 @@
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "jshint",
     "lint:sass": "stylelint ./src/**/*.scss",
-    "start": "webpack-dev-server",
-    "test": "jest --watch --coverage"
+    "start": "webpack-dev-server --config ./webpackConfigs/webpack.config.js",
+    "begin": "node .\\dist\\Server\\server.js",
+    "test": "jest --watch --coverage",
+    "build": "webpack --config ./webpackConfigs/webpack.config.js && tsc "
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -53,12 +55,14 @@
     "stylelint-webpack-plugin": "^0.7.0",
     "ts-loader": "^2.1.0",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
     "@types/express": "^4.0.35",
     "@types/webpack-env": "^1.13.0",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "webpack-dev-middleware": "^1.10.2"
   },
   "jest": {
     "moduleFileExtensions": [
