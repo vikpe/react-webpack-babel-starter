@@ -8,3 +8,6 @@
 
 # use webpack dev middleware in Express 
 # http://madole.github.io/blog/2015/08/26/setting-up-webpack-dev-middleware-in-your-express-application/
+
+# html webpack plugin wiht jade template
+# https://github.com/jantimon/html-webpack-plugin/
