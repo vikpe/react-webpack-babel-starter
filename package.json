@@ -28,7 +28,8 @@
     "start": "webpack-dev-server --config ./webpackConfigs/webpack.config.js",
     "begin": "node .\\dist\\Server\\server.js",
     "test": "jest --watch --coverage",
-    "build": "webpack --config ./webpackConfigs/webpack.config.js && tsc "
+    "build": "webpack --config ./webpackConfigs/webpack.config.js && tsc ",
+    "clean": "rimraf dist && rimraf public"
   },
   "devDependencies": {
     "babel": "^6.23.0",

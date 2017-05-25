@@ -68,7 +68,8 @@ module.exports = {
             title: 'Jade demo'
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor', 'manifest'] // Specify the common bundle's name.
+            name: 'chunks', // Specify the common bundle's name.
+            filename: `chunks-[chunkhash].js`,
         })
 
     ],
