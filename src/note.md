@@ -14,3 +14,4 @@
 
 
 # remote ubuntu with rsa key from cygwin  https://serverfault.com/questions/241588/how-to-automate-ssh-login-with-password
+# create login alia server name : https://superuser.com/questions/575270/how-to-set-up-an-alias-server-name
