@@ -11,3 +11,6 @@
 
 # html webpack plugin wiht jade template
 # https://github.com/jantimon/html-webpack-plugin/
+
+
+# remote ubuntu with rsa key from cygwin  https://serverfault.com/questions/241588/how-to-automate-ssh-login-with-password
