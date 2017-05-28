@@ -15,3 +15,12 @@
 
 # remote ubuntu with rsa key from cygwin  https://serverfault.com/questions/241588/how-to-automate-ssh-login-with-password
 # create login alia server name : https://superuser.com/questions/575270/how-to-set-up-an-alias-server-name
+
+
+# kotlin communicate with elastic https://www.elastic.co/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
+
+# spring root web config https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-java-custom-upload#springboot
+
+# spring root web deploy https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/11/23/deploy-java-8-spring-boot-api-to-azure-app-service/
+
+# for kotlin learning https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli
