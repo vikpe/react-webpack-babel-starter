@@ -24,3 +24,5 @@
 # spring root web deploy https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/11/23/deploy-java-8-spring-boot-api-to-azure-app-service/
 
 # for kotlin learning https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli
+
+# for local learning elastic install on lnx https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
