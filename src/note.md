@@ -26,3 +26,5 @@
 # for kotlin learning https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli
 
 # for local learning elastic install on lnx https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
+
+# react learning https://facebook.github.io/react/docs/forms.html
