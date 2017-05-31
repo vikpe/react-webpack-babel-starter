@@ -28,3 +28,5 @@
 # for local learning elastic install on lnx https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
 
 # react learning https://facebook.github.io/react/docs/forms.html
+
+# ntelliJ IDEA 2016 — 2017 Activation  https://jetbrains-server.ru/2017/03/31/intellij-idea-2016-2017-activation/
