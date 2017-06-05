@@ -3,6 +3,8 @@ const {resolve}       = require("path");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const FileListPlugin = require('./FileListPlugin');
+
 module.exports = {
     resolve: {
         extensions: [".webpack.js", ".web.js", ".js", ".jsx", ".tsx", ".ts"],
@@ -58,10 +60,11 @@ module.exports = {
     },
 
     plugins:     [
+        new FileListPlugin({options: true}),
         new StyleLintPlugin(),
         //new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-         new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             filename: 'index.html',
             favicon: resolve(__dirname, "../src/jade") +  '/favicon.ico',
             template: resolve(__dirname, "../src/jade") + '/template.jade',
@@ -71,7 +74,6 @@ module.exports = {
             name: 'chunks', // Specify the common bundle's name.
             filename: `chunks-[chunkhash].js`,
         })
-
     ],
     performance: {
         hints: false
