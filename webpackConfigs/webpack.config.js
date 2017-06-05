@@ -4,6 +4,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const FileListPlugin = require('./FileListPlugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
     resolve: {
@@ -73,7 +74,8 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'chunks', // Specify the common bundle's name.
             filename: `chunks-[chunkhash].js`,
-        })
+        }),
+        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']})
     ],
     performance: {
         hints: false

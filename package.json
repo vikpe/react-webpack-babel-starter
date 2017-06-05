@@ -60,7 +60,8 @@
     "webpack": "^2.5.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-dev-server": "^2.4.5",
-    "webpack-hot-middleware": "^2.18.0"
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "@types/express": "^4.0.35",
