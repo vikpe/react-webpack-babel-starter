@@ -12,7 +12,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output:  {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         path:       resolve(__dirname, "../public"),
         publicPath: "/" // necessary for HMR to know where to load the hot update chunks
     },
@@ -59,7 +59,7 @@ module.exports = {
 
     plugins:     [
         new StyleLintPlugin(),
-        //new webpack.HotModuleReplacementPlugin(), // enable HMR globally
+        // new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
          new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -69,7 +69,7 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'chunks', // Specify the common bundle's name.
-            filename: `chunks-[chunkhash].js`,
+            filename: `chunks-[hash].js`,
         })
 
     ],

@@ -15,7 +15,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output:  {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         path:       resolve(__dirname, "../public"),
         publicPath: "/" // necessary for HMR to know where to load the hot update chunks
     },
@@ -73,7 +73,7 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'chunks', // Specify the common bundle's name.
-            filename: `chunks-[chunkhash].js`,
+            filename: `chunks-[hash].js`,
         }),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']})
     ],
