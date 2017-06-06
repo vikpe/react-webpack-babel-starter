@@ -51,7 +51,7 @@ module.exports = {
                 loader: 'jade-loader' 
             },
             stylesRules.bakStyle,
-            stylesRules.bakFonts
+            stylesRules.fonts
         ],
     },
 
