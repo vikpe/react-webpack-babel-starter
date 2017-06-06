@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const FileListPlugin = require('./FileListPlugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
-const stylesRules = require('./rules/stylesRules');
+const styles = require('./rules/stylesRules');
+var stylesRules = styles.rules;
 
 module.exports = {
     resolve: {
@@ -38,10 +39,6 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                use:  ["style-loader", "css-loader?modules", "postcss-loader",],
-            },
-            {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 exclude: /node_modules/,
@@ -50,8 +47,10 @@ module.exports = {
                 test: /\.jade$/, 
                 loader: 'jade-loader' 
             },
-            stylesRules.bakStyle,
-            stylesRules.fonts
+            //stylesRules.bakStyle,
+            stylesRules.fonts,
+            stylesRules.cssExtractTextPlugin,
+            stylesRules.scssExtractTextPlugin
         ],
     },
 
@@ -70,7 +69,8 @@ module.exports = {
             name: 'chunks', // Specify the common bundle's name.
             filename: `chunks-[hash].js`,
         }),
-        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']})
+        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
+        styles.ExtractTextPlugin
     ],
     performance: {
         hints: false
