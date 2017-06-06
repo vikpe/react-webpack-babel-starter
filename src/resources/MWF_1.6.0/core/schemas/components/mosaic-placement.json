@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Mosaic placement",
+    "description": "A MWF mosaic placement component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/mosaic-placement.json",
+    "properties": {
+        "background-image": {
+            "$ref": "#/definitions/background-image"
+        },
+        "heading": {
+            "type": "string"
+        },
+        "subheading": {
+            "type": "string"
+        },
+        "call-to-action": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+        },
+        "call-to-action-group": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "label": {
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "title": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ]
+                        },
+                        "links": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+                            }
+                        }
+                    },
+                    "required": [
+                        "links"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "hyperlink-group": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/modules/hyperlink-group.json"
+        }
+    },
+    "dependencies": {
+        "subheading": [
+            "heading"
+        ]
+    },
+    "definitions": {
+        "call-to-action-group": {},
+        "background-image": {
+            "type": "object",
+            "properties": {
+                "vp6": {
+                    "type": "string"
+                },
+                "vp5": {
+                    "type": "string"
+                },
+                "vp4": {
+                    "type": "string"
+                },
+                "vp3": {
+                    "type": "string"
+                },
+                "vp2": {
+                    "type": "string"
+                },
+                "vp1": {
+                    "type": "string"
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "vp1",
+                "alt"
+            ]
+        }
+    }
+}

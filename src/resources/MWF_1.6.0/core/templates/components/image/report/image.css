@@ -1,0 +1,12 @@
+
+img.c-image, picture.c-image img {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+
+img.c-image.f-round {
+  border-radius: 50%;
+}

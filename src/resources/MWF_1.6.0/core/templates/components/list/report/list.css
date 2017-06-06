@@ -1,0 +1,39 @@
+
+ul.c-list,
+ol.c-list {
+  font-size: 15px;
+  line-height: 20px;
+  padding-left: 19px;
+  padding-right: 0;
+  margin: 8px 0;
+  list-style-position: outside;
+}
+
+
+ul.c-list li,
+ol.c-list li {
+  padding: 8px 0;
+}
+
+
+ul.c-list.f-lean li,
+ol.c-list.f-lean li {
+  padding: 0;
+}
+
+
+ul.c-list.f-bare,
+ol.c-list.f-bare {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+
+ul.c-list {
+  list-style-type: disc;
+}
+
+
+ol.c-list {
+  list-style-type: decimal;
+}

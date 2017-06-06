@@ -1,0 +1,93 @@
+// ==========================================================================
+// Define fonts
+// ==========================================================================
+
+// ==========================================================================
+// Segoe UI font (via mixins & functions)
+// ==========================================================================
+
+@mixin font-face(
+    $path:              $font-group-path,
+    $subset:            $font-group-default,
+    $local:             "Segoe UI",
+    $weight:            $font-weight-normal,
+    $available-weight:  normal
+) {
+    $path-weight: null;
+    $local-source: null;
+
+    @if $available-weight != normal {
+        // set the weight values from map data
+        $path-weight: to-lower-case($available-weight);
+        $local-source: $local + " " + $available-weight;
+    } @else {
+        // or just use the normal weight
+        $path-weight: $available-weight;
+        $local-source: $local;
+    }
+
+    $local-font: local(quote($local-source));
+
+    // if semilight or bold, add additional local reference to prevent download in Chrome
+    @if $weight == $font-weight-semilight or $weight == $font-weight-bold {
+        $local-font: $local-font, local(quote($local));
+    }
+
+    // build the fonts for the locale's font-group
+    @font-face {
+        font-family: "SegoeUI";
+        @if $ltie8 == true {
+            // only output .eot for IE8
+            src: url('//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.eot');
+            src: local(quote($local-source)),
+                 url("//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.eot?#iefix") format("embedded-opentype");
+        } @else {
+            src: $local-font,
+                 url("//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.woff2") format("woff2"),
+                 url("//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.woff") format("woff"),
+                 url("//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.ttf") format("truetype"),
+                 url("//c.s-microsoft.com/static/fonts/#{$path}/#{$subset}/#{$path-weight}/latest.svg#web") format("svg");
+        }
+        font-weight: $weight;
+    }
+}
+
+@mixin set-font-family($family: SegoeUI, $fallbacks: default) {
+    // replace default values defined in config\_fonts variable
+    @if $fallbacks != default {
+        $font-family-fallbacks: $fallbacks, $font-family-fallbacks !global;
+
+        // prepend Segoe UI to font-family list for non-Segoe locales so that font
+        // will get used for numeric values.  Otherwise Arial or other sans-serif
+        // font would get picked up for numbers.
+        $family: SegoeUI, quote($family);
+    }
+
+    $font-family-normal: $family, $font-family-fallbacks !global;
+}
+
+@mixin build-fonts($font-group-subset: $font-group-default) {
+    // get font-group map
+    $map-font-group: map-get($font-groups, $font-group-subset);
+
+    // set font-group details
+    $map-path:              map-get($map-font-group, path);
+    $map-subset:            map-get($map-font-group, subset);
+    $map-local:             map-get($map-font-group, local);
+    $map-family:            map-get($map-font-group, family);
+    $map-weight-light:      map-get($map-font-group, weight-light);
+    $map-weight-semilight:  map-get($map-font-group, weight-semilight);
+    $map-weight-semibold:   map-get($map-font-group, weight-semibold);
+    $map-weight-bold:       map-get($map-font-group, weight-bold);
+    $map-fallbacks:         map-get($map-font-group, fallbacks);
+
+    // build the @font-face declarations for each font-weight
+    @include font-face($path: $map-path, $subset: $map-subset, $local: $map-local, $weight: $font-weight-normal, $available-weight: normal);
+    @include font-face($path: $map-path, $subset: $map-subset, $local: $map-local, $weight: $font-weight-light, $available-weight: $map-weight-light);
+    @include font-face($path: $map-path, $subset: $map-subset, $local: $map-local, $weight: $font-weight-semilight, $available-weight: $map-weight-semilight);
+    @include font-face($path: $map-path, $subset: $map-subset, $local: $map-local, $weight: $font-weight-semibold, $available-weight: $map-weight-semibold);
+    @include font-face($path: $map-path, $subset: $map-subset, $local: $map-local, $weight: $font-weight-bold, $available-weight: $map-weight-bold);
+
+    // set the font family and fallback list
+    @include set-font-family($map-family, $map-fallbacks);
+}

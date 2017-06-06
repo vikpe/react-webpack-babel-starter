@@ -1,0 +1,13 @@
+//  ==========================================================================
+//  Define Theme Selectors
+//  ==========================================================================
+//  Define the theme class names. Use these when you need to apply theme to a
+//  components root element (such as hero, where the component acts as a container).
+$theme-light-selector: ".theme-light";
+$theme-dark-selector: ".theme-dark";
+
+// Define the selector string for light and dark themes. These should be used
+// When styling components where the component is not a container and the theme
+// is applied to the components container.
+$theme-light: "#{$theme-light-selector} &, #{$theme-dark-selector} #{$theme-light-selector} &";
+$theme-dark: "#{$theme-dark-selector} &, #{$theme-light-selector} #{$theme-dark-selector} &";

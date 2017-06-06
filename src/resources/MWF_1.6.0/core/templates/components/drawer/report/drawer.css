@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.c-drawer > button,
+.c-drawer .f-toggle {
+  min-height: 44px;
+  position: relative;
+}
+
+.c-drawer > header {
+  margin-bottom: 8px;
+  min-height: 44px;
+  position: relative;
+}
+
+@media only screen and (max-width: 539px) {
+  .c-drawer > header {
+    padding-right: 36px;
+  }
+}
+
+.c-drawer > header > button,
+.c-drawer > header .f-toggle {
+  height: 100%;
+  position: absolute;
+}
+
+.c-drawer > nav.c-link-navigation {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 0;
+  overflow: hidden;
+  text-align: left;
+  width: auto;
+}
+
+.c-drawer > nav.c-link-navigation li {
+  display: inline-block;
+  height: auto;
+}
+
+.c-drawer > nav.c-link-navigation li a.c-hyperlink {
+  padding: 0;
+}
+
+.c-drawer > nav.c-link-navigation li:first-child a {
+  margin-left: 0;
+}
+
+.c-drawer > nav.c-link-navigation ul {
+  white-space: nowrap;
+}
+
+.c-drawer > button,
+.c-drawer .f-toggle,
+.c-drawer > header > button,
+.c-drawer > header .f-toggle {
+  font-size: 13px;
+  line-height: 16px;
+  display: block;
+  border: 0;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  padding: 14px 36px 14px 12px;
+  left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.c-drawer > button:after,
+.c-drawer .f-toggle:after,
+.c-drawer > header > button:after,
+.c-drawer > header .f-toggle:after {
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 12px;
+}
+
+.c-drawer > button[aria-expanded="true"]:after,
+.c-drawer .f-toggle[aria-expanded="true"]:after,
+.c-drawer > header > button[aria-expanded="true"]:after,
+.c-drawer > header .f-toggle[aria-expanded="true"]:after {
+  content: "";
+}
+
+.c-drawer > button[aria-expanded="false"]:after,
+.c-drawer .f-toggle[aria-expanded="false"]:after,
+.c-drawer > header > button[aria-expanded="false"]:after,
+.c-drawer > header .f-toggle[aria-expanded="false"]:after {
+  content: "";
+}
+
+.c-drawer > button:focus,
+.c-drawer .f-toggle:focus,
+.c-drawer > header > button:focus,
+.c-drawer > header .f-toggle:focus {
+  outline: 1px dashed #000;
+}
+
+.c-drawer > button:hover,
+.c-drawer .f-toggle:hover,
+.c-drawer > header > button:hover,
+.c-drawer > header .f-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.c-drawer > button:active,
+.c-drawer .f-toggle:active,
+.c-drawer > header > button:active,
+.c-drawer > header .f-toggle:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.c-drawer.f-responsive > button + div,
+.c-drawer.f-responsive .f-toggle + div,
+.c-drawer.f-responsive > header + div {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+@media only screen and (min-width: 540px) {
+  .c-drawer.f-responsive.f-show > button:after,
+  .c-drawer.f-responsive.f-show .f-toggle:after,
+  .c-drawer.f-responsive.f-show > header > button:after,
+  .c-drawer.f-responsive.f-show > header .f-toggle:after {
+    display: none;
+  }
+  .c-drawer.f-responsive.f-show > button:hover,
+  .c-drawer.f-responsive.f-show .f-toggle:hover,
+  .c-drawer.f-responsive.f-show > header > button:hover,
+  .c-drawer.f-responsive.f-show > header .f-toggle:hover {
+    background: transparent;
+  }
+}
+
+.c-drawer > div[id] {
+  position: relative;
+}

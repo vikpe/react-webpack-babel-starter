@@ -1,0 +1,72 @@
+//  ==========================================================================
+//  Component: Group
+//  ==========================================================================
+
+#{$migration-button-container}
+#{$migration-group}
+.c-group {
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 1px;
+
+    &.f-wrap-items {
+        flex-wrap: wrap;
+        /** .c-product-placement deprecated on v1.6.0 **/
+        /*  use .m-product-placement-item
+            TODO: remove c- in v.2.0 */
+        .m-product-placement-item,
+        .c-product-placement {
+            &.f-orientation-vertical.f-size-medium {
+                @media only screen and (max-width: $vp1-max) {
+                    width: calc(50% - 24px);
+
+                    picture {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .c-call-to-action {
+        margin-#{$right}: 4px;
+    }
+
+    .c-action-trigger {
+        padding-#{$right}: 24px;
+
+        &:last-child {
+            padding-#{$right}: 0;
+        }
+    }
+
+    @if $ltie8 == true {
+        .c-checkbox {
+            float: #{$left};
+        }
+    }
+
+    .c-select-button {
+        margin-top: 8px;
+    }
+
+    @media only screen and (min-width: $vp1) {
+        #{$migration-button}
+        button.c-button,
+        a.c-button[role="button"] {
+            margin-#{$right}: 4px;
+        }
+    }
+
+    @media only screen and (min-width: $vp2) {
+        #{$migration-button}
+        button.c-button,
+        a.c-button[role="button"] {
+            margin-#{$right}: 8px;
+        }
+    }
+}

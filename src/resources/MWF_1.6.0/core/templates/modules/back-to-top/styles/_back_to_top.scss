@@ -1,0 +1,57 @@
+//  ==========================================================================
+//  Component: Back-to-top
+//  ==========================================================================
+
+/* .c-back-to-top has been depricated as of v.1.6
+    TODO: Remove as of v.2.0*/
+a.m-back-to-top,
+a.c-back-to-top {
+    visibility: hidden;
+
+    @media only screen and (min-width: $vp3){
+        position: fixed;
+        bottom: 24px;
+        #{$right}: 24px;
+        width: 48px;
+        height: 48px;
+        background: $color-foreground-10;
+        cursor: pointer;
+        visibility: visible;
+        float: #{$right};
+        padding: 12px;
+        z-index: map-get($z-index, nav);
+        opacity: 1;
+        transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
+
+        &:hover,
+        &:focus {
+            background: $color-foreground-20;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &:active {
+            background: $color-foreground-30;
+        }
+
+        .c-glyph {
+            &.glyph-up {
+                font-size: 24px;
+
+                &:before {
+                    width: 24px;
+                    height: 24px;
+                    content: $glyph-up;
+                }
+            }
+        }
+
+        &[aria-disabled="true"] {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 601ms cubic-bezier(0.19, 1, 0.22, 1), opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+}

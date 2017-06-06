@@ -1,0 +1,325 @@
+//  ==========================================================================
+//  Component: Mosaic placement
+//  ==========================================================================
+
+.c-mosaic-placement {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 19px;
+    width: 100%;
+    height: 100%;
+
+    &.f-background-neutral-00 {
+        background: $color-brand-neutral-00;
+    }
+
+    &.f-background-neutral-10 {
+        background: $color-brand-neutral-10;
+    }
+
+    &.f-background-neutral-20 {
+        background: $color-brand-neutral-20;
+    }
+
+    &.f-background-neutral-30 {
+        background: $color-brand-neutral-30;
+    }
+
+    &.f-background-neutral-45 {
+        background: $color-brand-neutral-45;
+    }
+
+    &.f-background-neutral-55 {
+        background: $color-brand-neutral-55;
+    }
+
+    &.f-background-neutral-65 {
+        background: $color-brand-neutral-65;
+    }
+
+    &.f-background-neutral-75 {
+        background: $color-brand-neutral-75;
+    }
+
+    &.f-background-neutral-80 {
+        background: $color-brand-neutral-80;
+    }
+
+    &.f-background-neutral-90 {
+        background: $color-brand-neutral-90;
+    }
+
+    &.f-background-neutral-100 {
+        background: $color-brand-neutral-100;
+    }
+
+    &.f-background-accent {
+        background: $color-accent;
+    }
+
+    &[class*="f-mask"] {
+        > picture {
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: "";
+                z-index: map-get($z-index, neutral);
+            }
+        }
+    }
+
+    #{$theme-light} {
+        &.f-mask-10 {
+            > picture {
+                &:before {
+                    background: $color-background-10;
+                }
+            }
+        }
+
+        &.f-mask-20 {
+            > picture {
+                &:before {
+                    background: $color-background-20;
+                }
+            }
+        }
+
+        &.f-mask-40 {
+            > picture {
+                &:before {
+                    background: $color-background-40;
+                }
+            }
+        }
+
+        &.f-mask-60 {
+            > picture {
+                &:before {
+                    background: $color-background-60;
+                }
+            }
+        }
+
+        &.f-mask-80 {
+            > picture {
+                &:before {
+                    background: $color-background-80;
+                }
+            }
+        }
+
+        &.f-mask-100 {
+            > picture {
+                &:before {
+                    background: $color-background;
+                }
+            }
+        }
+    }
+
+    #{$theme-dark} {
+        &.f-mask-10 {
+            > picture {
+                &:before {
+                    background: $color-shade-10;
+                }
+            }
+        }
+
+        &.f-mask-20 {
+            > picture {
+                &:before {
+                    background: $color-shade-20;
+                }
+            }
+        }
+
+        &.f-mask-40 {
+            > picture {
+                &:before {
+                    background: $color-shade-40;
+                }
+            }
+        }
+
+        &.f-mask-60 {
+            > picture {
+                &:before {
+                    background: $color-shade-60;
+                }
+            }
+        }
+
+        &.f-mask-80 {
+            > picture {
+                &:before {
+                    background: $color-shade-80;
+                }
+            }
+        }
+
+        &.f-mask-100 {
+            > picture {
+                &:before {
+                    background: $color-shade;
+                }
+            }
+        }
+    }
+
+    & .c-video {
+        height: 400px;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        #{$left}: 0;
+        top: 0;
+        position: absolute;
+
+        & > h1 {
+            display: none;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            z-index: map-get($z-index, buried);
+            background-size: cover;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .c-heading {
+        @include apply-type-component(h5);
+        @include apply-maxlines(2, h5, true, true);
+        font-weight: $font-weight-bold;
+    }
+
+    .c-subheading {
+        @include apply-type(t5, false, true);
+        @include apply-maxlines(3, t5, true, true);
+        font-weight: $font-weight-semilight;
+
+        @include migration-override(bootstrap) {
+            // Bootstrap / OneUI applies padding to the p tag, so we need to
+            // override this.
+            padding-top: 0;
+        }
+    }
+
+    a.c-call-to-action {
+        @include c-call-to-action-lightweight();
+    }
+
+    .c-group,
+    picture,
+    picture:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+
+    picture:after {
+        content: "";
+        display: block;
+    }
+
+    .c-group {
+        display: block;
+        top: auto;
+        text-align: center;
+        height: 42px;
+    }
+
+    picture { // Background image
+        z-index: map-get($z-index, default);
+        overflow: hidden;
+
+        img {
+            // TODO: https://microsoft.visualstudio.com/DefaultCollection/OSGS/_workitems/edit/6156535
+            position: absolute;
+            left: calc(50%);
+            top: calc(50%);
+            transform: translate(-50%, -50%);
+        }
+
+        &:after {
+            z-index: map-get($z-index, neutral);
+
+            @if $ltie8 == false {
+                // Since RGBA isn't supported in IE8 and lower, this "overlay"
+                // would get flattend to an opaque color and we couldn't see our image.
+                // To prevent this, we're only applying background colors to our
+                // non-ie8 stylesheets
+
+                #{$theme-light} {
+                    background-color: $color-tint-20;
+                }
+
+                #{$theme-dark} {
+                    background-color: $color-shade-20;
+                }
+            }
+        }
+    }
+
+    & > div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: map-get($z-index, above);
+        text-align: center;
+
+        & > div {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: auto;
+            text-align: center;
+            height: 42px;
+        }
+    }
+
+    &.f-height-large {
+
+        &.f-width-small {
+            padding: 0 12.5% 19px;
+        }
+
+        &.f-width-large {
+            padding: 0 25% 19px;
+        }
+    }
+
+    &.f-height-medium {
+        .c-heading,
+        .c-subheading {
+            display: none; // Hide title and subtitle
+        }
+
+        &.f-width-large {
+            padding: 0 12.5% 19px;
+        }
+
+        & .c-video {
+            height: 200px;
+        }
+    }
+}

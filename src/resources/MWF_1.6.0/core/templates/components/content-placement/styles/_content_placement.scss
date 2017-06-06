@@ -1,0 +1,96 @@
+//  ==========================================================================
+//  Component: Content placement
+//  ==========================================================================
+
+.c-content-placement {
+    margin-top: 48px;
+    overflow: hidden;
+
+    .c-heading {
+        @include apply-type(t4, false, true);
+        @include apply-maxlines(2, t4, true);
+        font-weight: $font-weight-semilight;
+        padding-top: 12px;
+    }
+
+    .c-badge {
+        margin-bottom: 4px;
+    }
+
+    .c-paragraph {
+        @include apply-maxlines(4, t7, true);
+        padding-top: 2px;
+    }
+
+    .c-call-to-action {
+        @include c-call-to-action-lightweight();
+        margin-top: 12px;
+    }
+
+    .c-video {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        #{$left}: 0;
+
+        video {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    > picture {
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    > div {
+        padding-#{$right}: 24px;
+
+        > .c-call-to-action {
+            padding-#{$right}: 0;
+
+            &:focus {
+                padding-#{$right}: 44px;
+            }
+        }
+
+        > .c-group {
+            display: block;
+            overflow: visible;
+            margin-top: 12px;
+
+            > .c-call-to-action {
+                margin-top: 0;
+
+                + .c-call-to-action {
+                    &:focus {
+                        padding-#{$left}: 24px;
+                        margin-#{$left}: -24px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        > div {
+            padding-#{$right}: 12px;
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        .c-heading {
+            @include apply-type(t5, false, true);
+            @include apply-maxlines(2, t5, true);
+            font-weight: $font-weight-normal;
+        }
+    }
+}

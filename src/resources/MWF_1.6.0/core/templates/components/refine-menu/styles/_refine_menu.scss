@@ -1,0 +1,57 @@
+//  ==========================================================================
+//  Component: Refine
+//  ==========================================================================
+
+.c-refine-menu {
+    > button {
+        display: none;
+    }
+
+    > div {
+        > div {
+            position: relative;
+
+            .c-heading {
+                @include apply-type-component(h4);
+                display: inline-block;
+                overflow: hidden;
+                margin-#{$left}: 12px;
+
+                & + button.c-action-trigger.c-glyph,
+                & + a.c-action-trigger.c-glyph {
+                    display: none;
+                    position: absolute;
+                    top: 26px;
+                    #{$right}: 0;
+                    width: 44px;
+                    height: 44px;
+                    margin: set-direction-based-value(0 -12px 0 0, 0 0 0 -12px);
+                    padding: 9px 0 10px;
+                    color: $color-foreground-60;
+                }
+            }
+        }
+    }
+
+    .c-divider {
+        margin: 12px 0;
+    }
+
+    .c-drawer {
+        margin: 0;
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        > div {
+            > div {
+                .c-heading {
+                    padding-#{$right}: 44px;
+
+                    & + button.c-action-trigger.c-glyph {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

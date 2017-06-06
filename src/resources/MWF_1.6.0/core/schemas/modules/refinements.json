@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Refinements module",
+    "description": "A MWF refinements module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/refinements.json",
+    "supportedPartners": [
+        "redtiger",
+        "sfw"
+    ],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/refine-menu.json"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/choice-summary.json"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/product-placement.json#/definitions/medium"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/pagination.json"
+        }
+    ]
+}

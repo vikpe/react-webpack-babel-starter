@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.c-menu-item a,
+.c-menu-item span,
+.c-menu-item button {
+  display: block;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 11px 12px 13px;
+  outline: 0;
+  cursor: pointer;
+  white-space: normal;
+}
+
+
+.c-menu-item a:hover,
+.c-menu-item a:focus,
+.c-menu-item span:hover,
+.c-menu-item span:focus,
+.c-menu-item button:hover,
+.c-menu-item button:focus {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+.c-menu-item a:focus,
+.c-menu-item span:focus,
+.c-menu-item button:focus {
+  outline: 1px dashed #000;
+}
+
+
+.c-menu-item a:active,
+.c-menu-item span:active,
+.c-menu-item button:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+.c-menu-item a[role="menuitemradio"][aria-checked="true"],
+.c-menu-item span[role="menuitemradio"][aria-checked="true"],
+.c-menu-item button[role="menuitemradio"][aria-checked="true"] {
+  background: #0078D7;
+  color: #FFF;
+}
+
+
+.c-menu-item.f-sub-menu > a,
+.c-menu-item.f-sub-menu > button {
+  position: relative;
+}
+
+
+.c-menu-item.f-sub-menu > a:after,
+.c-menu-item.f-sub-menu > button:after {
+  font-family: "MWF-MDL2";
+  content: "";
+  position: absolute;
+  font-size: 6px;
+  right: 12px;
+  top: 19px;
+}
+
+
+.c-menu-item.f-sub-menu > a + .c-menu,
+.c-menu-item.f-sub-menu > button + .c-menu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+
+.c-menu-item.f-sub-menu > a + .c-menu.f-flip,
+.c-menu-item.f-sub-menu > button + .c-menu.f-flip {
+  left: -100%;
+}
+
+.no-js
+.c-menu-item.f-sub-menu > a:focus + .c-menu,
+.no-js
+.c-menu-item.f-sub-menu > a:hover + .c-menu,
+.js
+.c-menu-item.f-sub-menu > a[aria-expanded="true"] + .c-menu[aria-hidden="false"], .no-js
+.c-menu-item.f-sub-menu > button:focus + .c-menu,
+.no-js
+.c-menu-item.f-sub-menu > button:hover + .c-menu,
+.js
+.c-menu-item.f-sub-menu > button[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+  display: block;
+  animation: fadeIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

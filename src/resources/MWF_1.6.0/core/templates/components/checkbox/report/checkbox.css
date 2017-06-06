@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.c-checkbox .c-label {
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 24px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+
+.c-checkbox input[type="checkbox"] {
+  position: absolute;
+  height: 20px;
+  opacity: 0;
+  width: 20px;
+}
+
+
+.c-checkbox input[type="checkbox"] + span {
+  cursor: pointer;
+  display: inline-block;
+  left: 0;
+  padding-left: 28px;
+  position: relative;
+  top: 0;
+}
+
+
+.c-checkbox input[type="checkbox"] + span:after,
+.c-checkbox input[type="checkbox"] + span:before {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  top: 0;
+}
+
+
+.c-checkbox input[type="checkbox"] + span:before {
+  content: "";
+  box-shadow: inset 0 0 0 1px #000, inset 0 0 0 10px transparent;
+  top: 0;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  
+  .c-checkbox input[type="checkbox"] + span:before {
+    border: 1px solid #767676;
+  }
+}
+
+
+.c-checkbox input[type="checkbox"]:not(:disabled):focus + span:before,
+.c-checkbox input[type="checkbox"]:not(:disabled):hover + span:before {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+
+.c-checkbox input[type="checkbox"]:focus + span:before {
+  outline: 1px dashed rgba(0, 0, 0, 0.8);
+}
+
+
+.c-checkbox input[type="checkbox"]:checked + span:after {
+  font-family: "MWF-MDL2";
+  content: "";
+  color: #FFF;
+  font-size: 17px;
+  padding-left: 1px;
+}
+
+
+.c-checkbox input[type="checkbox"]:checked:disabled + span:after {
+  box-shadow: inset 0 0 0 1px rgba(0, 120, 215, 0.05), inset 0 0 0 10px rgba(0, 120, 215, 0.2);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.c-checkbox input[type="checkbox"]:checked:not(:disabled) + span:before {
+  box-shadow: inset 0 0 0 10px #0078D7;
+}
+
+
+.c-checkbox input[type="checkbox"]:checked:not(:disabled):focus + span:before,
+.c-checkbox input[type="checkbox"]:checked:not(:disabled):hover + span:before {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6), inset 0 0 0 10px #0078D7;
+}
+
+
+.c-checkbox input[type="checkbox"]:indeterminate + span:after {
+  border: 5px solid #000;
+  content: "";
+  height: 0;
+  left: 5px;
+  top: 5px;
+  width: 0;
+}
+
+
+.c-checkbox input[type="checkbox"]:indeterminate:disabled + span:after {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.c-checkbox input[type="checkbox"]:indeterminate:not(:disabled):hover + span:after {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.c-checkbox input[type="checkbox"]:indeterminate:not(:disabled) + span:before {
+  box-shadow: inset 0 0 0 1px #0078D7;
+}
+
+
+.c-checkbox input[type="checkbox"]:disabled + span {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+
+.c-checkbox input[type="checkbox"]:disabled + span:before {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}

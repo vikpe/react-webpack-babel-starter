@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "In-page navigation module",
+    "description": "A MWF In-page navigation module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/in-page-navigation.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/in-page-navigation.json#/definitions/sticky-on"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/in-page-navigation.json#/definitions/sticky-off"
+        }
+    ]
+}

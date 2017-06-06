@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="For development testing of Microsoft Web Framework">
+    <meta name="keywords" content="Development Site's">
+    <meta name="author" content="Microsoft Corporation">
+
+    <!--[if !(IE 8)]><!-->
+        <link id="primary-stylesheet"
+            rel="stylesheet"
+            href="/css/ltr-west-european-default.css"
+            data-dir="ltr"
+            data-market="ltr-west-european"
+            data-theme="default"
+            data-default-ltr="/css/ltr-west-european-default.css"
+            data-default-rtl="/css/rtl-arabic-default.css"
+            data-alt-ltr="/css/ltr-west-european-alt.css"
+            data-alt-rtl="/css/rtl-arabic-alt.css">
+        <link rel="stylesheet" href="/css/mwf_cmg_overrides.css">
+
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+        <link id="primary-stylesheet-ie8" rel="stylesheet" href="/css/ltr-west-european-default-ie8.css" data-theme="default" data-dir="ltr" data-market="ltr-west-european" data-default-ltr="/css/ltr-west-european-default-ie8.css" data-default-rtl="/css/rtl-arabic-default-ie8.css" data-alt-ltr="/css/ltr-west-european-alt-ie8.css" data-alt-rtl="/css/rtl-arabic-alt-ie8.css">
+    <![endif]-->
+        {{! Modernizr needed for all browsers to detect js before css loads. Async removed to enable js detection }}
+        <script src="/scripts/vendor/modernizr.min.js"></script><noscript></noscript>
+    </head>
+        <body>
+            {{#unless removeContainer }}
+                <div data-grid="container">
+                    <div data-grid="col-12 pad-6x">
+            {{/unless}}
+
+            {{> body }}
+
+            {{#unless removeContainer }}
+                    </div>
+                </div>
+            {{/unless}}
+            <script src="/scripts/mwf-main.js" defer></script><noscript></noscript>
+
+            {{#if useDevToolbar}}
+            <script src="/scripts/dev-toolbar.js" defer></script><noscript></noscript>
+            {{/if}}
+        </body>
+</html>

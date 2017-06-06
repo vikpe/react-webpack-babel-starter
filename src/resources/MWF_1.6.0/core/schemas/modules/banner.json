@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Banner module",
+    "description": "A MWF banner module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/banner.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/banner.json#/definitions/heading-subtext"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/banner.json#/definitions/heading-subtext-logo"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/banner.json#/definitions/heading-call-to-action"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/banner.json#/definitions/heading-logo-call-to-action"
+        }
+    ]
+}

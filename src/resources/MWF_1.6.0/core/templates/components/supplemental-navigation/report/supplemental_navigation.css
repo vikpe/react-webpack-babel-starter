@@ -1,0 +1,53 @@
+.c-supplemental-nav {
+  margin-top: 32px;
+}
+
+.c-supplemental-nav a,
+.c-supplemental-nav span {
+  display: block;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.c-supplemental-nav a:hover,
+.c-supplemental-nav span:hover {
+  cursor: pointer;
+}
+
+.c-supplemental-nav a.active {
+  color: #000;
+}
+
+.c-supplemental-nav a:hover,
+.c-supplemental-nav a focus {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.c-supplemental-nav a:focus {
+  outline: 1px dashed;
+}
+
+.c-supplemental-nav a.f-active {
+  color: #000;
+}
+
+.c-supplemental-nav a.f-disabled {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.c-supplemental-nav > nav > a + nav {
+  height: 0;
+  overflow: hidden;
+}
+
+.c-supplemental-nav > nav > a:first-child,
+.c-supplemental-nav > nav > span:first-child {
+  margin-left: 0;
+  margin-bottom: 16px;
+}
+
+.c-supplemental-nav > nav a {
+  margin-left: 20px;
+  margin-bottom: 16px;
+}

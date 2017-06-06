@@ -1,0 +1,271 @@
+// ==========================================================================
+// Migration class name support
+// ==========================================================================
+$bootstrap-migration: false !default;
+$webcore-migration: false !default;
+
+// ==========================================================================
+// Migration class name definitions
+//  Note: class names should always be followed by a comma and optionally a space.
+//  This ensures that the selector chain is compiled correctly when this class
+//  is used directly preceding the component selector.
+// ==========================================================================
+// Example:
+// #{$migration-button}
+// button.c-button,
+// a.c-button[role="button"]
+// {
+//     ...
+// }
+
+// ==========================================================================
+// Migration selector map
+//  Note: top-level node should reflect the MWF name (as applicable).
+//  Sass syntax requirements:
+//      1. multiple selectors should be separated ONLY by spaces, not commas
+//         - commas are delimiters for the Sass map, the commas needed for
+//           the selector lists will be added in get-migration-selector
+//      2. classes must be enclosed in "quotes" as the .period is treated as
+//         a special character in Sass:
+//         - http://www.sitepoint.com/sass-reference/string/
+// ==========================================================================
+
+// scss-lint:disable TrailingSemicolon
+$migration: (
+    heading-1: (
+        bootstrap:  h1 ".h1" ".type-h1",
+        webcore:    h1 "text-headline"
+    ),
+    heading-2: (
+        bootstrap:  h2 ".h2" ".type-h2",
+        webcore:    h2 ".text-header"
+    ),
+    heading-3: (
+        bootstrap:  h3 ".h3" ".type-h3",
+        webcore:    h3 ".text-subheader"
+    ),
+    heading-4: (
+        bootstrap:  h4 ".h4" ".type-h4",
+        webcore:    h4 ".text-title"
+    ),
+    heading-5: (
+        bootstrap:  h5 ".h5" ".type-h5",
+        webcore:    h5 ".text-subtitle"
+    ),
+    heading-6: (
+        bootstrap:  h6 ".h6" ".type-h6",
+        webcore:    h6 ".text-base"
+    ),
+    subheading-1: (
+        bootstrap:  ".type-sh1"
+    ),
+    subheading-2: (
+        bootstrap:  ".type-sh2"
+    ),
+    subheading-3: (
+        bootstrap:  ".type-sh3"
+    ),
+    subheading-4: (
+        bootstrap:  ".type-sh4"
+    ),
+    subheading-5: (
+        bootstrap:  ".type-sh5"
+    ),
+    subheading-6: (
+        bootstrap:  ".type-sh6"
+    ),
+    paragraph-1: (
+        bootstrap:  ".type-p1"
+    ),
+    paragraph-2: (
+        bootstrap:  ".type-p2"
+    ),
+    paragraph-3: (
+        bootstrap:  ".type-p3" p,
+        webcore:    ".text-body" p
+    ),
+    paragraph-4: (
+        bootstrap:  ".type-p4"
+    ),
+    caption-1: (
+        bootstrap:  ".type-c1",
+        webcore:    ".text-caption"
+    ),
+    caption-2: (
+        bootstrap:  ".type-c2",
+        webcore:    ".text-caption-alt" ".text-subcaption"
+    ),
+    active: (
+        bootstrap:  ".active",
+        webcore:    ""
+    ),
+    button: (
+        bootstrap:  ".btn",
+        webcore:    ".btn" button #{"input[type=button]"} #{"input[type=submit]"} #{"input[type=reset]"}
+    ),
+    button-container: (
+        bootstrap:  ".btn-group",
+        webcore:    ".btn-group"
+    ),
+    button-primary: (
+        bootstrap:  ".btn.btn-primary",
+        webcore:    ".btn-primary" // WebCore adds this class to more than just .btn
+    ),
+    checkbox: (
+        bootstrap:  ".checkbox",
+        webcore:    ".checkbox"
+    ),
+    col-3: (
+        bootstrap: ".col-3"
+    ),
+    col-6: (
+        bootstrap: ".col-6"
+    ),
+    divider: (
+        bootstrap:  hr,
+        webcore:    hr
+    ),
+    glyph: (
+        bootstrap:  ".glyph",
+        webcore:    ""
+    ),
+    group: (
+        bootstrap:  ".checkbox-inline" ".radio-inline",
+        webcore:    ".checkbox-inline" ".radio-inline"
+    ),
+    histogram: (
+        bootstrap:  ".histogram",
+        webcore:    ""
+    ),
+    histogram-rating-bars: (
+        bootstrap:  ".rating-star-bars",
+        webcore:    ""
+    ),
+    image: (
+        bootstrap:  ".img-responsive",
+        webcore:    ".img-responsive"
+    ),
+    label: (
+        bootstrap:  label,
+        webcore:    label
+    ),
+    link-navigation: (
+        bootstrap:  ".link-navigation",
+        webcore:    ""
+    ),
+    link-navigation-heading: (
+        bootstrap:  ".text-title",
+        webcore:    ""
+    ),
+    link-navigation-hyperlink: (
+        bootstrap:  a,
+        webcore:    ""
+    ),
+    list-bare: (
+        bootstrap:  "ul.list-unstyled",
+        webcore:    ""
+    ),
+    list-ol: (
+        bootstrap:  "ol.list-styled",
+        webcore:    ""
+    ),
+    list-ul: (
+        bootstrap:  "ul.list-styled",
+        webcore:    ".bulleted-list"
+    ),
+    pagination: (
+        bootstrap:  ".pagination",
+        webcore:    ""
+    ),
+    password: (
+        bootstrap:  "input.form-control",
+        webcore:    ""
+    ),
+    radio: (
+        bootstrap:  ".radio",
+        webcore:    ".radio"
+    ),
+    screen-reader: (
+        bootstrap:  ".sr-only",
+        webcore:    ".sr-only"
+    ),
+    select: (
+        bootstrap:  ".combobox",
+        webcore:    ""
+    ),
+    select-menu: (
+        bootstrap:  ".dropdown",
+        webcore:    ""
+    ),
+    select-menu-menu: (
+        bootstrap:  ".dropdown-menu",
+        webcore:    ""
+    ),
+    select-menu-menu-item: (
+        bootstrap:  ".dropdown-menu > li",
+        webcore:    ""
+    ),
+    table: (
+        bootstrap:  ".table-responsive",
+        webcore:    ""
+    ),
+    text-field: (
+        bootstrap:  "input.form-control",
+        webcore:    ""
+    )
+);
+
+// scss-lint:enable TrailingSemicolon
+// set migration variables from map data
+
+// typography
+$migration-heading-1:                   get-migration-selector(heading-1);                  // .a.k.a. h1
+$migration-heading-2:                   get-migration-selector(heading-2);                  // .a.k.a. h2
+$migration-heading-3:                   get-migration-selector(heading-3);                  // .a.k.a. h3
+$migration-heading-4:                   get-migration-selector(heading-4);                  // .a.k.a. h4
+$migration-heading-5:                   get-migration-selector(heading-5);                  // .a.k.a. h5
+$migration-heading-6:                   get-migration-selector(heading-6);                  // .a.k.a. h6
+$migration-subheading-1:                get-migration-selector(subheading-1);               // .a.k.a. sh1
+$migration-subheading-2:                get-migration-selector(subheading-2);               // .a.k.a. sh2
+$migration-subheading-3:                get-migration-selector(subheading-3);               // .a.k.a. sh3
+$migration-subheading-4:                get-migration-selector(subheading-4);               // .a.k.a. sh4
+$migration-subheading-5:                get-migration-selector(subheading-5);               // .a.k.a. sh5
+$migration-subheading-6:                get-migration-selector(subheading-6);               // .a.k.a. sh6
+$migration-paragraph-1:                 get-migration-selector(paragraph-1);                // .a.k.a. p1
+$migration-paragraph-2:                 get-migration-selector(paragraph-2);                // .a.k.a. p2
+$migration-paragraph-3:                 get-migration-selector(paragraph-3);                // .a.k.a. p3
+$migration-paragraph-4:                 get-migration-selector(paragraph-4);                // .a.k.a. p4
+$migration-caption-1:                   get-migration-selector(caption-1);                  // .a.k.a. c1
+$migration-caption-2:                   get-migration-selector(caption-2);                  // .a.k.a. c2
+
+// components, helper classes, etc. (alphabetical order, por favor)
+$migration-active:                      get-migration-selector(active);
+$migration-button:                      get-migration-selector(button);
+$migration-button-container:            get-migration-selector(button-container);           // a.k.a. button-group
+$migration-button-primary:              get-migration-selector(button-primary);
+$migration-checkbox:                    get-migration-selector(checkbox);
+$migration-col-3:                       get-migration-selector(col-3);
+$migration-col-6:                       get-migration-selector(col-6);
+$migration-divider:                     get-migration-selector(divider);
+$migration-glyph:                       get-migration-selector(glyph);
+$migration-group:                       get-migration-selector(group);
+$migration-histogram:                   get-migration-selector(histogram);
+$migration-histogram-rating-bars:       get-migration-selector(histogram-rating-bars);      // a.k.a. rating-star-bars
+$migration-image:                       get-migration-selector(image);
+$migration-label:                       get-migration-selector(label);
+$migration-link-navigation:             get-migration-selector(link-navigation);
+$migration-link-navigation-heading:     get-migration-selector(link-navigation-heading);
+$migration-link-navigation-hyperlink:   get-migration-selector(link-navigation-hyperlink);  // a.k.a. link-navigation-link
+$migration-list-bare:                   get-migration-selector(list-bare);                  // a.k.a. list-unstyled
+$migration-list-ol:                     get-migration-selector(list-ol);
+$migration-list-ul:                     get-migration-selector(list-ul);
+$migration-pagination:                  get-migration-selector(pagination);
+$migration-password:                    get-migration-selector(password);
+$migration-radio:                       get-migration-selector(radio);
+$migration-screen-reader:               get-migration-selector(screen-reader);              // a.k.a. sr-only
+$migration-select:                      get-migration-selector(select);                     // a.k.a. combobox
+$migration-select-menu:                 get-migration-selector(select-menu);                // a.k.a. dropdown
+$migration-select-menu-menu:            get-migration-selector(select-menu-menu);           // a.k.a. dropdown-menu
+$migration-select-menu-menu-item:       get-migration-selector(select-menu-menu-item);      // a.k.a. dropdown-menu-item
+$migration-table:                       get-migration-selector(table);                      // a.k.a. table-responsive
+$migration-text-field:                  get-migration-selector(text-field);

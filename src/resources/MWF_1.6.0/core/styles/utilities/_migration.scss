@@ -1,0 +1,81 @@
+// ==========================================================================
+// Migration Support
+//  This file adds support for migration classes to be compiled into component
+//  selectors. Doing this will increase support for teams currently using
+//  migration classes and markup.
+// ==========================================================================
+
+@mixin migration-override($migration-source) {
+    // if migration source is configured to true, include the content
+    @if ($migration-source == bootstrap and $bootstrap-migration == true) or ($migration-source == webcore and $webcore-migration == true) {
+        @content;
+    }
+}
+
+@function get-migration-selector($selector) {
+    // If all migration variables are false, migration selectors should be
+    // an empty string so that they have no affect on the compiled stylesheet
+    @if $bootstrap-migration == false and $webcore-migration == false {
+        @return "";
+    }
+
+    $map-selector-list: ();
+    $migration-selector-list: ();
+    $map-migration: map-get($migration, $selector);
+
+    @each $source, $source-selector in $map-migration {
+        // concatenate selectors from map data into list
+        @if ($source == bootstrap and $bootstrap-migration == true) or ($source == webcore and $webcore-migration == true) {
+            $map-selector-list: join($map-selector-list, $source-selector, space);
+        }
+    }
+
+    // @debug "$map-selector-list: " + $map-selector-list;
+
+    @if type-of($map-selector-list) == list {
+        // @debug "length: " + length($map-selector-list);
+
+        @each $selector in $map-selector-list {
+
+            // remove quotes needed due to Sass issues with "." prefix on class names
+            $selector: unquote($selector);
+
+            // skip empty values (some "" values appear in @debug output of $map-selector-list)
+            @if $selector != "" {
+                // @debug "selector: " + $selector;
+
+                // don't check for duplicates if nothing there yet (just to speed up processing)
+                @if length($migration-selector-list) > 0 {
+                    $duplicate: false;
+
+                    // compare selectors
+                    @each $new-selector in $migration-selector-list {
+                        // @debug "new-selector: " + $new-selector;
+
+                        // look for duplicates, if found, set flag to true
+                        @if $new-selector == $selector {
+                            $duplicate: true;
+                        }
+                    }
+
+                    @if $duplicate == false {
+                        // building the selector list:
+                        // -- if NOT already here, add it
+                        // -- otherwise, do nothing to skip duplicates
+                        $migration-selector-list: append($migration-selector-list, $selector, "comma");
+                    }
+                } @else {
+                    // no selectors added to list yet, add the first w/o checking for duplicates
+                    $migration-selector-list: join($migration-selector-list, $selector, space);
+                }
+            }
+        }
+    }
+
+    // append final comma & space at the end for proper formatting for concatenation
+    $migration-selector-list: $migration-selector-list + ", ";
+
+    // @debug "final: " + $migration-selector-list;
+
+    @return $migration-selector-list;
+}

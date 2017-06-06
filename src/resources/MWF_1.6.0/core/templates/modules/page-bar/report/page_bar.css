@@ -1,0 +1,154 @@
+.m-page-bar {
+  position: relative;
+  min-width: inherit;
+  padding-top: 0;
+  background: #FFF;
+  border-bottom: 1px solid #E3E3E3;
+}
+
+.m-page-bar.f-hidden {
+  display: none;
+}
+
+.m-page-bar.f-sticky {
+  z-index: 500;
+  visibility: hidden;
+  position: fixed;
+  top: -60px;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.m-page-bar.f-sticky.f-show {
+  visibility: visible;
+  top: 0;
+}
+
+.m-page-bar > div {
+  height: 60px;
+  width: 30%;
+  float: right;
+}
+
+.m-page-bar > div:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.m-page-bar > div:first-child {
+  width: 70%;
+  float: left;
+}
+
+.m-page-bar > div [class^="c-heading-"] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 0;
+  margin-right: 24px;
+}
+
+.m-page-bar > div [class^="c-heading-"] .c-hyperlink {
+  float: none;
+}
+
+.m-page-bar > div .context-menu [class^="c-heading-"] {
+  float: left;
+  padding-top: 5px;
+}
+
+.m-page-bar > div .context-menu [class^="c-heading-"] + .c-list li:first-child {
+  margin-left: 24px;
+}
+
+.m-page-bar > div .context-menu .c-list {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.m-page-bar > div .context-menu .c-list li {
+  display: inline-block;
+  margin: 0 24px;
+}
+
+.m-page-bar > div .context-menu .c-list li.f-active .c-hyperlink {
+  color: #000;
+}
+
+.m-page-bar > div .context-menu .c-list li .c-hyperlink {
+  color: #5E5E5E;
+}
+
+.m-page-bar > div .context-menu .c-list li .c-hyperlink:hover {
+  text-decoration: none;
+}
+
+.m-page-bar > div > div {
+  width: 95%;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.m-page-bar > div > div > div {
+  float: left;
+  width: inherit;
+}
+
+.m-page-bar > div > div > div + div {
+  display: block;
+  width: 100%;
+}
+
+.m-page-bar > div > div > div > .c-hyperlink {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m-page-bar > div > .c-price {
+  width: initial;
+  float: right;
+  padding: 20px 0;
+  margin: 0 12px;
+}
+
+.m-page-bar > div > .c-call-to-action {
+  float: right;
+  margin: 10px 0;
+  margin-left: 12px;
+  max-width: 90%;
+}
+
+@media only screen and (max-width: 1083px) {
+  .m-page-bar > div {
+    width: 40%;
+  }
+  .m-page-bar > div:first-child {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .m-page-bar {
+    width: 100%;
+  }
+  .m-page-bar > div .context-menu [class^="c-heading-"] {
+    padding-top: 8px;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .m-page-bar > div {
+    width: 50%;
+  }
+  .m-page-bar > div:first-child {
+    width: 50%;
+  }
+  .m-page-bar > div > .c-price {
+    display: none;
+  }
+}

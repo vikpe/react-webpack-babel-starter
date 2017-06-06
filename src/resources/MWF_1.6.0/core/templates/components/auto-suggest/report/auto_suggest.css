@@ -1,0 +1,51 @@
+.c-auto-suggest {
+  display: block;
+}
+
+.c-auto-suggest .c-menu {
+  position: absolute;
+  background: #FFF;
+  border-top: 1px solid;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.c-auto-suggest .c-menu .c-menu-item span {
+  background: #FFF;
+}
+
+.c-auto-suggest .c-menu .c-menu-item span:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.c-auto-suggest .c-menu[aria-hidden="true"] {
+  display: none;
+}
+
+.c-auto-suggest .c-menu[data-js-auto-suggest-postion="default"] {
+  top: 38px;
+}
+
+.c-auto-suggest .c-menu[data-js-auto-suggest-postion="above"] {
+  bottom: 100%;
+}
+
+.c-auto-suggest .c-menu.f-auto-suggest-no-results .c-menu-item span {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.c-auto-suggest .c-menu.f-auto-suggest-no-results[data-js-auto-suggest-postion="default"] {
+  top: 38px;
+}
+
+.c-auto-suggest .c-menu.f-auto-suggest-no-results[data-js-auto-suggest-postion="above"] {
+  bottom: 100%;
+}
+
+.c-auto-suggest .c-menu.f-auto-suggest-scroll {
+  overflow-y: auto;
+  max-height: none;
+}
+
+.c-label + .c-auto-suggest.c-search {
+  margin-top: 0;
+}

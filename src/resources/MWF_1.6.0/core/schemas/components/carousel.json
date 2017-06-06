@@ -1,0 +1,229 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Carousel",
+    "description": "A MWF Carousel component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/carousel.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/heroCarousel"
+        },
+        {
+            "$ref": "#/definitions/productPlacementCarousel"
+        }
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "previous-flipper": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/flipper.json"
+                },
+                "next-flipper": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/flipper.json"
+                },
+                "items": {
+                    "type": "array"
+                }
+            },
+            "required": [
+                "label",
+                "previous-flipper",
+                "next-flipper",
+                "items"
+            ]
+        }
+    },
+    "required": [
+        "content"
+    ],
+    "definitions": {
+        "heroCarousel": {
+            "properties": {
+                "context": {
+                    "enum": [
+                        "hero"
+                    ]
+                },
+                "content": {
+                    "properties": {
+                        "items": {
+                            "items": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/hero.json"
+                            }
+                        },
+                        "sequence-indicator": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/sequence-indicator.json"
+                        }
+                    },
+                    "required": [
+                        "items",
+                        "sequence-indicator"
+                    ]
+                }
+            },
+            "required": [
+                "context",
+                "content"
+            ]
+        },
+        "productPlacementCarousel": {
+            "oneOf": [
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/modules/product-placement-item-module/definitions/small"
+                },
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/modules/product-placement-item-module/definitions/medium"
+                },
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/modules/product-placement-item-module/definitions/large"
+                }
+            ],
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "content-type": {
+                            "type": "string",
+                            "enum": [
+                                "placements-single-row",
+                                "placements-multi-row"
+                            ]
+                        },
+                        "multi-row": {
+                            "type": "boolean"
+                        },
+                        "multi-slide": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "content-type",
+                        "multi-row",
+                        "multi-slide"
+                    ]
+                },
+                "content": {
+                    "properties": {
+                        "link": {
+                            "type": "object",
+                            "properties": {
+                                "alt": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "alt",
+                                "href"
+                            ]
+                        },
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/product-placement.json"
+                            }
+                        }
+                    },
+                    "required": [
+                        "link",
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "meidaGalleryCarousel": {
+            "oneOf": [
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading/definitions/level-6"
+                },
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image/definitions/picture-element"
+                },
+                {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/action-trigger.json"
+                }
+            ],
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "content-type": {
+                            "type": "string"
+                        },
+                        "multi-row": {
+                            "type": "boolean"
+                        },
+                        "multi-slide": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "content-type",
+                        "multi-row",
+                        "multi-slide"
+                    ]
+                },
+                "content": {
+                    "properties": {
+                        "previous-flipper": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/flipper.json"
+                        },
+                        "next-flipper": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/flipper.json"
+                        },
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "config": {
+                                    "type": "object",
+                                    "properties": {
+                                        "metadata": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "content": {
+                                    "action-trigger": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/action-trigger.json"
+                                    },
+                                    "media-image": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                                    },
+                                    "media-title": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading/definitions/level-6"
+                                    },
+                                    "media-time": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading/definitions/level-6"
+                                    }
+                                },
+                                "required": [
+                                    "config",
+                                    "content"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "previous-flipper",
+                        "next-flipper",
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        }
+    }
+}

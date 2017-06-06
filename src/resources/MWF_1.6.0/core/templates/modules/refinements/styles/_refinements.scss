@@ -1,0 +1,27 @@
+//  ==========================================================================
+//  Module: Product detail hero
+//  ==========================================================================
+
+.m-refinements {
+
+    // left column
+    > div[data-grid="col-3"] {
+        margin-top: 35px;
+    }
+
+    // right column
+    > div + div {
+        margin-top: 36px;
+        padding-#{$left}: 75px;
+
+        > h1 {
+            padding-top: 12px;
+            padding-bottom: 8px;
+        }
+
+        section {
+            display: inline-block;
+        }
+
+    }
+}

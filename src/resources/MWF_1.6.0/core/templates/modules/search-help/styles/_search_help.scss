@@ -1,0 +1,27 @@
+.m-search-help {
+    .c-heading-5 {
+        padding: 12px 0 24px;
+    }
+
+    ul li,
+    span {
+        padding: 2px 0;
+    }
+
+    .f-column {
+        padding-#{$right}: 24px;
+    }
+
+    .c-search {
+        max-width: initial;
+        margin: 46px 0 84px;
+    }
+}
+
+@media only screen and (max-width: $vp1-max) {
+    .m-search-help {
+        .c-heading-5 {
+            padding: 12px 0 8px;
+        }
+    }
+}

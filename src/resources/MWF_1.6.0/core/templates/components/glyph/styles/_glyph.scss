@@ -1,0 +1,34 @@
+//  ==========================================================================
+//  Component: Glyph
+//  ==========================================================================
+
+#{$migration-glyph}
+.c-glyph {
+    // display: inline-block; text-decoration: underline; and
+    // text-decoration:none; work together to prevent an underline on the
+    // :before and :after elements where the element itself gets
+    // text-decoration: underline. Setting text-decoration: underline in one
+    // rule and text-decoration: none in a different rule fixes a bug in IE
+    // where underline will still be applied if the text-decoration propery
+    // is only set to none.
+    &:before,
+    &:after {
+        font-family: $font-family-glyphs;
+        display: inline-block; // Prevent underline
+        text-decoration: underline; // Prevent underline
+    }
+
+    &:before,
+    &:after,
+    &:hover:before,
+    &:hover:after {
+        text-decoration: none; // Prevent underline
+    }
+
+    @if $ltie8 == true {
+        // This triggers a redraw to fix IE8's :before/:after content rendering.
+        @at-root html:hover & {
+            -ms-zoom: 1;
+        }
+    }
+}

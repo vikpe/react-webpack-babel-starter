@@ -1,0 +1,153 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "In-page navigation",
+    "description": "A MWF In-page navigation component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/in-page-navigation.json",
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "vertical": {
+                    "type": "boolean"
+                },
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "sticky-on"
+                    ]
+                }
+            },
+            "dependencies": {
+                "context": [
+                    "vertical"
+                ]
+            }
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "selected": {
+                                "type": "string",
+                                "enum": [
+                                    "f-active",
+                                    ""
+                                ]
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "href",
+                            "selected",
+                            "text"
+                        ]
+                    }
+                },
+                "dropdown-menu": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "sticky-on-collapsed"
+                                    ]
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "ul"
+                                    ]
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "hidden": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "menu-items": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "config": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "li"
+                                                        ]
+                                                    }
+                                                },
+                                                "required": [
+                                                    "type"
+                                                ]
+                                            },
+                                            "content": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "text": {
+                                                        "type": "string"
+                                                    },
+                                                    "href": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "text",
+                                                    "href"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "config",
+                                            "content"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "href",
+                                "menu-items"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                }
+            },
+            "required": [
+                "links",
+                "dropdown-menu"
+            ]
+        }
+    }
+}

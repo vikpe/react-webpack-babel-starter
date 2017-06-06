@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Multi-column",
+    "description": "A MWF Multi-column modules's schema definition",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/multi-column.json",
+    "supportedPartners": [],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "columns": {
+                    "type": "string",
+                    "enum": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ]
+                },
+                "list": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "columns"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                            },
+                            {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/subheading.json"
+                            },
+                            {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                            },
+                            {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                            },
+                            {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/caption.json"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "items"
+            ]
+        }
+    },
+    "definitions": {
+        "list": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+        }
+    },
+    "required": [
+        "config",
+        "content"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Table module",
+    "description": "A MWF table module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/table.json",
+    "supportedPartners": [],
+    "$ref": "http://www.getmwf.com/releases/core/schemas/components/table.json"
+}

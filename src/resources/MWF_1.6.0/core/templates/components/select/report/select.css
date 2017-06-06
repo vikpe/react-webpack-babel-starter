@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+.c-select {
+  position: relative;
+  margin-top: 20px;
+  min-width: 88px;
+  max-width: 296px;
+  background-color: #FFF;
+  cursor: pointer;
+  height: 36px;
+}
+
+
+.c-select:after {
+  font-family: "MWF-MDL2";
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 1px;
+  height: 34px;
+  width: 31px;
+  background: #FFF;
+  padding-top: 10px;
+  text-align: center;
+}
+
+
+.c-select:after:hover {
+  z-index: 1;
+}
+
+
+.c-select select {
+  position: relative;
+  width: 100%;
+  padding: 7px 34px 7px 5px;
+  background: #FFF;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 100%;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+
+.c-select select:active,
+.c-select select:focus {
+  background: #FFF;
+}
+
+
+.c-select select:hover {
+  z-index: 100;
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.c-select select:active,
+.c-select select:focus {
+  border-color: #0078D7;
+}
+
+
+.c-select select[disabled] {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: #FFF;
+  z-index: 100;
+  padding-right: 0;
+}
+
+
+.c-select select option {
+  background: #FFF;
+  color: #000;
+}
+
+
+.c-select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+
+.c-select select::-ms-expand {
+  display: none;
+}
+
+
+.c-select select:focus::-ms-value {
+  background: transparent;
+  color: #000;
+}

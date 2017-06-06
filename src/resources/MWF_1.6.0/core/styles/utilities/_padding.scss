@@ -1,0 +1,6 @@
+// This mixin adds equal padding left/right when added
+// Created to quickly add padding to modules using variables in _page.scss
+@mixin left-right-padding($padding) {
+    padding-#{$left}: $padding;
+    padding-#{$right}: $padding;
+}

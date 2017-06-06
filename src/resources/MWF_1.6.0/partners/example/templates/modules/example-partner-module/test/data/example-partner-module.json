@@ -1,0 +1,19 @@
+{
+    "name": {
+        "config": {
+            "tag": "h2",
+            "level": 2
+        },
+        "content": {
+            "text": "Example module"
+        }
+    },
+    "description": {
+        "config": {
+            "level": 3
+        },
+        "content": {
+            "text": "Module description."
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.c-flyout {
+  font-size: 15px;
+  position: absolute;
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-width: 128px;
+  max-width: 296px;
+  padding: 12px;
+  z-index: 700;
+}
+
+.c-flyout[aria-hidden="true"] {
+  display: none;
+}
+
+.c-flyout[aria-hidden="false"] {
+  display: block;
+}
+
+.c-flyout p {
+  padding: 0;
+}
+
+.c-flyout button {
+  float: right;
+}
+
+.c-flyout:focus {
+  outline: none;
+}

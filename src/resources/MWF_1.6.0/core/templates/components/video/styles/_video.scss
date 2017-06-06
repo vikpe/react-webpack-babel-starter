@@ -1,0 +1,409 @@
+// ==========================================================================
+// Component: Video
+// ==========================================================================
+// RTL not needed in video component, component doesn't change when flipped
+
+.c-video {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    min-width: $vp1;
+    direction: ltr; // video layout is the same for both ltr & rtl
+    position: relative;
+    overflow: hidden;
+
+    & > [aria-hidden="true"] {
+        display: none;
+    }
+
+    video {
+        display: block;
+        min-width: 100%;
+        width: 100%;
+        max-height: 100%;
+        height: auto;
+        background: $color-shade;
+    }
+
+    // Seek Bar Slider Overwrites
+    .f-progress {
+        direction: ltr;
+        width: 100%;
+        // Disable SCSS Linter to skip known/needed duplicate : 288 is the width of the other controls
+        // scss-lint:disable DuplicateProperty
+        width: calc(100% - 288px);
+        // scss-lint:enable DuplicateProperty
+        display: inline-block;
+        margin-bottom: 4px;
+
+        div {
+            background: $color-tint-40;
+
+            button:hover,
+            button:active {
+                background: $color-tint;
+
+                span {
+                    display: block;
+                }
+            }
+
+            button span {
+                @include apply-type(t8, true, false);
+                width: auto;
+                top: -50px;
+                background: $color-shade;
+                color: $color-tint;
+            }
+        }
+    }
+
+    button {
+        color: $color-tint;
+        background: transparent;
+        border: 0;
+    }
+
+    .f-video-controls {
+        @include apply-type(t4, true, false);
+        width: 100%;
+        max-width: $vp6;
+        height: 44px;
+        background: $color-shade;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+
+        button.c-glyph {
+            width: 44px;
+            height: 44px;
+            padding-top: 4px;
+            vertical-align: middle;
+
+            &.glyph-volume,
+            &.glyph-mute {
+                padding-top: 12px;
+            }
+
+            &:hover,
+            &:focus {
+                color: $color-tint-60;
+            }
+
+            &:focus {
+                outline: 1px dashed $color-tint;
+            }
+
+            &:active {
+                color: $color-tint-40;
+            }
+        }
+
+        .f-timecode {
+            @include apply-type(t8, true, false);
+            color: $color-tint;
+            padding-right: 12px;
+            position: relative;
+            top: -2px;
+
+            span {
+                color: $color-tint-60;
+            }
+        }
+    }
+
+    .f-play-pause {
+        margin-left: 1px;
+        margin-top: 1px;
+
+        span {
+            @include apply-type(t8, true, false);
+            color: $color-tint;
+            position: absolute;
+            height: 36px;
+            min-width: 44px;
+            bottom: 46px;
+            left: 0;
+            background: $color-shade;
+            padding: 8px;
+
+            &[aria-hidden="true"] {
+                display: none;
+            }
+
+            &[aria-hidden="false"] {
+                display: block;
+            }
+        }
+    }
+
+    .f-full-screen {
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+
+        span {
+            @include apply-type(t8, true, false);
+            color: $color-tint;
+            position: absolute;
+            height: 36px;
+            min-width: 44px;
+            text-align: right;
+            bottom: 47px;
+            right: 0;
+            background: $color-shade;
+            padding: 8px;
+
+            &[aria-hidden="true"] {
+                display: none;
+            }
+
+            &[aria-hidden="false"] {
+                display: block;
+            }
+        }
+    }
+
+    .f-volume-button {
+        display: inline-block;
+        position: absolute;
+        top: -4px;
+        right: 45px;
+    }
+
+    .f-volume-slider {
+        position: absolute;
+        width: 44px;
+        min-height: 148px;
+        bottom: 46px;
+        right: 46px;
+        background: $color-shade;
+        border: 1px solid $color-tint-60;
+
+        &[aria-hidden="true"] {
+            visibility: hidden;
+        }
+
+        &[aria-hidden="false"] {
+            visibility: visible;
+        }
+
+        .c-slider {
+            direction: ltr;
+            transform: rotate(-90deg);
+            width: 120px;
+            padding-bottom: 40px;
+            margin-top: 52px;
+            margin-left: -18px;
+
+            div {
+                background: $color-tint-40;
+
+                button:hover,
+                button:active {
+                    background: $color-tint;
+                }
+
+                > span {
+                    min-height: 0;
+                    height: 4px;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    background: $color-accent;
+                }
+
+                button {
+                    z-index: map-get($z-index, neutral);
+
+                    span {
+                        @include apply-type(t8, true, false);
+                        width: auto;
+                        transform: rotate(90deg);
+                        min-width: 40px;
+                        min-height: 32px;
+                        top: 38px;
+                        left: -16px;
+                        background: $color-shade;
+                        color: $color-tint;
+                        border: 1px solid $color-tint-60;
+                    }
+                }
+            }
+        }
+    }
+
+    .f-options {
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        right: 90px;
+        margin-left: 12px;
+    }
+
+    .f-options-dialog {
+        position: absolute;
+        bottom: 46px;
+        right: 90px;
+        width: 160px;
+        background: $color-shade;
+        border: 1px solid $color-tint-60;
+        overflow: hidden;
+
+        .c-list {
+            margin: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 160px;
+
+            li {
+                height: 40px;
+                padding: 0;
+                border-top: 1px solid $color-tint-60;
+
+                &:first-child {
+                    border-top: 0;
+                }
+
+                ul {
+                    display: none;
+                    left: 160px;
+
+                    li {
+                        position: relative;
+                    }
+                }
+
+                a {
+                    @include apply-type(t8, true, false);
+                    color: $color-tint;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    padding: 8px 12px;
+
+                    .c-image {
+                        padding-right: 12px;
+                        display: inline-block;
+                    }
+
+                    &.c-action-trigger {
+                        margin-top: 0;
+
+                        &:before {
+                            margin-left: 1px;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    &.c-glyph[data-video-selectable] {
+                        color: $color-tint-80;
+                    }
+
+                    &.glyph-check-mark[data-video-selectable] {
+                        color: $color-tint;
+
+                        &:before {
+                            float: right;
+                            margin-right: 0;
+                        }
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                        background: $color-tint-10;
+                    }
+
+                    &:focus {
+                        border: 1px dashed $color-tint;
+                    }
+
+                    &:active {
+                        text-decoration: none;
+                        background: $color-tint-20;
+                        border: 0;
+                    }
+                }
+            }
+        }
+
+        &[aria-hidden="true"] {
+            visibility: hidden;
+        }
+
+        &[aria-hidden="false"] {
+            visibility: visible;
+        }
+    }
+
+    .glyph-play:before {
+        @include apply-glyph($glyph-play);
+    }
+
+    .glyph-pause:before {
+        @include apply-glyph($glyph-pause);
+    }
+
+    .glyph-full-screen:before {
+        @include apply-glyph($glyph-full-screen);
+    }
+
+    .glyph-mute:before {
+        @include apply-glyph($glyph-mute);
+    }
+
+    .glyph-volume:before {
+        @include apply-glyph($glyph-volume);
+    }
+
+    .glyph-more:before {
+        @include apply-glyph($glyph-more);
+    }
+
+    .glyph-copy:before {
+        @include apply-glyph($glyph-copy);
+    }
+
+    .glyph-mail:before {
+        @include apply-glyph($glyph-mail);
+    }
+
+    .glyph-check-mark:before {
+        @include apply-glyph($glyph-check-mark);
+    }
+
+    // Control panel animations
+    @keyframes slidein {
+        from {
+            bottom: -44px;
+        }
+
+        to {
+            bottom: 0;
+        }
+    }
+
+    @keyframes slideout {
+        from {
+            bottom: 0;
+        }
+
+        to {
+            bottom: -44px;
+        }
+    }
+
+    .f-slidein {
+        animation-duration: 0.5s;
+        animation-name: slidein;
+        animation-fill-mode: forwards;
+    }
+
+    .f-slideout {
+        animation-duration: 0.5s;
+        animation-name: slideout;
+        animation-fill-mode: forwards;
+    }
+}

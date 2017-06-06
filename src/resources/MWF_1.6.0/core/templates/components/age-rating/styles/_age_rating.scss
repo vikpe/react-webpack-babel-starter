@@ -1,0 +1,37 @@
+//  ==========================================================================
+//  Component: Age rating
+//  ==========================================================================
+
+.c-age-rating {
+    display: block;
+
+    > .c-image {
+        float: $left;
+        width: 56px;
+        height: auto;
+    }
+
+    & .c-label,
+    & .c-paragraph {
+        @include apply-type(t7, false, true);
+        padding: 0;
+        margin: set-direction-based-value(0 0 0 68px, 0 68px 0 0);
+    }
+
+    & .c-label {
+        font-weight: $font-weight-bold;
+    }
+
+    .c-content-toggle {
+        margin-#{$left}: 68px;
+
+        p {
+            @include apply-maxlines(10, p3, true);
+            padding-top: 0;
+
+            &[data-f-expanded="false"] {
+                @include apply-maxlines(0, p3, true);
+            }
+        }
+    }
+}

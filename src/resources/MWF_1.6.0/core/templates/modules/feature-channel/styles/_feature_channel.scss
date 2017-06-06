@@ -1,0 +1,160 @@
+//  ==========================================================================
+//  Module: Feature channel
+//  ==========================================================================
+
+$gradient-width: 150px;
+$section-offset: 48px;
+
+.m-feature-channel {
+    display: block;
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    padding-top: 0;
+    margin-top: $section-offset;
+
+    > .c-image img {
+        #{$left}: 0;
+        max-width: inherit; // override 100% to clip right edge and preserve size in this design
+        position: absolute;
+    }
+
+    > section {
+        position: relative;
+        z-index: map-get($z-index, neutral); // stack above background gradient/color/mask
+
+        > .c-group li {
+            display: none;
+        }
+
+        .c-call-to-action {
+            margin-top: 16px;
+        }
+    }
+
+    > div {
+        height: 100%;
+        position: absolute;
+        #{$right}: 0;
+        top: 0;
+        z-index: map-get($z-index, default); // stack below content
+    }
+
+    //  ========================================================================
+    //  Responsive variations
+    //  ========================================================================
+
+    @media only screen and (max-width: $vp2-max) {
+        > section {
+            text-align: center;
+        }
+
+        > div {
+            background-image: none !important; // !important needed to override inline style from CMS for gradient in larger viewports
+            #{$left}: 0;
+        }
+
+        &#{$theme-dark-selector} > div {
+            background: $color-shade-40;
+        }
+
+        &#{$theme-light-selector} > div {
+            background: $color-tint-40;
+        }
+    }
+
+    @media only screen and (min-width: $vp2) {
+        height: 260px;
+    }
+
+    @media only screen and (max-width: $vp3-max) {
+        > section {
+            top: calc(50% - #{$section-offset});
+
+            > .c-heading-4 {
+                padding-top: 0;
+
+                .c-hyperlink {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: $vp3) {
+        height: 280px;
+
+        > div {
+            @include flip-direction();
+            #{$left}: calc(50% - #{$gradient-width});
+            #{$right}: 0;
+        }
+
+        &#{$theme-dark-selector} > div {
+            // don't use $right Sass var for RTL, already handled with flip-direction mixin
+            // this is b/c gradient can be overridden in HTML with custom CMS color
+            background: linear-gradient(to right, $color-transparent 0, flatten-overlay($color-tint, $color-shade, 80) $gradient-width);
+        }
+
+        &#{$theme-light-selector} > div {
+            // don't use $right Sass var for RTL, already handled with flip-direction mixin
+            // this is b/c gradient can be overridden in HTML with custom CMS color
+            background: linear-gradient(to right, $color-transparent 0, flatten-overlay($color-tint, $color-shade, 10) $gradient-width);
+        }
+
+        > section {
+            padding: 0 $section-offset;
+            position: absolute;
+            #{$right}: 0;
+
+            > .c-group {
+                margin-#{$right}: -24px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $vp3) and (max-width: $vp3-max) {
+        > section {
+            width: 50%;
+       }
+    }
+
+    @media only screen and (min-width: $vp4) {
+        height: 370px;
+
+        > section {
+            .c-call-to-action {
+                display: none;
+            }
+
+            .c-group li:nth-child(-n+3) {
+                display: inherit;
+            }
+        }
+
+        > div {
+            #{$left}: auto;
+            width: $gradient-width + $section-offset + 551px; // + 3 products
+        }
+    }
+
+    @media only screen and (min-width: $vp5) {
+        > section  .c-group li:nth-child(-n+4) {
+            display: inherit;
+        }
+
+        > div {
+            width: $gradient-width + $section-offset + 762px; // + 4 products
+        }
+    }
+
+    @media only screen and (min-width: $vp6) {
+        > section .c-group li:nth-child(-n+5) {
+            display: inherit;
+        }
+
+        > div {
+            width: $gradient-width + $section-offset + 933px; // + 5 products
+        }
+    }
+}

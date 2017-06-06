@@ -1,0 +1,18 @@
+.m-hero {
+    @include left-right-padding($add-0);
+    padding-top: 0;
+
+    @media only screen and (max-width: $vp3-max){
+        .m-hero-item,
+        .c-hero {
+            @include left-right-padding($add-36);
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max){
+        .m-hero-item,
+        .c-hero {
+            @include left-right-padding($add-0);
+        }
+    }
+}

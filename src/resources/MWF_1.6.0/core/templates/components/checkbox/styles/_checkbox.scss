@@ -1,0 +1,150 @@
+//  ==========================================================================
+//  Component: Checkbox
+//  ==========================================================================
+
+$checkbox-button-size: 20px;
+$checkbox-dot-size: 10px;
+$checkbox-dot-offset: $checkbox-dot-size / 2;
+$checkbox-gap: 8px;
+
+@mixin checkboxTextBase() {
+    cursor: pointer;
+    display: inline-block;
+    #{$left}: 0;
+    padding-#{$left}: $checkbox-button-size + $checkbox-gap;
+    position: relative;
+    top: 0;
+}
+
+#{$migration-checkbox}
+.c-checkbox {
+    .c-label {
+        @include apply-type(t7, false, true);
+        margin-#{$right}: 24px;
+        padding-bottom: 0;
+        position: relative;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+
+        // show default styling in IE8, otherwise go to town
+        @if $ltie8 == true {
+            + span {
+                @include checkboxTextBase();
+            }
+        } @else {
+            height: $checkbox-button-size;
+            opacity: 0;
+            width: $checkbox-button-size;
+
+            + span {
+                @include checkboxTextBase();
+
+                &:after,
+                &:before {
+                    height: $checkbox-button-size;
+                    #{$left}: 0;
+                    position: absolute;
+                    width: $checkbox-button-size;
+                    top: 0;
+                }
+
+                // outer square
+                &:before {
+                    content: "";
+                    box-shadow: inset 0 0 0 1px $color-foreground, inset 0 0 0 ($checkbox-button-size / 2) transparent;
+                    top: 0;
+
+                    // add border for IE/Edge high contrast mode
+                    @media screen and (-ms-high-contrast: active) {
+                        border: 1px solid $color-brand-neutral-55;
+                    }
+                }
+            }
+
+            // outer square hover color
+            &:not(:disabled):focus,
+            &:not(:disabled):hover {
+                + span:before {
+                    box-shadow: inset 0 0 0 1px $color-foreground-80;
+                }
+            }
+
+            &:focus + span:before {
+                outline: 1px dashed $color-foreground-80;
+            }
+
+            &:checked {
+                // inner mark
+                + span:after {
+                    @include apply-glyph($glyph-check-mark);
+                    color: $color-tint;
+                    font-size: 17px;
+                    padding-#{$left}: 1px;
+                }
+
+                &:disabled + span:after {
+                    // disabled inner square
+                    box-shadow: inset 0 0 0 1px $color-accent-05, inset 0 0 0 ($checkbox-button-size / 2) $color-accent-20;
+                    color: $color-tint-30;
+                }
+
+                &:not(:disabled) {
+                    + span:before {
+                        // checked outer square
+                        box-shadow: inset 0 0 0 ($checkbox-button-size / 2) $color-accent;
+                    }
+
+                    // checked outer square hover
+                    &:focus,
+                    &:hover {
+                        + span:before {
+                            box-shadow: inset 0 0 0 1px $color-foreground-60, inset 0 0 0 ($checkbox-button-size / 2) $color-accent;
+                        }
+                    }
+                }
+            }
+
+            &:indeterminate {
+                + span:after {
+                    // indeterminate inner square
+                    border: 5px solid $color-foreground;
+                    content: "";
+                    height: 0;
+                    #{$left}: $checkbox-dot-offset;
+                    top: $checkbox-dot-offset;
+                    width: 0;
+                }
+
+                &:disabled + span:after {
+                    // disabled inner square
+                    border-color: $color-foreground-20;
+                }
+
+                &:not(:disabled) {
+                    &:hover + span:after {
+                        // indeterminate inner square hover
+                        border-color: $color-foreground-60;
+                    }
+
+                    + span:before {
+                        // indeterminate outer square
+                        box-shadow: inset 0 0 0 1px $color-accent;
+                    }
+                }
+            }
+
+            &:disabled + span {
+                // disabled inner mark
+                color: $color-foreground-20;
+                cursor: not-allowed;
+
+                &:before {
+                    // disabled outer square
+                    box-shadow: inset 0 0 0 1px $color-foreground-20;
+                }
+            }
+        }
+    }
+}

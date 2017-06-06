@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Ratings and reviews module",
+    "description": "A MWF ratings and reviews module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/ratings-and-reviews.json",
+    "supportedPartners": [],
+    "properties": {
+        "heading": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+        },
+        "filters": {
+            "type": "array",
+            "items": {
+                "$ref": "http://www.getmwf.com/releases/core/schemas/components/select-menu.json"
+            }
+        },
+        "histogram": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/histogram.json"
+        },
+        "rate-and-review": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/button.json"
+        },
+        "top-reviews": {
+            "most-favourable": {
+                "type": "object",
+                "properties": {
+                    "heading": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                    },
+                    "review": {
+                        "$ref": "#/definitions/review"
+                    }
+                }
+            },
+            "most-critical": {
+                "$ref": "#/definitions/review"
+            }
+        },
+        "sort-by": {
+            "type": "array",
+            "items": {
+                "$ref": "http://www.getmwf.com/releases/core/schemas/components/select-menu.json"
+            }
+        },
+        "visible-reviews": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "text": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "all-reviews": {
+            "type": "array",
+            "items": {
+                "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+            }
+        },
+        "pagination": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/pagination.json"
+        }
+    },
+    "definitions": {
+        "review": {
+            "type": "object",
+            "properties": {
+                "rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+                },
+                "date": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                },
+                "name": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                },
+                "title": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "platform": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/metatext.json"
+                },
+                "text": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/content-toggle.json"
+                },
+                "helpful": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/metatext.json"
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "text"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "content"
+                            ]
+                        },
+                        "comment-type": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "text"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "content"
+                            ]
+                        },
+                        "date": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "text"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "content"
+                            ]
+                        },
+                        "text": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/content-toggle.json"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

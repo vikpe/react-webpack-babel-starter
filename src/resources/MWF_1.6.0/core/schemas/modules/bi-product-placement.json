@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Bi-product placement module",
+    "description": "A MWF Bi-product placement module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/bi-product-placement.json",
+    "supportedPartners": [],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "first": {
+                    "type": "object",
+                    "properties": {
+                        "heading": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                        },
+                        "carousel": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/carousel.json"
+                        }
+                    },
+                    "required": [
+                        "heading",
+                        "carousel"
+                    ]
+                },
+                "second": {
+                    "type": "object",
+                    "properties": {
+                        "heading": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                        },
+                        "carousel": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/carousel.json"
+                        }
+                    },
+                    "required": [
+                        "heading",
+                        "carousel"
+                    ]
+                }
+            },
+            "required": [
+                "first",
+                "second"
+            ]
+        }
+    },
+    "required": [
+        "config",
+        "content"
+    ]
+}

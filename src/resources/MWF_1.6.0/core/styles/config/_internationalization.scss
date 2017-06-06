@@ -1,0 +1,14 @@
+// Direction variables for RTL
+// Use these any time you set directional margins or floats
+// For instance float: $left; will return left in 'ltr' locales and right in 'rtl' locales
+$left: left;
+$right: right;
+$ltr: ltr;
+$rtl: rtl;
+
+@if $dir == "rtl" {
+    $left: right;
+    $right: left;
+    $ltr: rtl;
+    $rtl: ltr;
+}

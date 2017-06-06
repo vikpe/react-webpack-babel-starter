@@ -1,0 +1,32 @@
+//  ==========================================================================
+//  Component: Badge
+//  ==========================================================================
+
+//  Accent colors
+$color-badge-yellow:    #FFD800;
+$color-badge-grey:      #333;
+
+// Badge styles
+.c-badge {
+    @include apply-type(t8);
+    display: inline-block;
+    letter-spacing: 0.075em;
+
+    &.f-highlight {
+        background-color: $color-badge-yellow;
+        color: $color-shade;
+    }
+
+    &.f-lowlight {
+        background-color: $color-badge-grey;
+        color: $color-tint;
+    }
+
+    &.f-small {
+        padding: set-direction-based-value(0 9px 1px 8px, 0 8px 1px 9px);
+    }
+
+    &.f-large {
+        padding: set-direction-based-value(3px 13px 5px 12px, 3px 12px 5px 13px);
+    }
+}

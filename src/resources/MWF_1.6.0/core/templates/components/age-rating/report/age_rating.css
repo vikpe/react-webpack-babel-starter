@@ -1,0 +1,38 @@
+.c-age-rating {
+  display: block;
+}
+
+.c-age-rating > .c-image {
+  float: left;
+  width: 56px;
+  height: auto;
+}
+
+.c-age-rating .c-label,
+.c-age-rating .c-paragraph {
+  font-size: 15px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 0 0 68px;
+}
+
+.c-age-rating .c-label {
+  font-weight: 700;
+}
+
+.c-age-rating .c-content-toggle {
+  margin-left: 68px;
+}
+
+.c-age-rating .c-content-toggle p {
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 200px;
+  padding-top: 0;
+}
+
+.c-age-rating .c-content-toggle p[data-f-expanded="false"] {
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 0px;
+}

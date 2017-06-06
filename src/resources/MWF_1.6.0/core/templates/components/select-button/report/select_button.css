@@ -1,0 +1,198 @@
+
+button.c-select-button {
+  font-size: 15px;
+  margin-top: 36px;
+  margin-right: 12px;
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  color: #000;
+  padding: 6px 10px;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+button.c-select-button[aria-pressed="true"] {
+  border-width: 2px;
+  border-color: #000;
+  padding: 5px 9px;
+}
+
+
+button.c-select-button:focus {
+  outline: 1px dashed #000;
+}
+
+
+button.c-select-button:hover {
+  outline: 1px dashed #000;
+  border-color: #000;
+}
+
+
+button.c-select-button:hover[aria-pressed="true"] {
+  border-color: #004881;
+}
+
+
+button.c-select-button:active {
+  outline: none;
+  border-color: #004881;
+}
+
+
+button.c-select-button[disabled] {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+  outline: 0;
+  cursor: not-allowed;
+}
+
+
+button.c-select-button[data-select-button-swatch] {
+  width: 36px;
+  height: 36px;
+}
+
+
+button.c-select-button[data-select-button-swatch]:hover,
+button.c-select-button[data-select-button-swatch]:focus {
+  border-color: #000;
+  box-shadow: inset 0 0 0 1px #FFF;
+}
+
+
+button.c-select-button[data-select-button-swatch]:active {
+  border-color: #999999;
+  box-shadow: inset 0 0 0 1px #FFF;
+}
+
+
+button.c-select-button[data-select-button-swatch][aria-pressed="true"] {
+  box-shadow: inset 0 0 0 1px #FFF;
+}
+
+
+button.c-select-button[data-select-button-swatch][aria-pressed="true"]:hover,
+button.c-select-button[data-select-button-swatch][aria-pressed="true"]:focus {
+  border-color: #999999;
+  outline: 1px dashed #000;
+  box-shadow: inset 0 0 0 1px #FFF;
+}
+
+
+button.c-select-button.f-swatch-disabled {
+  position: relative;
+}
+
+
+button.c-select-button.f-swatch-disabled:hover,
+button.c-select-button.f-swatch-disabled:focus {
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+button.c-select-button.f-swatch-disabled:before {
+  position: absolute;
+  content: "";
+  left: -25%;
+  top: 50%;
+  right: -25%;
+  border-top: 1px solid;
+  border-color: inherit;
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+}
+
+
+button.c-select-button.f-swatch-disabled-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+button.c-select-button.f-swatch-disabled-dark:hover,
+button.c-select-button.f-swatch-disabled-dark:focus {
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-light
+button.c-select-button, .theme-dark .theme-light
+button.c-select-button {
+  background: rgba(255, 255, 255, 0);
+  border-color: rgba(0, 0, 0, 0.4);
+  color: #000;
+}
+
+.theme-light
+button.c-select-button[aria-pressed="true"], .theme-dark .theme-light
+button.c-select-button[aria-pressed="true"] {
+  border-color: #000;
+}
+
+.theme-light
+button.c-select-button:focus, .theme-dark .theme-light
+button.c-select-button:focus {
+  outline-color: #000;
+}
+
+.theme-light
+button.c-select-button:hover, .theme-dark .theme-light
+button.c-select-button:hover {
+  border-color: #000;
+}
+
+.theme-light
+button.c-select-button:active, .theme-dark .theme-light
+button.c-select-button:active {
+  background: rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+.theme-light
+button.c-select-button[disabled], .theme-dark .theme-light
+button.c-select-button[disabled] {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark
+button.c-select-button, .theme-light .theme-dark
+button.c-select-button {
+  background: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFF;
+}
+
+.theme-dark
+button.c-select-button[aria-pressed="true"], .theme-light .theme-dark
+button.c-select-button[aria-pressed="true"] {
+  border-color: #FFF;
+}
+
+.theme-dark
+button.c-select-button:focus, .theme-dark
+button.c-select-button:hover, .theme-light .theme-dark
+button.c-select-button:focus, .theme-light .theme-dark
+button.c-select-button:hover {
+  outline-color: #FFF;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-dark
+button.c-select-button:active, .theme-light .theme-dark
+button.c-select-button:active {
+  background: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.theme-dark
+button.c-select-button[disabled], .theme-light .theme-dark
+button.c-select-button[disabled] {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
+}

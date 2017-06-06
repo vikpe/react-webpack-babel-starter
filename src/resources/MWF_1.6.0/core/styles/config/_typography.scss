@@ -1,0 +1,272 @@
+//  ==========================================================================
+//  Type Ramp
+//  ==========================================================================
+// Sass seems to trip on multi-line map definitions.
+// scss-lint:disable TrailingSemicolon
+$type-ramp-config: (
+    t1: (
+        base: (
+            font-size:          62px,
+            line-height:        72px
+        ),
+        small: (
+            font-size:          46px,
+            line-height:        56px
+        )
+    ),
+    t2: (
+        base: (
+            font-size:          46px,
+            line-height:        56px
+        ),
+        small: (
+            font-size:          34px,
+            line-height:        40px
+        )
+    ),
+    t3: (
+        base: (
+            font-size:          34px,
+            line-height:        40px
+        ),
+        small: (
+            font-size:          26px,
+            line-height:        32px
+        )
+    ),
+    t4: (
+        base: (
+            font-size:          24px,
+            line-height:        28px
+        ),
+        small: (
+            font-size:          20px,
+            line-height:        24px
+        )
+    ),
+    t5: (
+        base: (
+            font-size:          20px,
+            line-height:        24px
+        ),
+        small: (
+            font-size:          18px,
+            line-height:        24px
+        )
+    ),
+    t6: (
+        base: (
+            font-size:          18px,
+            line-height:        24px
+        ),
+        small: (
+            font-size:          16px,
+            line-height:        20px
+        )
+    ),
+    t7: (
+        base: (
+            font-size:          15px,
+            line-height:        20px
+        )
+    ),
+    t8: (
+        base: (
+            font-size:          13px,
+            line-height:        16px
+        ),
+        small: (
+            font-size:          12px,
+            line-height:        16px
+        )
+    ),
+    t9: (
+        base: (
+            font-size:          11px,
+            line-height:        16px
+        ),
+        small: (
+            font-size:          10px,
+            line-height:        12px
+        )
+    )
+);
+
+//  ==========================================================================
+//  Type Objects (Header, Sub-Header, Paragraph, Caption)
+//  ==========================================================================
+$type-object-config: (
+    h1: (
+        base: (
+            padding: 38px 0 6px,
+            font-weight: $font-weight-light,
+            letter-spacing:     -0.01em
+        ),
+        small: (
+            padding: 37px 0 3px
+        ),
+        type-ramp-mapping: t1,
+        selectors: $migration-heading-1 + ".c-heading-1"
+    ),
+    h2: (
+        base: (
+            padding: 37px 0 3px,
+            font-weight: $font-weight-light,
+            letter-spacing:     -0.01em
+        ),
+        small: (
+            padding: 38px 0 2px
+        ),
+        type-ramp-mapping: t2,
+        selectors: $migration-heading-2 + ".c-heading-2"
+    ),
+    h3: (
+        base: (
+            padding: 38px 0 2px,
+            font-weight: $font-weight-light
+        ),
+        type-ramp-mapping: t3,
+        selectors: $migration-heading-3 + ".c-heading-3"
+    ),
+    h4: (
+        base: (
+            padding: 36px 0 4px,
+            font-weight: $font-weight-semilight
+        ),
+        type-ramp-mapping: t4,
+        selectors: $migration-heading-4 + ".c-heading-4"
+    ),
+    h5: (
+        base: (
+            padding: 35px 0 5px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 37px 0 3px
+        ),
+        type-ramp-mapping: t5,
+        selectors: $migration-heading-5 + ".c-heading-5"
+    ),
+    h6: (
+        base: (
+            padding: 37px 0 3px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 39px 0 1px
+        ),
+        type-ramp-mapping: t6,
+        selectors: $migration-heading-6 + ".c-heading-6"
+    ),
+    sh1: (
+        base: (
+            padding: 2px 0 2px,
+            font-weight: $font-weight-light
+        ),
+        small: (
+            padding: 9px 0 3px
+        ),
+        type-ramp-mapping: t3,
+        selectors: $migration-subheading-1 + ".c-subheading-1"
+    ),
+    sh2: (
+        base: (
+            padding: 4px 0 8px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 8px 0 4px
+        ),
+        type-ramp-mapping: t4,
+        selectors: $migration-subheading-2 + ".c-subheading-2"
+    ),
+    sh3: (
+        base: (
+            padding: 8px 0 4px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 4px 0 4px
+        ),
+        type-ramp-mapping: t5,
+        selectors: $migration-subheading-3 + ".c-subheading-3"
+    ),
+    sh4: (
+        base: (
+            padding: 9px 0 3px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 7px 0 5px
+        ),
+        type-ramp-mapping: t6,
+        selectors: $migration-subheading-4 + ".c-subheading-4"
+    ),
+    sh5: (
+        base: (
+            padding: 8px 0 0,
+            font-weight: $font-weight-semilight
+        ),
+        type-ramp-mapping: t7,
+        selectors: $migration-subheading-5 + $migration-subheading-6 + ".c-subheading-5, .c-subheading-6"
+    ),
+    // sh6: (
+    //  This is identical to sh5, so instead of duplicating
+    //  styles, we should just chain the selectors together.
+    // ),
+    p1: (
+        base: (
+            padding: 24px 0 4px,
+            font-weight: $font-weight-semilight
+        ),
+        type-ramp-mapping: t5,
+        selectors: $migration-paragraph-1 + ".c-paragraph-1"
+    ),
+    p2: (
+        base: (
+            padding: 25px 0 3px,
+            font-weight: $font-weight-semilight
+        ),
+        small: (
+            padding: 27px 0 1px
+        ),
+        type-ramp-mapping: t6,
+        selectors: $migration-paragraph-2 + ".c-paragraph-2"
+    ),
+    p3: (
+        base: (
+            padding: 24px 0 0,
+            font-weight: $font-weight-normal
+        ),
+        type-ramp-mapping: t7,
+        selectors: $migration-paragraph-3 + ".c-paragraph-3"
+    ),
+    p4: (
+        base: (
+            padding: 24px 0 0,
+            font-weight: $font-weight-normal
+        ),
+        type-ramp-mapping: t7,
+        selectors: $migration-paragraph-4 + ".c-paragraph-4"
+    ),
+    c1: (
+        base: (
+            padding: 3px 0 1px,
+            font-weight: $font-weight-normal
+        ),
+        type-ramp-mapping: t8,
+        selectors: $migration-caption-1 + ".c-caption-1"
+    ),
+    c2: (
+        base: (
+            padding: 4px 0 4px,
+            font-weight: $font-weight-normal
+        ),
+        small: (
+            padding: 2px 0 2px
+        ),
+        type-ramp-mapping: t9,
+        selectors: $migration-caption-2 + ".c-caption-2"
+    )
+);
+// scss-lint:enable TrailingSemicolon

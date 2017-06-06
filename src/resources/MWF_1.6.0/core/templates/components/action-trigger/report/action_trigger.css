@@ -1,0 +1,188 @@
+@charset "UTF-8";
+button.c-action-trigger,
+a.c-action-trigger {
+  font-size: 15px;
+  max-width: 374px;
+  min-width: 36px;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 0 8px;
+  color: #0078D7;
+  border: solid 1px transparent;
+  background: none;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  outline: 1px dashed transparent;
+}
+
+button.c-action-trigger:focus, button.c-action-trigger:hover,
+a.c-action-trigger:focus,
+a.c-action-trigger:hover {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}
+
+button.c-action-trigger:focus,
+a.c-action-trigger:focus {
+  outline: 1px dashed rgba(0, 0, 0, 0.6);
+}
+
+button.c-action-trigger:active,
+a.c-action-trigger:active {
+  color: #000;
+  outline: 1px solid transparent;
+  text-decoration: none;
+}
+
+button.c-action-trigger[disabled],
+a.c-action-trigger[disabled] {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+button.c-action-trigger.c-glyph,
+a.c-action-trigger.c-glyph {
+  min-width: 120px;
+  padding-right: 10px;
+}
+
+button.c-action-trigger.c-glyph:before,
+a.c-action-trigger.c-glyph:before {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+button.c-action-trigger.c-glyph.glyph-edit:before,
+a.c-action-trigger.c-glyph.glyph-edit:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-cancel:before,
+a.c-action-trigger.c-glyph.glyph-cancel:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-global-nav-button:before,
+a.c-action-trigger.c-glyph.glyph-global-nav-button:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-shopping-cart:before,
+a.c-action-trigger.c-glyph.glyph-shopping-cart:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-chevron-left:before,
+a.c-action-trigger.c-glyph.glyph-chevron-left:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-chevron-right:before,
+a.c-action-trigger.c-glyph.glyph-chevron-right:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-arrow-htmllegacy-mirrored:before,
+a.c-action-trigger.c-glyph.glyph-arrow-htmllegacy-mirrored:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-arrow-htmllegacy:before,
+a.c-action-trigger.c-glyph.glyph-arrow-htmllegacy:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-play:before,
+a.c-action-trigger.c-glyph.glyph-play:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph.glyph-info:before,
+a.c-action-trigger.c-glyph.glyph-info:before {
+  content: "";
+}
+
+button.c-action-trigger.c-glyph[aria-label],
+a.c-action-trigger.c-glyph[aria-label] {
+  min-width: 0;
+  margin-right: 10px;
+  padding-right: 0;
+}
+
+.theme-light button.c-action-trigger, .theme-dark .theme-light button.c-action-trigger, .theme-light
+a.c-action-trigger, .theme-dark .theme-light
+a.c-action-trigger {
+  color: #000;
+  background: transparent;
+}
+
+.theme-light button.c-action-trigger:focus, .theme-light button.c-action-trigger:hover, .theme-dark .theme-light button.c-action-trigger:focus, .theme-dark .theme-light button.c-action-trigger:hover, .theme-light
+a.c-action-trigger:focus, .theme-light
+a.c-action-trigger:hover, .theme-dark .theme-light
+a.c-action-trigger:focus, .theme-dark .theme-light
+a.c-action-trigger:hover {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}
+
+.theme-light button.c-action-trigger:focus, .theme-dark .theme-light button.c-action-trigger:focus, .theme-light
+a.c-action-trigger:focus, .theme-dark .theme-light
+a.c-action-trigger:focus {
+  outline: 1px dashed rgba(0, 0, 0, 0.6);
+}
+
+.theme-light button.c-action-trigger:active, .theme-dark .theme-light button.c-action-trigger:active, .theme-light
+a.c-action-trigger:active, .theme-dark .theme-light
+a.c-action-trigger:active {
+  color: #000;
+  outline: 1px solid transparent;
+  text-decoration: none;
+}
+
+.theme-light button.c-action-trigger[disabled], .theme-dark .theme-light button.c-action-trigger[disabled], .theme-light
+a.c-action-trigger[disabled], .theme-dark .theme-light
+a.c-action-trigger[disabled] {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.theme-dark button.c-action-trigger, .theme-light .theme-dark button.c-action-trigger, .theme-dark
+a.c-action-trigger, .theme-light .theme-dark
+a.c-action-trigger {
+  color: #FFF;
+  background: transparent;
+}
+
+.theme-dark button.c-action-trigger:focus, .theme-dark button.c-action-trigger:hover, .theme-light .theme-dark button.c-action-trigger:focus, .theme-light .theme-dark button.c-action-trigger:hover, .theme-dark
+a.c-action-trigger:focus, .theme-dark
+a.c-action-trigger:hover, .theme-light .theme-dark
+a.c-action-trigger:focus, .theme-light .theme-dark
+a.c-action-trigger:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+
+.theme-dark button.c-action-trigger:focus, .theme-light .theme-dark button.c-action-trigger:focus, .theme-dark
+a.c-action-trigger:focus, .theme-light .theme-dark
+a.c-action-trigger:focus {
+  outline: 1px dashed #FFF;
+}
+
+.theme-dark button.c-action-trigger:active, .theme-light .theme-dark button.c-action-trigger:active, .theme-dark
+a.c-action-trigger:active, .theme-light .theme-dark
+a.c-action-trigger:active {
+  color: #FFF;
+  outline: 1px solid transparent;
+  text-decoration: none;
+}
+
+.theme-dark button.c-action-trigger[disabled], .theme-light .theme-dark button.c-action-trigger[disabled], .theme-dark
+a.c-action-trigger[disabled], .theme-light .theme-dark
+a.c-action-trigger[disabled] {
+  color: rgba(255, 255, 255, 0.6);
+  cursor: not-allowed;
+}

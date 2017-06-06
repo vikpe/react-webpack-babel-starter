@@ -1,0 +1,88 @@
+.c-slider {
+  width: 296px;
+}
+
+.c-slider input[type="range"] {
+  -webkit-appearance: slider-horizontal;
+     -moz-appearance: slider-horizontal;
+          appearance: slider-horizontal;
+}
+
+.no-js .c-slider input[type="range"] {
+  display: block;
+}
+
+.js .c-slider input[type="range"] {
+  display: none;
+}
+
+.c-slider div {
+  position: relative;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: 12px;
+}
+
+.c-slider div button {
+  height: 24px;
+  width: 8px;
+  background: #0078D7;
+  border: 0;
+  padding: 0;
+  border-radius: 4px;
+  position: absolute;
+  top: -10px;
+  outline: none;
+}
+
+.c-slider div button:focus {
+  outline: 1px dashed #000;
+}
+
+.c-slider div button:hover {
+  background: #000;
+}
+
+.c-slider div button:active {
+  background: #004881;
+}
+
+.c-slider div button:active span {
+  display: block;
+}
+
+.c-slider div button span {
+  display: none;
+  position: absolute;
+  min-width: 36px;
+  height: 36px;
+  text-align: center;
+  top: -40px;
+  left: 4px;
+  padding: 8px 8px 10px;
+  background: #e6e6e6;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+}
+
+.c-slider div > span {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #0078D7;
+}
+
+.c-slider.f-disabled label.c-label {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.c-slider.f-disabled input[type="range"][disabled] + div,
+.c-slider.f-disabled input[type="range"][disabled] + div button {
+  background: #cccccc;
+}
+
+.c-slider.f-disabled input[type="range"][disabled] + div span {
+  display: none;
+}

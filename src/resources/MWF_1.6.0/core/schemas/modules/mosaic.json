@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Mosaic",
+    "description": "A MWF mosaic modules's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/mosaic.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-one"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-two"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-three"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-four"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-five"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-six"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-seven"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-eight"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-nine"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json#/definitions/pattern-ten"
+        }
+    ]
+}

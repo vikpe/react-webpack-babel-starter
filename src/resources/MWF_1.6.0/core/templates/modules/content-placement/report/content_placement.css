@@ -1,0 +1,30 @@
+.m-content-placement {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+@media only screen and (min-width: 540px) {
+  .m-content-placement {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .m-content-placement {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 48px;
+  }
+  .m-content-placement .c-content-placement {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .m-content-placement {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}

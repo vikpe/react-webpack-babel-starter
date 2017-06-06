@@ -1,0 +1,14 @@
+
+.c-label {
+  font-size: 13px;
+  display: block;
+  margin-top: 21px;
+  padding-bottom: 7px;
+  line-height: 20px;
+}
+
+
+.c-label + input.c-text-field[type="text"],
+.c-label + input.c-password[type="password"] {
+  margin: 0;
+}

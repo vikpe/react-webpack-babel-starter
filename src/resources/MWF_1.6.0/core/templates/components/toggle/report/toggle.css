@@ -1,0 +1,86 @@
+div.c-toggle button {
+  display: inline-block;
+  position: relative;
+  width: 44px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin-top: 42px;
+}
+
+div.c-toggle button:after {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  transition: all 0.1s ease;
+  background: #000;
+  content: "";
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+div.c-toggle button:focus {
+  outline: 1px dashed #000;
+}
+
+div.c-toggle button[aria-checked='true'] {
+  background: #0078D7;
+  border-color: #0078D7;
+}
+
+div.c-toggle button[aria-checked='true']:hover {
+  background: rgba(0, 120, 215, 0.8);
+  border-color: rgba(0, 120, 215, 0.8);
+}
+
+div.c-toggle button[aria-checked='true']:after {
+  left: 28px;
+  background: #FFF;
+}
+
+div.c-toggle button[aria-checked='true']:disabled {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+}
+
+div.c-toggle button[aria-checked='true']:disabled:after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+div.c-toggle button[aria-checked='false'] {
+  background: transparent;
+  border-color: #000;
+}
+
+div.c-toggle button:disabled {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+div.c-toggle button:disabled:after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+div.c-toggle label {
+  margin-top: 32px;
+}
+
+div.c-toggle label + button {
+  margin-top: 0;
+}
+
+div.c-toggle span {
+  font-size: 13px;
+  display: inline-block;
+  margin-top: 0;
+  padding-left: 12px;
+  padding-bottom: 0;
+  cursor: pointer;
+  line-height: 19px;
+}
+
+div.c-toggle.f-disabled {
+  color: rgba(0, 0, 0, 0.2);
+}

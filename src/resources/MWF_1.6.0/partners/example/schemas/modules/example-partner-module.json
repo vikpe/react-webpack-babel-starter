@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Example module",
+    "description": "A MWF example module's data requirements.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/partners/example/schemas/module/example-partner-module.json",
+    "suppertedPartners": [
+        "example"
+    ],
+    "properties": {
+        "name": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+        },
+        "description": {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+        }
+    },
+    "required": [
+        "name",
+        "description"
+    ]
+}

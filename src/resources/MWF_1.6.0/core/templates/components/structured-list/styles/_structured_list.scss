@@ -1,0 +1,50 @@
+.c-structured-list {
+    margin: 24px 0;
+
+    .f-column {
+        padding-#{$left}: 10px;
+
+        &:first-child {
+            padding-#{$right}: 10px;
+            padding-#{$left}: 0;
+
+            @media only screen and (max-width: $vp4-max) {
+                .f-row:first-child {
+                    border-top: 1px solid $color-brand-neutral-10;
+                }
+            }
+        }
+
+        @media only screen and (max-width: $vp4-max) {
+            padding-#{$right}: 10px;
+            padding-#{$left}: 0;
+            max-width: $vp3;
+        }
+
+        .f-row {
+            @include clearfix();
+            border-bottom: 1px solid $color-brand-neutral-10;
+            float: $left;
+
+            &:first-child {
+                border-top: 1px solid $color-brand-neutral-10;
+
+                @media only screen and (max-width: $vp4-max) {
+                    border-top: 0;
+                }
+            }
+
+            [class^='c-paragraph'] {
+                padding: 0;
+            }
+
+            [data-grid="col-2 stack-2"] {
+                padding: set-direction-based-value(8px 0 8px 24px, 8px 24px 8px 0);
+            }
+
+            [data-grid="col-10"] {
+                padding: set-direction-based-value(8px 12px 8px 24px, 8px 24px 8px 12px);
+            }
+        }
+    }
+}

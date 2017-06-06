@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Feature Channel module",
+    "description": "An MWF feature channel module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/feature-channel.json",
+    "supportedPartners": [
+        "store"
+    ],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                },
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "call-to-action": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+                },
+                "product-placement": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/product-placement.json"
+                }
+            },
+            "required": [
+                "image",
+                "heading",
+                "call-to-action",
+                "product-placement"
+            ]
+        }
+    }
+}

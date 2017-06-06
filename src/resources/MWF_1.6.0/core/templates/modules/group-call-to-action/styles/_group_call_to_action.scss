@@ -1,0 +1,37 @@
+.m-group-call-to-action {
+    padding-top: 34px;
+
+    strong {
+        @include apply-type(t6, true, true);
+        padding-bottom: 10px;
+    }
+
+    .c-group {
+        height: initial;
+        position: relative;
+
+        .c-call-to-action {
+            @include apply-type(t6, true, true);
+            border: 0;
+            font-weight: $font-weight-semilight;
+
+            &:after {
+                content: "";
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $vp2-max) {
+    .m-group-call-to-action {
+        padding-top: 24px;
+
+        strong {
+            padding-bottom: 6px;
+        }
+
+        .c-call-to-action {
+            padding: 6px 0;
+        }
+    }
+}

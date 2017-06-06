@@ -1,0 +1,199 @@
+﻿// ==========================================================================
+// Font Stacks
+// ==========================================================================
+$font-family-fallbacks:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-normal:        "SegoeUI", $font-family-fallbacks;
+$font-family-monospace:     Consolas, "Courier New", Courier, monospace !default;
+$font-group:                west-european !default;
+$font-group-default:        west-european;
+$font-group-path:           segoe-ui;
+
+// ==========================================================================
+// Font-Weights
+// ==========================================================================
+$font-weight-light:         100;
+$font-weight-semilight:     200;
+$font-weight-normal:        400;
+$font-weight-semibold:      600;
+$font-weight-bold:          700;
+
+// ==========================================================================
+// Font Groups
+// ==========================================================================
+// Sass seems to trip on multi-line map definitions.
+// scss-lint:disable TrailingSemicolon
+// Additionally, beware of syntax for "fallbacks" key if more than one font-family
+// needed in fallback list, as the entire string would need to be quoted since commas
+// are required for CSS (but commas are delimiters in the Sass map). Also families
+// can need quotes if they consist of multiple words, so there can be syntax gotchas.
+$font-groups: (
+    //Segoe UI subsets
+    arabic: (
+        path:               $font-group-path,
+        subset:             arabic,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    armenian: (
+        path:               $font-group-path,
+        subset:             armenian,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    cyrillic: (
+        path:               $font-group-path,
+        subset:             cyrillic,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    east-european: (
+        path:               $font-group-path,
+        subset:             east-european,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    georgian: (
+        path:               $font-group-path,
+        subset:             georgian,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    greek: (
+        path:               $font-group-path,
+        subset:             greek,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    hebrew: (
+        path:               $font-group-path,
+        subset:             hebrew,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    vietnamese: (
+        path:               $font-group-path,
+        subset:             vietnamese,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    west-european: (
+        path:               $font-group-path,
+        subset:             west-european,
+        local:              "Segoe UI",
+        family:             "SegoeUI",
+        fallbacks:          default,
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    //Segoe UI variant
+    thai: (
+        path:               leelawadee,
+        subset:             thai,
+        local:              "Leelawadee UI",
+        family:             "Leelawadee UI",
+        fallbacks:          default,
+        weight-light:       Semilight,      // not available
+        weight-semilight:   Semilight,
+        weight-semibold:    Bold,           // not available
+        weight-bold:        Bold
+    ),
+    //Non-Segoe UI
+    korean: (
+        path:               $font-group-path,
+        subset:             $font-group-default,
+        local:              "Segoe UI",
+        family:             "Malgun Gothic",
+        fallbacks:          Gulim,
+        weight-light:       Semilight,       // not available
+        weight-semilight:   Semilight,
+        weight-semibold:    Bold,            // not available
+        weight-bold:        Bold
+    ),
+    chinese-simplified: (
+        path:               $font-group-path,
+        subset:             $font-group-default,
+        local:              "Segoe UI",
+        family:             "Microsoft YaHei",
+        fallbacks:          微软雅黑,
+        weight-light:       Light,
+        weight-semilight:   Light,          // not available
+        weight-semibold:    Bold,           // not available
+        weight-bold:        Bold
+    ),
+    chinese-traditional: (
+        path:               $font-group-path,
+        subset:             $font-group-default,
+        local:              "Segoe UI",
+        family:             "Microsoft JhengHei",
+        fallbacks:          微軟正黑體,
+        weight-light:       Light,
+        weight-semilight:   Light,          // not available
+        weight-semibold:    Bold,           // not available
+        weight-bold:        Bold
+    ),
+    japanese: (
+        path:               $font-group-path,
+        subset:             $font-group-default,
+        local:              "Segoe UI",
+        family:             "Yu Gothic UI",
+        fallbacks:          "Meiryo UI",
+        weight-light:       Light,
+        weight-semilight:   Semilight,
+        weight-semibold:    Semibold,
+        weight-bold:        Bold
+    ),
+    indian: (
+        path:               $font-group-path,
+        subset:             $font-group-default,
+        local:              "Segoe UI",
+        family:             "Nirmala UI",
+        fallbacks:          Nirmala,
+        weight-light:       Semilight,      // not available
+        weight-semilight:   Semilight,
+        weight-semibold:    Bold,           // not available
+        weight-bold:        Bold
+    )
+);
+// scss-lint:enable TrailingSemicolon

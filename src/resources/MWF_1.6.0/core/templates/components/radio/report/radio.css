@@ -1,0 +1,88 @@
+
+.c-radio .c-label {
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 24px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+
+.c-radio input[type="radio"] {
+  float: left;
+  opacity: 0;
+}
+
+
+.c-radio input[type="radio"] + span {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 28px;
+}
+
+
+.c-radio input[type="radio"] + span:before {
+  border: solid #000 1px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+
+.c-radio input[type="radio"]:hover:not(:disabled) + span:before {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.c-radio input[type="radio"]:focus + span:before {
+  outline: 1px dashed rgba(0, 0, 0, 0.8);
+}
+
+
+.c-radio input[type="radio"]:checked + span:after {
+  background: currentColor;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  content: "";
+  left: 5px;
+  position: absolute;
+  top: 5px;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  
+  .c-radio input[type="radio"]:checked + span:after {
+    border: solid currentColor 5px;
+  }
+}
+
+
+.c-radio input[type="radio"]:checked:not(:disabled) + span {
+  color: #000;
+}
+
+
+.c-radio input[type="radio"]:checked:not(:disabled) + span:before {
+  border-color: #0078D7;
+}
+
+
+.c-radio input[type="radio"]:checked:not(:disabled):hover + span:after {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.c-radio input[type="radio"]:disabled + span {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+
+.c-radio input[type="radio"]:disabled + span:before {
+  border-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,23 @@
+.c-badge {
+  font-size: 13px;
+  display: inline-block;
+  letter-spacing: 0.075em;
+}
+
+.c-badge.f-highlight {
+  background-color: #FFD800;
+  color: #000;
+}
+
+.c-badge.f-lowlight {
+  background-color: #333;
+  color: #FFF;
+}
+
+.c-badge.f-small {
+  padding: 0 9px 1px 8px;
+}
+
+.c-badge.f-large {
+  padding: 3px 13px 5px 12px;
+}

@@ -1,0 +1,17 @@
+.m-system-requirements {
+    .c-table {
+        tr:before {
+            width: 0;
+        }
+
+        td {
+            min-width: 120px;
+            padding-#{$left}: 0;
+            vertical-align: text-top;
+
+            &:first-child {
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}

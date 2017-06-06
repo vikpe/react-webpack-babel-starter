@@ -1,0 +1,112 @@
+@charset "UTF-8";
+.c-universal-footer nav:before, .c-universal-footer nav:after {
+  content: " ";
+  display: table;
+}
+
+.c-universal-footer nav:after {
+  clear: both;
+}
+
+.c-universal-footer nav div > div {
+  box-sizing: border-box;
+  float: left;
+  min-height: 1px;
+  padding: 0 12px;
+  width: 16.6666666667%;
+  zoom: 1;
+}
+
+.c-universal-footer nav div > div:before, .c-universal-footer nav div > div:after {
+  content: " ";
+  display: table;
+}
+
+.c-universal-footer nav div > div:after {
+  clear: both;
+}
+
+.c-universal-footer nav div > div .c-heading-4,
+.c-universal-footer nav div > div a.c-hyperlink {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.c-universal-footer nav div > div ul.c-list {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.c-universal-footer > section > a.c-hyperlink {
+  font-size: 11px;
+  line-height: 16px;
+  display: inline-block;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  float: left;
+}
+
+.c-universal-footer > section > a.c-hyperlink.c-glyph {
+  font-size: 11px;
+  line-height: 16px;
+  display: inline-block;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  float: left;
+}
+
+.c-universal-footer > section > a.c-hyperlink.c-glyph:before {
+  font-size: 20px;
+  line-height: 24px;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  vertical-align: middle;
+}
+
+.c-universal-footer > section > a.c-hyperlink.c-glyph.glyph-world:before {
+  content: "";
+}
+
+.c-universal-footer > section ul.c-list {
+  font-size: 11px;
+  line-height: 16px;
+  margin-left: -20px;
+  float: right;
+  margin-top: 25px;
+}
+
+.c-universal-footer > section ul.c-list li {
+  color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 8px 20px;
+}
+
+.c-universal-footer > section ul.c-list li a.c-hyperlink {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 767px) {
+  .c-universal-footer nav div:before, .c-universal-footer nav div:after {
+    content: " ";
+    display: table;
+  }
+  .c-universal-footer nav div:after {
+    clear: both;
+  }
+  .c-universal-footer nav div > div {
+    width: 33.33333%;
+  }
+  .c-universal-footer > section ul.c-list li {
+    padding-left: 0;
+    padding-right: 16px;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .c-universal-footer nav div > div {
+    width: 100%;
+    float: none;
+  }
+  .c-universal-footer > section ul.c-list {
+    float: left;
+  }
+}

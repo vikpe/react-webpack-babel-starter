@@ -1,0 +1,177 @@
+.m-hyperlink-group {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.m-hyperlink-group > div {
+  text-align: center;
+  padding: 0 12.5% 19px;
+}
+
+.m-hyperlink-group > div .c-heading {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 35px 0 5px;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 48px;
+  padding-bottom: 1.636px;
+  font-weight: 700;
+}
+
+.m-hyperlink-group > div ul {
+  margin: 0;
+  padding: 0;
+}
+
+.m-hyperlink-group > div ul li {
+  padding: 0;
+}
+
+.m-hyperlink-group > div ul li .c-hyperlink {
+  font-size: 18px;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 24px;
+  padding: 10px 0;
+  display: block;
+  text-decoration: none;
+  font-weight: 200;
+}
+
+@media (max-width: 767px) {
+  .m-hyperlink-group > div ul li .c-hyperlink {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.m-hyperlink-group > div.f-background-accent {
+  background: #0078D7;
+}
+
+.m-hyperlink-group > div.f-background-neutral-00 {
+  background: #FFF;
+}
+
+.m-hyperlink-group > div.f-background-neutral-10 {
+  background: #E3E3E3;
+}
+
+.m-hyperlink-group > div.f-background-neutral-20 {
+  background: #C8C8C8;
+}
+
+.m-hyperlink-group > div.f-background-neutral-30 {
+  background: #ACACAC;
+}
+
+.m-hyperlink-group > div.f-background-neutral-45 {
+  background: #919191;
+}
+
+.m-hyperlink-group > div.f-background-neutral-55 {
+  background: #767676;
+}
+
+.m-hyperlink-group > div.f-background-neutral-65 {
+  background: #5E5E5E;
+}
+
+.m-hyperlink-group > div.f-background-neutral-75 {
+  background: #464646;
+}
+
+.m-hyperlink-group > div.f-background-neutral-80 {
+  background: #2F2F2F;
+}
+
+.m-hyperlink-group > div.f-background-neutral-90 {
+  background: #171717;
+}
+
+.m-hyperlink-group > div.f-background-neutral-100 {
+  background: #000;
+}
+
+.m-hyperlink-group > div.f-brand-neutral-100 {
+  background: #000;
+}
+
+.theme-light .m-hyperlink-group > div, .theme-dark .theme-light .m-hyperlink-group > div {
+  color: #000;
+}
+
+.theme-dark .m-hyperlink-group > div, .theme-light .theme-dark .m-hyperlink-group > div {
+  color: #f2f2f2;
+}
+
+@media only screen and (max-width: 767px) {
+  .m-hyperlink-group > div .c-heading {
+    padding-top: 24px;
+    padding-bottom: 6px;
+  }
+  .m-hyperlink-group > div ul {
+    margin: 0;
+    padding: 0;
+  }
+  .m-hyperlink-group > div ul li {
+    padding: 0;
+  }
+  .m-hyperlink-group > div ul li .c-hyperlink {
+    padding: 6px 0;
+  }
+}
+
+/*
+* Module & component specific integration
+*/
+.c-mosaic-placement .m-hyperlink-group > div {
+  padding: 0;
+  height: 100%;
+}
+
+.m-hyperlink-group-content-placement {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+@media only screen and (min-width: 540px) {
+  .m-hyperlink-group-content-placement {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .m-hyperlink-group-content-placement {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .m-hyperlink-group-content-placement {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .m-hyperlink-group-content-placement,
+  .m-hyperlink-group-content-placement [data-grid*="col-"] {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.m-hyperlink-group-content-placement .m-hyperlink-group {
+  display: block;
+}
+
+.m-hyperlink-group-content-placement .f-background-accent {
+  height: 100%;
+}

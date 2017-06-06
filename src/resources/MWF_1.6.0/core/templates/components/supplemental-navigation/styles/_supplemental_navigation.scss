@@ -1,0 +1,60 @@
+//  ==========================================================================
+//  Component: Supplemental nav
+//  ==========================================================================
+
+.c-supplemental-nav {
+    margin-top: 32px;
+
+    a,
+    span {
+        display: block;
+        margin-bottom: 30px;
+        color: $color-foreground-60;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    a {
+        &.active {
+            color: $color-foreground;
+        }
+
+        &:hover,
+        focus {
+            color: $color-foreground-80;
+        }
+
+        &:focus {
+            outline: 1px dashed;
+        }
+
+        &.f-active {
+            color: $color-foreground;
+        }
+
+        &.f-disabled {
+            color: $color-foreground-20;
+            cursor: not-allowed;
+        }
+    }
+
+    > nav {
+        > a + nav {
+            height: 0;
+            overflow: hidden;
+        }
+
+        > a:first-child,
+        > span:first-child {
+            margin-#{$left}: 0;
+            margin-bottom: 16px;
+        }
+
+        a {
+            margin-#{$left}: 20px;
+            margin-bottom: 16px;
+        }
+    }
+}

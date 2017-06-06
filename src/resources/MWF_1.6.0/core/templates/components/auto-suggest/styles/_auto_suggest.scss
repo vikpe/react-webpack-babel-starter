@@ -1,0 +1,62 @@
+// ==========================================================================
+// Component: Auto suggest
+// ==========================================================================
+
+.c-auto-suggest {
+    display: block;
+
+    & .c-menu {
+        position: absolute;
+        $left: 0;
+        background: $color-background;
+        border-top: 1px solid;
+        border-color: $color-foreground-20;
+
+        & .c-menu-item span {
+            background: $color-background;
+
+            &:hover {
+                background: $color-foreground-10;
+            }
+        }
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        &[data-js-auto-suggest-postion="default"] {
+            top: 38px;
+        }
+
+        &[data-js-auto-suggest-postion="above"] {
+            bottom: 100%;
+        }
+
+        &.f-auto-suggest-no-results {
+            & .c-menu-item span {
+                color: $color-foreground-60;
+            }
+
+            &[data-js-auto-suggest-postion="default"] {
+                top: 38px;
+            }
+
+            &[data-js-auto-suggest-postion="above"] {
+                bottom: 100%;
+            }
+        }
+
+        &.f-auto-suggest-scroll {
+            overflow-y: auto;
+            max-height: none;
+        }
+    }
+}
+
+.c-label {
+    + .c-auto-suggest {
+        &.c-search {
+            margin-top: 0;
+        }
+    }
+}

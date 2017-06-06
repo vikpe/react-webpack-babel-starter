@@ -1,0 +1,399 @@
+@charset "UTF-8";
+@keyframes hero-content-next {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-content-previous {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-background-next {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-background-previous {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-background-next-y-center {
+  0% {
+    transform: translate(10px, -50%);
+  }
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes hero-background-previous-y-center {
+  0% {
+    transform: translate(-10px, -50%);
+  }
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes hero-background-next-x-center {
+  0% {
+    transform: translateX(-49%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-background-previous-x-center {
+  0% {
+    transform: translateX(-51%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-background-next-x-center-y-center {
+  0% {
+    transform: translate(-49%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hero-background-previous-x-center-y-center {
+  0% {
+    transform: translate(-51%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.c-carousel {
+  position: relative;
+}
+
+.c-carousel .c-flipper {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  z-index: 100;
+  display: none;
+  /*
+        * Use .f-previous and .f-next
+        * .f-left and f-left deprecated v1.3.0
+        */
+}
+
+.c-carousel .c-flipper.f-left, .c-carousel .c-flipper.f-previous {
+  left: 0;
+}
+
+.c-carousel .c-flipper.f-right, .c-carousel .c-flipper.f-next {
+  right: 0;
+}
+
+.c-carousel .c-flipper + div {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-carousel.f-scrollable-next .c-flipper.f-right,
+.c-carousel.f-scrollable-next .c-flipper.f-next {
+  display: block;
+}
+
+.c-carousel.f-scrollable-previous .c-flipper.f-left,
+.c-carousel.f-scrollable-previous .c-flipper.f-previous {
+  display: block;
+}
+
+.c-carousel .c-sequence-indicator {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  bottom: 24px;
+}
+
+.c-carousel.f-multi-slide .c-flipper {
+  opacity: 0;
+  transition: opacity cubic-bezier(0.16, 1, 0.29, 0.99) 0.15;
+}
+
+.c-carousel.f-multi-slide:hover .c-flipper {
+  opacity: 0.8;
+}
+
+.c-carousel.f-multi-slide:hover .c-flipper:hover {
+  opacity: 1;
+}
+
+.c-carousel.f-multi-slide:hover .c-flipper:active {
+  opacity: 0.8;
+}
+
+.c-carousel.f-multi-slide.theme-light .c-flipper {
+  background: #FFF;
+  color: #000;
+}
+
+.c-carousel.f-multi-slide.theme-dark .c-flipper {
+  background: #000;
+  color: #FFF;
+}
+
+.c-carousel.f-multi-slide li {
+  display: none;
+  width: 100%;
+}
+
+.c-carousel.f-multi-slide li.f-active {
+  display: block;
+}
+
+.c-carousel.f-single-slide ul {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0;
+  left: 0;
+  width: auto;
+  transition: left cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s;
+}
+
+.c-carousel.f-single-slide li {
+  font-size: 15px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+  .c-carousel .f-gallery {
+    display: none;
+  }
+}
+
+.c-carousel .f-gallery li {
+  height: 201px;
+  width: 358px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+@media only screen and (max-width: 1399px) {
+  .c-carousel .f-gallery li {
+    height: 153px;
+    width: 272px;
+  }
+}
+
+.c-carousel .f-gallery li .c-action-trigger {
+  background: rgba(0, 0, 0, 0.6);
+  border: transparent;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+}
+
+.c-carousel .f-gallery li .c-action-trigger:before {
+  color: #FFF;
+  font-size: 24px;
+  padding-top: 5px;
+  padding-left: 1px;
+  content: "";
+}
+
+.c-carousel .f-gallery li .c-heading-6 {
+  color: #000;
+  position: absolute;
+  bottom: 9px;
+  right: 12px;
+  width: 72px;
+  text-align: right;
+}
+
+.c-carousel .f-gallery li .c-heading-6:first-child {
+  left: 12px;
+  width: 238px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1399px) {
+  .c-carousel .f-gallery li .c-heading-6:first-child {
+    width: 152px;
+  }
+}
+
+.c-carousel li {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+
+.c-carousel li ~ li {
+  display: none;
+}
+
+.c-carousel li > picture.c-image img {
+  margin: 0 auto;
+}
+
+.c-carousel li .m-hero-item > picture img,
+.c-carousel li .c-hero > picture img {
+  min-width: calc(100% + 20px);
+}
+
+.c-carousel li .m-hero-item.f-x-left > picture img,
+.c-carousel li .c-hero.f-x-left > picture img {
+  right: -10px;
+}
+
+.c-carousel li .m-hero-item.f-x-right > picture img,
+.c-carousel li .c-hero.f-x-right > picture img {
+  left: -10px;
+}
+
+.c-carousel li.f-animate-next > picture.c-image img {
+  animation: hero-background-next cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-next > picture.c-image.f-x-center img {
+  animation-name: hero-background-next-x-center;
+}
+
+.c-carousel li.f-animate-next > picture.c-image.f-y-center img {
+  animation-name: hero-background-next-y-center;
+}
+
+.c-carousel li.f-animate-next > picture.c-image.f-y-center.f-x-center img {
+  animation-name: hero-background-next-x-center-y-center;
+}
+
+.c-carousel li.f-animate-next .m-hero-item > picture img,
+.c-carousel li.f-animate-next .c-hero > picture img {
+  animation: hero-background-next cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-next .m-hero-item > div,
+.c-carousel li.f-animate-next .c-hero > div {
+  animation: hero-content-next cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-next .m-hero-item.f-x-center > picture img,
+.c-carousel li.f-animate-next .c-hero.f-x-center > picture img {
+  animation-name: hero-background-next-x-center;
+}
+
+.c-carousel li.f-animate-next .m-hero-item.f-y-center > picture img,
+.c-carousel li.f-animate-next .c-hero.f-y-center > picture img {
+  animation-name: hero-background-next-y-center;
+}
+
+.c-carousel li.f-animate-next .m-hero-item.f-y-center.f-x-center > picture img,
+.c-carousel li.f-animate-next .c-hero.f-y-center.f-x-center > picture img {
+  animation-name: hero-background-next-x-center-y-center;
+}
+
+.c-carousel li.f-animate-previous > picture.c-image img {
+  animation: hero-background-previous cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-previous > picture.c-image.f-x-center img {
+  animation-name: hero-background-previous-x-center;
+}
+
+.c-carousel li.f-animate-previous > picture.c-image.f-y-center img {
+  animation-name: hero-background-previous-y-center;
+}
+
+.c-carousel li.f-animate-previous > picture.c-image.f-y-center.f-x-center img {
+  animation-name: hero-background-previous-x-center-y-center;
+}
+
+.c-carousel li.f-animate-previous .m-hero-item > picture img,
+.c-carousel li.f-animate-previous .c-hero > picture img {
+  animation: hero-background-previous cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-previous .m-hero-item > div,
+.c-carousel li.f-animate-previous .c-hero > div {
+  animation: hero-content-previous cubic-bezier(0.16, 1, 0.29, 0.99) 0.667s both;
+}
+
+.c-carousel li.f-animate-previous .m-hero-item.f-x-center > picture img,
+.c-carousel li.f-animate-previous .c-hero.f-x-center > picture img {
+  animation-name: hero-background-previous-x-center;
+}
+
+.c-carousel li.f-animate-previous .m-hero-item.f-y-center > picture img,
+.c-carousel li.f-animate-previous .c-hero.f-y-center > picture img {
+  animation-name: hero-background-previous-y-center;
+}
+
+.c-carousel li.f-animate-previous .m-hero-item.f-y-center.f-x-center > picture img,
+.c-carousel li.f-animate-previous .c-hero.f-y-center.f-x-center > picture img {
+  animation-name: hero-background-previous-x-center-y-center;
+}
+
+@media only screen and (max-width: 767px) {
+  .c-carousel li > picture.c-image.f-x-left img, .c-carousel li > picture.c-image.f-x-right img {
+    left: 0;
+    left: calc(50%);
+    right: auto;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+  }
+  .c-carousel li .m-hero-item > div > div,
+  .c-carousel li .c-hero > div > div {
+    padding-bottom: 48px;
+  }
+  .c-carousel li .m-hero-item.f-x-left > picture img, .c-carousel li .m-hero-item.f-x-right > picture img,
+  .c-carousel li .c-hero.f-x-left > picture img,
+  .c-carousel li .c-hero.f-x-right > picture img {
+    left: 0;
+    left: calc(50%);
+    right: auto;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+  }
+  .c-carousel li.f-animate-next > picture.c-image[class*="f-x"][class*="f-y"] img {
+    animation-name: hero-background-next-x-center;
+  }
+  .c-carousel li.f-animate-next .m-hero-item[class*="f-x"][class*="f-y"] > picture img,
+  .c-carousel li.f-animate-next .c-hero[class*="f-x"][class*="f-y"] > picture img {
+    animation-name: hero-background-next-x-center;
+  }
+  .c-carousel li.f-animate-previous > picture.c-image[class*="f-x"][class*="f-y"] img {
+    animation-name: hero-background-previous-x-center;
+  }
+  .c-carousel li.f-animate-previous .m-hero-item[class*="f-x"][class*="f-y"] > picture img,
+  .c-carousel li.f-animate-previous .c-hero[class*="f-x"][class*="f-y"] > picture img {
+    animation-name: hero-background-previous-x-center;
+  }
+}

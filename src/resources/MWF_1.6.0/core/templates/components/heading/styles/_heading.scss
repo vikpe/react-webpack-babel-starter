@@ -1,0 +1,72 @@
+//  ==========================================================================
+//  Component: Heading
+//
+//  Note:  - Headings are applied through mixin apply-type...
+//         - Top margin was used to avoid clipping which could happen when elements
+//         are absolutely positioned which was the alternate approach to solving.
+//         - Font sizes have two core sizes as shown below in media queries which
+//         dictate the need for different margins
+//  ==========================================================================
+
+[class^="c-heading-"] {
+    @include clearfix();
+
+    a.c-hyperlink {
+        @include apply-type(t7, false, true);
+
+        float: $right;
+        margin-#{$left}: 12px;
+        font-weight: $font-weight-normal;
+    }
+}
+
+.c-heading-1 a.c-hyperlink {
+    margin-top: 45px;
+}
+
+.c-heading-2 a.c-hyperlink {
+    margin-top: 31px;
+}
+
+.c-heading-3 a.c-hyperlink {
+    margin-top: 18px;
+}
+
+.c-heading-4 a.c-hyperlink {
+    margin-top: 8px;
+}
+
+.c-heading-5 a.c-hyperlink {
+    margin-top: 4px;
+}
+
+.c-heading-6 a.c-hyperlink {
+    margin-top: 3px;
+}
+
+@media (max-width: $vp2-max) {
+
+    .c-heading-1 a.c-hyperlink {
+        margin-top: 31px;
+    }
+
+    .c-heading-2 a.c-hyperlink {
+        margin-top: 18px;
+    }
+
+    .c-heading-3 a.c-hyperlink {
+        margin-top: 10px;
+    }
+
+    .c-heading-4 a.c-hyperlink {
+        margin-top: 4px;
+    }
+
+    .c-heading-5 a.c-hyperlink {
+        margin-top: 3px;
+    }
+
+    .c-heading-6 a.c-hyperlink {
+        margin-top: 0;
+    }
+}

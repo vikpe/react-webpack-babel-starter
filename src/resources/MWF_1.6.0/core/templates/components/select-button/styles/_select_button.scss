@@ -1,0 +1,174 @@
+//  ==========================================================================
+//  Component: Select button
+//  ==========================================================================
+
+#{$migration-button}
+button.c-select-button {
+    @include apply-type(t7);
+
+    margin-top: 36px;
+    margin-#{$right}: 12px;
+
+    background: $color-background;
+    border: 1px solid $color-foreground-40;
+    color: $color-foreground;
+    padding: 6px 10px;
+
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+
+    &[aria-pressed="true"] {
+        border-width: 2px;
+        border-color: $color-foreground;
+        padding: 5px 9px; // This is the default padding -1px on every side to account for increased border
+    }
+
+    &:focus {
+        outline: 1px dashed $color-foreground;
+    }
+
+    &:hover {
+        outline: 1px dashed $color-foreground;
+        border-color: $color-foreground;
+
+        &[aria-pressed="true"] {
+            border-color: flatten-overlay($color-accent, $color-foreground, 40);
+        }
+    }
+
+    &:active {
+        outline: none;
+        border-color: flatten-overlay($color-accent, $color-foreground, 40);
+    }
+
+    &[disabled] {
+        border-color: $color-foreground-20;
+        color: $color-foreground-20;
+        outline: 0;
+        cursor: not-allowed;
+    }
+
+    &[data-select-button-swatch] {
+        width: 36px;
+        height: 36px;
+
+        &:hover,
+        &:focus {
+            border-color: $color-foreground;
+            box-shadow: inset 0 0 0 1px $color-background;
+        }
+
+        &:active {
+            border-color: flatten-overlay($color-background, $color-foreground, 40);
+            box-shadow: inset 0 0 0 1px $color-background;
+        }
+
+        &[aria-pressed="true"] {
+            box-shadow: inset 0 0 0 1px $color-background;
+
+            &:hover,
+            &:focus {
+                border-color: flatten-overlay($color-background, $color-foreground, 40);
+                outline: 1px dashed $color-foreground;
+                box-shadow: inset 0 0 0 1px $color-background;
+            }
+        }
+    }
+
+    &.f-swatch-disabled {
+        position: relative;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border: 1px solid $color-foreground-20;
+        }
+    }
+
+    &.f-swatch-disabled:before {
+        position: absolute;
+        content: "";
+        left: -25%;
+        top: 50%;
+        right: -25%;
+        border-top: 1px solid;
+        border-color: inherit;
+        transform: rotate(-45deg);
+
+        @if $ltie8 {
+            border-color: flatten-overlay($color-background, $color-foreground, 40);
+            margin-top: -10px;
+        }
+    }
+
+    &.f-swatch-disabled-dark {
+        border-color: $color-background-20;
+
+        @if $ltie8 {
+            border-color: flatten-overlay($color-foreground, $color-background, 40);
+        }
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border: 1px solid $color-background-20;
+        }
+    }
+
+    #{$theme-light} {
+        background: $color-transparent;
+        border-color: $color-shade-40;
+        color: $color-shade;
+
+        &[aria-pressed="true"] {
+            border-color: $color-shade;
+        }
+
+        &:focus {
+            outline-color: $color-shade;
+        }
+
+        &:hover {
+            border-color: $color-shade;
+        }
+
+        &:active {
+            background: $color-shade-40;
+            outline: none;
+        }
+
+        &[disabled] {
+            border-color: $color-shade-20;
+            color: $color-shade-20;
+        }
+    }
+
+    #{$theme-dark} {
+        background: $color-transparent;
+        border-color: $color-tint-40;
+        color: $color-tint;
+
+        &[aria-pressed="true"] {
+            border-color: $color-tint;
+        }
+
+        &:focus,
+        &:hover {
+            outline-color: $color-tint;
+            border-color: $color-tint-40;
+        }
+
+        &:active {
+            background: $color-tint-40;
+            outline: none;
+        }
+
+        &[disabled] {
+            border-color: $color-tint-20;
+            color: $color-tint-20;
+        }
+    }
+}

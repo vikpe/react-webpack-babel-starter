@@ -1,0 +1,165 @@
+ //  ==========================================================================
+//  Define Grid Styles
+//  ==========================================================================
+
+// Define grid gutter values. Each set of values must contain a vp4 field.
+// vp4 gets applied outside of any media quieres, providing IE8 support.
+$grid-gutter: (
+    12x: (
+        vp6: 48px,
+        vp5: 48px,
+        vp4: 36px,
+        vp3: 36px,
+        vp2: 24px,
+        vp1: 24px
+    ),
+    6x: (
+        vp4: 24px
+    ),
+    3x: (
+        vp4: 12px
+    ),
+    2x: (
+        vp4: 8px
+    )
+);
+
+//  Configure the grid container.
+[data-grid~="container"] {
+    max-width: $max-content-width; // Allows a maximum width to be set. This is helpful for very large monitors. Pixel value or 100% is recomended. Note, it is nesssary to change the responsive pixel values at the end of this file to correspond to this number.
+
+    // Disable SCSS Linter to skip known/needed duplicate max-width property
+    // scss-lint:disable DuplicateProperty
+    max-width: calc(#{$max-content-width} + 10%); // max-content-width + 5% left gutter and 5% right gutter
+    // scss-lint:enable DuplicateProperty
+    margin: 0 auto; // Enables a centered layout, can remove the auto value for a layout that aligns to the right side of the window.
+    padding-left: 5%; // Adds default padding to containers
+    padding-right: 5%; // Adds default padding to containers
+
+    @if $ltie8 {
+        width: $vp4;
+    }
+
+    @media screen and (max-width: $vp3-max) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+[data-grid~="container"],
+[data-grid*="col-"] {
+    @include clearfix();
+    box-sizing: border-box;
+    zoom: 1;
+}
+
+[data-grid*="col-"] {
+    float: $left;
+    min-height: 1px;
+}
+
+// Padding effects the data-grid children of the element it is placed on.
+@mixin generate-padding() {
+    @each $pad, $size in $grid-gutter {
+        [data-grid~="pad-#{$pad}"] > [data-grid] {
+            @if map-get($size, vp6) {
+                @media screen and (max-width: $vp5-max) {
+                    padding-left: map-get($size, vp6) / 2;
+                    padding-right: map-get($size, vp6) / 2;
+                }
+            }
+
+            @if map-get($size, vp5) {
+                @media screen and (max-width: $vp5-max) {
+                    padding-left: map-get($size, vp5) / 2;
+                    padding-right: map-get($size, vp5) / 2;
+                }
+            }
+
+            // VP4 is default. This is because this is the value that most IE8
+            // users will fall under and IE8 does not understand media queries.
+            // This value is also required for the above reasons.
+            padding-left: map-get($size, vp4) / 2;
+            padding-right: map-get($size, vp4) / 2;
+
+            @if map-get($size, vp3) {
+                @media screen and (max-width: $vp3-max) {
+                    padding-left: map-get($size, vp3) / 2;
+                    padding-right: map-get($size, vp3) / 2;
+                }
+            }
+
+            @if map-get($size, vp2) {
+                @media screen and (max-width: $vp2-max)  {
+                    padding-left: map-get($size, vp2) / 2;
+                    padding-right: map-get($size, vp2) / 2;
+                }
+            }
+
+            @if map-get($size, vp1) {
+                @media screen and (max-width: $vp1-max)  {
+                    padding-left: map-get($size, vp1) / 2;
+                    padding-right: map-get($size, vp1) / 2;
+                }
+            }
+        }
+    }
+}
+
+// Create grid column width
+@mixin generate-grid($col-count: 12) {
+    @for $i from 1 through $col-count {
+        [data-grid~="col-#{$i}"] {
+            width: percentage($i / $col-count);
+        }
+    }
+
+    // Certain layouts require base 5 and base 8 grid columns
+    [data-grid~="col-1-5"] {
+        width: percentage(1 / 5);
+    }
+
+    [data-grid~="col-1-8"] {
+        width: percentage(1 / 8);
+    }
+}
+
+@mixin grid-stack() {
+    float: none;
+    width: 100%;
+    display: block;
+    padding: inherit 0;
+}
+
+@include generate-padding();
+@include generate-grid();
+
+@media screen and (max-width: $vp5-max) {
+    [data-grid~="stack-5"] > [data-grid] {
+        @include grid-stack();
+    }
+}
+
+@media screen and (max-width: $vp4-max) {
+    [data-grid~="stack-4"] > [data-grid] {
+        @include grid-stack();
+    }
+}
+
+@media screen and (max-width: $vp3-max) {
+    [data-grid~="stack-3"] > [data-grid] {
+        @include grid-stack();
+    }
+}
+
+@media screen and (max-width: $vp2-max)  {
+    [data-grid~="stack-2"] > [data-grid] {
+        @include grid-stack();
+    }
+}
+
+@media screen and (max-width: $vp1-max)  {
+    [data-grid*="col-"] {
+        @include grid-stack();
+    }
+}

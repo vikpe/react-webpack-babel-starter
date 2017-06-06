@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Link navigation",
+    "description": "A MWF link navigation component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/link-navigation.json",
+    "required": [
+        "config",
+        "links"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "links-with-title-image",
+                        "links-with-image",
+                        "links-with-title",
+                        "links-only"
+                    ]
+                },
+                "header-tag": {
+                    "type": "string",
+                    "enum": [
+                        "h1",
+                        "h2",
+                        "h3",
+                        "h4",
+                        "h5",
+                        "h6"
+                    ]
+                },
+                "header-title": {
+                    "type": "string"
+                }
+            },
+            "dependencies": {
+                "header-tag": [
+                    "header-title"
+                ],
+                "header-title": [
+                    "header-tag"
+                ]
+            },
+            "required": [
+                "context"
+            ]
+        },
+        "links": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "href": {
+                        "type": "string"
+                    },
+                    "text": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "alternative-text": {
+                        "type": "string"
+                    }
+                },
+                "dependencies": {
+                    "image": [
+                        "alternative-text"
+                    ],
+                    "alternative-text": [
+                        "image"
+                    ]
+                },
+                "required": [
+                    "href",
+                    "text"
+                ]
+            }
+        }
+    }
+}

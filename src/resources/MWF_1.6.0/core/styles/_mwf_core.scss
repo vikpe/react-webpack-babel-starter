@@ -1,0 +1,145 @@
+﻿// ==========================================================================
+// License requirements
+// ==========================================================================
+/*! %versionBanner% | Copyright 2016 Microsoft Corporation | This software is based on or incorporates material from the files listed below (collectively, "Third Party Code"). Microsoft is not the original author of the Third Party Code. The original copyright notice and the license under which Microsoft received Third Party Code are set forth below together with the full text of such license. Such notices and license are provided solely for your information. Microsoft, not the third party, licenses this Third Party Code to you under the terms in which you received the Microsoft software or the services, unless Microsoft clearly states that such Microsoft terms do NOT apply for a particular Third Party Code. Unless applicable law gives you more rights, Microsoft reserves all other rights not expressly granted under such agreement(s), whether by implication, estoppel or otherwise.*/
+@charset "UTF-8";
+
+// ==========================================================================
+// Utility mixins / functions
+// ==========================================================================
+@import "utilities/package";
+
+// ==========================================================================
+// Config Variables
+// ==========================================================================
+@import "config/package";
+
+// ==========================================================================
+// Document setup
+// ==========================================================================
+@import "normalize";
+@import "foundation";
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+@import "grid";
+
+// ==========================================================================
+// Extensions
+// ==========================================================================
+@import "extensions/animations";
+@import "extensions/clearfix";
+@import "extensions/floats";
+@import "extensions/print";
+@import "extensions/responsive";
+@import "extensions/screen_reader";
+@import "extensions/typography";
+@import "extensions/module_padding";
+
+// ==========================================================================
+// Components
+// ==========================================================================
+@import "core/templates/components/action-trigger/styles/action_trigger";
+@import "core/templates/components/age-rating/styles/age_rating";
+@import "core/templates/components/auto-suggest/styles/auto_suggest";
+@import "core/templates/components/badge/styles/badge";
+@import "core/templates/components/breadcrumb/styles/breadcrumb";
+@import "core/templates/components/button/styles/button";
+@import "core/templates/components/call-to-action/styles/call_to_action";
+@import "core/templates/components/carousel/styles/carousel";
+@import "core/templates/components/checkbox/styles/checkbox";
+@import "core/templates/components/choice-summary/styles/choice_summary";
+@import "core/templates/components/combo/styles/combo";
+@import "core/templates/components/content-placement/styles/content_placement";
+@import "core/templates/components/content-toggle/styles/content_toggle";
+@import "core/templates/components/datetime-picker/styles/datetime_picker";
+@import "core/templates/components/dialog/styles/dialog";
+@import "core/templates/components/divider/styles/divider";
+@import "core/templates/components/drawer/styles/drawer";
+@import "core/templates/components/explicit/styles/explicit";
+@import "core/templates/components/feature/styles/feature";
+@import "core/templates/components/file/styles/file";
+@import "core/templates/components/flipper/styles/flipper";
+@import "core/templates/components/flyout/styles/flyout";
+@import "core/templates/components/universal-footer/styles/universal_footer";
+@import "core/templates/components/group/styles/group";
+@import "core/templates/components/heading/styles/heading";
+@import "core/templates/components/histogram/styles/histogram";
+@import "core/templates/components/hyperlink/styles/hyperlink";
+@import "core/templates/components/glyph/styles/glyph";
+@import "core/templates/components/image/styles/image";
+@import "core/templates/components/in-page-navigation/styles/in_page_navigation";
+@import "core/templates/components/label/styles/label";
+@import "core/templates/components/link-navigation/styles/link_navigation";
+@import "core/templates/components/list/styles/list";
+@import "core/templates/components/logo/styles/logo";
+@import "core/templates/components/metatext/styles/metatext";
+@import "core/templates/components/menu-item/styles/menu_item";
+@import "core/templates/components/menu/styles/menu";
+@import "core/templates/components/mosaic/styles/mosaic";
+@import "core/templates/components/pagination/styles/pagination";
+@import "core/templates/components/paragraph/styles/paragraph";
+@import "core/templates/components/password/styles/password";
+@import "core/templates/components/pivot/styles/pivot";
+@import "core/templates/components/mosaic-placement/styles/mosaic_placement";
+@import "core/templates/components/price/styles/price";
+@import "core/templates/components/progress/styles/progress";
+@import "core/templates/components/rating/styles/rating";
+@import "core/templates/components/radio/styles/radio";
+@import "core/templates/components/refine-item/styles/refine_item";
+@import "core/templates/components/refine-menu/styles/refine_menu";
+@import "core/templates/components/search/styles/search";
+@import "core/templates/components/select-button/styles/select_button";
+@import "core/templates/components/select-menu/styles/select_menu";
+@import "core/templates/components/select/styles/select";
+@import "core/templates/components/sequence-indicator/styles/sequence_indicator";
+@import "core/templates/components/slider/styles/slider";
+@import "core/templates/components/structured-list/styles/structured_list";
+@import "core/templates/components/supplemental-navigation/styles/supplemental_navigation";
+@import "core/templates/components/table/styles/table";
+@import "core/templates/components/textarea/styles/textarea";
+@import "core/templates/components/text-field/styles/text_field";
+@import "core/templates/components/toggle/styles/toggle";
+@import "core/templates/components/tooltip/styles/tooltip";
+@import "core/templates/components/track-list-placement/styles/track_list_placement";
+@import "core/templates/components/universal-header/styles/universal_header";
+@import "core/templates/components/video/styles/video";
+
+// ==========================================================================
+// Module Items
+// ==========================================================================
+@import "core/templates/modules/product-placement-item/styles/product_placement_item";
+@import "core/templates/modules/hero-item/styles/hero_item";
+// ==========================================================================
+// Modules
+// ==========================================================================
+
+@import "core/templates/modules/additional-information/styles/additional_information";
+@import "core/templates/modules/alert/styles/alert";
+@import "core/templates/modules/back-to-top/styles/back_to_top";
+@import "core/templates/modules/banner/styles/banner";
+@import "core/templates/modules/compare-chart/styles/compare_chart";
+@import "core/templates/modules/content-placement/styles/content_placement";
+@import "core/templates/modules/feature/styles/feature";
+@import "core/templates/modules/feature-channel/styles/feature_channel";
+@import "core/templates/modules/group-call-to-action/styles/group_call_to_action";
+@import "core/templates/modules/hero/styles/hero";
+@import "core/templates/modules/in-page-navigation/styles/in_page_navigation";
+@import "core/templates/modules/link-navigation/styles/link_navigation";
+@import "core/templates/modules/media/styles/media";
+@import "core/templates/modules/hyperlink-group/styles/hyperlink_group";
+@import "core/templates/modules/mosaic/styles/mosaic";
+@import "core/templates/modules/multi-column/styles/multi_column";
+@import "core/templates/modules/page-bar/styles/page_bar";
+@import "core/templates/modules/ratings-and-reviews/styles/ratings_and_reviews";
+@import "core/templates/modules/refinements/styles/refinements";
+@import "core/templates/modules/rich-heading/styles/rich_heading";
+@import "core/templates/modules/product-detail-hero/styles/product_detail_hero";
+@import "core/templates/modules/live-gold-badge/styles/live_gold_badge";
+@import "core/templates/modules/product-placement/styles/product_placement";
+@import "core/templates/modules/search-help/styles/search_help";
+@import "core/templates/modules/search-results/styles/search_results";
+@import "core/templates/modules/social/styles/social";
+@import "core/templates/modules/supplemental-navigation/styles/supplemental_navigation";
+@import "core/templates/modules/system-requirements/styles/system_requirements";

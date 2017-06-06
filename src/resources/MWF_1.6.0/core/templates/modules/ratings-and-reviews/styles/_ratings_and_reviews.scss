@@ -1,0 +1,200 @@
+.m-ratings-and-reviews {
+    .context-filter,
+    .context-sort {
+        padding-#{$right}: 24px;
+    }
+
+    .context-response {
+        padding-top: 24px;
+
+        > div {
+            position: relative;
+            padding-#{$left}: 24px;
+
+            &:before {
+                @include apply-glyph($glyph-check-mark);
+                position: absolute;
+                #{$left}: 0;
+                top: 0;
+            }
+
+            .c-content-toggle p {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .context-helpful-select {
+        padding-top: 24px;
+
+        .c-meta-text {
+            padding-right: 13px;
+        }
+
+        .c-group {
+            display: inline-block;
+            vertical-align: bottom;
+
+            button {
+                display: inline-block;
+                color: $color-accent;
+                border: 0;
+                background: transparent;
+                padding: 0;
+                min-width: inherit;
+                margin: 0 13px;
+                vertical-align: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:active {
+                    text-decoration: none;
+                    color: flatten-overlay($color-accent, $color-foreground, 10);
+                }
+
+                &:focus {
+                    outline: 1px dashed $color-foreground;
+                }
+            }
+        }
+    }
+
+    .c-histogram {
+        padding-top: 22px;
+    }
+
+    .c-divider {
+        margin-top: 48px;
+
+        + span {
+            padding: 8px 0;
+            padding-#{$left}: 8px;
+            float: $right;
+        }
+    }
+
+    .c-heading-4 {
+        padding-top: 48px;
+    }
+
+    [data-grid="col-3"] {
+        .c-rating {
+            padding-top: 18px;
+        }
+
+        .c-paragraph-3 {
+            padding: 0;
+
+            + .c-paragraph-3 {
+                padding: 8px 0 0;
+            }
+        }
+
+        .c-meta-text {
+            padding-top: 8px;
+        }
+    }
+
+    [data-grid="col-9"] {
+        .c-heading-6 {
+            font-weight: $font-weight-normal;
+            padding: 22px 0 5px;
+
+            & + .c-content-toggle p {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        .c-histogram {
+            padding-top: 8px;
+        }
+
+        button + [data-grid="col-12"] .c-heading-4 {
+            padding-top: 48px;
+        }
+
+        .c-heading-4 {
+            padding-top: 28px;
+        }
+
+        .context-filter,
+        .c-select-menu {
+            display: block;
+        }
+
+        .context-sort + .c-select-menu {
+            display: inline-block;
+        }
+
+        .c-divider {
+            margin-top: 28px;
+
+            + span {
+                float: none;
+                display: block;
+                padding: 8px 0;
+                padding-#{$right}: 8px;
+            }
+        }
+
+        .context-filter {
+            padding: 12px 0 8px;
+        }
+
+        .context-helpful-select {
+            .c-meta-text {
+                display: block;
+            }
+
+            .c-group button:first-child {
+                margin-#{$left}: 0;
+            }
+        }
+
+        [data-grid="col-9"] {
+            .c-heading-6 {
+                padding: 14px 0 4px;
+            }
+
+            .c-content-toggle p {
+                padding: 0;
+            }
+
+            .c-meta-text {
+                padding: 20px 0 24px;
+            }
+
+            .context-helpful-select .c-meta-text {
+                padding: 20px 0 14px;
+            }
+
+            .context-response {
+                padding-top: 24px;
+
+                > div {
+                    position: relative;
+                    padding-#{$left}: 24px;
+
+                    span {
+                        display: block;
+                    }
+
+                    .c-content-toggle p {
+                        padding-top: 12px;
+                    }
+
+                    &:before {
+                        @include apply-glyph($glyph-check-mark);
+                        position: absolute;
+                        #{$left}: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

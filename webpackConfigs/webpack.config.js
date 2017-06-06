@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const FileListPlugin = require('./FileListPlugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const stylesRules = require('./rules/stylesRules');
 
 module.exports = {
     resolve: {
@@ -41,22 +42,16 @@ module.exports = {
                 use:  ["style-loader", "css-loader?modules", "postcss-loader",],
             },
             {
-                test:    /\.scss$/,
-                loaders: ["style-loader", "css-loader?modules", "postcss-loader", "sass-loader"]
-            },
-            {
-                test:    /\.(jpe?g|png|gif|svg)$/i,
-                loaders: [
-                    'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
-                ]
-            },
-            {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 exclude: /node_modules/,
             },
-            { test: /\.jade$/, loader: 'jade-loader' }
+            { 
+                test: /\.jade$/, 
+                loader: 'jade-loader' 
+            },
+            stylesRules.bakStyle,
+            stylesRules.bakFonts
         ],
     },
 

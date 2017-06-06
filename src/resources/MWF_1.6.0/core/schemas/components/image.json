@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Image",
+    "description": "A MWF Image component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/image.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/picture-element"
+        },
+        {
+            "$ref": "#/definitions/image-element"
+        }
+    ],
+    "definitions": {
+        "picture-element": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "background-image": {
+                            "type": "object",
+                            "properties": {
+                                "vp6": {
+                                    "type": "string"
+                                },
+                                "vp5": {
+                                    "type": "string"
+                                },
+                                "vp4": {
+                                    "type": "string"
+                                },
+                                "vp3": {
+                                    "type": "string"
+                                },
+                                "vp2": {
+                                    "type": "string"
+                                },
+                                "vp1": {
+                                    "type": "string"
+                                },
+                                "alt": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "alt",
+                                "vp1"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "background-image"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "image-element": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string"
+                        },
+                        "alt": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "src",
+                        "alt"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        }
+    }
+}

@@ -1,0 +1,333 @@
+//  ==========================================================================
+//  Component: Rating
+//  ==========================================================================
+
+.c-rating {
+    span.c-glyph {
+        width: 16px;
+        height: 16px;
+        line-height: 1;
+
+        &:before,
+        &:after {
+            font-size: 12px;
+        }
+    }
+
+    button.c-glyph {
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: transparent;
+
+        &:before,
+        &:after {
+            font-size: 24px;
+        }
+
+        &:focus {
+            outline: none;
+
+            &:before {
+                outline: 1px dashed $color-foreground;
+            }
+        }
+    }
+
+    &.f-individual {
+        // adjustment applies to the star for flush left align
+        transform: translateX(set-direction-based-value(-4px, 4px));
+
+        span.c-glyph {
+            width: 30px;
+            height: 30px;
+
+            &:before,
+            &:after {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .c-glyph {
+        position: relative;
+        float: $left;
+
+        &:before,
+        &:after {
+            position: absolute;
+            @if $ltie8 {
+                top: 10px;
+                #{$left}: 10px;
+            } @else {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &:before {
+            @include apply-glyph($glyph-favorite-star);
+            color: $color-foreground-30;
+        }
+
+        &:after {
+            color: $color-foreground;
+        }
+    }
+
+    form,
+    div {
+        @include clearfix();
+        display: inline-block;
+    }
+
+    div {
+        // Read-only adjustment applies to the smaller star for flush left align
+        transform: translateX(set-direction-based-value(-2px, 2px));
+
+        .c-glyph {
+            &:before,
+            &:after {
+                @if $ltie8 {
+                    top: 2px;
+                    #{$left}: 2px;
+                }
+            }
+        }
+    }
+
+    form {
+        // Read / Write goes here
+        transform: translateX(set-direction-based-value(-7px, 7px));
+
+        &:hover {
+            button.c-glyph {
+                &:before {
+                    @include apply-glyph($glyph-favorite-star-fill);
+                    color: $color-foreground;
+                }
+
+                &:after {
+                    display: none; // Hide after content as this is only for displaying the current rating
+                }
+
+                &:hover {
+                    & ~ button.c-glyph {
+                        &:before {
+                            color: $color-foreground-30;
+                        }
+                    }
+                }
+            }
+        }
+
+        &[disabled] {
+            button.c-glyph {
+                &:hover {
+                    cursor: not-allowed;
+
+                    & ~ button.c-glyph {
+                        &:before {
+                            color: $color-foreground-20;
+                        }
+                    }
+                }
+
+                &:after {
+                    display: none;
+                }
+
+                &:before {
+                    @include apply-glyph($glyph-favorite-star-fill);
+                    color: $color-foreground-20;
+                }
+            }
+        }
+    }
+
+    &.f-community-rated {
+        .c-glyph {
+            &:before {
+                @include apply-glyph($glyph-favorite-star-fill);
+            }
+        }
+
+        .f-full {
+            &:after {
+                @include apply-glyph($glyph-favorite-star-fill);
+            }
+        }
+
+        .f-half {
+            &:after {
+                @include apply-glyph(set-direction-based-value($glyph-half-star-left, $glyph-half-star-right));
+            }
+        }
+
+        &.f-user-rated {
+            .f-full,
+            .f-half {
+                &:after {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+
+    #{$theme-light} {
+        .c-glyph {
+            &:before {
+                color: $color-shade-30;
+            }
+
+            &:after {
+                color: $color-shade;
+            }
+        }
+
+        form {
+            button.c-glyph {
+                &:focus {
+                    &:before {
+                        outline-color: $color-shade;
+                    }
+                }
+
+                &:before {
+                    color: $color-shade-30;
+                }
+
+                &:after {
+                    color: $color-shade;
+                }
+            }
+
+            &:hover {
+                button.c-glyph {
+                    &:before {
+                        color: $color-shade-80;
+                    }
+
+                    &:hover {
+                        & ~ button.c-glyph {
+                            &:before {
+                                color: $color-shade-30;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &[disabled] {
+                button.c-glyph {
+                    &:before {
+                        color: $color-shade-20;
+                    }
+
+                    &:hover {
+                        & ~ button.c-glyph {
+                            &:before {
+                                color: $color-shade-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.f-community-rated {
+            &.f-user-rated {
+                .f-full,
+                .f-half {
+                    &:after {
+                        color: $color-shade;
+                    }
+                }
+            }
+        }
+    }
+
+    #{$theme-dark} {
+        .c-glyph {
+            &:before {
+                color: $color-tint-30;
+            }
+
+            &:after {
+                color: $color-tint;
+            }
+        }
+
+        form {
+            button.c-glyph {
+                &:focus {
+                    &:before {
+                        outline-color: $color-tint;
+                    }
+                }
+
+                &:before {
+                    color: $color-tint-30;
+                }
+
+                &:after {
+                    color: $color-tint;
+                }
+            }
+
+            &:hover {
+                button.c-glyph {
+                    &:before {
+                        color: $color-tint-80;
+                    }
+
+                    &:hover {
+                        & ~ button.c-glyph {
+                            &:before {
+                                color: $color-tint-30;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &[disabled] {
+                button.c-glyph {
+                    &:before {
+                        color: $color-tint-20;
+                    }
+
+                    &:hover {
+                        & ~ button.c-glyph {
+                            &:before {
+                                color: $color-tint-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.f-community-rated {
+            &.f-user-rated {
+                .f-full,
+                .f-half {
+                    &:after {
+                        color: $color-tint;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+        form:hover button.c-glyph:hover ~ button.c-glyph:before {
+            @include apply-glyph($glyph-favorite-star);
+        }
+
+        &.f-community-rated .c-glyph:before {
+            @include apply-glyph($glyph-favorite-star);
+        }
+    }
+}

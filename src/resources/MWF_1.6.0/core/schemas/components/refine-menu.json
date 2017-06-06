@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Refine menu",
+    "description": "A MWF refine menu component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/refine-menu.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "dismissable": {
+                    "type": "boolean"
+                },
+                "expanded": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "controls": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dismissable",
+                "expanded",
+                "id",
+                "controls"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "expand-button-text": {
+                    "type": "string"
+                },
+                "expand-button-label": {
+                    "type": "string"
+                },
+                "collapse-button-label": {
+                    "type": "string"
+                },
+                "submit-button-text": {
+                    "type": "string"
+                },
+                "sections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/drawer.json"
+                    }
+                }
+            },
+            "required": [
+                "heading",
+                "expand-button-text",
+                "expand-button-label",
+                "collapse-button-label",
+                "submit-button-text",
+                "sections"
+            ]
+        }
+    }
+}

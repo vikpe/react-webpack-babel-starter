@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Video module",
+    "description": "A MWF video module's schema defintion.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/video.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/video.json"
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+//  ==========================================================================
+//  Component: Radio
+//  ==========================================================================
+
+$radio-button-size: 20px;
+$radio-dot-size: 10px;
+$radio-dot-offset: $radio-dot-size / 2;
+$radio-gap: 8px;
+
+@mixin radioTextBase($gap: $radio-gap) {
+    cursor: pointer;
+    display: inline-block;
+    margin-#{$left}: $gap;
+}
+
+#{$migration-radio}
+.c-radio {
+    @if $ltie8 == true {
+        .c-group & {
+            float: #{$left};
+        }
+    }
+
+    .c-label {
+        @include apply-type(t7, false, true);
+        margin-#{$right}: 24px;
+        padding-bottom: 0;
+        position: relative;
+    }
+
+    input[type="radio"] {
+        float: #{$left};
+
+        // show default styling in IE8, otherwise go to town
+        @if $ltie8 == true {
+            + span {
+                @include radioTextBase();
+            }
+        } @else {
+            opacity: 0;
+
+            + span {
+                @include radioTextBase($radio-button-size + $radio-gap);
+
+                // outer ring
+                &:before {
+                    @include circle($style: hollow, $color: $color-foreground, $size: $radio-button-size, $width: 1px);
+                    content: "";
+                    #{$left}: 0;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+
+            // outer ring hover color
+            &:hover:not(:disabled) + span:before {
+                border-color: $color-foreground-80;
+            }
+
+            &:focus + span:before {
+                outline: 1px dashed $color-foreground-80;
+            }
+
+            &:checked {
+                // checked inner dot
+                + span:after {
+                    @include circle($style: solid, $color: currentColor, $size: $radio-dot-size);
+                    content: "";
+                    #{$left}: $radio-dot-offset;
+                    position: absolute;
+                    top: $radio-dot-offset;
+
+                    // background color not shown in IE/Edge high contrast mode, replace
+                    @media screen and (-ms-high-contrast: active) {
+                        border: solid currentColor $radio-dot-offset;
+                    }
+                }
+
+                &:not(:disabled) {
+                    // checked inner dot
+                    + span {
+                        color: $color-foreground;
+
+                        &:before {
+                            // checked outer ring
+                            border-color: $color-accent;
+                        }
+                    }
+
+                    // checked inner dot hover
+                    &:hover + span:after {
+                        background: $color-foreground-60;
+                    }
+                }
+            }
+
+            &:disabled + span {
+                // disabled inner dot
+                color: $color-foreground-20;
+                cursor: not-allowed;
+
+                &:before {
+                    // disabled outer ring
+                    border-color: $color-foreground-20;
+                }
+            }
+        }
+    }
+}

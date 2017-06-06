@@ -1,0 +1,158 @@
+//  ==========================================================================
+//  Component: Social
+//  ==========================================================================
+
+/** .c-social deprecated v.1.6.0 - use m-social **/
+/** TODO: Remove c-social in v.2.0 **/
+.m-social {
+    padding: 0;
+}
+
+.m-social,
+.c-social {
+    display: block;
+    margin-top: 48px;
+
+    &.f-facebook,
+    &.f-pinterest,
+    &.f-twitter {
+        > div {
+            display: inline-block;
+            margin-#{$right}: 24px;
+        }
+    }
+
+    & > span {
+        @include apply-type(t9, false, true);
+        color: $color-foreground-60;
+    }
+
+    & > a {
+        position: relative;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+            &:before {
+                background: $color-foreground-10;
+            }
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &:before {
+            background: none;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        > img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &.f-share,
+    &.f-follow {
+        & > a {
+            &:hover {
+                &:before {
+                    background: $color-transparent;
+                }
+            }
+
+            &:active {
+                outline: none;
+            }
+
+            > img {
+                opacity: 0.6;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.8;
+                }
+
+                &:active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    & button {
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        color: $color-foreground-60;
+        vertical-align: middle;
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+    }
+
+    & .f-hide {
+        display: none !important;
+    }
+
+    &.f-horizontal {
+        > a {
+            display: inline-block;
+            margin-#{$right}: 12px;
+        }
+
+        & button {
+            &[aria-hidden="false"] {
+                display: inline-block;
+            }
+
+            &.c-glyph[aria-expanded="false"]:after {
+                content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+            }
+
+            &.c-glyph[aria-expanded="true"]:after {
+                content: set-direction-based-value($glyph-chevron-left, $glyph-chevron-right);
+            }
+        }
+    }
+
+    &.f-vertical {
+        > a {
+            display: block;
+            margin-bottom: 12px;
+            margin-#{$right}: 0;
+        }
+
+        & button {
+            &[aria-hidden="false"] {
+                display: block;
+            }
+
+            &.c-glyph[aria-expanded="false"]:after {
+                @include apply-glyph($glyph-chevron-down);
+            }
+
+            &.c-glyph[aria-expanded="true"]:after {
+                @include apply-glyph($glyph-chevron-up);
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        margin-top: 36px;
+    }
+}

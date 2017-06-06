@@ -1,0 +1,98 @@
+//  ==========================================================================
+//  Component: Histogram
+//  ==========================================================================
+
+#{$migration-histogram}
+.c-histogram {
+    @include clearfix;
+
+    > div:first-child {
+        float: $left;
+
+        > div {
+            > span {
+                margin-#{$left}: 4px;
+            }
+        }
+
+        > span {
+            font-size: 135px;
+            line-height: 1;
+            letter-spacing: -5px;
+            font-weight: $font-weight-light;
+
+            @include migration-override(bootstrap) {
+                padding: 0;
+            }
+        }
+    }
+
+    // Histogram Rating Bars
+    #{$migration-histogram-rating-bars}
+    > ul {
+        overflow: hidden; // Create new block formatting context
+        padding-#{$left}: 28px;
+        margin-top: 26px;
+
+        li {
+            margin-bottom: 14px;
+        }
+
+        a {
+            @include apply-type(t8);
+            display: block;
+            line-height: 1;
+
+            > div {
+                display: inline-block;
+                margin-#{$left}: 6px;
+                width: calc(100% - 85px);
+
+                @if $ltie8 {
+                    width: 90%;
+                }
+
+                > div {
+                    height: 12px;
+                    position: relative;
+                    background-color: $color-accent;
+                    // Prevent background color from being removed
+                    -ms-high-contrast-adjust: none;
+
+                    span {
+                        position: absolute;
+                        #{$right}: 0;
+                        transform: translateX(set-direction-based-value(100%, -100%));
+                        padding-#{$left}: 4px;
+
+                        @if $ltie8 {
+                            #{$left}: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #{$migration-glyph}
+        .c-glyph {
+            margin-#{$left}: 1px;
+
+            &:after {
+                transform: translateY(1px);
+                content: $glyph-favorite-star-fill;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        > div:first-child {
+            float: none;
+        }
+
+        // Histogram Rating Bars
+        #{$migration-histogram-rating-bars}
+        > ul {
+            padding-#{$left}: 0;
+        }
+    }
+}

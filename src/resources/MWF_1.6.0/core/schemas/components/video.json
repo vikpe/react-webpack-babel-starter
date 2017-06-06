@@ -1,0 +1,209 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Video",
+    "description": "A MWF video component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/video.json",
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "controls": {
+                    "type": "boolean"
+                },
+                "autoplay": {
+                    "type": "boolean"
+                },
+                "loop": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "controls",
+                "autoplay",
+                "loop"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "thumbnailUrl": {
+                    "type": "string"
+                },
+                "thumbnailAlt": {
+                    "type": "string"
+                },
+                "uploadDate": {
+                    "type": "string",
+                    "format": "ISO 8601"
+                },
+                "mp4": {
+                    "type": "string"
+                },
+                "webm": {
+                    "type": "string"
+                },
+                "ogg": {
+                    "type": "string"
+                },
+                "options": {
+                    "type": "object",
+                    "properties": {
+                        "info": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "label",
+                                "href"
+                            ]
+                        },
+                        "captions": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "child": {
+                                    "type": "string"
+                                },
+                                "selectable": {
+                                    "type": "boolean"
+                                },
+                                "items": {
+                                    "type": "array",
+                                    "properties": {
+                                        "label": {
+                                            "type": "string"
+                                        },
+                                        "href": {
+                                            "type": "string"
+                                        },
+                                        "selected": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "label",
+                                        "href",
+                                        "selected"
+                                    ]
+                                },
+                                "required": [
+                                    "label",
+                                    "child",
+                                    "selectable",
+                                    "items"
+                                ]
+                            }
+                        },
+                        "quality": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "child": {
+                                    "type": "string"
+                                },
+                                "selectable": {
+                                    "type": "boolean"
+                                },
+                                "items": {
+                                    "type": "array",
+                                    "properties": {
+                                        "label": {
+                                            "type": "string"
+                                        },
+                                        "href": {
+                                            "type": "string"
+                                        },
+                                        "selected": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "label",
+                                        "href",
+                                        "selected"
+                                    ]
+                                },
+                                "required": [
+                                    "label",
+                                    "child",
+                                    "selectable",
+                                    "items"
+                                ]
+                            }
+                        },
+                        "share": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "child": {
+                                    "type": "string"
+                                },
+                                "selectable": {
+                                    "type": "boolean"
+                                },
+                                "items": {
+                                    "type": "array",
+                                    "properties": {
+                                        "label": {
+                                            "type": "string"
+                                        },
+                                        "href": {
+                                            "type": "string"
+                                        },
+                                        "icon": {
+                                            "type": "string"
+                                        },
+                                        "glyph": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "label",
+                                        "href"
+                                    ]
+                                },
+                                "required": [
+                                    "label",
+                                    "child",
+                                    "selectable",
+                                    "items"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "heading",
+                "description",
+                "thumbnailUrl",
+                "thumbnailAlt",
+                "uploadDate",
+                "width",
+                "height",
+                "mp4",
+                "webm",
+                "ogg"
+            ]
+        }
+    }
+}

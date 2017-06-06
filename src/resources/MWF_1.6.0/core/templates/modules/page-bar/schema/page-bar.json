@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Page bar",
+    "description": "A MWF Page bar module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/components/page-bar/schema/page-bar.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/buy-box"
+        },
+        {
+            "$ref": "#/definitions/in-page-nav"
+        },
+        {
+            "$ref": "#/definitions/link-nav"
+        }
+    ],
+    "definitions": {
+        "buy-box": {
+            "content": {
+                "type": "object",
+                "properties": {
+                    "call-to-action": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/call-to-action/schema/call-to-action.json"
+                    },
+                    "heading": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/heading/schema/heading.json"
+                    },
+                    "hyperlink": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/hyperlink/schema/hyperlink.json"
+                    }
+                },
+                "required": [
+                    "call-to-action",
+                    "title"
+                ],
+                "dependencies": {
+                    "subheading": [
+                        "heading"
+                    ]
+                }
+            }
+        },
+        "in-page-nav": {
+            "content": {
+                "type": "object",
+                "properties": {
+                    "heading": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/heading/schema/heading.json"
+                    },
+                    "hyperlink-list": {
+                        "$ref": "#/definitions/list"
+                    },
+                    "call-to-action": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/call-to-action/schema/call-to-action.json"
+                    }
+                },
+                "required": [
+                    "hyperlink-list"
+                ]
+            }
+        },
+        "link-nav": {
+            "content": {
+                "type": "object",
+                "properties": {
+                    "heading": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/heading/schema/heading.json"
+                    },
+                    "hyperlink-list": {
+                        "$ref": "#/definitions/list"
+                    },
+                    "call-to-action": {
+                        "$ref": "http://www.getmwf.com/releases/core/components/call-to-action/schema/call-to-action.json"
+                    }
+                },
+                "required": [
+                    "hyperlink-list"
+                ]
+            }
+        },
+        "list": {
+            "type": "array",
+            "items": {
+                "$ref": "http://www.getmwf.com/releases/core/components/hyperlink/schema/hyperlink.json"
+            }
+        }
+    }
+}

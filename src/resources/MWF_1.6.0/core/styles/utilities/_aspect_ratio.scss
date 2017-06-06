@@ -1,0 +1,21 @@
+// Cite: https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+// Used to set aspect ratio for elements when aspect ratio is important
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .item-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

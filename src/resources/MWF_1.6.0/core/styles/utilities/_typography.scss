@@ -1,0 +1,171 @@
+// INTERNAL: Compile the selector chains for type objects with the same typeramp IDs
+@function _compile-type-selectors($type-ramp-config-id) {
+    $type-object-keys: map-keys($type-object-config);
+    $selector-string: "";
+
+    // Iterate over all of the type classes defined in the project.
+    @each $control-id in $type-object-keys {
+        $type-object: map-get($type-object-config, $control-id);
+        $control-id: map-get($type-object, type-ramp-mapping);
+
+        // If the ID's match, we need to add these selectors to the selector
+        // chain so that it gets the appropriate typographic properties applied
+        @if ($control-id == $type-ramp-config-id) {
+            $control-selectors: map-get($type-object, selectors);
+
+            @if str-length($selector-string) == 0 {
+                $selector-string: $control-selectors;
+            } @else {
+                $selector-string: $selector-string + ", " + $control-selectors;
+            }
+
+        }
+    }
+
+    @return $selector-string;
+}
+
+// INTERNAL: Convert line-height to unitless number based on font-size
+@function _unitless-line-height($property-set) {
+    @if map-has-key($property-set, font-size) and map-has-key($property-set, line-height) {
+        $line-height: map-get($property-set, line-height);
+        $font-size: map-get($property-set, font-size);
+        $property-set: map-merge($property-set, (line-height: ($line-height / $font-size)));
+    }
+
+    @return $property-set;
+}
+
+// INTERNAL: Creates and applies properties to exposed type classes.
+@mixin _apply-type-styles($variation, $config) {
+    $keys: map-keys($config);
+
+    @each $id in $keys {
+        $type-class: map-get($config, $id);
+        $properties: map-get($type-class, $variation);
+        $selectors: null;
+
+        @if map-has-key($type-class, selectors) {
+            // If the map has selectors, it means we're using the type-object
+            // config and we should honor the type-selectors on that map
+            $selectors: map-get($type-class, selectors);
+        } @else {
+            $selectors: _compile-type-selectors($id);
+        }
+
+        @if (type-of($type-class) != map) {
+            @error $type-class + "_apply-typeramp failed. $type-class is not a map";
+        }
+
+        @if (type-of($selectors) != string) {
+            @error $selectors + "_apply-typeramp failed. $selectors is not a string";
+        }
+
+        @if (type-of($properties) == map) {
+            #{$selectors} {
+                @include set-properties($properties);
+            }
+        }
+    }
+}
+
+// Mixin used to apply typeographic styles inline.
+@mixin apply-type($type-id, $responsive: false, $line-height: false) {
+    $type-ramp-config-object: map-get($type-ramp-config, $type-id);
+    $ramp-object-keys: map-keys($type-ramp-config-object);
+
+    // Loop config object to convert any line-heights to unitless values and
+    // Remove line-height styles if $line-height is set to false
+    @each $key in $ramp-object-keys {
+        $property-set: map-get($type-ramp-config-object, $key);
+
+        @if map-has-key($property-set, line-height) {
+            @if ($line-height == false) {
+                $property-set: map-remove($property-set, line-height);
+            }
+        }
+
+        $new-ramp-properties: (
+            #{$key}: $property-set
+        );
+
+        $type-ramp-config-object: map-merge($type-ramp-config-object, $new-ramp-properties);
+    }
+
+    // Set base type styles
+    @include set-properties(map-get($type-ramp-config-object, base));
+
+    @if ($responsive == true) {
+        @if map-has-key($type-ramp-config-object, small) {
+            @media (max-width: ($vp3 - 1)) {
+                @include set-properties(map-get($type-ramp-config-object, small));
+            }
+        }
+        // Define large breakpoint type styles
+        @if map-has-key($type-ramp-config-object, large) {
+            @media (min-width: $vp-max) {
+                @include set-properties(map-get($type-ramp-config-object, large));
+            }
+        }
+    }
+}
+
+// Mixin used to apply typeographic components inline.
+@mixin apply-type-component($component-id) {
+    $component: map-get($type-object-config, $component-id);
+
+    @include apply-type(map-get($component, type-ramp-mapping), false, true);
+    @include set-properties(map-get($component, base));
+}
+
+// Mixin used to apply max-lines to a component. Accepts IDs from $type-ramp-config
+// or $type-object-config
+@mixin apply-maxlines($maxlines, $id, $apply-foundation: false, $clipping-adjustment: false) {
+    $type-ramp-base: null;
+
+    @if map-has-key($type-ramp-config, $id) {
+        $type-ramp-base: map-deep-get($type-ramp-config, $id, base);
+    } @elseif map-has-key($type-object-config, $id) {
+        $type-ramp-id: map-deep-get($type-object-config, $id, type-ramp-mapping);
+        $type-ramp-base: map-deep-get($type-ramp-config, $type-ramp-id, base);
+    } @else {
+        @error "$id does not resolve to a type object. Ensure that $id exists in either $type-ramp-config or $type-object-config";
+    }
+
+    $line-height: map-get($type-ramp-base, line-height);
+    $font-size: map-get($type-ramp-base, font-size);
+
+    @if $maxlines == 1 {
+        white-space: nowrap;
+    }
+
+    @if $apply-foundation == true {
+        overflow: hidden;
+        box-sizing: content-box;
+    }
+
+    max-height: $maxlines * $line-height;
+
+    @if $clipping-adjustment == true {
+        padding-bottom: (($font-size * 1.3636) - $line-height) / 2;
+    }
+}
+
+// Creates all typographic classes available.
+@mixin create-typography-classes() {
+    // Define default typographic styles
+
+    @include _apply-type-styles(base, $type-ramp-config);
+    @include _apply-type-styles(base, $type-object-config);
+    // Define small breakpoint type styles
+    @media (max-width: ($vp2-max)) {
+        @include _apply-type-styles(small, $type-ramp-config);
+        @include _apply-type-styles(small, $type-object-config);
+    }
+
+    // Define large breakpoint type styles
+    @media (min-width: $vp-max) {
+        @include _apply-type-styles(large, $type-ramp-config);
+        @include _apply-type-styles(large, $type-object-config);
+    }
+}

@@ -1,0 +1,40 @@
+//  ==========================================================================
+//  Component: List
+//  ==========================================================================
+
+#{$migration-list-ul}
+#{$migration-list-ol}
+ul.c-list,
+ol.c-list {
+    @include apply-type(t7, true, true);
+
+    padding-#{$left}: 19px;
+    padding-#{$right}: 0;
+    margin: 8px 0;
+    list-style-position: outside;
+
+    li {
+        padding: 8px 0;
+    }
+
+    // no current migration equivalent
+    &.f-lean li {
+        padding: 0;
+    }
+
+    @at-root #{$migration-list-bare}
+    &.f-bare {
+        padding-#{$left}: 0;
+        list-style-type: none;
+    }
+}
+
+#{$migration-list-ul}
+ul.c-list {
+    list-style-type: disc;
+}
+
+#{$migration-list-ol}
+ol.c-list {
+    list-style-type: decimal;
+}

@@ -1,0 +1,138 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Heading",
+    "description": "A MWF heading component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/heading.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "level": {
+                    "type": "string",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "definitions": {
+        "level-1": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h1"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "level-2": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h2"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "level-3": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h3"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "level-4": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h4"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "level-5": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h5"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "level-6": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "tag": {
+                            "type": "string",
+                            "enum": [
+                                "h6"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

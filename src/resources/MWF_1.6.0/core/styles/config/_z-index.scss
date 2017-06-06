@@ -1,0 +1,39 @@
+// Global config variable to set standardized z-index values.
+
+// EXAMPLE:
+// .block {
+//     z-index: map-get($z-index, neutral);
+// }
+
+// BACKGROUND:
+// Providing this ramp ensures that z-index usage is not arbitrary.
+// Adequate room is left in each block for additional levels to be added if needed.
+
+// USAGE:
+// 900's (dialog): Use for Dialog component stack.
+// 700's (flyout): Use for all other flyout elements.
+// 500's (nav): Use for navigational elements.
+// 300's (over): Use for elements that need to be raised more out of the normal flow.
+// 100's (above): Use for elements that need to be raised out of the normal flow.
+// 1 (neutral): Common z-index value for elements that need to be above baseline.
+// 0 (default): Default browser element z-index (baseline).
+// -1 (below): Use for elements that need to live below the normal flow of the document.
+// -2 (buried): Reserved for lowest elements in the stack.
+
+// OTHER GUIDANCE:
+// Easily increment within a block by adding an integer like the below example.
+// .block {
+//     z-index: map-get($z-index, nav + 1);
+// }
+
+$z-index: (
+    dialog: 900,
+    flyout: 700,
+    nav: 500,
+    over: 300,
+    above: 100,
+    neutral: 1,
+    default: 0,
+    below: -1,
+    buried: -2,
+);

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* .c-back-to-top has been depricated as of v.1.6
+    TODO: Remove as of v.2.0*/
+a.m-back-to-top,
+a.c-back-to-top {
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  a.m-back-to-top,
+  a.c-back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    visibility: visible;
+    float: right;
+    padding: 12px;
+    z-index: 500;
+    opacity: 1;
+    transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  a.m-back-to-top:hover, a.m-back-to-top:focus,
+  a.c-back-to-top:hover,
+  a.c-back-to-top:focus {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  a.m-back-to-top:focus,
+  a.c-back-to-top:focus {
+    outline: 1px dashed #000;
+  }
+  a.m-back-to-top:active,
+  a.c-back-to-top:active {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  a.m-back-to-top .c-glyph.glyph-up,
+  a.c-back-to-top .c-glyph.glyph-up {
+    font-size: 24px;
+  }
+  a.m-back-to-top .c-glyph.glyph-up:before,
+  a.c-back-to-top .c-glyph.glyph-up:before {
+    width: 24px;
+    height: 24px;
+    content: "";
+  }
+  a.m-back-to-top[aria-disabled="true"],
+  a.c-back-to-top[aria-disabled="true"] {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 601ms cubic-bezier(0.19, 1, 0.22, 1), opacity 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}

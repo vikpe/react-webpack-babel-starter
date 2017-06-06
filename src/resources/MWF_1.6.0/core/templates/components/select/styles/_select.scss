@@ -1,0 +1,104 @@
+//  ==========================================================================
+//  Component: Select
+//  ==========================================================================
+
+#{$migration-select}
+.c-select {
+    position: relative;
+    margin-top: 20px;
+    min-width: 88px;
+    max-width: 296px;
+    background-color: $color-background;
+    cursor: pointer;
+    height: 36px;
+
+    &:after {
+        @include apply-glyph($glyph-chevron-down);
+        position: absolute;
+        #{$right}: 4px;
+        top: 1px;
+        height: 34px;
+        width: 31px;
+        background: $color-background;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    // z-index change on hover is required to get around rendering issue in edge.
+    &:after:hover {
+        z-index: map-get($z-index, neutral);
+    }
+
+    select {
+        position: relative;
+        width: 100%;
+
+        @if $ltie8 {
+            padding: 7px 5px;
+        } @else {
+            padding: set-direction-based-value(7px 34px 7px 5px, 7px 5px 7px 34px);
+        }
+
+        background: $color-background;
+        appearance: none;
+        height: 100%;
+        outline: 0;
+        border: 1px solid $color-foreground-60;
+        cursor: pointer;
+
+        // TODO: https://microsoft.visualstudio.com/DefaultCollection/OSGS/_workitems/edit/6156793
+        &:active,
+        &:focus {
+            background: $color-background;
+        }
+
+
+        &:hover {
+            z-index: map-get($z-index, above);
+            background: transparent;
+            border-color: $color-foreground-80;
+        }
+
+        // This selector set is repeated from above because the background must be set before and the border after the hover.
+        //Disable SCSS Linter for known issue:comment above
+        // scss-lint:disable MergeableSelector
+        &:active,
+        &:focus {
+            border-color: $color-accent;
+        }
+        // scss-lint:enable MergeableSelector
+
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: $color-foreground-20;
+            border-color: $color-foreground-20;
+            background: $color-background;
+            z-index: map-get($z-index, above);
+            padding-#{$right}: 0;
+        }
+
+
+        option {
+            background: $color-background;
+            color: $color-foreground;
+        }
+
+        // required to remove undesireable outline effects from Firefox.
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $color-foreground;
+        }
+
+        // required to remove default select dropdown arrow in IE10 and above.
+        &::-ms-expand {
+            display: none;
+        }
+
+        // required to remove default focus background color in IE10+.
+        &:focus::-ms-value {
+            background: transparent;
+            color: $color-foreground;
+        }
+    }
+}

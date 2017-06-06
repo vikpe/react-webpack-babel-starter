@@ -1,0 +1,157 @@
+{
+  "_args": [
+    [
+      {
+        "name": null,
+        "raw": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+        "rawSpec": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+        "scope": null,
+        "spec": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+        "type": "local"
+      },
+      "d:\\mwf2"
+    ]
+  ],
+  "_from": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+  "_id": "MWF@1.6.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/MWF",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": null,
+    "raw": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+    "rawSpec": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+    "scope": null,
+    "spec": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+  "_shasum": "60218dfcc4ec6bcfbfd543a90c04dd3fbc156cfd",
+  "_shrinkwrap": null,
+  "_spec": "C:\\Users\\rjboeke\\Downloads\\MWF-1.6.0.tgz",
+  "_where": "d:\\mwf2",
+  "author": {
+    "name": "Microsoft Corporation"
+  },
+  "contributors": [
+    {
+      "email": "jasfalk@microsoft.com",
+      "name": "Jason Falk"
+    },
+    {
+      "email": "awentzel@microsoft.com",
+      "name": "Aaron Wentzel"
+    },
+    {
+      "email": "v-nichor@microsoft.com",
+      "name": "Nick Rice"
+    },
+    {
+      "email": "andrewn@microsoft.com",
+      "name": "Andrew Ng"
+    },
+    {
+      "email": "lochen@microsoft.com",
+      "name": "Lorine Chen"
+    },
+    {
+      "email": "v-anayab@microsoft.com",
+      "name": "Bryan Anaya"
+    },
+    {
+      "email": "v-nilogi@microsoft.com",
+      "name": "Nicolas LoGuidice"
+    },
+    {
+      "email": "jaket@microsoft.com",
+      "name": "Jake Torset"
+    },
+    {
+      "email": "dhmeht@microsoft.com",
+      "name": "Dhaumya Mehta"
+    },
+    {
+      "email": "v-janchu@microsoft.com",
+      "name": "Jane Chu"
+    },
+    {
+      "email": "carrisa@microsoft.com",
+      "name": "Carrie Sapp"
+    }
+  ],
+  "dependencies": {
+    "hammerjs": "^2.0.7",
+    "normalize.css": "^3.0.3",
+    "picturefill": "^3.0.2"
+  },
+  "description": "Microsoft Web Framework",
+  "devDependencies": {
+    "async": "^1.5.2",
+    "autoprefixer": "^6.3.1",
+    "babel-plugin-transform-es2015-modules-amd": "^6.6.5",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
+    "babel-plugin-transform-es3-property-literals": "^6.5.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "glob": "^7.0.3",
+    "grunt": "^0.4.5",
+    "grunt-accessibility": "^3.5.1",
+    "grunt-assemble": "^0.4.0",
+    "grunt-babel": "^6.0.0",
+    "grunt-browserify": "^4.0.1",
+    "grunt-bump": "^0.7.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-convert": "^0.1.12",
+    "grunt-curl": "^2.2.0",
+    "grunt-focus": "^0.1.1",
+    "grunt-gzip": "^0.1.0",
+    "grunt-html": "^5.0.1",
+    "grunt-jsbeautifier": "^0.2.12",
+    "grunt-jsonlint": "^1.0.7",
+    "grunt-minified": "^0.0.6",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-notify": "^0.4.1",
+    "grunt-postcss": "^0.7.1",
+    "grunt-replace": "^0.11.0",
+    "grunt-sass": "^1.0.0",
+    "grunt-scss-lint": "^0.3.8",
+    "grunt-sftp-deploy": "^0.2.4",
+    "grunt-stripcomments": "^0.4.0",
+    "grunt-uncss": "^0.4.4",
+    "grunt-zip": "^0.17.1",
+    "html-minifier": "^1.4.0",
+    "jit-grunt": "^0.9.1",
+    "js-beautify": "^1.6.2",
+    "lodash": "^4.6.1",
+    "pa11y": "^3.4.0",
+    "time-grunt": "^1.3.0"
+  },
+  "homepage": "http://www.getmwf.com",
+  "name": "MWF",
+  "optionalDependencies": {},
+  "publishConfig": {
+    "registry": "http://cxovm01.cloudapp.net/artifactory/api/npm/npm-local"
+  },
+  "readme": "***Team:*** Storefront & Services Design\r\n***Product:*** Microsoft Web Framework (MWF)\r\n***Description:*** A modern and responsive web framework (HTML, CSS, JavaScript) built to meet Microsoft's Modern Design Language.\r\n\r\n## DEPENDENCIES\r\n1. Normalizer\r\n2. Modernizr\r\n3. Picturefill\r\n4. Hammer\r\n\r\n### IE8 ONLY\r\n1. bind-polyfill\r\n2. indexOf-polyfill\r\n\r\n## GET STARTED AS A CONTRIBUTOR\r\n### Installation and configuration on development environment (windows, mac, or other)\r\n1. Install Git on http://git-scm.com/download\r\n    a. Launch \"Git Bash\" application.\r\n    b. Set your Git Identity.\r\n        $ git config --global user.name \"John Doe\"\r\n1. Configure credential manager to eliminate the need to continually login on every time pulling with Git.\r\n    a. Windows\r\n        $ git config --global credential.helper wincred\r\n    b. Mac\r\n        $ git config --global credential.helper osxkeychain\r\n        $ git config --global user.email \"johndoe@example.com\"\r\n    c.  Verify your Git settings are accurate\r\n        $ git config --list\r\n1. Download and install the latest 'mature and dependable' version of Node https://nodejs.org/en/ to manage our dependencies.\r\n1. Install Grunt http://gruntjs.com/getting-started command tools.\r\n\t$ npm install -g grunt-cli\r\n1. Install Phantom.js\r\n\ta. Windows (command prompt)\r\n\t\t$ npm install phantomjs-prebuilt -g\r\n\t\t$ copy %AppData%\\npm\\node_modules\\phantomjs-prebuilt\\lib\\phantom\\bin\\phantomjs.exe %AppData%\\npm\r\n\tb. Mac\r\n\t\t$ sudo npm install phantomjs-prebuilt -g\r\n1. Install Ruby http://rubyinstaller.org/ Select the option to add ruby executables to path\r\n1. Reboot.\r\n\ta. Windows\r\n\t\t$ gem update --system\r\n\t\t$ gem install scss_lint\r\n\tb. Mac\r\n\t   i. If this fails for Mac with a permissions issue\r\n\t\t$ sudo gem install -n /usr/local/bin scss_lint\r\n1. Clone solution hosted on Git and map to local work directory.\r\n    a. Change directory to your preferred working directory.\r\n        $ cd /Source/Web/MWF\r\n    b. Perform a clone on the remote repository to get source code locally.\r\n        $ git clone https://microsoft.visualstudio.com/DefaultCollection/Universal%20Store/_git/SSD.Framework.OneUI\r\n    c. When prompted for user name enter your Microsoft email address.\r\n    d. When prompted for a password use your newly created security token.\r\n    e. Change direction one level deeper into MWF where package.json resides.\r\n        $ cd SSD.Framework.OneUI\r\n1. Install all solution dependencies.\r\n        $ npm install\r\n\r\n### TESTING AND VALIDATION\r\n    $ grunt\r\n    >>  Done, without errors.\r\n\r\n## INTERNAL DOCUMENTATION\r\n### DEVELOPING\r\nhttps://microsoft.sharepoint.com/teams/osg_unistore/sf/_layouts/OneNote.aspx?id=%2Fteams%2Fosg_unistore%2Fsf%2FTools%20SFT%2FSMERF%2FOneUI%20RedTiger&wd=target%28MWF%201.0%2FDesign%20Integration%2FGetting%20started.one%7C8ABF4314-D368-4E60-9913-FE697F123DA6%2F%29\r\n\r\n### GUIDANCE https://microsoft.sharepoint.com/teams/osg_unistore/sf/_layouts/OneNote.aspx?id=%2Fteams%2Fosg_unistore%2Fsf%2FTools%20SFT%2FSMERF%2FOneUI%20RedTiger&wd=target%28MWF%201.0%2FDesign%20Integration%2FGuidance.one%7C322DC330-C56C-406A-BDFB-FF9ABE5AA16F%2F%29\r\n\r\n### CONTRIBUTING POLICY\r\nhttp://www.getmwf.com/developers/about/contribution-policy.html\r\n\r\n## MWF CORE NODE PACKAGE CONSUMPTION\r\nhttps://microsoft.sharepoint.com/teams/osg_unistore/sf/_layouts/OneNote.aspx?id=%2Fteams%2Fosg_unistore%2Fsf%2FTools%20SFT%2FSMERF%2FOneUI%20RedTiger&wd=target%28MWF%201.0%2FDesign%20Integration%2FNPM.one%7CE72CE5D8-3E2A-4FA8-95FC-BF8AD1B6F59A%2FMWF%20Node%20Packaging%7C788649EC-686C-4533-8DE3-9D39D7CEAACB%2F%29\r\n\r\n## MWF NODE PUBLISHING\r\nhttps://microsoft.sharepoint.com/teams/osg_unistore/sf/_layouts/OneNote.aspx?id=%2Fteams%2Fosg_unistore%2Fsf%2FTools%20SFT%2FSMERF%2FOneUI%20RedTiger&wd=target%28MWF%201.0%2FDesign%20Integration%2FNPM.one%7CE72CE5D8-3E2A-4FA8-95FC-BF8AD1B6F59A%2FMWF%20Node%20Publishing%7C19FE6894-E825-4ADE-AF8D-ECB6C64063D7%2F%29\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://microsoft.visualstudio.com/DefaultCollection/Universal%20Store/_git/SSD.Framework.OneUI"
+  },
+  "version": "1.6.0"
+}

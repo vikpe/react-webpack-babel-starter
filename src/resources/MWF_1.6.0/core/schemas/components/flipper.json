@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Flipper",
+    "description": "A MWF flipper component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/flipper.json",
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "direction": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "right"
+                    ]
+                },
+                "hide-from-screen-readers": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "direction",
+                "hide-from-screen-readers"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "label",
+                "title"
+            ]
+        }
+    },
+    "required": [
+        "content",
+        "config"
+    ]
+}

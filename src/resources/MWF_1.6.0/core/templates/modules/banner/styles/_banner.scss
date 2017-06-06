@@ -1,0 +1,31 @@
+//  ==========================================================================
+//  Module: Banner
+//  ==========================================================================
+
+.m-banner {
+    text-align: center;
+
+    .c-heading-3 {
+        @include apply-maxlines(2, h3, true, true);
+    }
+
+    .c-caption-1 {
+        @include apply-type(t6);
+        padding-top: 20px;
+        color: $color-foreground-60;
+    }
+
+    .c-image {
+        margin: 0 auto;
+        width: auto;
+        max-height: 70px;
+
+        + .c-heading-3 {
+            padding-top: 10px;
+        }
+    }
+
+    a.c-call-to-action {
+        @include c-call-to-action-lightweight();
+    }
+}

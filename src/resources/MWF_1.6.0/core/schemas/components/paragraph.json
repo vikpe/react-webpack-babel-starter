@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Paragraph",
+    "description": "A MWF paragraph component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

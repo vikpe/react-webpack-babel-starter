@@ -1,0 +1,140 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Compare chart module",
+    "description": "A MWF compare chart module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/compare-chart.json",
+    "supportedPartners": [],
+    "required": [
+        "config",
+        "content",
+        "items"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "column-width": {
+                    "type": "integer",
+                    "enum": [
+                        3,
+                        4,
+                        6
+                    ]
+                }
+            },
+            "required": [
+                "column-width"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                }
+            },
+            "required": [
+                "heading"
+            ]
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "product-placement": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/product-placement.json"
+                    },
+                    "button": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/button.json"
+                    },
+                    "sections": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "row-title": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                                }
+                            },
+                            "oneOf": [
+                                {
+                                    "paragraph": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                                    }
+                                },
+                                {
+                                    "icons": {
+                                        "$ref": "#/definitions/icons"
+                                    }
+                                },
+                                {
+                                    "list": {
+                                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "icons": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "tag": {
+                                    "type": "string",
+                                    "enum": [
+                                        "h1",
+                                        "h2",
+                                        "h3",
+                                        "h4",
+                                        "h5",
+                                        "h6"
+                                    ]
+                                },
+                                "level": {
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "tag",
+                                "level"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config"
+                    ]
+                },
+                "icons": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "icons"
+            ]
+        }
+    }
+}

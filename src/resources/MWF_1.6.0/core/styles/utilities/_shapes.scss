@@ -1,0 +1,25 @@
+﻿// ==========================================================================
+// Define shapes
+// ==========================================================================
+
+// ==========================================================================
+// Create circles (hollow or solid)
+// ==========================================================================
+
+@mixin circle(
+    $style: hollow,
+    $color: $themeColor,
+    $size: 15px,
+    $width: 1px
+) {
+    @if $style == solid {
+        background: $color;
+        border-radius: 50%;
+    } @else if $style == hollow {
+        border: solid $color $width {
+            radius: 50%;
+        }
+    }
+    height: $size;
+    width: $size;
+}

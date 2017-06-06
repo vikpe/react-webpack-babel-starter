@@ -1,0 +1,30 @@
+//  ==========================================================================
+//  Component: Label
+//  ==========================================================================
+
+#{$migration-label}
+.c-label {
+    @include apply-type(t8);
+
+    display: block;
+
+    margin-top: 21px;
+    padding-bottom: 7px;
+
+    line-height: 20px;
+
+    // Spacing overrides for sibling controls.
+    // TODO: v-nichor - this needs to be moved to a form component / context.
+    @if $migration-text-field == "" {
+        & + input.c-text-field[type="text"],
+        & + input.c-password[type="password"] {
+            margin: 0;
+        }
+    } @else {
+        & + #{$migration-text-field} // In bootstrap, all password and text are selected the same way
+        & + input.c-text-field[type="text"],
+        & + input.c-password[type="password"] {
+            margin: 0;
+        }
+    }
+}

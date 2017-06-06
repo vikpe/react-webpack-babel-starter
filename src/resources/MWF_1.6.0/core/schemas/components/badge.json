@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Badge",
+    "description": "A MWF badge component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/badge.json",
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "size": {
+                    "type": "string",
+                    "enum": [
+                        "small",
+                        "large"
+                    ]
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "highlight",
+                        "lowlight"
+                    ]
+                }
+            },
+            "required": [
+                "size",
+                "type"
+            ]
+        }
+    }
+}

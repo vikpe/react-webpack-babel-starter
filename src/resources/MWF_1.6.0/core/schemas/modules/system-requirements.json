@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "System requirements module",
+    "description": "A MWF system requirements module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/schemas/modules/system-requirements.json",
+    "supportedPartners": [
+        "store"
+    ],
+    "required": [
+        "heading",
+        "select",
+        "minimum",
+        "recommended"
+    ],
+    "properties": {
+        "heading": {
+            "$ref": "http://www.getmwf.com/schemas/component/heading.json"
+        },
+        "select": {
+            "$ref": "http://www.getmwf.com/schemas/component/select-menu.json"
+        },
+        "minimum": {
+            "$ref": "http://www.getmwf.com/schemas/component/table.json"
+        },
+        "recommended": {
+            "$ref": "http://www.getmwf.com/schemas/component/table.json"
+        }
+    }
+}

@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+.c-select-menu {
+  position: relative;
+  display: inline-block;
+}
+
+
+.c-select-menu.f-border [aria-expanded] {
+  margin-left: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+
+.c-select-menu.f-border [aria-expanded]:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.c-select-menu.f-border [aria-expanded]:active,
+.c-select-menu.f-border [aria-expanded]:focus {
+  border-color: #0078D7;
+}
+
+
+.c-select-menu .c-menu {
+  position: absolute;
+  top: 100%;
+}
+
+
+.c-select-menu [aria-expanded="false"] + .c-menu[aria-hidden="true"] {
+  display: none;
+}
+
+
+.c-select-menu > button {
+  border: 0;
+  background: transparent;
+}
+
+
+.c-select-menu > a,
+.c-select-menu > button {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  padding-right: 24px;
+  -ms-transform: translateX(-8px);
+      transform: translateX(-8px);
+}
+
+
+.c-select-menu > a:after,
+.c-select-menu > button:after {
+  font-family: "MWF-MDL2";
+  content: "";
+  position: absolute;
+  font-size: 9px;
+  color: #000;
+  font-weight: 700;
+  right: 8px;
+  padding-top: 7px;
+}
+
+
+.c-select-menu > a:hover,
+.c-select-menu > button:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+
+.c-select-menu > a:focus,
+.c-select-menu > button:focus {
+  border-color: #0078D7;
+  outline: 1px dashed #000;
+}
+
+
+.c-select-menu > a:focus:hover,
+.c-select-menu > button:focus:hover {
+  outline: none;
+}
+
+.no-js
+.c-select-menu:hover .c-menu,
+.js
+.c-select-menu > [aria-expanded="true"] + .c-menu[aria-hidden="false"],
+.js
+.c-select-menu > span[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+  display: block;
+  animation: fadeIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.theme-dark
+.c-select-menu > a,
+.theme-dark
+.c-select-menu > button, .theme-light .theme-dark
+.c-select-menu > a,
+.theme-light .theme-dark
+.c-select-menu > button {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark
+.c-select-menu > a:hover,
+.theme-dark
+.c-select-menu > button:hover, .theme-light .theme-dark
+.c-select-menu > a:hover,
+.theme-light .theme-dark
+.c-select-menu > button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark
+.c-select-menu > a:after,
+.theme-dark
+.c-select-menu > button:after, .theme-light .theme-dark
+.c-select-menu > a:after,
+.theme-light .theme-dark
+.c-select-menu > button:after {
+  color: #FFF;
+}
+
+.theme-dark
+.c-select-menu > a:focus,
+.theme-dark
+.c-select-menu > button:focus, .theme-light .theme-dark
+.c-select-menu > a:focus,
+.theme-light .theme-dark
+.c-select-menu > button:focus {
+  outline-color: #FFF;
+}
+
+.theme-dark
+.c-select-menu.f-border > a,
+.theme-dark
+.c-select-menu.f-border > button, .theme-light .theme-dark
+.c-select-menu.f-border > a,
+.theme-light .theme-dark
+.c-select-menu.f-border > button {
+  color: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: #FFF;
+}
+
+.theme-dark
+.c-select-menu.f-border > a:after,
+.theme-dark
+.c-select-menu.f-border > button:after, .theme-light .theme-dark
+.c-select-menu.f-border > a:after,
+.theme-light .theme-dark
+.c-select-menu.f-border > button:after {
+  color: #000;
+}
+
+.theme-dark
+.c-select-menu.f-border > a:hover,
+.theme-dark
+.c-select-menu.f-border > button:hover, .theme-light .theme-dark
+.c-select-menu.f-border > a:hover,
+.theme-light .theme-dark
+.c-select-menu.f-border > button:hover {
+  color: rgba(0, 0, 0, 0.8);
+  border-color: #FFF;
+}
+
+.theme-dark
+.c-select-menu.f-border > a:focus,
+.theme-dark
+.c-select-menu.f-border > button:focus, .theme-light .theme-dark
+.c-select-menu.f-border > a:focus,
+.theme-light .theme-dark
+.c-select-menu.f-border > button:focus {
+  border-color: #FFF;
+}

@@ -1,0 +1,86 @@
+//  ==========================================================================
+//  Component: Compare chart
+//  ==========================================================================
+
+/** .c-compare-chart class deprecated on v1.3.0 **/
+.c-compare-chart,
+.m-compare-chart {
+    /** .c-product-placement deprecated on v1.6.0 **/
+    /*  use .m-product-placement-item
+        TODO: remove c- in v.2.0 */
+    .m-product-placement-item,
+    .c-product-placement {
+
+        img {
+            margin: 0;
+        }
+
+        [aria-hidden="true"] {
+            visibility: visible;
+        }
+
+        .c-heading-4 {
+            padding: 4px 0 8px;
+        }
+    }
+
+    section {
+        .f-row {
+            display: inline-block;
+            padding-#{$right}: 24px;
+            margin: 10px 0 0;
+        }
+
+        .f-icons {
+            margin-bottom: 24px;
+        }
+
+        img {
+            margin: 5px;
+            display: initial;
+        }
+
+        button {
+            @include primary-button();
+            margin-bottom: 24px;
+        }
+
+        ul {
+            margin-bottom: 24px;
+        }
+
+        .c-call-to-action {
+            margin-top: 15px;
+        }
+
+        .c-divider {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-bottom: 24px;
+            padding: 0;
+            display: block;
+        }
+
+        [aria-hidden="true"] {
+            visibility: hidden;
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        & {
+            padding: 0 24px;
+        }
+
+        section .f-column .f-row img {
+            max-height: 112px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h3[aria-hidden="true"] {
+            visibility: visible;
+        }
+    }
+}

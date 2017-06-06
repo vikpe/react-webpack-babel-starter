@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Content rich block module",
+    "description": "A MWF content rich block module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/content-rich-block.json",
+    "supportedPartners": [],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "subheading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/subheading.json"
+                },
+                "paragraph": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                },
+                "caption": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/caption.json"
+                },
+                "list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                }
+            }
+        }
+    }
+}

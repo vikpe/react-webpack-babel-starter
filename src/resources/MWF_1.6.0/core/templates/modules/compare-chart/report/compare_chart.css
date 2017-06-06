@@ -1,0 +1,185 @@
+/** .c-compare-chart class deprecated on v1.3.0 **/
+.c-compare-chart,
+.m-compare-chart {
+  /** .c-product-placement deprecated on v1.6.0 **/
+  /*  use .m-product-placement-item
+        TODO: remove c- in v.2.0 */
+}
+
+.c-compare-chart .m-product-placement-item img,
+.c-compare-chart .c-product-placement img,
+.m-compare-chart .m-product-placement-item img,
+.m-compare-chart .c-product-placement img {
+  margin: 0;
+}
+
+.c-compare-chart .m-product-placement-item [aria-hidden="true"],
+.c-compare-chart .c-product-placement [aria-hidden="true"],
+.m-compare-chart .m-product-placement-item [aria-hidden="true"],
+.m-compare-chart .c-product-placement [aria-hidden="true"] {
+  visibility: visible;
+}
+
+.c-compare-chart .m-product-placement-item .c-heading-4,
+.c-compare-chart .c-product-placement .c-heading-4,
+.m-compare-chart .m-product-placement-item .c-heading-4,
+.m-compare-chart .c-product-placement .c-heading-4 {
+  padding: 4px 0 8px;
+}
+
+.c-compare-chart section .f-row,
+.m-compare-chart section .f-row {
+  display: inline-block;
+  padding-right: 24px;
+  margin: 10px 0 0;
+}
+
+.c-compare-chart section .f-icons,
+.m-compare-chart section .f-icons {
+  margin-bottom: 24px;
+}
+
+.c-compare-chart section img,
+.m-compare-chart section img {
+  margin: 5px;
+  display: initial;
+}
+
+.c-compare-chart section button,
+.m-compare-chart section button {
+  color: #FFF;
+  background-color: #0078D7;
+  margin-bottom: 24px;
+}
+
+.c-compare-chart section button:hover, .c-compare-chart section button:focus,
+.m-compare-chart section button:hover,
+.m-compare-chart section button:focus {
+  background-color: #006cc2;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.c-compare-chart section button:active,
+.m-compare-chart section button:active {
+  background-color: #005497;
+  border-color: transparent;
+}
+
+.c-compare-chart section button[disabled],
+.m-compare-chart section button[disabled] {
+  color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 120, 215, 0.2);
+  border-color: transparent;
+}
+
+.theme-light .c-compare-chart section button, .theme-dark .theme-light .c-compare-chart section button, .theme-light
+.m-compare-chart section button, .theme-dark .theme-light
+.m-compare-chart section button {
+  color: #FFF;
+  background-color: #000;
+  border-color: transparent;
+}
+
+.theme-light .c-compare-chart section button:focus, .theme-dark .theme-light .c-compare-chart section button:focus, .theme-light
+.m-compare-chart section button:focus, .theme-dark .theme-light
+.m-compare-chart section button:focus {
+  outline-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-light .c-compare-chart section button:hover, .theme-dark .theme-light .c-compare-chart section button:hover, .theme-light
+.m-compare-chart section button:hover, .theme-dark .theme-light
+.m-compare-chart section button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-light .c-compare-chart section button:active, .theme-dark .theme-light .c-compare-chart section button:active, .theme-light
+.m-compare-chart section button:active, .theme-dark .theme-light
+.m-compare-chart section button:active {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .c-compare-chart section button[disabled], .theme-dark .theme-light .c-compare-chart section button[disabled], .theme-light
+.m-compare-chart section button[disabled], .theme-dark .theme-light
+.m-compare-chart section button[disabled] {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .c-compare-chart section button, .theme-light .theme-dark .c-compare-chart section button, .theme-dark
+.m-compare-chart section button, .theme-light .theme-dark
+.m-compare-chart section button {
+  color: #000;
+  background-color: #FFF;
+  border-color: transparent;
+}
+
+.theme-dark .c-compare-chart section button:focus, .theme-light .theme-dark .c-compare-chart section button:focus, .theme-dark
+.m-compare-chart section button:focus, .theme-light .theme-dark
+.m-compare-chart section button:focus {
+  outline-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .c-compare-chart section button:hover, .theme-light .theme-dark .c-compare-chart section button:hover, .theme-dark
+.m-compare-chart section button:hover, .theme-light .theme-dark
+.m-compare-chart section button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .c-compare-chart section button:active, .theme-light .theme-dark .c-compare-chart section button:active, .theme-dark
+.m-compare-chart section button:active, .theme-light .theme-dark
+.m-compare-chart section button:active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .c-compare-chart section button[disabled], .theme-light .theme-dark .c-compare-chart section button[disabled], .theme-dark
+.m-compare-chart section button[disabled], .theme-light .theme-dark
+.m-compare-chart section button[disabled] {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.c-compare-chart section ul,
+.m-compare-chart section ul {
+  margin-bottom: 24px;
+}
+
+.c-compare-chart section .c-call-to-action,
+.m-compare-chart section .c-call-to-action {
+  margin-top: 15px;
+}
+
+.c-compare-chart section .c-divider,
+.m-compare-chart section .c-divider {
+  box-sizing: border-box;
+}
+
+.c-compare-chart section p,
+.m-compare-chart section p {
+  margin-bottom: 24px;
+  padding: 0;
+  display: block;
+}
+
+.c-compare-chart section [aria-hidden="true"],
+.m-compare-chart section [aria-hidden="true"] {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 539px) {
+  .c-compare-chart,
+  .m-compare-chart {
+    padding: 0 24px;
+  }
+  .c-compare-chart section .f-column .f-row img,
+  .m-compare-chart section .f-column .f-row img {
+    max-height: 112px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .c-compare-chart h3[aria-hidden="true"],
+  .m-compare-chart h3[aria-hidden="true"] {
+    visibility: visible;
+  }
+}

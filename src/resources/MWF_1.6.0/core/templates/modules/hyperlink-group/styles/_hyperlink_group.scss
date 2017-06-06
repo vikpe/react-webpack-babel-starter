@@ -1,0 +1,166 @@
+.m-hyperlink-group {
+    @include left-right-padding($add-0);
+
+    > div {
+        text-align: center;
+        padding: 0 12.5% 19px;
+
+        .c-heading {
+            font-size: 20px;
+            line-height: 24px;
+            padding: 35px 0 5px;
+            overflow: hidden;
+            box-sizing: content-box;
+            max-height: 48px;
+            padding-bottom: 1.636px;
+            font-weight: $font-weight-bold;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: 0;
+
+                .c-hyperlink {
+                    @include apply-type(t6, true, true);
+                    @include apply-maxlines(1, t6, true);
+                    padding: 10px 0;
+                    display: block;
+                    text-decoration: none;
+                    font-weight: $font-weight-semilight;
+                }
+            }
+        }
+
+        &.f-background-accent {
+            background: $color-accent;
+        }
+
+        &.f-background-neutral-00 {
+            background: $color-brand-neutral-00;
+        }
+
+        &.f-background-neutral-10 {
+            background: $color-brand-neutral-10;
+        }
+
+        &.f-background-neutral-20 {
+            background: $color-brand-neutral-20;
+        }
+
+        &.f-background-neutral-30 {
+            background: $color-brand-neutral-30;
+        }
+
+        &.f-background-neutral-45 {
+            background: $color-brand-neutral-45;
+        }
+
+        &.f-background-neutral-55 {
+            background: $color-brand-neutral-55;
+        }
+
+        &.f-background-neutral-65 {
+            background: $color-brand-neutral-65;
+        }
+
+        &.f-background-neutral-75 {
+            background: $color-brand-neutral-75;
+        }
+
+        &.f-background-neutral-80 {
+            background: $color-brand-neutral-80;
+        }
+
+        &.f-background-neutral-90 {
+            background: $color-brand-neutral-90;
+        }
+
+        &.f-background-neutral-100 {
+            background: $color-brand-neutral-100;
+        }
+
+        &.f-brand-neutral-100 {
+            background: $color-brand-neutral-100;
+        }
+
+        #{$theme-light} {
+            color: $color-shade;
+        }
+
+        #{$theme-dark} {
+            color: flatten-overlay($color-tint, $color-shade, 05);
+        }
+    }
+}
+
+@media only screen and (max-width: $vp2-max) {
+    .m-hyperlink-group {
+        > div {
+            .c-heading {
+                padding-top: 24px;
+                padding-bottom: 6px;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    padding: 0;
+
+                    .c-hyperlink {
+                        padding: 6px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+* Module & component specific integration
+*/
+
+.c-mosaic-placement {
+    .m-hyperlink-group {
+        > div {
+            padding: 0;
+            height: 100%;
+        }
+    }
+}
+
+.m-hyperlink-group-content-placement {
+    @include left-right-padding($add-0);
+    padding-top: 0;
+
+    @media only screen and (min-width: $vp2){
+        @include left-right-padding($add-12);
+    }
+
+    @media only screen and (min-width: $vp3){
+        @include left-right-padding($add-24);
+    }
+
+    @media only screen and (min-width: $vp5){
+        @include left-right-padding($add-36);
+    }
+
+    &,
+    [data-grid*="col-"] {
+        @media only screen and (min-width: $vp3) {
+            display: flex;
+        }
+    }
+
+    .m-hyperlink-group {
+        display: block;
+    }
+
+    .f-background-accent {
+        height: 100%;
+    }
+}

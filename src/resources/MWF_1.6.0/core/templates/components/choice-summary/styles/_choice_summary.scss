@@ -1,0 +1,57 @@
+//  ==========================================================================
+//  Component: Choice summary
+//  ==========================================================================
+
+.c-choice-summary {
+    @include apply-type(t8);
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    max-width: 100%;
+    background-color: $color-foreground-10;
+    padding-#{$right}: 36px;
+    min-width: 72px;
+    margin-top: 12px;
+    margin-#{$right}: 12px;
+
+    span {
+        display: inline-block;
+        padding: set-direction-based-value(9px 0 10px 12px, 9px 12px 10px 0);
+        min-width: 100%;
+    }
+
+    button.c-action-trigger.c-glyph {
+        position: absolute;
+        top: 0;
+        #{$right}: 0;
+        width: 36px;
+        height: 100%;
+        margin: 0;
+        padding: 5px 0 9px;
+
+        &:before {
+            margin: 0;
+            width: auto;
+            height: auto;
+            color: $color-foreground-60;
+        }
+
+        &:hover {
+            &,
+            & + span {
+                background-color: $color-foreground-20;
+            }
+        }
+
+        &:active {
+            &,
+            & + span {
+                background-color: $color-foreground-30;
+            }
+
+            &:before {
+                color: $color-foreground-80;
+            }
+        }
+    }
+}

@@ -1,0 +1,1835 @@
+{
+  "lead-hero": {
+      "config": {
+          "content-type": "hero",
+          "multi-slide": true
+      },
+      "content": {
+          "label": "Label",
+          "previous-flipper": {
+              "config": {
+                  "direction": "previous",
+                  "hide-from-screen-readers": true
+              },
+              "content": {
+                  "label": "View previous",
+                  "title": "View previous"
+              }
+          },
+          "next-flipper": {
+              "config": {
+                  "direction": "next",
+                  "hide-from-screen-readers": true
+              },
+              "content": {
+                  "label": "View next",
+                  "title": "View next"
+              }
+          },
+          "sequence-indicator": {
+              "content": {
+                  "items": [{
+                      "config": {
+                          "checked": true
+                      },
+                      "content": {
+                          "label": "View x-align left",
+                          "title": "x-align-left",
+                          "id": "x-align-left"
+                      }
+                  }, {
+                      "content": {
+                          "label": "View x-align center",
+                          "title": "x-align-center",
+                          "id": "x-align-center"
+                      }
+                  }, {
+                      "content": {
+                          "label": "View x-align right",
+                          "title": "x-align-right",
+                          "id": "x-align-right"
+                      }
+                  }, {
+                      "content": {
+                          "label": "View y-align top",
+                          "title": "y-align-top",
+                          "id": "y-align-top"
+                      }
+                  }, {
+                      "content": {
+                          "label": "View y-align center",
+                          "title": "y-align-center",
+                          "id": "y-align-center"
+                      }
+                  }, {
+                      "content": {
+                          "label": "View y-align bottom",
+                          "title": "y-align-bottom",
+                          "id": "y-align-bottom"
+                      }
+                  }]
+              }
+          },
+          "items": [{
+              "id": "x-align-left",
+              "config": {
+                  "x-align": "left",
+                  "y-align": "top",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "x-align-left",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }, {
+              "id": "x-align-center",
+              "config": {
+                  "x-align": "center",
+                  "y-align": "top",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "x-align-center",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }, {
+              "id": "x-align-right",
+              "config": {
+                  "x-align": "right",
+                  "y-align": "top",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "x-align-right",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }, {
+              "id": "y-align-top",
+              "config": {
+                  "x-align": "left",
+                  "y-align": "top",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "y-align-top",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }, {
+              "id": "y-align-center",
+              "config": {
+                  "x-align": "left",
+                  "y-align": "center",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "y-align-center",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }, {
+              "id": "y-align-bottom",
+              "config": {
+                  "x-align": "left",
+                  "y-align": "bottom",
+                  "context": "accessory",
+                  "theme": "dark"
+              },
+              "content": {
+                  "heading": "y-align-bottom",
+                  "subheading": "Subheading",
+                  "price": {
+                      "config": {
+                          "currency-symbol": "$",
+                          "currency-code": "USD"
+                      },
+                      "content": {
+                          "price": 100,
+                          "discounted-price": null
+                      }
+                  },
+                  "calls-to-action": [{
+                      "content": {
+                          "text": "CALL TO ACTION",
+                          "href": "./"
+                      }
+                  }],
+                  "background-image": {
+                      "vp6": "http://placehold.it/2048x600",
+                      "vp5": "http://placehold.it/1778x600",
+                      "vp4": "http://placehold.it/1399x600",
+                      "vp3": "http://placehold.it/1083x500",
+                      "vp2": "http://placehold.it/767x400",
+                      "vp1": "http://placehold.it/539x300",
+                      "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                  }
+              }
+          }]
+      }
+  },
+  "pattern-two": {
+      "config": {
+          "pattern": 2
+      },
+      "content": {
+          "items": {
+              "one": {
+                  "config": {
+                      "theme": "dark",
+                      "background": "neutral-90"
+                  },
+                  "content": {
+                      "heading": "Pattern 2 Item 1 - Title",
+                      "subheading": "Pattern 2 Item 1 - Subtitle",
+                      "background-image": {
+                          "vp6": "http://placehold.it/890x800/171717/2F2F2F",
+                          "vp5": "http://placehold.it/800x800/171717/2F2F2F",
+                          "vp4": "http://placehold.it/700x800/171717/2F2F2F",
+                          "vp3": "http://placehold.it/1083x400/171717/2F2F2F",
+                          "vp2": "http://placehold.it/768x400/171717/2F2F2F",
+                          "vp1": "http://placehold.it/540x300/171717/2F2F2F",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      },
+                      "call-to-action": {
+                          "content": {
+                              "text": "CALL TO ACTION",
+                              "href": "#"
+                          }
+                      }
+                  }
+              },
+              "two": {
+                  "config": {
+                      "theme": "dark",
+                      "background": "neutral-80"
+                  },
+                  "content": {
+                      "heading": "Pattern 2 Item 2 - Title",
+                      "subheading": "Pattern 2 Item 2 - Subtitle",
+                      "background-image": {
+                          "vp6": "http://placehold.it/425x425/2F2F2F/222222",
+                          "vp5": "http://placehold.it/400x400/2F2F2F/222222",
+                          "vp4": "http://placehold.it/350x400/2F2F2F/222222",
+                          "vp3": "http://placehold.it/542x400/2F2F2F/222222",
+                          "vp2": "http://placehold.it/384x400/2F2F2F/222222",
+                          "vp1": "http://placehold.it/540x300/2F2F2F/222222",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      },
+                      "call-to-action": {
+                          "content": {
+                              "text": "CALL TO ACTION",
+                              "href": "#"
+                          }
+                      }
+                  }
+              },
+              "three": {
+                  "config": {
+                      "theme": "dark",
+                      "background": "neutral-75"
+                  },
+                  "content": {
+                      "heading": "Pattern 2 Item 3 - Title",
+                      "subheading": "Pattern 2 Item 3 - Subtitle",
+                      "background-image": {
+                          "vp6": "http://placehold.it/425x425/464646/333333",
+                          "vp5": "http://placehold.it/400x400/464646/333333",
+                          "vp4": "http://placehold.it/350x400/464646/333333",
+                          "vp3": "http://placehold.it/542x400/464646/333333",
+                          "vp2": "http://placehold.it/384x400/464646/333333",
+                          "vp1": "http://placehold.it/540x300/464646/333333",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      },
+                      "call-to-action": {
+                          "content": {
+                              "text": "CALL TO ACTION",
+                              "href": "#"
+                          }
+                      }
+                  }
+              },
+              "four": {
+                  "config": {
+                      "theme": "dark",
+                      "background": "neutral-65"
+                  },
+                  "content": {
+                      "heading": "Pattern 2 Item 4 - Title",
+                      "subheading": "Pattern 2 Item 4 - Title",
+                      "background-image": {
+                          "vp6": "http://placehold.it/850x425/5E5E5E/505050",
+                          "vp5": "http://placehold.it/800x400/5E5E5E/505050",
+                          "vp4": "http://placehold.it/700x400/5E5E5E/505050",
+                          "vp3": "http://placehold.it/1084x400/5E5E5E/505050",
+                          "vp2": "http://placehold.it/768x400/5E5E5E/505050",
+                          "vp1": "http://placehold.it/540x300/5E5E5E/505050",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      },
+                      "call-to-action": {
+                          "content": {
+                              "text": "CALL TO ACTION",
+                              "href": "#"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "context-carousel": {
+      "config": {
+          "content-type": "hero",
+          "multi-slide": true
+      },
+      "content": {
+          "label": "New Products",
+          "previous-flipper": {
+              "config": {
+                  "direction": "previous",
+                  "hide-from-screen-readers": true
+              },
+              "content": {
+                  "label": "View previous",
+                  "title": "View previous"
+              }
+          },
+          "next-flipper": {
+              "config": {
+                  "direction": "next",
+                  "hide-from-screen-readers": true
+              },
+              "content": {
+                  "label": "View next",
+                  "title": "View next"
+              }
+          },
+          "sequence-indicator": {
+              "content": {
+                  "items": [
+                      {
+                          "config": {
+                              "checked": true
+                          },
+                          "content": {
+                              "label": "Accessory hero",
+                              "title": "accessory-hero",
+                              "id": "accessory-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "App hero",
+                              "title": "app-hero",
+                              "id": "app-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Article hero",
+                              "title": "article-hero",
+                              "id": "article-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Device hero",
+                              "title": "device-hero",
+                              "id": "device-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Game hero",
+                              "title": "game-hero",
+                              "id": "game-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Movie hero",
+                              "title": "movie-hero",
+                              "id": "movie-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Music album hero",
+                              "title": "music-album-hero",
+                              "id": "music-album-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Music artist hero",
+                              "title": "music-artist-hero",
+                              "id": "music-artist-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "Software hero",
+                              "title": "software-hero",
+                              "id": "software-hero"
+                          }
+                      },
+                      {
+                          "content": {
+                              "label": "TV-show hero",
+                              "title": "tv-show-hero",
+                              "id": "tv-show-hero"
+                          }
+                      }
+                  ]
+              }
+          },
+          "items": [
+              {
+                  "id": "accessory-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "accessory",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "heading": "Accessory hero",
+                      "subheading": "Subheading",
+                      "price": {
+                          "config": {
+                              "currency-symbol": "$",
+                              "currency-code": "USD"
+                          },
+                          "content": {
+                              "price": 100,
+                              "discounted-price": null
+                          }
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "app-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "app",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "app-icon": {
+                          "src": "https://placehold.it/64x64/E3E3E3",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      },
+                      "heading": "App hero",
+                      "subheading": "Subheading",
+                      "rating": {
+                          "config": {
+                              "read-only": true,
+                              "community-rating": 3.2
+                          }
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "article-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "article",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "heading": "Article hero",
+                      "description": "[description]",
+                      "publisher": {
+                          "content": {
+                              "label": "[publisher-label]",
+                              "logotype": "[Publisher Name]"
+                          }
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "device-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "device",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "heading": "Device hero",
+                      "subheading": "Subheading",
+                      "price": {
+                          "config": {
+                              "currency-symbol": "$",
+                              "currency-code": "USD"
+                          },
+                          "content": {
+                              "price": 100,
+                              "discounted-price": null
+                          }
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "game-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "game",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "product-title": "Game hero",
+                      "product-subtitle": "[product-subtitle]",
+                      "rating": {
+                          "config": {
+                              "read-only": true,
+                              "community-rating": 3.2
+                          }
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "movie-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "movie",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "product-title": "Movie hero",
+                      "product-subtitle": "[product-subtitle]",
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "music-album-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "music-album",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "product-title": "Music-album hero",
+                      "product-subtitle": "[product-subtitle]",
+                      "image": {
+                          "src": "http://placehold.it/120x120/E3E3E3",
+                          "alt": "[Album cover]"
+                      },
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "music-artist-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "music-artist",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "product-title": "Music-artist hero",
+                      "product-subtitle": "[product-subtitle]",
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "software-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "software",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "heading": "Software hero",
+                      "subheading": "Subheading",
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              },
+              {
+                  "id": "TV-show-hero",
+                  "config": {
+                      "x-align": "left",
+                      "y-align": "top",
+                      "context": "tv-show",
+                      "theme": "dark"
+                  },
+                  "content": {
+                      "product-title": "TV show hero",
+                      "product-subtitle": "[product-subtitle]",
+                      "calls-to-action": [
+                          {
+                              "content": {
+                                  "text": "CALL TO ACTION",
+                                  "href": "./"
+                              }
+                          }
+                      ],
+                      "background-image": {
+                          "vp6": "http://placehold.it/2048x600",
+                          "vp5": "http://placehold.it/1778x600",
+                          "vp4": "http://placehold.it/1399x600",
+                          "vp3": "http://placehold.it/1083x500",
+                          "vp2": "http://placehold.it/767x400",
+                          "vp1": "http://placehold.it/539x300",
+                          "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                      }
+                  }
+              }
+          ]
+      }
+  },
+    "bring-ideas": {
+        "config": {
+            "align": "left"
+        },
+        "content": {
+            "heading": "Bring ideas to life",
+            "body": "Microsoft HoloLens is the first fully untethered, holographic computer, enabling you to interact with high‑definition holograms in your world.",
+            "image": {
+                "vp6": "http://placehold.it/800x400",
+                "vp5": "http://placehold.it/800x400",
+                "vp4": "http://placehold.it/700x400",
+                "vp3": "http://placehold.it/542x300",
+                "vp2": "http://placehold.it/767x300",
+                "vp1": "http://placehold.it/539x200",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "WATCH THE VIDEO",
+                    "href": "#"
+                }
+            }
+        }
+    },
+    "advanced-tech": {
+        "config": {
+            "align": "center"
+        },
+        "content": {
+            "heading": "Advanced technology only from Microsoft",
+            "body": "Microsoft HoloLens is the world’s most advanced holographic computer. Find out more about its advanced optics, multiple sensors, custom holographic processing unit, and more.",
+            "image": {
+                "vp5": "http://placehold.it/1600x400/0078D7/FFFFFF",
+                "vp4": "http://placehold.it/1399x400/0078D7/FFFFFF",
+                "vp3": "http://placehold.it/1083x300/0078D7/FFFFFF",
+                "vp2": "http://placehold.it/767x300/0078D7/FFFFFF",
+                "vp1": "http://placehold.it/539x200/0078D7/FFFFFF",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "SEE THE HARDWARE",
+                    "href": "./"
+                }
+            }
+        }
+    },
+    "prod-shot": {
+        "content": {
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600",
+                "vp5": "http://placehold.it/1778x600",
+                "vp4": "http://placehold.it/1399x600",
+                "vp3": "http://placehold.it/1083x500",
+                "vp2": "http://placehold.it/767x400",
+                "vp1": "http://placehold.it/539x300",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            }
+        }
+    },
+    "windows": {
+        "content": {
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600/0078D7/FFFFFF",
+                "vp5": "http://placehold.it/1778x600/0078D7/FFFFFF",
+                "vp4": "http://placehold.it/1399x600/0078D7/FFFFFF",
+                "vp3": "http://placehold.it/1083x500/0078D7/FFFFFF",
+                "vp2": "http://placehold.it/767x400/0078D7/FFFFFF",
+                "vp1": "http://placehold.it/539x300/0078D7/FFFFFF",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            }
+        }
+    },
+    "blank-hero": {
+        "config": {
+            "size": "medium",
+            "x-align": "left",
+            "y-align": "bottom",
+            "context": "software",
+            "theme": "dark"
+        },
+        "content": {
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600",
+                "vp5": "http://placehold.it/1778x600",
+                "vp4": "http://placehold.it/1399x600",
+                "vp3": "http://placehold.it/1083x500",
+                "vp2": "http://placehold.it/767x400",
+                "vp1": "http://placehold.it/539x300",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery",
+                "mask": 0
+            }
+        }
+    },
+    "call-to-action": {
+        "content": {
+            "text": "CALL TO ACTION",
+            "href": "#"
+        }
+    },
+    "picture-element": {
+        "content": {
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600",
+                "vp5": "http://placehold.it/1778x600",
+                "vp4": "http://placehold.it/1399x600",
+                "vp3": "http://placehold.it/1083x500",
+                "vp2": "http://placehold.it/767x400",
+                "vp1": "http://placehold.it/539x300",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            }
+        }
+    },
+    "l3-heading": {
+        "config": {
+            "tag": "h3",
+            "level": 3
+        },
+        "content": {
+            "text": "{{lorem.sentence}}"
+        }
+    },
+    "l4-subhead-paragraph": {
+        "config": {
+            "level": 4
+        },
+        "content": {
+            "text": "{{lorem.sentences}}"
+        }
+    },
+    "small-header": {
+        "config": {
+            "tag": "h5",
+            "level": 5
+        },
+        "content": {
+            "text": "{{lorem.sentence}}"
+        }
+    },
+    "heading-call-to-action": {
+        "content": {
+            "heading": {
+                "config": {
+                    "tag": "h2",
+                    "level": 3
+                },
+                "content": {
+                    "text": "Heading text for Banner with Heading and Call to action"
+                }
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "CALL TO ACTION",
+                    "href": "#"
+                }
+            }
+        }
+    },
+    "product-placement-large": {
+        "config": {
+            "content-type": "placements-single-row",
+            "multi-slide": false,
+            "size": "large",
+            "context": "software"
+        },
+        "content": {
+            "previous-flipper": {
+                "config": {
+                    "direction": "previous",
+                    "hide-flippers": true
+                },
+                "content": {
+                    "label": "View previous",
+                    "title": "View previous"
+                }
+            },
+            "next-flipper": {
+                "config": {
+                    "direction": "next",
+                    "hide-flippers": true
+                },
+                "content": {
+                    "label": "View next",
+                    "title": "View next"
+                }
+            },
+            "heading": {
+                "config": {
+                    "tag": "h2",
+                    "level": 4
+                },
+                "content": {
+                    "text": "Heading",
+                    "hyperlink": {
+                        "config": {
+                            "href": "#"
+                        },
+                        "content": {
+                            "text": "See all",
+                            "label": "See all Heading"
+                        }
+                    }
+                }
+            },
+            "link": {
+                "alt": "See all",
+                "href": "./"
+            },
+            "items": [
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                },
+                {
+                    "config": {
+                        "context": "software",
+                        "size": "large"
+                    },
+                    "content": {
+                        "heading": {
+                            "config": {
+                                "tag": "h3",
+                                "itemprop": "product name"
+                            },
+                            "content": {
+                                "text": "Heading"
+                            }
+                        },
+                        "badge": {
+                            "config": {
+                                "size": "small",
+                                "type": "highlight"
+                            },
+                            "content": {
+                                "text": "BADGE"
+                            }
+                        },
+                        "rating": {
+                            "config": {
+                                "type": {
+                                    "aggregate": true
+                                },
+                                "community-rating": 4
+                            }
+                        },
+                        "price": {
+                            "config": {
+                                "currency-symbol": "$",
+                                "currency-code": "USD"
+                            },
+                            "content": {
+                                "price": 500,
+                                "discounted-price": null
+                            }
+                        },
+                        "paragraph": "Paragraph text.",
+                        "featured-image": {
+                            "vp2": "http://placehold.it/358x300",
+                            "vp1": "http://placehold.it/272x272",
+                            "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                        },
+                        "href": "./"
+                    }
+                }
+            ]
+        }
+    },
+    "l-feature": {
+        "config": {
+            "align": "left"
+        },
+        "content": {
+            "heading": "Heading",
+            "body": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "badge": {
+                "config": {
+                    "size": "small",
+                    "type": "highlight"
+                },
+                "content": {
+                    "text": "BADGE"
+                }
+            },
+            "image": {
+                "vp5": "http://placehold.it/800x400",
+                "vp4": "http://placehold.it/700x400",
+                "vp3": "http://placehold.it/542x300",
+                "vp2": "http://placehold.it/767x300",
+                "vp1": "http://placehold.it/539x200",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "CALL TO ACTION",
+                    "href": "./"
+                }
+            }
+        }
+    },
+    "r-feature": {
+        "config": {
+            "align": "right"
+        },
+        "content": {
+            "heading": "Heading",
+            "body": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "badge": {
+                "config": {
+                    "size": "small",
+                    "type": "highlight"
+                },
+                "content": {
+                    "text": "BADGE"
+                }
+            },
+            "image": {
+                "vp5": "http://placehold.it/800x400",
+                "vp4": "http://placehold.it/700x400",
+                "vp3": "http://placehold.it/542x300",
+                "vp2": "http://placehold.it/767x300",
+                "vp1": "http://placehold.it/539x200",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "CALL TO ACTION",
+                    "href": "./"
+                }
+            }
+        }
+    },
+    "h-computing-three-up": {
+        "config": {
+            "size": "medium",
+            "type": "three-up"
+        },
+        "content": {
+            "one": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Sign up for newsletter"
+                    },
+                    "paragraph": "Be the first to learn about Microsoft HoloLens news, events, and updates.",
+                    "featured-image": {
+                        "vp1": "images/hololens-landing-newsletter-placement-vp1.jpg",
+                        "vp2": "images/hololens-landing-newsletter-placement-vp2.jpg",
+                        "vp3": "images/hololens-landing-newsletter-placement-vp3.jpg",
+                        "vp4": "images/hololens-landing-newsletter-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "two": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Share your idea"
+                    },
+                    "paragraph": "You chose Galaxy Explorer Project. We built it and now the source code is yours.",
+                    "featured-image": {
+                        "vp1": "images/hololens-landing-share-placement-vp1.jpg",
+                        "vp2": "images/hololens-landing-share-placement-vp2.jpg",
+                        "vp3": "images/hololens-landing-share-placement-vp3.jpg",
+                        "vp4": "images/hololens-landing-share-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "three": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Developer tutorials"
+                    },
+                    "paragraph": "Learn about the Windows Holographic platform in our online academy.",
+                    "featured-image": {
+                        "vp1": "images/hololens-landing-newsletter-placement-vp1.jpg",
+                        "vp2": "images/hololens-landing-newsletter-placement-vp2.jpg",
+                        "vp3": "images/hololens-landing-newsletter-placement-vp3.jpg",
+                        "vp4": "images/hololens-landing-newsletter-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            }
+        }
+    },
+    "info-three-up": {
+        "config": {
+            "size": "medium",
+            "type": "three-up"
+        },
+        "content": {
+            "one": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "paragraph": "Do you have a question about developing for Microsoft HoloLens?",
+                    "featured-image": {
+                        "vp1": "http://placehold.it/540x280",
+                        "vp2": "http://placehold.it/372x170",
+                        "vp3": "http://placehold.it/253x120",
+                        "vp4": "http://placehold.it/358x200",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "two": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "paragraph": "Learn about the Windows Holographic platform in our online academy.",
+                    "featured-image": {
+                        "vp1": "http://placehold.it/540x280",
+                        "vp2": "http://placehold.it/372x170",
+                        "vp3": "http://placehold.it/253x120",
+                        "vp4": "http://placehold.it/358x200",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "three": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "paragraph": "Learn about the Windows Holographic platform in our online academy.",
+                    "featured-image": {
+                        "vp1": "http://placehold.it/540x280",
+                        "vp2": "http://placehold.it/372x170",
+                        "vp3": "http://placehold.it/253x120",
+                        "vp4": "http://placehold.it/358x200",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            }
+        }
+    },
+    "logo-rich-heading": {
+        "config": {
+            "theme": "dark",
+            "background": "f-accent"
+        },
+        "content": {
+            "heading": {
+                "config": {
+                    "tag": "h3",
+                    "level": 3
+                },
+                "content": {
+                    "text": "Heading"
+                }
+            },
+            "paragraph": {
+                "config": {
+                    "level": 3
+                },
+                "content": {
+                    "text": "Paragraph"
+                }
+            },
+            "logo": {
+                "content": {
+                    "label": "Microsoft corp.",
+                    "logotype": "Microsoft",
+                    "image": {
+                        "src": "http://placehold.it/200x130/0078D7/FFFFFF",
+                        "alt": "Placeholder logo image"
+                    }
+                }
+            }
+        }
+    },
+    "win10-four": {
+        "config": {
+            "size": "medium",
+            "type": "four-up"
+        },
+        "content": {
+            "one": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Windows Store"
+                    },
+                    "paragraph": "Download exclusive apps only for Microsoft HoloLens, in addition to hundreds of Universal Windows Platform apps available to Windows 10 devices.",
+                    "featured-image": {
+                        "vp1": "images/hololens-apps-store-placement-vp1.jpg",
+                        "vp2": "images/hololens-apps-store-placement-vp2.jpg",
+                        "vp3": "images/hololens-apps-store-placement-vp3.jpg",
+                        "vp4": "images/hololens-apps-store-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "two": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Microsoft Edge"
+                    },
+                    "paragraph": "Microsoft Edge is the browser available exclusively on Windows 10 that makes the web work the way you do.",
+                    "featured-image": {
+                        "vp1": "images/hololens-apps-edge-placement-vp1.jpg",
+                        "vp2": "images/hololens-apps-edge-placement-vp2.jpg",
+                        "vp3": "images/hololens-apps-edge-placement-vp3.jpg",
+                        "vp4": "images/hololens-apps-edge-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "three": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Cortana"
+                    },
+                    "paragraph": "Cortana is your truly personal assistant. She can answer your questions, help you search the web, complete system tasks, and more.",
+                    "featured-image": {
+                        "vp1": "images/hololens-apps-cortana-placement-vp1.jpg",
+                        "vp2": "images/hololens-apps-cortana-placement-vp2.jpg",
+                        "vp3": "images/hololens-apps-cortana-placement-vp3.jpg",
+                        "vp4": "images/hololens-apps-cortana-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            },
+            "four": {
+                "config": {
+                    "context": "article"
+                },
+                "content": {
+                    "heading": {
+                        "level": 3,
+                        "text": "Mixed Reality Capture"
+                    },
+                    "paragraph": "Capture all your holograms in the context of your environment, and share them with the world.",
+                    "featured-image": {
+                        "vp1": "images/hololens-apps-capture-placement-vp1.jpg",
+                        "vp2": "images/hololens-apps-capture-placement-vp2.jpg",
+                        "vp3": "images/hololens-apps-capture-placement-vp3.jpg",
+                        "vp4": "images/hololens-apps-capture-placement-vp4.jpg",
+                        "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                    }
+                }
+            }
+        }
+    }
+}

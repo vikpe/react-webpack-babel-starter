@@ -1,0 +1,35 @@
+.m-live-gold-badge {
+    margin-top: 40px;
+    margin-#{$right}: 40px;
+
+    display: inline-block;
+    position: relative;
+
+    float: $right;
+
+    > div {
+        width: 100%;
+        padding-top: 50px;
+
+        position: absolute;
+        top: 0;
+
+        color: $color-white;
+        text-align: center;
+
+        * {
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-width: $vp3) {
+        margin-#{$right}: 0;
+        margin-#{$left}: 75px;
+
+        float: none;
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        margin-#{$left}: 25px;
+    }
+}

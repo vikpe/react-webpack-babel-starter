@@ -1,0 +1,134 @@
+
+@mixin primary-button() {
+    // This is designed to override the colors of the .c-button. This will not
+    // work as expcted if it does not get applied to an element that is a
+    // .c-button
+    color: $color-tint;
+    background-color: $color-accent;
+
+    &:hover,
+    &:focus {
+        background-color: flatten-overlay($color-accent, $color-foreground, 10%);
+        border-color: $color-foreground-40;
+    }
+
+    &:active {
+        background-color: flatten-overlay($color-accent, $color-foreground, 30%);
+        border-color: transparent;
+    }
+
+    &[disabled] {
+        color: $color-foreground-20;
+        background-color: $color-accent-20;
+        border-color: transparent;
+    }
+
+    #{$theme-light} {
+        color: $color-tint;
+        background-color: $color-shade;
+        border-color: transparent;
+
+        &:focus {
+            outline-color: $color-shade;
+            background-color: $color-shade-80;
+        }
+
+        &:hover {
+            background-color: $color-shade-80;
+        }
+
+        &:active {
+            background-color: $color-shade-60;
+        }
+
+        &[disabled] {
+            background-color: $color-shade-20;
+            color: $color-shade-20;
+        }
+    }
+
+    #{$theme-dark} {
+        color: $color-shade;
+        background-color: $color-tint;
+        border-color: transparent;
+
+        &:focus {
+            outline-color: $color-tint;
+            background-color: $color-tint-80;
+        }
+
+        &:hover {
+            background-color: $color-tint-80;
+        }
+
+        &:active {
+            background-color: $color-tint-60;
+        }
+
+        &[disabled] {
+            background-color: $color-tint-20;
+            color: $color-tint-20;
+        }
+    }
+}
+
+@mixin light-button() {
+    // This is designed to override the colors of the .c-button. This will not
+    // work as expcted if it does not get applied to an element that is a
+    // .c-button
+    color: $color-accent;
+    background-color: transparent;
+    border: 0;
+    padding: 10px 12px 11px;
+
+    &:focus {
+        outline-color: $color-foreground;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: flatten-overlay($color-accent, $color-foreground, 10%);
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        color: $color-foreground-20;
+        text-decoration: none;
+        cursor: not-allowed;
+    }
+
+    #{$theme-light} {
+        color: $color-shade;
+
+        &:focus {
+            outline-color: $color-shade;
+        }
+
+        &:active {
+            color: $color-shade-60;
+        }
+
+        &[disabled] {
+            color: $color-shade-20;
+        }
+    }
+
+    #{$theme-dark} {
+        color: $color-tint;
+
+        &:focus {
+            outline-color: $color-tint;
+        }
+
+        &:active {
+            color: $color-tint-60;
+        }
+
+        &[disabled] {
+            color: $color-tint-20;
+        }
+    }
+}

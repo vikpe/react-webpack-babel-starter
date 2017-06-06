@@ -1,0 +1,145 @@
+//  ==========================================================================
+//  Component: Drawer
+//  ==========================================================================
+
+$chevron-height-adjustment: 16px / 2;
+$chevron-width-plus-padding: 36px;
+$drawer-vertical-padding: 14px;
+$header-vertical-spacing: 8px;
+
+.c-drawer {
+    > button,
+    .f-toggle {
+        min-height: 44px;
+        position: relative;
+    }
+
+    > header {
+        margin-bottom: $header-vertical-spacing;
+        min-height: 44px;
+        position: relative;
+
+        @media only screen and (max-width: $vp1-max) {
+            padding-#{$right}: $chevron-width-plus-padding;
+        }
+
+        > button,
+        .f-toggle {
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    > nav.c-link-navigation {
+        height: 40px;
+        line-height: 40px;
+        margin-top: 0;  // override vp1-6
+        overflow: hidden;
+        text-align: $left; // override vp1-6
+        width: auto;
+
+        li {
+            display: inline-block; // override vp1-2
+            height: auto; // override vp1-2
+
+            a.c-hyperlink {
+                padding: 0; // override vp1-2
+            }
+
+            &:first-child a {
+                margin-#{$left}: 0; // override vp1-6
+            }
+        }
+
+        ul {
+            white-space: nowrap;
+        }
+    }
+
+    // target simple drawer w/ button or complex drawer with HTML header container
+    > button,
+    .f-toggle,
+    > header > button,
+    > header .f-toggle {
+        @include apply-type(t8, false, true);
+        display: block;
+        border: 0;
+        background: transparent;
+        color: $color-foreground-60;
+        font-weight: $font-weight-normal;
+        padding: set-direction-based-value($drawer-vertical-padding $chevron-width-plus-padding $drawer-vertical-padding 12px, $drawer-vertical-padding 12px $drawer-vertical-padding $chevron-width-plus-padding);
+        #{$left}: 0;
+        text-align: $left;
+        width: 100%;
+
+        &:after {
+            position: absolute;
+            @if $ltie8 == true {
+                margin-top: #{-($chevron-height-adjustment)};
+                top: 50%;
+            } @else {
+                top: calc(50% - #{$chevron-height-adjustment});
+            }
+            #{$right}: 12px;
+        }
+
+        &[aria-expanded="true"]:after {
+            content: $glyph-chevron-up;
+        }
+
+        &[aria-expanded="false"]:after {
+            content: $glyph-chevron-down;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &:hover {
+            @if $ltie8 == false {
+                background: $color-foreground-10;
+            }
+        }
+
+        &:active {
+            @if $ltie8 == false {
+                background: $color-foreground-30;
+            }
+        }
+    }
+
+    &.f-responsive {
+        > button,
+        .f-toggle,
+        > header {
+            + div {
+                border-top: 1px solid $color-foreground-20;
+                margin-top: $header-vertical-spacing;
+                padding-top: $header-vertical-spacing;
+            }
+        }
+
+        // selector dynamically added to DOM via BreakpointTracker.js
+        &.f-show {
+            @media only screen and (min-width: $vp2) {
+                > button,
+                .f-toggle,
+                > header > button,
+                > header .f-toggle {
+                    &:after {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    // Drawer container
+    > div[id] {
+        position: relative;
+    }
+}

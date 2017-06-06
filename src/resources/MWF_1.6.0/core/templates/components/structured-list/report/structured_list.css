@@ -1,0 +1,62 @@
+.c-structured-list {
+  margin: 24px 0;
+}
+
+.c-structured-list .f-column {
+  padding-left: 10px;
+}
+
+.c-structured-list .f-column:first-child {
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 1399px) {
+  .c-structured-list .f-column:first-child .f-row:first-child {
+    border-top: 1px solid #E3E3E3;
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .c-structured-list .f-column {
+    padding-right: 10px;
+    padding-left: 0;
+    max-width: 768px;
+  }
+}
+
+.c-structured-list .f-column .f-row {
+  border-bottom: 1px solid #E3E3E3;
+  float: left;
+}
+
+.c-structured-list .f-column .f-row:before, .c-structured-list .f-column .f-row:after {
+  content: " ";
+  display: table;
+}
+
+.c-structured-list .f-column .f-row:after {
+  clear: both;
+}
+
+.c-structured-list .f-column .f-row:first-child {
+  border-top: 1px solid #E3E3E3;
+}
+
+@media only screen and (max-width: 1399px) {
+  .c-structured-list .f-column .f-row:first-child {
+    border-top: 0;
+  }
+}
+
+.c-structured-list .f-column .f-row [class^='c-paragraph'] {
+  padding: 0;
+}
+
+.c-structured-list .f-column .f-row [data-grid="col-2 stack-2"] {
+  padding: 8px 0 8px 24px;
+}
+
+.c-structured-list .f-column .f-row [data-grid="col-10"] {
+  padding: 8px 12px 8px 24px;
+}

@@ -3,6 +3,10 @@ const {resolve}       = require("path");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const FileListPlugin = require('./FileListPlugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
+const stylesRules = require('./rules/stylesRules');
+
 module.exports = {
     resolve: {
         extensions: [".webpack.js", ".web.js", ".js", ".jsx", ".tsx", ".ts"],
@@ -38,30 +42,25 @@ module.exports = {
                 use:  ["style-loader", "css-loader?modules", "postcss-loader",],
             },
             {
-                test:    /\.scss$/,
-                loaders: ["style-loader", "css-loader?modules", "postcss-loader", "sass-loader"]
-            },
-            {
-                test:    /\.(jpe?g|png|gif|svg)$/i,
-                loaders: [
-                    'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
-                ]
-            },
-            {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 exclude: /node_modules/,
             },
-            { test: /\.jade$/, loader: 'jade-loader' }
+            { 
+                test: /\.jade$/, 
+                loader: 'jade-loader' 
+            },
+            stylesRules.bakStyle,
+            stylesRules.bakFonts
         ],
     },
 
     plugins:     [
+        new FileListPlugin({options: true}),
         new StyleLintPlugin(),
-        // new webpack.HotModuleReplacementPlugin(), // enable HMR globally
+        //new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-         new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             filename: 'index.html',
             favicon: resolve(__dirname, "../src/jade") +  '/favicon.ico',
             template: resolve(__dirname, "../src/jade") + '/template.jade',
@@ -70,8 +69,8 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'chunks', // Specify the common bundle's name.
             filename: `chunks-[hash].js`,
-        })
-
+        }),
+        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']})
     ],
     performance: {
         hints: false
