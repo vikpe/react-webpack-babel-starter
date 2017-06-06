@@ -3,7 +3,7 @@ const {resolve}       = require("path");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const FileListPlugin = require('./FileListPlugin');
+const FileListPlugin = require('./plugins/FileListPlugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const styles = require('./rules/stylesRules');
 var stylesRules = styles.rules;
@@ -57,7 +57,7 @@ module.exports = {
     plugins:     [
         new FileListPlugin({options: true}),
         new StyleLintPlugin(),
-        //new webpack.HotModuleReplacementPlugin(), // enable HMR globally
+        new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -70,6 +70,7 @@ module.exports = {
             filename: `chunks-[hash].js`,
         }),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
+        // 
         styles.ExtractTextPlugin
     ],
     performance: {

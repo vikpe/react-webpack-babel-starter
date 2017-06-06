@@ -25,10 +25,11 @@
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "jshint",
     "lint:sass": "stylelint ./src/**/*.scss",
-    "start": "webpack-dev-server --config ./webpackConfigs/webpack.config.js --hot --inline",
+    "start": "npm run clean && tsc && npm run begin",
     "begin": "node .\\dist\\Server\\server.js",
     "test": "jest --watch --coverage",
-    "build": "webpack --config ./webpackConfigs/webpack.config.js && tsc ",
+    "build:dev": "webpack --config ./webpackConfigs/webpack.dev.config && tsc ",
+    "build:prod": "webpack --config ./webpackConfigs/webpack.prod.config && tsc ",
     "clean": "rimraf dist && rimraf public"
   },
   "devDependencies": {

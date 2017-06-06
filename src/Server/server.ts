@@ -12,7 +12,7 @@ var webpack = require("webpack");
 
 // https://www.npmjs.com/package/@types/node 
 // use this url to resolve require usage in node
-var webpackConfig = require("../../webpackConfigs/webpack.config");
+var webpackConfig = require("../../webpackConfigs/webpack.dev.config");
 
 var app = express();
 var compiler = webpack(webpackConfig);
