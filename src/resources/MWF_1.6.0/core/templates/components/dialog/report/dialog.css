@@ -1,0 +1,210 @@
+@charset "UTF-8";
+.c-dialog[aria-hidden="true"] {
+  display: none;
+}
+
+.c-dialog [role="dialog"] {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  background: #FFF;
+  border: 1px solid #0078D7;
+  margin: 0 auto;
+  max-height: 760px;
+  max-width: 546px;
+  min-width: 296px;
+  overflow: auto;
+  padding: 24px;
+  z-index: 900;
+}
+
+.c-dialog [role="dialog"]:focus {
+  outline: none;
+}
+
+.c-dialog [role="dialog"] h2 {
+  font-size: 20px;
+  line-height: normal;
+  padding: 0;
+}
+
+.c-dialog [role="dialog"] p {
+  padding-top: 8px;
+}
+
+.c-dialog [role="dialog"] .c-group {
+  display: block;
+}
+
+.c-dialog [role="dialog"] .c-group button {
+  float: right;
+  margin-top: 24px;
+  width: 50%;
+  max-width: none;
+  margin-right: 0;
+}
+
+.c-dialog [role="dialog"] .c-group button + button {
+  float: left;
+  width: calc(50% - 4px);
+}
+
+.c-dialog.f-flow [role="dialog"], .c-dialog.f-lightbox [role="dialog"] {
+  padding: 36px;
+}
+
+.c-dialog.f-flow [role="dialog"] > .c-glyph, .c-dialog.f-lightbox [role="dialog"] > .c-glyph {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  right: 0;
+  top: 0;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.c-dialog.f-flow [role="dialog"] > .c-glyph:hover, .c-dialog.f-lightbox [role="dialog"] > .c-glyph:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.c-dialog.f-flow [role="dialog"] > .c-glyph:focus, .c-dialog.f-lightbox [role="dialog"] > .c-glyph:focus {
+  outline: 1px dashed rgba(0, 0, 0, 0.8);
+}
+
+.c-dialog.f-flow [role="dialog"] > .c-glyph:active, .c-dialog.f-lightbox [role="dialog"] > .c-glyph:active {
+  color: #000;
+}
+
+.c-dialog.f-flow [role="dialog"] > .c-glyph:before, .c-dialog.f-lightbox [role="dialog"] > .c-glyph:before {
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.c-dialog.f-flow [role="dialog"] > .glyph-cancel:before, .c-dialog.f-lightbox [role="dialog"] > .glyph-cancel:before {
+  content: "";
+}
+
+.c-dialog.f-flow [role="dialog"] .c-group button, .c-dialog.f-lightbox [role="dialog"] .c-group button {
+  margin-top: 36px;
+}
+
+.c-dialog.f-lightbox [role="dialog"] {
+  background: #2F2F2F;
+  border-color: transparent;
+  max-width: 1066px;
+  overflow: visible;
+}
+
+.c-dialog.f-lightbox [role="dialog"] > .c-glyph {
+  top: -36px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.c-dialog.f-lightbox [role="dialog"] > .c-glyph:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.c-dialog.f-lightbox [role="dialog"] > .c-glyph:focus {
+  outline-color: rgba(255, 255, 255, 0.6);
+}
+
+.c-dialog.f-lightbox [role="dialog"] [role="document"] img {
+  width: 100%;
+}
+
+.c-dialog [role="presentation"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 900;
+}
+
+.c-dialog [role="presentation"]:focus {
+  outline: none;
+}
+
+.theme-light .c-dialog [role="dialog"], .theme-dark .theme-light .c-dialog [role="dialog"] {
+  background: #FFF;
+  border-color: #000;
+}
+
+.theme-light .c-dialog [role="dialog"] .c-glyph, .theme-dark .theme-light .c-dialog [role="dialog"] .c-glyph {
+  color: #000;
+}
+
+.theme-light .c-dialog [role="dialog"] .c-glyph:hover, .theme-dark .theme-light .c-dialog [role="dialog"] .c-glyph:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-light .c-dialog [role="dialog"] .c-glyph:focus, .theme-dark .theme-light .c-dialog [role="dialog"] .c-glyph:focus {
+  outline-color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .c-dialog [role="presentation"], .theme-dark .theme-light .c-dialog [role="presentation"] {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.theme-dark .c-dialog [role="dialog"], .theme-light .theme-dark .c-dialog [role="dialog"] {
+  background: #000;
+  border-color: #FFF;
+}
+
+.theme-dark .c-dialog [role="dialog"] .c-glyph, .theme-light .theme-dark .c-dialog [role="dialog"] .c-glyph {
+  color: #FFF;
+}
+
+.theme-dark .c-dialog [role="dialog"] .c-glyph:hover, .theme-light .theme-dark .c-dialog [role="dialog"] .c-glyph:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .c-dialog [role="dialog"] .c-glyph:focus, .theme-light .theme-dark .c-dialog [role="dialog"] .c-glyph:focus {
+  outline-color: rgba(255, 255, 255, 0.6);
+}
+
+@media only screen and (max-width: 539px) {
+  .c-dialog [role="dialog"] {
+    top: 0;
+    left: 0;
+    -ms-transform: none;
+        transform: none;
+    margin: 12px;
+    max-height: 342px;
+  }
+  .c-dialog [role="dialog"] .c-group {
+    display: block;
+    padding: 0;
+  }
+  .c-dialog [role="dialog"] .c-group button {
+    float: none;
+    margin-top: 24px;
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+  }
+  .c-dialog [role="dialog"] .c-group button + button {
+    float: none;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .c-dialog.f-lightbox [role="dialog"] {
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    max-height: none;
+    margin: 0;
+  }
+  .c-dialog.f-flow [role="dialog"] {
+    max-height: 100%;
+    bottom: 0;
+  }
+  .c-dialog.f-flow [role="dialog"] .c-group button + button {
+    margin-top: 12px;
+  }
+}

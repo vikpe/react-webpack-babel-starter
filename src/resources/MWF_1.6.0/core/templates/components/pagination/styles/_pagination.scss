@@ -1,0 +1,88 @@
+//  ==========================================================================
+//  Component: Pagination
+//  ==========================================================================
+
+#{$migration-pagination}
+.c-pagination {
+    display: flex;
+    flex: 0 0 auto;
+    padding: 0;
+    margin-top: 24px;
+    flex-direction: row;
+
+    li {
+        display: inline-block;
+        margin-#{$right}: 12px;
+
+// This must use a child selector to allow for the extra span used in bootstrap.
+        & > a,
+        & > span {
+            display: inline-block;
+            padding: 5px 11px;
+            outline: 1px solid transparent;
+            white-space: nowrap;
+
+            &:focus {
+                background-color: $color-foreground-10;
+                outline: 1px dashed $color-foreground;
+            }
+        }
+
+        & > a {
+
+            &:hover {
+                background-color: $color-foreground-10;
+                outline-color: $color-foreground-10;
+            }
+
+            &:active {
+                background-color: $color-foreground-30;
+                outline: 1px solid $color-foreground-30;
+            }
+        }
+
+        &#{$migration-active}
+        &.f-active {
+            & > a,
+            & > span {
+                outline-color: $color-accent;
+            }
+        }
+
+        &.f-hide {
+            display: none;
+        }
+
+        &:first-child .c-glyph:before {
+            content: set-direction-based-value($glyph-chevron-left, $glyph-chevron-right);
+            vertical-align: -2px;
+            margin-#{$right}: 8px;
+        }
+
+        &:last-child .c-glyph:after {
+            content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+            vertical-align: -2px;
+            margin-#{$left}: 8px;
+        }
+
+        @media only screen and (max-width: $vp1-max) {
+            &:first-child,
+            &:last-child {
+
+                a {
+                    position: relative;
+                    text-indent: -9999px;
+                }
+
+                .c-glyph {
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        top: 8px;
+                        left: 9999px;
+                    }
+                }
+            }
+        }
+    }
+}

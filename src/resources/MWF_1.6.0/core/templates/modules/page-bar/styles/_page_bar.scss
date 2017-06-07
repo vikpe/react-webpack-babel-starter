@@ -1,0 +1,164 @@
+$page-bar-height: 60px;
+
+.m-page-bar {
+    position: relative;
+    min-width: inherit;
+    padding-top: 0;
+    background: $color-brand-neutral-00;
+    border-bottom: 1px solid $color-brand-neutral-10;
+
+    &.f-hidden {
+        display: none;
+    }
+
+    &.f-sticky {
+        z-index: map-get($z-index, nav);
+        visibility: hidden;
+        position: fixed;
+        top: -$page-bar-height;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+        &.f-show {
+            visibility: visible;
+            top: 0;
+        }
+    }
+
+    > div {
+        height: $page-bar-height;
+        width: 30%;
+        float: $right;
+
+        &:before {
+            content: ' ';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        &:first-child {
+            width: 70%;
+            float: $left;
+        }
+
+        [class^="c-heading-"] {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-top: 0;
+            margin-#{$right}: 24px;
+
+            .c-hyperlink {
+                float: none;
+            }
+        }
+
+        .context-menu {
+            [class^="c-heading-"] {
+                float: $left;
+                padding-top: 5px;
+
+                + .c-list li:first-child {
+                    margin-#{$left}: 24px;
+                }
+            }
+
+            .c-list {
+                margin: 0;
+                white-space: nowrap;
+
+                li {
+                    display: inline-block;
+                    margin: 0 24px;
+
+                    &.f-active .c-hyperlink {
+                        color: $color-brand-neutral-100;
+                    }
+
+                    .c-hyperlink {
+                        color: $color-brand-neutral-65;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        > div {
+            width: 95%;
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+
+            > div {
+                float: $left;
+                width: inherit;
+
+                + div {
+                    display: block;
+                    width: 100%;
+                }
+
+                > .c-hyperlink {
+                    display: block;
+                    margin: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        > .c-price {
+            width: initial;
+            float: $right;
+            padding: 20px 0;
+            margin: 0 12px;
+        }
+
+        > .c-call-to-action {
+            float: $right;
+            margin: 10px 0;
+            margin-#{$left}: 12px;
+            max-width: 90%;
+        }
+    }
+
+    @media only screen and (max-width: $vp3-max) {
+        > div {
+            width: 40%;
+
+            &:first-child {
+                width: 60%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        width: 100%;
+
+        > div {
+            .context-menu {
+                [class^="c-heading-"] {
+                    padding-top: 8px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        > div {
+            width: 50%;
+
+            &:first-child {
+                width: 50%;
+            }
+
+            > .c-price {
+                display: none;
+            }
+        }
+    }
+}

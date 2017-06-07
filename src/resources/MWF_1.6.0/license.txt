@@ -1,0 +1,11 @@
+Copyright 2016 Microsoft Corporation | This software is based on or incorporates
+material from the files listed below (collectively, “Third Party Code”). Microsoft
+is not the original author of the Third Party Code. The original copyright notice
+and the license under which Microsoft received Third Party Code are set forth below
+together with the full text of such license. Such notices and license are provided
+solely for your information. Microsoft, not the third party, licenses this Third
+Party Code to you under the terms in which you received the Microsoft software or the
+services, unless Microsoft clearly states that such Microsoft terms do NOT apply
+for a particular Third Party Code. Unless applicable law gives you more rights,
+Microsoft reserves all other rights not expressly granted under such agreement(s),
+whether by implication, estoppel or otherwise.

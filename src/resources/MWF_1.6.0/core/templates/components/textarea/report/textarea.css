@@ -1,0 +1,55 @@
+.c-textarea label.c-label {
+  margin-top: 16px;
+  padding-bottom: 6px;
+}
+
+.c-textarea textarea {
+  font-size: 15px;
+  line-height: 20px;
+  min-width: 276px;
+  min-height: 36px;
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: 0;
+  padding: 7px 12px;
+  color: #000;
+}
+
+.c-textarea textarea:active, .c-textarea textarea:focus {
+  border-color: #0078D7;
+}
+
+.c-textarea textarea[disabled] {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.c-textarea textarea[readonly] {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: #e6e6e6;
+}
+
+.c-textarea textarea.f-resize {
+  resize: both;
+}
+
+.c-textarea textarea.f-no-resize {
+  resize: none;
+}
+
+.c-textarea textarea.f-scroll {
+  overflow-y: scroll;
+}
+
+.theme-light .c-textarea textarea, .theme-dark .theme-light .c-textarea textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #000;
+  color: #000;
+}
+
+.theme-dark .c-textarea textarea, .theme-light .theme-dark .c-textarea textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: #FFF;
+  color: #000;
+}

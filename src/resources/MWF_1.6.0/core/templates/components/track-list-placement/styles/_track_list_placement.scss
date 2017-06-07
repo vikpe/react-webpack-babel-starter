@@ -1,0 +1,94 @@
+.c-track-list-placement {
+    margin-#{$right}: 24px;
+    margin-top: 12px;
+
+    > a {
+        @include clearfix();
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        //Todo: Design didn't provide req's for this so this is temporary.
+        &:focus {
+            outline: 1px dashed $color-foreground-60;
+        }
+
+        &:hover {
+            .c-heading,
+            .c-subheading {
+                text-decoration: underline;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            > picture {
+                img {
+                    outline: 1px solid $color-foreground-60;
+                }
+            }
+        }
+    }
+
+    picture {
+        &,
+        img {
+            display: block;
+        }
+    }
+
+    .c-badge {
+        margin-top: 12px;
+        margin-bottom: 4px;
+
+        & + .c-heading {
+            padding-top: 0;
+        }
+    }
+
+    .c-price {
+        padding: 5px 0 0 5px;
+        line-height: 20px;
+        float: right;
+    }
+
+    .c-heading {
+        @include apply-type(t7, false, true);
+        @include apply-maxlines(1, t7, true);
+        width: 200px;
+        float: left;
+        padding: 8px 0 0;
+        font-weight: $font-weight-normal;
+        text-overflow: ellipsis;
+    }
+
+    .c-explicit {
+        vertical-align: text-bottom;
+    }
+
+    .f-information {
+        @include apply-type-component(p3);
+        @include apply-maxlines(3, p3, true);
+        width: 200px;
+        color: $color-foreground-60;
+        float: left;
+        padding: 8px 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &.f-size-small {
+        width: 358px;
+
+        .c-badge {
+            // Badges should never show on small viewports
+            display: none;
+        }
+
+        picture {
+            float: $left;
+            margin-#{$right}: 12px;
+        }
+    }
+}

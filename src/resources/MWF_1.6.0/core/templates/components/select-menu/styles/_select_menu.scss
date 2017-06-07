@@ -1,0 +1,140 @@
+//  ==========================================================================
+//  Component: Select menu
+//  ==========================================================================
+
+#{$migration-select-menu}
+.c-select-menu {
+    position: relative;
+    display: inline-block;
+
+    &.f-border {
+        [aria-expanded] {
+            margin-#{$left}: 8px;
+            box-sizing: border-box;
+            height: 100%;
+            border: 1px solid $color-foreground-60;
+
+            &:hover {
+                border-color: $color-foreground-80;
+            }
+
+            &:active,
+            &:focus {
+                border-color: $color-accent;
+            }
+        }
+    }
+
+    .c-menu {
+        position: absolute;
+        top: 100%; //make menu extend from the bottom of the parent
+    }
+
+    @if $migration-select-menu-menu == "" {
+        // Staging does not translate $migration variables
+        [aria-expanded="false"] + .c-menu[aria-hidden="true"] {
+            display: none;
+        }
+    } @else {
+        [aria-expanded="false"] + #{$migration-select-menu-menu},
+        [aria-expanded="false"] + .c-menu[aria-hidden="true"] {
+            display: none;
+        }
+    }
+
+    & > button {
+        border: 0;
+        background: transparent;
+    }
+
+    & > a,
+    & > button {
+        display: inline-block;
+        color: $color-foreground-60;
+        padding: 8px;
+        padding-#{$right}: 24px;
+        transform: translateX(set-direction-based-value(-8px, 8px));
+
+        &:after {
+            @include apply-glyph($glyph-chevron-down);
+            position: absolute;
+            font-size: 9px;
+            color: $color-foreground;
+            font-weight: $font-weight-bold;
+            #{$right}: 8px;
+            padding-top: 7px;
+        }
+
+        &:hover {
+            color: $color-foreground-80;
+        }
+
+        &:focus {
+            border-color: $color-accent;
+            outline: 1px dashed $color-foreground;
+
+            &:hover {
+                outline: none;
+            }
+        }
+    }
+
+    @if $migration-select-menu-menu == "" {
+        .no-js &:hover .c-menu,
+        .js & > [aria-expanded="true"] + .c-menu[aria-hidden="false"],
+        .js & > span[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+            display: block;
+            animation: fadeIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    } @else {
+        .no-js &:hover #{$migration-select-menu-menu}
+        .no-js &:hover .c-menu,
+        .js & > [aria-expanded="true"] + #{$migration-select-menu-menu}
+        .js & > [aria-expanded="true"] + .c-menu[aria-hidden="false"],
+        .js & > span[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+            display: block;
+            animation: fadeIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    }
+
+    #{$theme-dark} {
+        & > a,
+        & > button {
+            color: $color-tint-60;
+
+            &:hover {
+                color: $color-tint-80;
+            }
+
+            &:after {
+                color: $color-tint;
+            }
+
+            &:focus {
+                outline-color: $color-tint;
+            }
+        }
+
+        &.f-border {
+            & > a,
+            & > button {
+                color: $color-shade-60;
+                background: $color-tint-60;
+                border-color: $color-tint;
+
+                &:after {
+                    color: $color-shade;
+                }
+
+                &:hover {
+                    color: $color-shade-80;
+                    border-color: $color-tint;
+                }
+
+                &:focus {
+                    border-color: $color-tint;
+                }
+            }
+        }
+    }
+}

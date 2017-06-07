@@ -1,0 +1,45 @@
+.m-search-results {
+    > div:last-child {
+        padding: 24px 0;
+    }
+
+    .c-hyperlink {
+        display: block;
+    }
+
+    .f-result-item,
+    .f-result-item-details {
+        padding-top: 24px;
+    }
+
+    .f-result-item-details {
+        padding-left: 24px;
+    }
+
+    .f-hyperlink {
+        font-weight: $font-weight-normal;
+        line-height: 20px;
+    }
+
+    h3.f-hyperlink {
+        @include apply-type(t5, true, true);
+        padding-top: 0;
+        font-weight: $font-weight-semilight;
+    }
+
+    span.f-hyperlink .c-hyperlink {
+        @include apply-maxlines(1, t5, true, true);
+        color: $color-brand-green;
+    }
+
+    p {
+        color: $color-foreground-60;
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: $vp1-max) {
+    .m-search-results .f-result-item-details {
+        padding: 0;
+    }
+}

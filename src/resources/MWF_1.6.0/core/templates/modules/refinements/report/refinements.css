@@ -1,0 +1,17 @@
+.m-refinements > div[data-grid="col-3"] {
+  margin-top: 35px;
+}
+
+.m-refinements > div + div {
+  margin-top: 36px;
+  padding-left: 75px;
+}
+
+.m-refinements > div + div > h1 {
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.m-refinements > div + div section {
+  display: inline-block;
+}

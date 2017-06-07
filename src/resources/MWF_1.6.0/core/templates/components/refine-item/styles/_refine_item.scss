@@ -1,0 +1,71 @@
+//  ==========================================================================
+//  Component: Refine Item
+//  ==========================================================================
+
+%c-refine-item {
+    position: relative;
+    display: block;
+    padding: 12px;
+    border: 0;
+    width: 100%;
+    background: transparent;
+    color: $color-foreground-60;
+
+    span {
+        text-align: $left;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &:after {
+        @include apply-glyph($glyph-cancel);
+        position: absolute;
+        #{$right}: 0;
+        top: 16px;
+        display: none;
+        width: 44px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    &:focus {
+        outline: 1px dashed $color-foreground;
+    }
+
+    &:hover {
+        background: $color-foreground-10;
+    }
+
+    &:active {
+        background: $color-foreground-30;
+    }
+
+    &[aria-selected="true"],
+    &[aria-checked="true"] {
+        padding-#{$right}: 44px;
+        background: $color-foreground-10;
+        font-weight: $font-weight-semibold;
+        color: $color-foreground;
+
+        &:hover {
+            background: $color-foreground-20;
+        }
+
+        &:active {
+            background: $color-foreground-30;
+        }
+
+        &:after {
+            display: inline-block;
+        }
+    }
+}
+
+button.c-refine-item {
+    @extend %c-refine-item;
+}
+
+a.c-refine-item {
+    @extend %c-refine-item;
+}

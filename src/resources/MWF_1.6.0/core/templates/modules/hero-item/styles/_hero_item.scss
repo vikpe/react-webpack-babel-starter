@@ -1,0 +1,704 @@
+//  ==========================================================================
+//  Notes:
+//     - Cal() and Transform are used together because they have very similar
+//       browser support. If the browser does not support these, it will fall
+//       back to the default position set.
+//  ==========================================================================
+
+/*  .c-hero depricated as of v.1.6, use .m-hero
+    TODO: Remove .c-hero references as of v.2.0 */
+.m-hero-item,
+.c-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 0 5%; // Match grid
+
+    @if $ltie8 {
+        height: 500px;
+    } @else {
+        height: 600px;
+    }
+
+    picture {
+        display: block;
+    }
+
+    & > picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: map-get($z-index, default);
+        overflow: hidden;
+
+        img {
+            position: absolute;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: map-get($z-index, neutral);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    & > div {
+        width: 100%;
+        height: 100%;
+        max-width: $max-content-width;
+        position: relative;
+        z-index: map-get($z-index, neutral);
+        margin: 0 auto;
+
+        // Hero content container
+        & > div {
+            position: absolute;
+            z-index: map-get($z-index, neutral);
+            @if $ltie8 {
+                width: 440px;
+            } @else {
+                width: 520px;
+            }
+
+            // Hero CTA container; keying off of div as to not introduce breaking change
+            & > div {
+                margin-top: 24px;
+            }
+        }
+    }
+
+
+    //  ========================================================================
+    //  Type Instances
+    //  ========================================================================
+    .c-heading {
+        @include apply-type-component(h3);
+        @include apply-maxlines(2, h3, true);
+    }
+
+    .c-subheading {
+        @include apply-type-component(sh3);
+        @include apply-maxlines(2, sh3, true);
+    }
+
+    .c-paragraph {
+        @include apply-type-component(p4);
+        @include apply-maxlines(4, p4, true);
+    }
+
+    .c-product-title,
+    .c-product-subtitle {
+        @include apply-type(t4, false, false);
+        @include apply-maxlines(2, t4, true);
+        line-height: 32px;
+        max-height: 64px;
+        padding: 0;
+    }
+
+    .c-product-title {
+        font-weight: $font-weight-bold;
+    }
+
+    .c-product-subtitle {
+        font-weight: $font-weight-light;
+    }
+
+    .c-price {
+        @include apply-type(t5, false, true);
+        display: inline-block;
+    }
+
+    .c-rating {
+        margin-top: 12px;
+    }
+
+    .c-group {
+        display: block;
+        overflow: visible;
+
+        > .c-call-to-action {
+            margin-#{$right}: 24px;
+
+            + .c-call-to-action {
+                @include c-call-to-action-lightweight();
+                padding: set-direction-based-value(10px 43px 7px 25px, 10px 25px 7px 43px);
+            }
+        }
+    }
+
+    &.theme-dark {
+        .c-group {
+            > .c-call-to-action {
+                + .c-call-to-action {
+                    color: $color-tint;
+                }
+            }
+        }
+    }
+
+    &.theme-light {
+        .c-group {
+            > .c-call-to-action {
+                + .c-call-to-action {
+                    color: $color-shade;
+                }
+            }
+        }
+    }
+
+    &.theme-light,
+    &.theme-dark {
+        .c-group {
+            &.f-accent {
+                > .c-call-to-action {
+                    margin-#{$right}: 24px;
+
+                    + .c-call-to-action {
+                        color: $color-brand-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .c-logo {
+        margin-top: 12px;
+    }
+
+    &.context-app {
+        .c-heading {
+            @include apply-type-component(h4);
+            @include apply-maxlines(1, h4);
+        }
+
+        .c-subheading {
+            @include apply-type-component(sh4);
+            @include apply-maxlines(2, sh4);
+        }
+    }
+
+    &.context-article {
+        .c-heading {
+            @include apply-type-component(h4);
+            @include apply-maxlines(2, h4);
+        }
+    }
+
+    &.context-game {
+        .c-rating {
+            margin-top: 60px;
+        }
+    }
+
+    &.context-music-album {
+        .c-product-title {
+            margin-top: 12px;
+        }
+    }
+
+    &.context-device,
+    &.context-accessory,
+    &.context-article,
+    &.context-game {
+        & > div > div > div {
+            margin-top: 12px;
+        }
+    }
+
+    //  ========================================================================
+    //  Layout: x-axis
+    //  ========================================================================
+    &.f-x-left {
+        & > div > div {
+            left: 0;
+        }
+
+        & > picture {
+            img {
+                right: 0;
+            }
+        }
+    }
+
+    &.f-x-center {
+        text-align: center;
+
+        .c-group {
+            justify-content: center;
+        }
+
+        & > div > div {
+            // scss-lint:disable DuplicateProperty
+            left: 30%; // Try to get close to centered for older browsers
+            left: calc(50%);
+            // scss-lint:enable DuplicateProperty
+            transform: translateX(-50%);
+
+            .c-image {
+                margin: 0 auto;
+            }
+        }
+
+        & > picture {
+            img {
+                left: calc(50%);
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &.f-x-right {
+        & > div > div {
+            right: 0;
+        }
+
+        & > picture {
+            img {
+                left: 0;
+            }
+        }
+    }
+
+    //  ========================================================================
+    //  Layout: y-axis
+    //  ========================================================================
+    &.f-y-top {
+        & > div > div {
+            top: 60px; // TODO update this because we've removed top-margin on everything
+        }
+
+        & > picture {
+            img {
+                top: 0;
+            }
+        }
+    }
+
+    &.f-y-center {
+        .c-heading {
+            &:first-child {
+                // Remove top padding if heading is the first child because
+                // otherwise the content does not look visually centered
+                padding-top: 0;
+            }
+        }
+
+        & > div > div {
+            // scss-lint:disable DuplicateProperty
+            top: 120px;
+            top: calc(50%);
+            // scss-lint:enable DuplicateProperty
+            transform: translateY(-50%);
+        }
+
+        & > picture {
+            img {
+                top: calc(50%);
+                transform: translateY(-50%);
+            }
+        }
+        //  ========================================================================
+        //  Layout: x and y centered. Required because transform syntax changes
+        //  ========================================================================
+        &.f-x-center {
+            & > div > div {
+                transform: translate(-50%, -50%);
+            }
+
+            & > picture {
+                img {
+                    top: calc(50%);
+                    left: calc(50%);
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+    &.f-y-bottom {
+        & > div > div {
+            bottom: 60px;
+        }
+
+        & >  picture {
+            img {
+                bottom: 0;
+            }
+        }
+    }
+
+    //  ========================================================================
+    //  Image masks
+    //  ========================================================================
+    &[class*="f-mask"] {
+        &.theme-light {
+            > picture:after {
+                background: $color-tint;
+            }
+
+            &.f-x-left {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top left, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center left, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom left, $color-tint, $color-transparent 80%);
+                    }
+                }
+            }
+
+            &.f-x-center {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top center, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center center, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom center, $color-tint, $color-transparent 80%);
+                    }
+                }
+            }
+
+            &.f-x-right {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top right, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center right, $color-tint, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom right, $color-tint, $color-transparent 80%);
+                    }
+                }
+            }
+        }
+
+        &.theme-dark {
+            > picture:after {
+                background: $color-shade;
+            }
+
+            &.f-x-left {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top left, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center left, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom left, $color-shade, $color-transparent 80%);
+                    }
+                }
+            }
+
+            &.f-x-center {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top center, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center center, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom center, $color-shade, $color-transparent 80%);
+                    }
+                }
+            }
+
+            &.f-x-right {
+                &.f-y-top {
+                    > picture:after {
+                        background: radial-gradient(circle at top right, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-center {
+                    > picture:after {
+                        background: radial-gradient(circle at center right, $color-shade, $color-transparent 80%);
+                    }
+                }
+
+                &.f-y-bottom {
+                    > picture:after {
+                        background: radial-gradient(circle at bottom right, $color-shade, $color-transparent 80%);
+                    }
+                }
+            }
+        }
+    }
+
+    &.f-mask-20 {
+        > picture:after {
+            @if $ltie8 {
+                // scss-lint:disable VendorPrefix
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+                // scss-lint:enable VendorPrefix
+            }
+
+            opacity: 0.2;
+        }
+    }
+
+    &.f-mask-40 {
+        > picture:after {
+            @if $ltie8 {
+                // scss-lint:disable VendorPrefix
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+                // scss-lint:enable VendorPrefix
+            }
+
+            opacity: 0.4;
+        }
+    }
+
+    &.f-mask-60 {
+        > picture:after {
+            @if $ltie8 {
+                // scss-lint:disable VendorPrefix
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+                // scss-lint:enable VendorPrefix
+            }
+
+            opacity: 0.6;
+        }
+    }
+
+    &.f-mask-80 {
+        > picture:after {
+            @if $ltie8 {
+                // scss-lint:disable VendorPrefix
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+                // scss-lint:enable VendorPrefix
+            }
+
+            opacity: 0.8;
+        }
+    }
+
+    &.f-mask-100 {
+        > picture:after {
+            @if $ltie8 {
+                // We can't ever be fully opaque in IE8 because IE8 applies
+                // a mask to the whole image (doesn't support gradient overlay).
+                // To prevent totally obsucring the image, set opacity to 80
+                // scss-lint:disable VendorPrefix
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+                // scss-lint:enable VendorPrefix
+            }
+
+            opacity: 1;
+        }
+    }
+    //  ========================================================================
+    //  Responsive layout
+    //  ========================================================================
+
+    .c-video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        left: 0;
+
+        & > h1 {
+            display: none;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            z-index: map-get($z-index, buried);
+            background-size: cover;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    @media only screen and (max-width: $vp3-max) {
+        height: 500px;
+
+        // Context container
+        & > div > div {
+            width: 440px;
+        }
+
+        .c-heading {
+            @include apply-type-component(h4);
+            @include apply-maxlines(2, h4);
+            padding-top: 0;
+        }
+
+        .c-subheading {
+            @include apply-type-component(sh4);
+            @include apply-maxlines(3, sh4);
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        height: auto;
+        padding: 0;
+        text-align: center;
+
+        &[class*="f-x"][class*="f-y"] {
+            > picture {
+                img {
+                    top: 0;
+                    // scss-lint:disable DuplicateProperty
+                    left: 0;
+                    left: calc(50%);
+                    // scss-lint:enable DuplicateProperty
+                    transform: translateX(-50%);
+                }
+
+                &:after {
+                    // Hide overlay
+                    display: none;
+                }
+            }
+
+            > div > div {
+                position: relative;
+                width: auto;
+                left: 0;
+                // scss-lint:disable DuplicateProperty
+                top: 0;
+                top: calc(50%);
+                // scss-lint:enable DuplicateProperty
+                transform: translateY(-50%);
+            }
+        }
+
+        > picture {
+            position: relative;
+            height: 400px;
+        }
+
+        > div {
+            padding: 12px;
+            height: 280px;
+
+            picture {
+                display: none;
+            }
+        }
+
+        .c-paragraph {
+            @include apply-maxlines(2, p4);
+        }
+
+        .c-heading,
+        &.context-article .c-heading {
+            @include apply-type-component(h5);
+            @include apply-maxlines(5, h5);
+        }
+
+        .c-heading,
+        &.context-app .c-heading,
+        &.context-article .c-heading {
+            padding-top: 0;
+        }
+
+        & > div > div > div {
+            justify-content: center;
+        }
+
+        .c-group {
+            > .c-call-to-action {
+                margin: 0;
+
+                + .c-call-to-action {
+                    margin: 0;
+                }
+            }
+        }
+
+        &.theme-light,
+        &.theme-dark {
+            .c-group {
+                &.f-accent {
+                    > .c-call-to-action {
+                        margin: 0;
+
+                        + .c-call-to-action {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .c-subheading {
+            display: none;
+        }
+
+        &.context-game {
+            .c-rating {
+                margin-top: 12px;
+            }
+        }
+
+        &.context-music-album {
+            .c-product-title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        > picture {
+            height: 300px;
+        }
+
+        .c-price,
+        .c-rating,
+        .c-paragraph {
+            display: none;
+        }
+    }
+}

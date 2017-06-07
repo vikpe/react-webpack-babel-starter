@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.c-flipper {
+  display: inline-block;
+  width: 24px;
+  height: 48px;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "MWF-MDL2";
+  /*
+    * Use .f-previous and .f-next
+    * .f-left and f-left deprecated v1.3.0
+    */
+}
+
+.c-flipper:before {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.c-flipper.f-left:before, .c-flipper.f-previous:before {
+  content: "";
+}
+
+.c-flipper.f-right:before, .c-flipper.f-next:before {
+  content: "";
+}
+
+.c-flipper:focus {
+  outline: 1px dashed #000;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.c-flipper:hover {
+  background: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.c-flipper:active {
+  background: rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.theme-light .c-flipper, .theme-dark .theme-light .c-flipper {
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .c-flipper:focus, .theme-dark .theme-light .c-flipper:focus {
+  background: rgba(255, 255, 255, 0.8);
+  outline-color: #000;
+}
+
+.theme-light .c-flipper:hover, .theme-dark .theme-light .c-flipper:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-light .c-flipper:active, .theme-dark .theme-light .c-flipper:active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+}
+
+.theme-dark .c-flipper, .theme-light .theme-dark .c-flipper {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .c-flipper:focus, .theme-light .theme-dark .c-flipper:focus {
+  background: rgba(0, 0, 0, 0.8);
+  outline-color: #FFF;
+}
+
+.theme-dark .c-flipper:hover, .theme-light .theme-dark .c-flipper:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .c-flipper:active, .theme-light .theme-dark .c-flipper:active {
+  background: rgba(0, 0, 0, 0.2);
+  color: #FFF;
+}

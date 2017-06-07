@@ -1,0 +1,32 @@
+
+.c-menu {
+  position: relative;
+  z-index: 500;
+  width: 296px;
+  min-width: 64px;
+  max-width: 368px;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 0;
+  background-clip: padding-box;
+}
+
+
+.c-menu .c-menu-item [aria-checked="true"] {
+  background: #0078D7;
+  color: #FFF;
+}
+
+.theme-dark
+.c-menu, .theme-light .theme-dark
+.c-menu {
+  color: #000;
+}
+
+.theme-light
+.c-menu, .theme-dark .theme-light
+.c-menu {
+  color: #000;
+}

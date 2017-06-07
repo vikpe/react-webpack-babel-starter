@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/** .c-alert deprecated v.1.6.0 - use m-alert **/
+/** TODO: Remove c-alert in v.2.0 **/
+.c-alert[role="alert"],
+.m-alert[role="alert"] {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-top: 24px;
+  position: relative;
+}
+
+.c-alert[role="alert"].f-fixed,
+.m-alert[role="alert"].f-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 700;
+}
+
+.c-alert[role="alert"].f-information,
+.m-alert[role="alert"].f-information {
+  background: #f2f2f2;
+  color: #231F20;
+}
+
+.c-alert[role="alert"].f-warning,
+.m-alert[role="alert"].f-warning {
+  background: #d02e00;
+  color: #FFF;
+}
+
+.c-alert[role="alert"].f-warning .c-action-trigger,
+.m-alert[role="alert"].f-warning .c-action-trigger {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.c-alert[role="alert"].f-error,
+.m-alert[role="alert"].f-error {
+  background: #fff999;
+  color: #231F20;
+}
+
+.c-alert[role="alert"] .c-glyph,
+.m-alert[role="alert"] .c-glyph {
+  float: left;
+  top: 0;
+  left: 0;
+  margin-left: -8px;
+  margin-right: 12px;
+}
+
+.c-alert[role="alert"] .c-glyph:before,
+.m-alert[role="alert"] .c-glyph:before {
+  font-size: 24px;
+  margin: 0;
+}
+
+.c-alert[role="alert"] .c-glyph ~ p.c-paragraph,
+.m-alert[role="alert"] .c-glyph ~ p.c-paragraph {
+  margin-left: 28px;
+}
+
+.c-alert[role="alert"] .c-glyph.glyph-warning:before,
+.m-alert[role="alert"] .c-glyph.glyph-warning:before {
+  content: "";
+}
+
+.c-alert[role="alert"] .c-glyph.glyph-info:before,
+.m-alert[role="alert"] .c-glyph.glyph-info:before {
+  content: "";
+}
+
+.c-alert[role="alert"] .c-glyph.glyph-incident-triangle:before,
+.m-alert[role="alert"] .c-glyph.glyph-incident-triangle:before {
+  content: "";
+}
+
+.c-alert[role="alert"] > .c-glyph.c-action-trigger.glyph-cancel,
+.m-alert[role="alert"] > .c-glyph.c-action-trigger.glyph-cancel {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  right: 1px;
+  left: auto;
+  top: 1px;
+  margin: 0;
+  margin-right: 10px;
+  padding: 14px 6px;
+  z-index: 1;
+  float: right;
+  color: currentColor;
+}
+
+.c-alert[role="alert"] > .c-glyph.c-action-trigger.glyph-cancel:before,
+.m-alert[role="alert"] > .c-glyph.c-action-trigger.glyph-cancel:before {
+  font-size: 15px;
+  content: "";
+}
+
+.c-alert[role="alert"] > div,
+.m-alert[role="alert"] > div {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 16px 48px 16px 20px;
+  float: inherit;
+}
+
+.c-alert[role="alert"] > div > .c-heading,
+.m-alert[role="alert"] > div > .c-heading {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 37px 0 3px;
+  font-weight: 200;
+  padding: 2px 0 8px;
+}
+
+.c-alert[role="alert"] > div > .c-paragraph,
+.m-alert[role="alert"] > div > .c-paragraph {
+  font-size: 13px;
+  padding-top: 0;
+  margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+  .c-alert[role="alert"] > div > .c-paragraph,
+  .m-alert[role="alert"] > div > .c-paragraph {
+    font-size: 12px;
+  }
+}
+
+.c-alert[role="alert"] > div > .c-paragraph .c-group,
+.m-alert[role="alert"] > div > .c-paragraph .c-group {
+  overflow: visible;
+  display: block;
+}
+
+.c-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger,
+.m-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger {
+  font-size: 13px;
+  line-height: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .c-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger,
+  .m-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .c-alert[role="alert"] > div > .c-paragraph .c-group,
+  .m-alert[role="alert"] > div > .c-paragraph .c-group {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .c-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger,
+  .m-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger {
+    margin-top: 0;
+    vertical-align: baseline;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .c-alert[role="alert"] > div > .c-paragraph .c-group,
+  .m-alert[role="alert"] > div > .c-paragraph .c-group {
+    display: inline;
+    padding-left: 15px;
+    float: right;
+  }
+  .c-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger,
+  .m-alert[role="alert"] > div > .c-paragraph .c-group .c-action-trigger {
+    margin: -7px 0 0;
+  }
+}

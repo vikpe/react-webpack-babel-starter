@@ -1,0 +1,47 @@
+
+input.c-text-field[type="text"] {
+  display: block;
+  width: 276px;
+  height: 36px;
+  margin-top: 20px;
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: 0;
+  background: #FFF;
+}
+
+
+input.c-text-field[type="text"].f-small {
+  width: 88px;
+}
+
+
+input.c-text-field[type="text"].f-flex {
+  width: 100%;
+  min-width: 88px;
+  max-width: 400px;
+}
+
+
+input.c-text-field[type="text"]:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+
+input.c-text-field[type="text"]:active,
+input.c-text-field[type="text"]:focus {
+  border-color: #0078D7;
+}
+
+
+input.c-text-field[type="text"][disabled] {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+input.c-text-field[type="text"][readonly] {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background: #e6e6e6;
+}

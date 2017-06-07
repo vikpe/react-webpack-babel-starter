@@ -1,0 +1,28 @@
+TITLE:
+Microsoft.com Web Framework Components
+
+SYNTAX:
+The format is the letter c followed by a dash and the category of the component.
+For example, c-commanding- is used for components that enable user action such as a button.
+
+SCOPE:
+All components have a default behavior (JavaScript, optional) and style (CSS) based on the theme. This style and behavior are applied regardless of where in the interface the component is located.
+
+Components can also be extended and overwritten with styles scoped to contexts. A context is a contextual shift in the design which require progressive style and/or behavior change for one or more of the controls it contains.
+
+All components should have a base style that applies without a theme that gives a baseline behavior.  Base styles should have the minimum amount of style possible to apply the presentation of a component. This helps when changing themes because the UI should still "work" even when a theme is removed.
+
+SEMANTICS:
+Components represent semantic content types such as buttons, product information, titles, etc. All content and HTML elements should be wrapped in an semantic component that describes its intention. Each component is organized into a category to further describe its intent. For example, a component "name" could belong to a category of person, place or thing.
+
+Specific components are not prescribed but, once used, should be documented and become part of the contract.
+
+HTML CONTRACT:
+The HTML part of any component should be as simple, consistent and generic as possible. The HTML should be documented to create a reference. To use a component, simply use the proper HTML. Even though modifications to a component HTML may be possible without breaking damaging the style, this should not be done because it may cause unexpected behaviors in the long run.
+
+DEFAULTS:
+Every component should always have a default style and behavior that is applied no matter where in the interface that component is used. The default can be overridden when necessary using contexts or when inside other components.
+
+REFERENCE:
+https://microsoft.sharepoint.com/teams/osg_unistore/sf/_layouts/OneNote.aspx?id=%2Fteams%2Fosg_unistore%2Fsf%2FTools%20SFT%2FSMERF%2FOneUI%20RedTiger&wd=target%28OneUI%203.0%2FDesign%20Integration%2FGuidance.one%7C322DC330-C56C-406A-BDFB-FF9ABE5AA16F%2FComponent%20c-%7CC2F7C1FA-DE90-4112-A934-BBDCD06B7436%2F%29
+onenote:https://microsoft.sharepoint.com/teams/osg_unistore/sf/Tools%20SFT/SMERF/OneUI%20RedTiger/OneUI%203.0/Design%20Integration/Guidance.one#Component%20c-&section-id={322DC330-C56C-406A-BDFB-FF9ABE5AA16F}&page-id={C2F7C1FA-DE90-4112-A934-BBDCD06B7436}&end

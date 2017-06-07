@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Alert module",
+    "description": "An MWF alert module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/alert.json",
+    "supportedPartners": [],
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "string",
+            "properties": {
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "cancel-action-trigger"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "information-message": {
+                    "type": "string"
+                },
+                "warning-message": {
+                    "type": "string"
+                },
+                "error-message": {
+                    "type": "string"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "cancel-action-trigger": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/action-trigger.json"
+                },
+                "action-triggers": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/action-trigger.json"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "description"
+            ]
+        }
+    }
+}

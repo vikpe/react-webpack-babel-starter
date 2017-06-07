@@ -1,0 +1,25 @@
+//  ==========================================================================
+//  Component: Image
+//  ==========================================================================
+
+%c-image {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+#{$migration-image}
+img.c-image {
+    @extend %c-image;
+
+    &.f-round {
+        border-radius: 50%;
+    }
+}
+
+picture.c-image {
+    img {
+        @extend %c-image;
+    }
+}

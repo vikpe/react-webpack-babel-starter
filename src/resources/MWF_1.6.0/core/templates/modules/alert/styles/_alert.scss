@@ -1,0 +1,164 @@
+// ==========================================================================
+// Module: Alert
+// ==========================================================================
+
+$color-yellow:                      #FFF100;
+$color-alert-warning:               #D02E00;
+$color-alert-copy:                  #231F20;
+$color-alert-information:           flatten-overlay($color-tint, $color-shade, 05);
+$color-alert-error:                 flatten-overlay($color-tint, $color-yellow, 40);
+$color-alert-warning-background:    flatten-overlay($color-tint, $color-alert-warning, 100);
+
+/** .c-alert deprecated v.1.6.0 - use m-alert **/
+/** TODO: Remove c-alert in v.2.0 **/
+.c-alert[role="alert"],
+.m-alert[role="alert"] {
+    @include left-right-padding($add-0);
+    padding-top: 0;
+    margin-top: 24px;
+    position: relative;
+
+
+    &.f-fixed {
+        position: fixed;
+        #{$left}: 0;
+        #{$right}: 0;
+        bottom: 0;
+        z-index: map-get($z-index, flyout);
+    }
+
+    &.f-information {
+        background: $color-alert-information;
+        color: $color-alert-copy;
+    }
+
+    &.f-warning {
+        background: $color-alert-warning-background;
+        color: $color-tint;
+
+        .c-action-trigger {
+            color: $color-tint;
+            text-decoration: underline;
+        }
+    }
+
+    &.f-error {
+        background: $color-alert-error;
+        color: $color-alert-copy;
+    }
+
+    & .c-glyph {
+        float: $left;
+        top: 0;
+        #{$left}: 0;
+        margin-#{$left}: -8px;
+        margin-#{$right}: 12px;
+
+        &:before {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        & ~ p.c-paragraph {
+            margin-#{$left}: 28px;
+        }
+
+        &.glyph-warning {
+            &:before {
+                content: $glyph-warning;
+            }
+        }
+
+        &.glyph-info {
+            &:before {
+                content: $glyph-info;
+            }
+        }
+
+        &.glyph-incident-triangle {
+            &:before {
+                content: $glyph-incident-triangle;
+            }
+        }
+    }
+
+    & > .c-glyph.c-action-trigger.glyph-cancel {
+        height: 48px;
+        width: 48px;
+        position: absolute;
+        #{$right}: 1px;
+        #{$left}: auto;
+        top: 1px;
+        margin: 0;
+        margin-#{$right}: 10px;
+        padding: 14px 6px;
+        z-index: map-get($z-index, neutral);
+        float: $right;
+        color: currentColor;
+
+        &:before {
+            font-size: 15px;
+            content: $glyph-cancel;
+        }
+    }
+
+    & > div {
+        max-width: $max-content-width;
+        margin: 0 auto;
+        padding: set-direction-based-value(16px 48px 16px 20px, 16px 20px 16px 48px);
+        float: inherit;
+
+        & > .c-heading {
+            @include apply-type-component(h6);
+            padding: 2px 0 8px;
+        }
+
+        & > .c-paragraph {
+            @include apply-type(t8, true, false);
+            padding-top: 0;
+            margin-#{$right}: 15px;
+
+            & .c-group {
+                overflow: visible;
+                //Known duplicate. Needed for IE9
+                display: block;
+
+                @if $ltie8 {
+                    float: $right;
+                }
+
+                & .c-action-trigger {
+                    @include apply-type(t8, true, true);
+
+                    @if $ltie8 {
+                        display: inline;
+                    }
+
+                    padding-#{$left}: 10px;
+                    padding-#{$right}: 10px;
+                }
+
+                @media only screen and (max-width: $vp2-max) {
+                    display: flex;
+                    margin-#{$left}: -12px;
+                    margin-#{$right}: -12px;
+
+                    & .c-action-trigger {
+                        margin-top: 0;
+                        vertical-align: baseline;
+                    }
+                }
+
+                @media only screen and (min-width: $vp3) {
+                    display: inline;
+                    padding-#{$left}: 15px;
+                    float: $right;
+
+                    & .c-action-trigger {
+                        margin: -7px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}

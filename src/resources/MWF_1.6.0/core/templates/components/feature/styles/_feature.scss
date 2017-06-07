@@ -1,0 +1,322 @@
+//  ==========================================================================
+//  Component: Feature
+//  ==========================================================================
+
+.c-feature {
+    @include clearfix();
+    position: relative;
+    height: 300px;
+
+    picture {
+        height: 300px;
+        width: 50%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            //Disable SCSS Linter to skip known/needed duplicate top & right properties
+            // scss-lint:disable DuplicateProperty
+            top: calc(50%);
+            right: calc(50%);
+            // scss-lint:enable DuplicateProperty
+            transform: translate(50%, -50%);
+        }
+    }
+
+    .c-video {
+        height: 300px;
+        width: 50%;
+        max-width: 50%;
+        overflow: hidden;
+        #{$left}: 0;
+
+        & > h1 {
+            display: none;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &.f-align-left {
+        & > div {
+            #{$left}: 0;
+            padding: 24px;
+        }
+
+        picture,
+        .c-video {
+            float: $right;
+        }
+    }
+
+    &.f-align-right {
+        & > div {
+            #{$left}: 50%;
+            padding: 24px;
+        }
+
+        picture,
+        .c-video {
+            float: $left;
+            #{$left}: 0;
+        }
+    }
+
+    &.f-align-right,
+    &.f-align-left {
+        & > div {
+            position: absolute;
+            top: 0;
+            //Disable SCSS Linter to skip known/needed duplicate top property
+            // scss-lint:disable DuplicateProperty
+            top: calc(50%);
+            // scss-lint:enable DuplicateProperty
+            transform: translateY(-50%);
+            width: 50%;
+        }
+
+        & .c-video {
+            position: relative;
+        }
+    }
+
+    & > div {
+        padding: 0 24px 24px;
+
+        .c-heading {
+            @include apply-type-component(h4);
+            @include apply-maxlines(3, h4, true);
+        }
+
+        .c-paragraph {
+            @include apply-type-component(p4);
+            @include apply-maxlines(3, p4, true);
+            padding-top: 0; // Override padding set by p4 for small breakpoint
+        }
+
+        .c-call-to-action {
+            @include c-call-to-action-lightweight();
+            margin-top: 10px;
+        }
+
+        .c-group {
+            display: block;
+            overflow: visible;
+            margin-top: 10px;
+
+            .c-call-to-action {
+                margin-top: 0;
+                margin-#{$right}: 4px;
+            }
+        }
+
+        .c-badge {
+            margin-top: 12px;
+
+            & + .c-heading {
+                padding-top: 8px;
+            }
+        }
+    }
+
+    &.f-align-center {
+        height: auto;
+
+        & > div {
+            width: auto;
+            padding: 0 24px;
+            max-width: 848px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            .c-heading {
+                @include apply-type-component(h3);
+                @include apply-maxlines(3, h3);
+                // margin-top: 32px;
+            }
+
+            .c-paragraph {
+                @include apply-maxlines(4, p4);
+                // margin-top: 19px;
+            }
+
+            .c-group {
+                display: block;
+
+                .c-call-to-action {
+                    margin: 0 2px;
+                }
+            }
+
+            .c-badge {
+                margin-top: 12px;
+
+                & + .c-heading {
+                    padding-top: 8px;
+                }
+            }
+        }
+
+        picture,
+        .c-video {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        height: auto;
+
+        &.f-align-left,
+        &.f-align-right {
+            & > div {
+                width: auto;
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                transform: none;
+                padding: set-direction-based-value(0 24px 0 24px, 0 24px 0 24px);
+
+                .c-badge {
+                    margin-top: 12px;
+
+                    & + .c-heading {
+                        padding-top: 8px;
+                    }
+                }
+            }
+
+            picture {
+                float: none;
+                width: auto;
+            }
+
+            .c-video {
+                float: none;
+                max-width: 100%;
+            }
+
+            .c-paragraph {
+                padding: 0;
+            }
+        }
+
+        & > div {
+            .c-heading {
+                @include apply-type-component(h5);
+                @include apply-maxlines(2, h5);
+            }
+        }
+
+        &.c-feature.f-align-left > div,
+        &.c-feature.f-align-right > div {
+            text-align: $left;
+        }
+
+        picture,
+        .c-video {
+            height: 200px;
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        height: auto;
+
+        &.f-align-left,
+        &.f-align-right {
+            & > div {
+                max-width: 490px;
+                margin: 0 auto;
+                position: relative;
+                width: auto;
+                top: auto;
+                left: auto;
+                right: auto;
+                transform: none;
+                padding: set-direction-based-value(0 24px 0 24px, 0 24px 0 24px);
+                text-align: center;
+                float: none;
+            }
+
+            .c-badge {
+                margin-top: 12px;
+
+                & + .c-heading {
+                    padding-top: 8px;
+                }
+            }
+
+            picture {
+                float: none;
+                width: auto;
+            }
+
+            .c-video {
+                float: none;
+                max-width: 100%;
+            }
+        }
+
+        & > div {
+
+            .c-heading {
+                @include apply-type-component(h5);
+                @include apply-maxlines(2, h5);
+            }
+        }
+    }
+
+    @media only screen and (min-width: $vp4) {
+        height: 400px;
+
+        & > div {
+            max-width: 654px;
+        }
+
+        picture,
+        .c-video {
+            height: 400px;
+        }
+
+        &.f-align-right {
+            & > div {
+                padding: 48px;
+            }
+        }
+
+        &.f-align-left {
+            & > div {
+                padding: 48px;
+            }
+        }
+
+        & > div {
+            .c-heading {
+                @include apply-type-component(h3);
+                @include apply-maxlines(3, h3);
+            }
+
+            .c-paragraph {
+                @include apply-type-component(p3);
+                @include apply-maxlines(4, p3);
+            }
+        }
+
+        &.f-align-center {
+            & > div {
+                padding: set-direction-based-value(0 48px 0 48px, 0 48px 0 48px);
+                max-width: 894px;
+            }
+        }
+    }
+}

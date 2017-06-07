@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Search more module",
+    "description": "A MWF search more module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/search-more.json",
+    "supportedPartners": [
+        "search"
+    ],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "columns": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "hyperlinks": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/hyperlink.json"
+                                }
+                            }
+                        },
+                        "required": [
+                            "title",
+                            "description",
+                            "hyperlinks"
+                        ]
+                    }
+                },
+                "search": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "is-form": {
+                                    "type": "boolean"
+                                },
+                                "autofocus": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "is-form",
+                                "autofocus"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "input-name": {
+                                    "type": "string"
+                                },
+                                "button-name": {
+                                    "type": "string"
+                                },
+                                "placeholder": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "label",
+                                "input-name",
+                                "button-name",
+                                "placeholder"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                }
+            },
+            "required": [
+                "heading",
+                "columns",
+                "search"
+            ]
+        }
+    }
+}

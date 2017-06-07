@@ -1,0 +1,89 @@
+//  ==========================================================================
+//  Component: Sequence indicator
+//  ==========================================================================
+
+.c-sequence-indicator {
+    font-size: 0;
+
+    button {
+        display: inline-block;
+        border: 0;
+        padding: 2px 3px;
+        width: 12px;
+        height: 10px;
+        background: transparent;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid $color-foreground-80;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &:hover {
+            &:before {
+                background: $color-foreground-40;
+            }
+        }
+
+        &[aria-checked="true"] {
+            &:before {
+                background: $color-foreground;
+            }
+        }
+    }
+
+    #{$theme-light} {
+        button {
+            &:before {
+                border-color: $color-shade-80;
+            }
+
+            &:focus {
+                outline-color: $color-shade;
+            }
+
+            &:hover {
+                &:before {
+                    background: $color-shade-40;
+                }
+            }
+
+            &[aria-checked="true"] {
+                &:before {
+                    background: $color-shade;
+                }
+            }
+        }
+    }
+
+    #{$theme-dark} {
+        button {
+            &:before {
+                border-color: $color-tint-80;
+            }
+
+            &:focus {
+                outline-color: $color-tint;
+            }
+
+            &:hover {
+                &:before {
+                    background: $color-tint-40;
+                }
+            }
+
+            &[aria-checked="true"] {
+                &:before {
+                    background: $color-tint;
+                }
+            }
+        }
+    }
+}

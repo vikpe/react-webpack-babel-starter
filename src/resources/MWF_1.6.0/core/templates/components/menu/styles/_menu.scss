@@ -1,0 +1,33 @@
+//  ==========================================================================
+//  Component: Menu
+//  ==========================================================================
+
+#{$migration-select-menu-menu}
+.c-menu {
+    position: relative;
+    z-index: map-get($z-index, nav);
+    width: 296px;
+    min-width: 64px;
+    max-width: 368px;
+    padding: 0;
+    margin: 0;
+    background: $color-background;
+    border: 1px solid $color-foreground-10;
+    border-top: 0;
+    background-clip: padding-box;
+
+    .c-menu-item {
+        [aria-checked="true"] {
+            background: $color-accent;
+            color: $color-background;
+        }
+    }
+
+    #{$theme-dark} {
+        color: $color-shade;
+    }
+
+    #{$theme-light} {
+        color: $color-shade;
+    }
+}

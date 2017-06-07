@@ -1,0 +1,846 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Product placement",
+    "description": "A MWF product placement component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/product-placement-item-module.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/small"
+        },
+        {
+            "$ref": "#/definitions/medium"
+        },
+        {
+            "$ref": "#/definitions/large"
+        },
+        {
+            "$ref": "#/definitions/extra-large"
+        }
+    ],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "itemprop": {
+                    "type": "string"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+                },
+                "price": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/price.json"
+                },
+                "featured-image": {
+                    "type": "object",
+                    "properties": {
+                        "vp1": {
+                            "type": "string"
+                        },
+                        "alt": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "default-image": {
+                    "type": "object",
+                    "properties": {
+                        "background-color": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "href": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "itemprop",
+                "heading",
+                "rating",
+                "price",
+                "href"
+            ]
+        }
+    },
+    "definitions": {
+        "small": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/small/definitions/app"
+                },
+                {
+                    "$ref": "#/definitions/small/definitions/game"
+                },
+                {
+                    "$ref": "#/definitions/small/definitions/movie"
+                },
+                {
+                    "$ref": "#/definitions/small/definitions/artist"
+                }
+            ],
+            "definitions": {
+                "app": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "app"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "small"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config"
+                    ]
+                },
+                "game": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "game"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "small"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config"
+                    ]
+                },
+                "movie": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "movie"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "small"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        }
+                    },
+                    "artist": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "artist"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "small"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config"
+                    ]
+                }
+            }
+        },
+        "medium": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/medium/definitions/app"
+                },
+                {
+                    "$ref": "#/definitions/medium/definitions/game"
+                },
+                {
+                    "$ref": "#/definitions/medium/definitions/device"
+                },
+                {
+                    "$ref": "#/definitions/medium/definitions/software"
+                },
+                {
+                    "$ref": "#/definitions/medium/definitions/accessory"
+                },
+                {
+                    "$ref": "#/definitions/small/definitions/movie"
+                },
+                {
+                    "$ref": "#/definitions/small/definitions/artist"
+                }
+            ],
+            "definitions": {
+                "app": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "app"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "game": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "game"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "device": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "device"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "software": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "software"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "accessory": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "accessory"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "movie": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "movie"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                "artist": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "artist"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "medium"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                }
+                            },
+                            "required": [
+                                "badge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                }
+            }
+        },
+        "large": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/large/definitions/device"
+                },
+                {
+                    "$ref": "#/definitions/large/definitions/software"
+                },
+                {
+                    "$ref": "#/definitions/large/definitions/accessory"
+                }
+            ],
+            "definitions": {
+                "device": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "device"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "software": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "software"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "accessory": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "accessory"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                }
+            }
+        },
+        "extra-large": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/extra-large/definitions/device"
+                },
+                {
+                    "$ref": "#/definitions/extra-large/definitions/software"
+                },
+                {
+                    "$ref": "#/definitions/extra-large/definitions/accessory"
+                }
+            ],
+            "definitions": {
+                "device": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "device"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "extra-large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "software": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "software"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "extra-large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                },
+                "accessory": {
+                    "type": "object",
+                    "properties": {
+                        "config": {
+                            "type": "object",
+                            "properties": {
+                                "context": {
+                                    "type": "string",
+                                    "enum": [
+                                        "accessory"
+                                    ]
+                                },
+                                "size": {
+                                    "type": "string",
+                                    "enum": [
+                                        "extra-large"
+                                    ]
+                                },
+                                "default-image": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "context",
+                                "size"
+                            ]
+                        },
+                        "content": {
+                            "type": "object",
+                            "properties": {
+                                "badge": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/badge.json"
+                                },
+                                "paragraph": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "badge",
+                                "paragraph"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "config",
+                        "content"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+//  ==========================================================================
+//  Custom Color Utilities
+//  ==========================================================================
+
+$color-black: #000;
+$color-white: #FFF;
+
+// Outputs a RGBa or RGB color depending on the $ltie8 flag
+@function RGBa($args...) {
+    $red: null;
+    $green: null;
+    $blue: null;
+    $alpha: null;
+
+    @if length($args) == 2 {
+        $color: nth($args, 1);
+        $alpha: nth($args, 2);
+        $red: red($color);
+        $green: green($color);
+        $blue: blue($color);
+    } @elseif length($args) == 4 {
+        $red: nth($args, 1);
+        $green: nth($args, 2);
+        $blue: nth($args, 3);
+        $alpha: nth($args, 4);
+    }
+
+    $rgba-color: rgba($red, $green, $blue, $alpha);
+
+    // If We're compiling a stylesheet for older browsers that don't understand RGBA,
+    // Convert the value to a RGB color
+    @if $ltie8 == true {
+        @if $red == 0 and $green == 0 and $blue == 0 {
+            @return flatten-overlay($color-white, $color-black, $alpha * 100);
+        } @elseif $red == 255 and $green == 255 and $blue == 255 {
+            @return flatten-overlay($color-black, $color-white, $alpha * 100);
+        } @else {
+            @return flatten-overlay($color-white, rgb($red, $green, $blue), $alpha * 100);
+        }
+    } @else {
+        @return $rgba-color;
+    }
+}
+
+// Function to replicate how flattened colors are calculated in Photoshop and
+// Illustrator. This function replicates the value produced when a transparent
+// color is overlayed on top of a base color, and the resulting color sampled
+// via the eyedropper tool.
+//
+// $base-color: The color to be the foundation of the resulting color. This variable must be a valid SASS color
+// $overlay-color: The color to be overlayed on top of the base color. This variable must be a valid SASS color
+// $overlay-opacity: The opacity of the overlay-color. This variable must be a number or percentage between 0 and 100.
+@function flatten-overlay($base-color, $overlay-color, $overlay-opacity) {
+    @if not unitless($overlay-opacity) and unit($overlay-opacity) != "%" {
+        @error "$overlay-opacity must be a unitless number or a percentage.";
+    }
+
+    @if $overlay-opacity > 100 {
+        @error "$overlay-opacity must be less than or equal to 100";
+    }
+
+    @if $overlay-opacity < 0 {
+        @error "$overlay-opacity must be greater than or equal to 0";
+    }
+
+    @if type-of($base-color) != "color" {
+        @error "$base-color must be a valid SASS color";
+    }
+
+    @if type-of($overlay-color) != "color" {
+        @error "$overlay-color must be a valid SASS color";
+    }
+
+    @return mix($overlay-color, $base-color, $overlay-opacity);
+}

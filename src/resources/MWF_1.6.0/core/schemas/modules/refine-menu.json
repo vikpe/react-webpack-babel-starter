@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Refine menu module",
+    "description": "A MWF refine menu module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/refine-menu.json",
+    "supportedPartners": []
+}

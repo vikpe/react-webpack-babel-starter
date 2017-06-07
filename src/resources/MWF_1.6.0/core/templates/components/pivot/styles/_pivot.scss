@@ -1,0 +1,53 @@
+//  ==========================================================================
+//  Component: Pivot
+//  ==========================================================================
+
+.c-pivot {
+    > header {
+        display: flex;
+
+        > a {
+            @include apply-type(t5);
+            display: inline-block;
+            flex-shrink: 0;
+            font-weight: $font-weight-semilight;
+            white-space: nowrap;
+            padding: 5px 12px 1px;
+            color: $color-foreground-60;
+
+            &:first-child {
+                padding-#{$left}: 0;
+            }
+
+            &.f-active {
+                color: $color-foreground;
+            }
+
+            &:hover {
+                color: $color-foreground-80;
+            }
+
+            &:focus {
+                outline: 1px dashed;
+            }
+        }
+    }
+
+    > section[aria-hidden="true"] {
+        display: none;
+        overflow: hidden;
+    }
+
+    > section[aria-hidden="false"] {
+        display: block;
+    }
+
+    &.f-disabled {
+        > header {
+            > a {
+                color: $color-foreground-20;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

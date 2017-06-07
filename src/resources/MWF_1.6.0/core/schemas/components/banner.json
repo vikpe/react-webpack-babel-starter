@@ -1,0 +1,123 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Banner",
+    "description": "A MWF banner component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/banner.json",
+    "required": [
+        "content"
+    ],
+    "oneOf": [
+        {
+            "$ref": "#/definitions/heading-caption"
+        },
+        {
+            "$ref": "#/definitions/heading-caption-logo"
+        },
+        {
+            "$ref": "#/definitions/heading-call-to-action"
+        },
+        {
+            "$ref": "#/definitions/heading-logo-call-to-action"
+        }
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json#definitions/level-3"
+                }
+            },
+            "required": [
+                "heading"
+            ]
+        }
+    },
+    "definitions": {
+        "heading-caption": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "caption": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/caption.json"
+                        }
+                    },
+                    "required": [
+                        "caption"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "heading-caption-logo": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "caption": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/caption.json"
+                        },
+                        "logo": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/logo.json"
+                        }
+                    },
+                    "required": [
+                        "caption",
+                        "logo"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "heading-call-to-action": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "call-to-action": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+                        }
+                    },
+                    "required": [
+                        "call-to-action"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "heading-logo-call-to-action": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "logo": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/logo.json"
+                        },
+                        "call-to-action": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+                        }
+                    },
+                    "required": [
+                        "logo",
+                        "call-to-action"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        }
+    }
+}

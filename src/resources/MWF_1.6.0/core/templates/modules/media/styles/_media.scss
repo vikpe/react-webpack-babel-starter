@@ -1,0 +1,28 @@
+.m-media {
+    @include clearfix;
+    @include left-right-padding($add-0);
+    padding-bottom: 4px;
+
+    // override of m- default top padding
+    padding-top: 0;
+
+    .c-image {
+        float: $left;
+        margin-#{$right}: 12px;
+    }
+
+    [class*="c-heading"],
+    [class*="c-paragraph"],
+    [class*="c-subheading"] {
+        float: $left;
+        width: calc(100% - 60px);
+        padding: set-direction-based-value(0 24px 0 0, 0 0 0 24px);
+    }
+
+    @media only screen and (min-width: $vp1-max) {
+        [class*='c-heading'] {
+            float: none;
+            display: inline-block;
+        }
+    }
+}

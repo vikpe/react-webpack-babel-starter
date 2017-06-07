@@ -1,0 +1,35 @@
+.m-media {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 4px;
+  padding-top: 0;
+}
+
+.m-media:before, .m-media:after {
+  content: " ";
+  display: table;
+}
+
+.m-media:after {
+  clear: both;
+}
+
+.m-media .c-image {
+  float: left;
+  margin-right: 12px;
+}
+
+.m-media [class*="c-heading"],
+.m-media [class*="c-paragraph"],
+.m-media [class*="c-subheading"] {
+  float: left;
+  width: calc(100% - 60px);
+  padding: 0 24px 0 0;
+}
+
+@media only screen and (min-width: 539px) {
+  .m-media [class*='c-heading'] {
+    float: none;
+    display: inline-block;
+  }
+}

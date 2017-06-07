@@ -1,0 +1,78 @@
+.m-banner {
+  text-align: center;
+}
+
+.m-banner .c-heading-3 {
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 80px;
+  padding-bottom: 3.1812px;
+}
+
+.m-banner .c-caption-1 {
+  font-size: 18px;
+  padding-top: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.m-banner .c-image {
+  margin: 0 auto;
+  width: auto;
+  max-height: 70px;
+}
+
+.m-banner .c-image + .c-heading-3 {
+  padding-top: 10px;
+}
+
+.m-banner a.c-call-to-action {
+  background: transparent;
+  color: #0078D7;
+  border-color: transparent;
+  border-width: 2px;
+  padding: 10px 44px 7px 24px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.m-banner a.c-call-to-action:focus, .m-banner a.c-call-to-action:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.m-banner a.c-call-to-action:active {
+  background: transparent;
+  text-decoration: none;
+}
+
+.m-banner a.c-call-to-action span:hover {
+  text-decoration: underline;
+}
+
+.theme-light .m-banner a.c-call-to-action, .theme-dark .theme-light .m-banner a.c-call-to-action {
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-light .m-banner a.c-call-to-action:active, .theme-dark .theme-light .m-banner a.c-call-to-action:active {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .m-banner a.c-call-to-action:focus, .theme-dark .theme-light .m-banner a.c-call-to-action:focus {
+  outline-color: #000;
+}
+
+.theme-dark .m-banner a.c-call-to-action, .theme-light .theme-dark .m-banner a.c-call-to-action {
+  color: #FFF;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-dark .m-banner a.c-call-to-action:active, .theme-light .theme-dark .m-banner a.c-call-to-action:active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .m-banner a.c-call-to-action:focus, .theme-light .theme-dark .m-banner a.c-call-to-action:focus {
+  outline-color: #FFF;
+}

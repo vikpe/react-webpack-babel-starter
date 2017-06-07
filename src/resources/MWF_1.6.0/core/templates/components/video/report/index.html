@@ -1,0 +1,89 @@
+<div class="c-video" itemscope itemtype="http://schema.org/VideoObject">
+    <span aria-hidden="true" itemprop="name">Heading</span>
+    <span aria-hidden="true" itemprop="description">Description</span>
+    <img aria-hidden="true" itemprop="thumbnailUrl" src="http://placehold.it/160x90.png" alt="Placeholder with grey background and dimension watermark without any imagery" />
+    <meta itemprop="uploadDate" content="2015-02-05T08:00:00+08:00" />
+    <video class="f-video-player" preload="metadata" poster="/images/components/video/holo-video-poster.jpg">
+        <source src="/videos/components/video/hololens.mp4" type="video/mp4" />
+        <source src="/videos/components/video/hololens.webm" type="video/webm" />
+        <source src="/videos/components/video/hololens.ogv" type="video/ogg" /> </video>
+    <div class="f-video-controls f-slidein">
+        <button type="button" class="f-play-pause c-glyph glyph-play" aria-label="Play">
+            <span aria-hidden="true">Play</span>
+        </button>
+        <span aria-label="time" class="f-timecode">00:00
+            <span> / 00:00</span>
+        </span>
+        <div class="c-slider f-progress">
+            <input type="range" class="f-seek-bar" aria-label="seek-bar" value="0" min="0"> </div>
+        <button type="button" class="f-options c-glyph glyph-more" aria-label="more"></button>
+        <span class="f-options-dialog" aria-hidden="true">
+            <ul class="c-list f-bare">
+                <li>
+                    <a href="#" class="c-hyperlink">Info</a>
+                </li>
+                <li>
+                    <a href="#" class="c-hyperlink" data-video-options="f-video-captions">CC / Subtitles</a>
+                    <ul class="c-list f-bare f-video-captions">
+                        <li>
+                            <a role="button" class="c-action-trigger c-glyph glyph-chevron-left" href="#" data-video-options="back">CC / Subtitles</a>
+                        </li>
+                        <li>
+                            <a role="button" class="c-action-trigger c-glyph glyph-check-mark" href="#" data-video-selectable="true">Off</a>
+                            <li>
+                                <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">English (US)</a>
+                                <li>
+                                    <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">English (UK)</a>
+                    </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="c-hyperlink" data-video-options="f-video-quality">Quality</a>
+                        <ul class="c-list f-bare f-video-quality">
+                            <li>
+                                <a role="button" class="c-action-trigger c-glyph glyph-chevron-left" href="#" data-video-options="back">Quality</a>
+                            </li>
+                            <li>
+                                <a role="button" class="c-action-trigger c-glyph glyph-check-mark" href="#" data-video-selectable="true">Auto</a>
+                                <li>
+                                    <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">HD 1080p</a>
+                                    <li>
+                                        <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">HD 720p</a>
+                                        <li>
+                                            <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">480p</a>
+                                            <li>
+                                                <a role="button" class="c-action-trigger c-glyph" href="#" data-video-selectable="true">360p</a>
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="c-hyperlink" data-video-options="f-video-share">Share</a>
+                            <ul class="c-list f-bare f-video-share">
+                                <li>
+                                    <a role="button" class="c-action-trigger c-glyph glyph-chevron-left" href="#" data-video-options="back">Share</a>
+                                </li>
+                                <li>
+                                    <a role="button" class="c-action-trigger" href="#">
+                                        <img src="images/Facebook-01.png" class="c-image" />Facebook</a>
+                                    <li>
+                                        <a role="button" class="c-action-trigger" href="#">
+                                            <img src="images/Twitter.png" class="c-image" />Twitter</a>
+                                        <li>
+                                            <a role="button" class="c-action-trigger" href="#">
+                                                <img src="images/Skype.png" class="c-image" />Skype</a>
+                                            <li>
+                                                <a role="button" class="c-action-trigger c-glyph glyph-mail" href="#">Email</a>
+                                                <li>
+                                                    <a role="button" class="c-action-trigger c-glyph glyph-copy" href="#">Copy link</a>
+                            </ul>
+                            </li>
+            </ul>
+        </span>
+        <button type="button" class="f-volume-button c-glyph glyph-volume" aria-label="volume"></button>
+        <div class="f-volume-slider" aria-hidden="true">
+            <div class="c-slider">
+                <input type="range" class="f-volume-bar f-vertical" aria-label="volume-bar" min="0" max="100" step="1" value="100"> </div>
+        </div>
+        <button type="button" class="f-full-screen c-glyph glyph-full-screen" aria-label="full-screen">
+            <span aria-hidden="true">Fullscreen</span>
+        </button>
+    </div>
+</div>

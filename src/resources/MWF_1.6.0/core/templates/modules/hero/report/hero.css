@@ -1,0 +1,21 @@
+.m-hero {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 1083px) {
+  .m-hero .m-hero-item,
+  .m-hero .c-hero {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .m-hero .m-hero-item,
+  .m-hero .c-hero {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

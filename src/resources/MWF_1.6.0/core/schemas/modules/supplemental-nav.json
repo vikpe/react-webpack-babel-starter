@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Supplemental navigation module",
+    "description": "A MWF supplemental navigation module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/supplemental-nav.json",
+    "supportedPartners": [],
+    "$ref": "http://www.getmwf.com/releases/core/schemas/components/supplemental-nav.json"
+}

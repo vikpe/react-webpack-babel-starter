@@ -1,0 +1,66 @@
+//  ==========================================================================
+//  Component: Breadcrumb
+//  ==========================================================================
+
+ul.c-breadcrumb {
+    display: flex;
+    margin-top: 12px;
+
+    li {
+        display: inline-block;
+        padding-#{$right}: 8px;
+
+        + li:before {
+            content: set-direction-based-value("\\", "/");
+            padding-#{$right}: 8px;
+            color: $color-foreground-60;
+        }
+
+        &:last-child a {
+            color: $color-foreground-60;
+        }
+
+        a {
+            @include apply-type(t8, false, true);
+            color: $color-accent;
+        }
+
+        #{$theme-light} {
+            &:last-child a {
+                color: $color-shade-60;
+            }
+
+            + li:before {
+                color: $color-shade-60;
+            }
+
+            a {
+                color: $color-shade;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #{$theme-dark} {
+            &:last-child a {
+                color: $color-tint-60;
+            }
+
+            + li:before {
+                color: $color-tint-60;
+            }
+
+            a {
+                color: $color-tint;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

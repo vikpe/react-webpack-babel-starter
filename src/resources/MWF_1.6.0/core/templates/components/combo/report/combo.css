@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.c-combo {
+  position: relative;
+  min-width: 92px;
+  max-width: 296px;
+  height: 38px;
+  margin-top: 20px;
+}
+
+.c-combo div {
+  display: block;
+}
+
+.c-combo div ul {
+  z-index: 1;
+  width: 296px;
+  min-width: 64px;
+  max-width: 368px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  position: absolute;
+  top: 38px;
+  background: #FFF;
+  overflow-y: auto;
+  max-height: none;
+}
+
+.c-combo div ul li span {
+  background: #f2f2f2;
+  display: block;
+  padding: 11px 12px 13px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.c-combo div ul li span.active {
+  color: #FFF;
+  background: #0078D7;
+}
+
+.c-combo div ul li span:hover {
+  color: #000;
+  background: #e6e6e6;
+}
+
+.c-combo div ul[aria-hidden="true"] {
+  display: none;
+}
+
+.c-combo input[type="text"],
+.c-combo button {
+  float: left;
+  height: 100%;
+  outline: 0;
+  background: #FFF;
+}
+
+.c-combo input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 7px 10px;
+  padding-right: 38px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.c-combo input[type="text"]:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.c-combo input[type="text"]:active, .c-combo input[type="text"]:focus {
+  border-color: #0078D7;
+}
+
+.c-combo input[type="text"]::-ms-clear {
+  display: none;
+}
+
+.c-combo button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  margin: 2px 1px 1px;
+  padding: 9px;
+  transition: color 0.1s, background-color 0.1s;
+  border: 0;
+}
+
+.c-combo button:hover {
+  color: #0078D7;
+}
+
+.c-combo button:active, .c-combo button:focus {
+  color: #FFF;
+  background: #0078D7;
+}
+
+.c-combo button:before {
+  content: "";
+  text-indent: 0;
+  font-size: 16px;
+}

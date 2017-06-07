@@ -1,0 +1,210 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Structured list component",
+    "description": "A MWF Structured list component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/structured-list.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/default"
+        },
+        {
+            "$ref": "#/definitions/dual-columns"
+        },
+        {
+            "$ref": "#/definitions/text-values"
+        }
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "paragraph": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                },
+                "image": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                }
+            },
+            "required": [
+                "heading",
+                "paragraph",
+                "image"
+            ]
+        }
+    },
+    "definitions": {
+        "default": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "dual-columns": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "dual-columns"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "column-1": {
+                        "type": "array",
+                        "properties": {
+                            "items": {
+                                "simple-image": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                                },
+                                "simple-text": {
+                                    "$ref": "#/definitions/simple-text"
+                                },
+                                "paragraph": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                                }
+                            }
+                        },
+                        "required": [
+                            "simple-image",
+                            "simple-text",
+                            "paragraph"
+                        ]
+                    }
+                },
+                "required": [
+                    "column-1"
+                ]
+            }
+        },
+        "dual-columns": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "dual-columns": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "dual-columns"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "column-1": {
+                        "type": "array",
+                        "properties": {
+                            "items": {
+                                "simple-image": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                                },
+                                "simple-text": {
+                                    "$ref": "#/definitions/simple-text"
+                                },
+                                "paragraph": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                                }
+                            }
+                        },
+                        "required": [
+                            "simple-image",
+                            "simple-text",
+                            "paragraph"
+                        ]
+                    },
+                    "column-2": {
+                        "type": "array",
+                        "properties": {
+                            "items": {
+                                "simple-image": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                                },
+                                "simple-text": {
+                                    "$ref": "#/definitions/simple-text"
+                                },
+                                "paragraph": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                                }
+                            }
+                        },
+                        "required": [
+                            "simple-image",
+                            "simple-text",
+                            "paragraph"
+                        ]
+                    }
+                },
+                "required": [
+                    "column-1",
+                    "column-2"
+                ]
+            }
+        },
+        "text-values": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "dual-columns": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "dual-columns"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "column-1": {
+                        "type": "array",
+                        "properties": {
+                            "items": {
+                                "simple-image": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json"
+                                },
+                                "simple-text": {
+                                    "$ref": "#/definitions/simple-text"
+                                },
+                                "paragraph": {
+                                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                                }
+                            }
+                        },
+                        "required": [
+                            "simple-image",
+                            "simple-text",
+                            "paragraph"
+                        ]
+                    }
+                },
+                "required": [
+                    "column-1"
+                ]
+            }
+        },
+        "simple-text": {
+            "type": "object",
+            "properties": {
+                "config":{
+                    "type": "object",
+                    "properties": {
+                        "text-element": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "content":{
+                    "type": "object",
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

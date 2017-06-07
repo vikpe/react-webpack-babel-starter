@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.c-histogram:before,
+.c-histogram:after {
+  content: " ";
+  display: table;
+}
+
+
+.c-histogram:after {
+  clear: both;
+}
+
+
+.c-histogram > div:first-child {
+  float: left;
+}
+
+
+.c-histogram > div:first-child > div > span {
+  margin-left: 4px;
+}
+
+
+.c-histogram > div:first-child > span {
+  font-size: 135px;
+  line-height: 1;
+  letter-spacing: -5px;
+  font-weight: 100;
+}
+
+
+.c-histogram > ul {
+  overflow: hidden;
+  padding-left: 28px;
+  margin-top: 26px;
+}
+
+
+.c-histogram > ul li {
+  margin-bottom: 14px;
+}
+
+
+.c-histogram > ul a {
+  font-size: 13px;
+  display: block;
+  line-height: 1;
+}
+
+
+.c-histogram > ul a > div {
+  display: inline-block;
+  margin-left: 6px;
+  width: calc(100% - 85px);
+}
+
+
+.c-histogram > ul a > div > div {
+  height: 12px;
+  position: relative;
+  background-color: #0078D7;
+  -ms-high-contrast-adjust: none;
+}
+
+
+.c-histogram > ul a > div > div span {
+  position: absolute;
+  right: 0;
+  -ms-transform: translateX(100%);
+      transform: translateX(100%);
+  padding-left: 4px;
+}
+
+
+.c-histogram > ul .c-glyph {
+  margin-left: 1px;
+}
+
+
+.c-histogram > ul .c-glyph:after {
+  -ms-transform: translateY(1px);
+      transform: translateY(1px);
+  content: "";
+}
+
+@media only screen and (max-width: 539px) {
+  
+  .c-histogram > div:first-child {
+    float: none;
+  }
+  
+  .c-histogram > ul {
+    padding-left: 0;
+  }
+}

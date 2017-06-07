@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Call to action",
+    "description": "A MWF metatext component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/metatext.json",
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "tag"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text"
+            ]
+        }
+    },
+    "required": [
+        "config",
+        "content"
+    ]
+}

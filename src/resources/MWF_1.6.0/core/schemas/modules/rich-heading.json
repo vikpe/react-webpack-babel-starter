@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Rich heading module",
+    "description": "A MWF rich heading module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/rich-heading.json",
+    "supportedPartners": [],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "paragraph": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                }
+            },
+            "required": [
+                "heading",
+                "paragraph"
+            ]
+        }
+    },
+    "oneOf": [
+        {
+            "$ref": "#/definitions/logo"
+        },
+        {
+            "$ref": "#/definitions/image"
+        }
+    ],
+    "definitions": {
+        "image": {
+            "properties": {
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/image.json#definitions/picture-element"
+                        }
+                    },
+                    "required": [
+                        "image"
+                    ]
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "logo": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "theme": {
+                            "type": "string",
+                            "enum": [
+                                "light",
+                                "dark"
+                            ]
+                        },
+                        "background": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "theme",
+                        "background"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "logo": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/logo.json"
+                        }
+                    },
+                    "required": [
+                        "logo"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        }
+    }
+}

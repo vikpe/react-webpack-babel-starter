@@ -1,0 +1,350 @@
+{
+    "lead-hero": {
+        "config": {
+            "size": "medium",
+            "x-align": "center",
+            "y-align": "bottom",
+            "context": "accessory",
+            "theme": "dark",
+            "multi-cta": true
+        },
+        "content": {
+            "heading": "{{lorem.sentence}}",
+            "subheading": "{{lorem.sentence}}",
+            "price": {
+                "config": {
+                    "currency-symbol": "{{finance.currencySymbol}}",
+                    "currency-code": "{{finance.currencyCode}}"
+                },
+                "content": {
+                    "price": "{{random.number}}",
+                    "discounted-price": null
+                }
+            },
+            "calls-to-action": [
+                {
+                    "content": {
+                        "text": "CALL TO ACTION",
+                        "href": "#"
+                    }
+                },
+                {
+                    "content": {
+                        "text": "CALL TO ACTION",
+                        "href": "#"
+                    }
+                }
+            ],
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600/2F2F2F/171717",
+                "vp5": "http://placehold.it/1778x600/2F2F2F/171717",
+                "vp4": "http://placehold.it/1399x600/2F2F2F/171717",
+                "vp3": "http://placehold.it/1083x500/2F2F2F/171717",
+                "vp2": "http://placehold.it/767x400/2F2F2F/171717",
+                "vp1": "http://placehold.it/539x300/2F2F2F/171717",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            }
+        }
+    },
+    "second-hero": {
+        "config": {
+            "size": "medium",
+            "x-align": "left",
+            "y-align": "center",
+            "context": "accessory",
+            "theme": "dark",
+            "multi-cta": false
+        },
+        "content": {
+            "heading": "{{lorem.sentence}}",
+            "subheading": "{{lorem.sentence}}",
+            "price": {
+                "config": {
+                    "currency-symbol": "{{finance.currencySymbol}}",
+                    "currency-code": "{{finance.currencyCode}}"
+                },
+                "content": {
+                    "price": "{{random.number}}",
+                    "discounted-price": null
+                }
+            },
+            "calls-to-action": [
+                {
+                    "content": {
+                        "text": "CALL TO ACTION",
+                        "href": "#"
+                    }
+                }
+            ],
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600/2F2F2F/171717",
+                "vp5": "http://placehold.it/1778x600/2F2F2F/171717",
+                "vp4": "http://placehold.it/1399x600/2F2F2F/171717",
+                "vp3": "http://placehold.it/1083x500/2F2F2F/171717",
+                "vp2": "http://placehold.it/767x400/2F2F2F/171717",
+                "vp1": "http://placehold.it/539x300/2F2F2F/171717",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            }
+        }
+    },
+    "blank-hero": {
+        "config": {
+            "size": "medium",
+            "x-align": "left",
+            "y-align": "bottom",
+            "context": "software",
+            "theme": "dark"
+        },
+        "content": {
+            "background-image": {
+                "vp6": "http://placehold.it/2048x600",
+                "vp5": "http://placehold.it/1778x600",
+                "vp4": "http://placehold.it/1399x600",
+                "vp3": "http://placehold.it/1083x500",
+                "vp2": "http://placehold.it/767x400",
+                "vp1": "http://placehold.it/539x300",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery",
+                "mask": 0
+            }
+        }
+    },
+    "alpha-feature": {
+        "config": {
+            "align": "left"
+        },
+        "content": {
+            "heading": "Heading",
+            "body": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": {
+                "vp6": "http://placehold.it/800x400",
+                "vp5": "http://placehold.it/800x400",
+                "vp4": "http://placehold.it/700x400",
+                "vp3": "http://placehold.it/542x300",
+                "vp2": "http://placehold.it/384x300",
+                "vp1": "http://placehold.it/539x200",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "CALL TO ACTION",
+                    "href": "#"
+                }
+            }
+        }
+    },
+    "bravo-feature": {
+        "config": {
+            "align": "right"
+        },
+        "content": {
+            "heading": "Heading",
+            "body": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": {
+                "vp6": "http://placehold.it/800x400",
+                "vp5": "http://placehold.it/800x400",
+                "vp4": "http://placehold.it/700x400",
+                "vp3": "http://placehold.it/542x300",
+                "vp2": "http://placehold.it/384x300",
+                "vp1": "http://placehold.it/539x200",
+                "alt": "Placeholder with grey background and dimension watermark without any imagery"
+            },
+            "call-to-action": {
+                "content": {
+                    "text": "CALL TO ACTION",
+                    "href": "#"
+                }
+            }
+        }
+    },
+    "l3-heading": {
+        "config": {
+            "tag": "h3",
+            "level": 3
+        },
+        "content": {
+            "text": "{{lorem.sentence}}"
+        }
+    },
+    "l4-subhead-paragraph": {
+        "config": {
+            "level": 4
+        },
+        "content": {
+            "text": "{{lorem.sentences}}"
+        }
+    },
+    "call-to-action": {
+        "content": {
+            "text": "CALL TO ACTION",
+            "href": "#"
+        }
+    },
+    "paragraph": {
+        "config": {
+            "column-width": "6"
+        },
+        "content": {
+            "rows": [
+                {
+                    "content": {
+                        "items": [
+                            {
+                                "template-name": "heading-template",
+                                "data": {
+                                    "config": {
+                                        "tag": "h2",
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Heading 1"
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "heading-template",
+                                "data": {
+                                    "config": {
+                                        "tag": "p",
+                                        "level": 4
+                                    },
+                                    "content": {
+                                        "text": "Subheading"
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "paragraph-template",
+                                "data": {
+                                    "config": {
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Paragraph text 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, libero nec commodo sodales, purus lorem tempor risus, vitae imperdiet erat nisi sit amet augue. Morbi urna ante, elementum at dolor vitae, luctus fringilla purus. Maecenas dolor risus, rhoncus ut ultricies et, tempor quis sem. Suspendisse ac tellus tellus. Cras maximus et massa non tempor. Morbi sed nibh elementum, tempus massa a, aliquet sem. Pellentesque orci elit, molestie ac enim at, lacinia auctor ante."
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "paragraph-template",
+                                "data": {
+                                    "config": {
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Paragraph text 3. Nunc laoreet et sem hendrerit finibus. Aliquam auctor fringilla ligula et tristique. Sed molestie, erat ac dignissim tincidunt, mi eros aliquet neque, vel facilisis risus magna ac metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam quis facilisis turpis. Vivamus id consectetur lacus. Vestibulum feugiat nisi ac massa convallis, eget ultricies odio imperdiet. Suspendisse venenatis sed eros sit amet efficitur. Maecenas vehicula orci sed porta condimentum. Aenean lacus enim, iaculis ac vestibulum ut, egestas et ante. Suspendisse dictum aliquam convallis."
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "content": {
+                        "items": [
+                            {
+                                "template-name": "paragraph-template",
+                                "data": {
+                                    "config": {
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Paragraph text 4. Integer gravida venenatis nisl, eget gravida diam vehicula nec. In fringilla mattis tristique. Phasellus ex urna, ultricies a felis eget, suscipit auctor risus. Aliquam eleifend semper dapibus. Duis a sollicitudin justo. Ut sed enim consequat erat dapibus laoreet. Sed ut elit nec odio feugiat laoreet. Aenean ut convallis justo. Ut faucibus a mauris consectetur convallis. Sed auctor libero sit amet lectus eleifend venenatis."
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "paragraph-template",
+                                "data": {
+                                    "config": {
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Paragraph text 5. Nunc laoreet et sem hendrerit finibus. Aliquam auctor fringilla ligula et tristique. Sed molestie, erat ac dignissim tincidunt, mi eros aliquet neque, vel facilisis risus magna ac metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam quis facilisis turpis. Vivamus id consectetur lacus. Vestibulum feugiat nisi ac massa convallis, eget ultricies odio imperdiet. Suspendisse venenatis sed eros sit amet efficitur. Maecenas vehicula orci sed porta condimentum. Aenean lacus enim, iaculis ac vestibulum ut, egestas et ante. Suspendisse dictum aliquam convallis."
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "paragraph-template",
+                                "data": {
+                                    "config": {
+                                        "level": 3
+                                    },
+                                    "content": {
+                                        "text": "Paragraph text 6. Nunc laoreet et sem hendrerit finibus. Aliquam auctor fringilla ligula et tristique. Sed molestie, erat ac dignissim tincidunt, mi eros aliquet neque, vel facilisis risus magna ac metus. Aenean lacus enim, iaculis ac vestibulum ut, egestas et ante. Suspendisse dictum aliquam convallis. Vivamus id consectetur lacus. Vestibulum feugiat nisi ac massa convallis, eget ultricies odio imperdiet. Suspendisse venenatis sed eros sit amet efficitur."
+                                    }
+                                }
+                            },
+                            {
+                                "template-name": "caption-template",
+                                "data": {
+                                    "config": {
+                                        "tag": "p",
+                                        "level": 1
+                                    },
+                                    "content": {
+                                        "text": "Caption level one"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "content-placement-four": {
+        "article": {
+            "config": {
+                "context": "article",
+                "size": "medium"
+            },
+            "content": {
+                "heading": {
+                    "level": 3,
+                    "text": "Heading"
+                },
+                "call-to-action": {
+                    "content": {
+                        "text": "CALL TO ACTION",
+                        "href": "#"
+                    }
+                },
+                "paragraph": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "featured-image": {
+                    "vp1": "http://placehold.it/540x280",
+                    "vp2": "http://placehold.it/372x170",
+                    "vp3": "http://placehold.it/253x120",
+                    "vp4": "http://placehold.it/376x200",
+                    "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                }
+            }
+        }
+    },
+    "content-placement-two": {
+        "article": {
+            "config": {
+                "context": "article",
+                "size": "large"
+            },
+            "content": {
+                "heading": {
+                    "level": 3,
+                    "text": "Heading"
+                },
+                "call-to-action": {
+                    "content": {
+                        "text": "CALL TO ACTION",
+                        "href": "#"
+                    }
+                },
+                "paragraph": "Paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae convallis eros, nec iaculis nisi.",
+                "featured-image": {
+                    "vp1": "http://placehold.it/540x280",
+                    "vp2": "http://placehold.it/768x420",
+                    "vp3": "http://placehold.it/530x300",
+                    "vp4": "http://placehold.it/776x440",
+                    "alt": "Placeholder with grey background and dimension watermark without any imagery"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,113 @@
+// ==========================================================================
+// Component: Link Navigation
+// ==========================================================================
+
+// Component variable map
+$c-link-navigation: (
+    image-size: 64px,
+    image-margin: 4px,
+);
+
+// Component selector
+#{$migration-link-navigation}
+nav.c-link-navigation {
+    margin-top: 48px;
+    text-align: center;
+
+    #{$migration-link-navigation-heading}
+    .c-heading {
+        @include apply-type-component(h5);
+        padding-top: 8px;
+        padding-bottom: 24px;
+    }
+
+    #{$migration-link-navigation-hyperlink}
+    a.c-hyperlink {
+        @include clearfix();
+        display: block;
+    }
+
+    p {
+        @include apply-maxlines(3, t7, true);
+        word-wrap: break-word;
+        text-overflow: clip;
+    }
+
+    li {
+        display: inline-block;
+
+        #{$migration-link-navigation-hyperlink}
+        a.c-hyperlink {
+            margin: 0 18px;
+            vertical-align: top;
+
+            picture {
+                display: block;
+                margin: 0 auto;
+                max-width: 400px;
+                max-height: 120px;
+
+                @media only screen and (min-width: $vp3) {
+                    margin-bottom: 12px;
+                }
+            }
+
+            p {
+                padding: 0 10px;
+                max-width: 200px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            &.f-image {
+                display: inline-block;
+                margin: 0 22px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        li {
+            clear: both;
+            display: block;
+            height: map-get($c-link-navigation, image-size) + (map-get($c-link-navigation, image-margin) * 2);
+
+            #{$migration-link-navigation-hyperlink}
+            a.c-hyperlink {
+                width: 100%;
+                height: 100%;
+                padding: 12px 0;
+                overflow: hidden;
+                margin: 0;
+
+                picture {
+                    display: inline-block;
+                    max-width: none;
+                    max-height: none;
+
+                    img {
+                        width: map-get($c-link-navigation, image-size);
+                        height: map-get($c-link-navigation, image-size);
+                        margin: map-get($c-link-navigation, image-margin);
+                    }
+                }
+
+                p {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    padding-#{$right}: 12px;
+                    padding-#{$left}: 8px;
+                    text-align: $left;
+                    max-width: none;
+                    display: inline;
+                }
+
+                &.f-image {
+                    text-align: $left;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

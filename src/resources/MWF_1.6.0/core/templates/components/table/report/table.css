@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+.c-table {
+  overflow: visible;
+  margin-top: 8px;
+}
+
+
+.c-table.f-divided tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.c-table td.f-image {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+
+.c-table table {
+  width: 100%;
+}
+
+
+.c-table thead {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.c-table thead th {
+  font-size: 11px;
+  line-height: 16px;
+  vertical-align: bottom;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+.c-table thead th button {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  background: transparent;
+  border: 0;
+  padding-left: 0;
+}
+
+
+.c-table thead th button:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+
+.c-table thead th button:focus {
+  outline: 1px dashed rgba(0, 0, 0, 0.6);
+}
+
+
+.c-table thead th button:active {
+  color: #000;
+  outline: 1px solid transparent;
+}
+
+
+.c-table thead th button.c-glyph:after {
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: top;
+}
+
+
+.c-table thead th button.f-ascending {
+  color: #000;
+}
+
+
+.c-table thead th button.f-ascending:after {
+  content: "";
+}
+
+
+.c-table thead th button.f-descending {
+  color: #000;
+}
+
+
+.c-table thead th button.f-descending:after {
+  content: "";
+}
+
+
+.c-table thead th[colspan]:not([colspan="1"]) {
+  text-align: center;
+}
+
+
+.c-table thead tr + tr th,
+.c-table thead tr + tr th:last-child {
+  text-align: center;
+}
+
+
+.c-table tr:before {
+  content: "";
+  display: block;
+  width: 7px;
+}
+
+
+.c-table td,
+.c-table th {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+
+.c-table td.f-sub-categorical,
+.c-table th.f-sub-categorical {
+  text-align: center;
+}
+
+
+.c-table td.f-numerical,
+.c-table th.f-numerical {
+  text-align: right;
+}
+
+
+.c-table td.f-numerical .c-price,
+.c-table th.f-numerical .c-price {
+  float: right;
+}
+
+
+.c-table[data-table="structured"] {
+  margin-top: 20px;
+}
+
+
+.c-table[data-table="structured"] table {
+  table-layout: fixed;
+}
+
+
+.c-table[data-table="structured"] table td {
+  width: 50%;
+}
+
+
+.c-table ul.c-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.c-table ul.c-list li {
+  padding: 0 0 8px;
+  list-style: none;
+}
+
+
+.c-table .c-paragraph {
+  padding: 0;
+}
+
+
+.c-table .c-call-to-action {
+  background: transparent;
+  color: #0078D7;
+  border-color: transparent;
+  border-width: 2px;
+  padding: 10px 44px 7px 24px;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: 10px;
+}
+
+
+.c-table .c-call-to-action:focus,
+.c-table .c-call-to-action:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+
+.c-table .c-call-to-action:active {
+  background: transparent;
+  text-decoration: none;
+}
+
+
+.c-table .c-call-to-action span:hover {
+  text-decoration: underline;
+}
+
+.theme-light
+.c-table .c-call-to-action, .theme-dark .theme-light
+.c-table .c-call-to-action {
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-light
+.c-table .c-call-to-action:active, .theme-dark .theme-light
+.c-table .c-call-to-action:active {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light
+.c-table .c-call-to-action:focus, .theme-dark .theme-light
+.c-table .c-call-to-action:focus {
+  outline-color: #000;
+}
+
+.theme-dark
+.c-table .c-call-to-action, .theme-light .theme-dark
+.c-table .c-call-to-action {
+  color: #FFF;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-dark
+.c-table .c-call-to-action:active, .theme-light .theme-dark
+.c-table .c-call-to-action:active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark
+.c-table .c-call-to-action:focus, .theme-light .theme-dark
+.c-table .c-call-to-action:focus {
+  outline-color: #FFF;
+}
+
+
+.c-table .c-call-to-action:hover {
+  border-color: transparent;
+}

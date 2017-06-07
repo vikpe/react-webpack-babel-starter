@@ -1,0 +1,240 @@
+//  ==========================================================================
+//  Component: Dialog
+//  ==========================================================================
+
+.c-dialog {
+    &[aria-hidden="true"] {
+        display: none;
+    }
+
+    [role="dialog"] {
+        display: block;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: $color-background;
+        border: 1px solid $color-accent;
+        margin: 0 auto;
+        max-height: 760px;
+        max-width: 546px;
+        min-width: 296px;
+        overflow: auto;
+        padding: 24px;
+        z-index: map-get($z-index, dialog);
+
+        &:focus {
+            outline: none;
+        }
+
+        h2 {
+            @include apply-type(t5);
+            line-height: normal;
+            padding: 0;
+        }
+
+        p {
+            padding-top: 8px;
+        }
+
+        .c-group {
+            display: block;
+
+            button {
+                float: #{$right};
+                margin-top: 24px;
+                width: 50%;
+                max-width: none;
+                margin-#{$right}: 0;
+
+                + button {
+                    float: #{$left};
+                    width: calc(50% - 4px);
+                }
+            }
+        }
+    }
+
+    &.f-flow,
+    &.f-lightbox {
+        [role="dialog"] {
+            padding: 36px;
+
+            > .c-glyph {
+                position: absolute;
+                width: 36px;
+                height: 36px;
+                #{$right}: 0;
+                top: 0;
+                color: $color-foreground-60;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-foreground-80;
+                }
+
+                &:focus {
+                    outline: 1px dashed $color-foreground-80;
+                }
+
+                &:active {
+                    color: $color-foreground;
+                }
+
+                &:before {
+                    margin: 10px;
+                    vertical-align: middle;
+                }
+            }
+
+            > .glyph-cancel:before {
+                content: $glyph-cancel;
+            }
+
+            .c-group {
+                button {
+                    margin-top: 36px;
+                }
+            }
+        }
+    }
+
+    &.f-lightbox {
+        [role="dialog"] {
+            background: $color-brand-neutral-80;
+            border-color: transparent;
+            max-width: 1066px;
+            overflow: visible;
+
+            > .c-glyph {
+                top: -36px;
+                color: $color-tint-60;
+
+                &:hover {
+                    color: $color-tint-80;
+                }
+
+                &:focus {
+                    outline-color: $color-tint-60;
+                }
+            }
+
+            [role="document"] {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    [role="presentation"] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $color-shade-90;
+        z-index: map-get($z-index, dialog);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    #{$theme-light} {
+        [role="dialog"] {
+            background: $color-tint;
+            border-color: $color-shade;
+
+            .c-glyph {
+                color: $color-shade;
+
+                &:hover {
+                    color: $color-shade-80;
+                }
+
+                &:focus {
+                    outline-color: $color-shade-60;
+                }
+            }
+        }
+
+        [role="presentation"] {
+            background: $color-tint-90;
+        }
+    }
+
+    #{$theme-dark} {
+        [role="dialog"] {
+            background: $color-shade;
+            border-color: $color-tint;
+
+            .c-glyph {
+                color: $color-tint;
+
+                &:hover {
+                    color: $color-tint-80;
+                }
+
+                &:focus {
+                    outline-color: $color-tint-60;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+
+        [role="dialog"] {
+            top: 0;
+            left: 0;
+            transform: none;
+            margin: 12px;
+            max-height: 342px;
+
+            .c-group {
+                display: block;
+                padding: 0;
+
+                button {
+                    float: none;
+                    margin-top: 24px;
+                    width: 100%;
+                    max-width: none;
+                    margin-#{$right}: 0;
+
+                    + button {
+                        float: none;
+                        width: 100%;
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+
+        &.f-lightbox {
+            [role="dialog"] {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                max-height: none;
+                margin: 0;
+            }
+        }
+
+        &.f-flow {
+            [role="dialog"] {
+                max-height: 100%;
+                bottom: 0;
+
+                .c-group {
+                    button {
+                        + button {
+                            margin-top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

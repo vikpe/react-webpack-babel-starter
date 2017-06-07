@@ -1,0 +1,477 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Hero",
+    "description": "A MWF hero component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/hero.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "x-align": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "center",
+                        "right"
+                    ]
+                },
+                "y-align": {
+                    "type": "string",
+                    "enum": [
+                        "top",
+                        "center",
+                        "bottom"
+                    ]
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": [
+                        "dark",
+                        "light"
+                    ]
+                },
+                "mask": {
+                    "type": "number",
+                    "enum": [
+                        20,
+                        40,
+                        60,
+                        80,
+                        100
+                    ]
+                },
+                "multi-cta": {
+                    "type": "boolean"
+                },
+                "cta-override": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "x-align",
+                "y-align",
+                "theme"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/accessory"
+                },
+                {
+                    "$ref": "#/definitions/app"
+                },
+                {
+                    "$ref": "#/definitions/article"
+                },
+                {
+                    "$ref": "#/definitions/device"
+                },
+                {
+                    "$ref": "#/definitions/game"
+                },
+                {
+                    "$ref": "#/definitions/movie"
+                },
+                {
+                    "$ref": "#/definitions/musicAlbum"
+                },
+                {
+                    "$ref": "#/definitions/musicArtist"
+                },
+                {
+                    "$ref": "#/definitions/software"
+                },
+                {
+                    "$ref": "#/definitions/tvShow"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "calls-to-action": {
+            "type": "array",
+            "items": {
+                "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+            }
+        },
+        "backgroundImage": {
+            "type": "object",
+            "properties": {
+                "vp6": {
+                    "type": "string"
+                },
+                "vp5": {
+                    "type": "string"
+                },
+                "vp4": {
+                    "type": "string"
+                },
+                "vp3": {
+                    "type": "string"
+                },
+                "vp2": {
+                    "type": "string"
+                },
+                "vp1": {
+                    "type": "string"
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "vp1",
+                "vp2",
+                "vp3",
+                "vp4",
+                "vp5",
+                "vp6",
+                "alt"
+            ]
+        },
+        "accessory": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "accessory"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "subheading": {
+                    "type": "string"
+                },
+                "price": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/price.json"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "heading",
+                "price",
+                "calls-to-action"
+            ]
+        },
+        "app": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "app"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "app-icon": {
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string"
+                        },
+                        "alt": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "src",
+                        "alt"
+                    ]
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "subheading": {
+                    "type": "string"
+                },
+                "rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "app-icon",
+                "heading",
+                "calls-to-action"
+            ]
+        },
+        "article": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "article"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "type": "object",
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/logo.json"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "heading",
+                "description",
+                "publisher",
+                "calls-to-action"
+            ]
+        },
+        "device": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "device"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "subheading": {
+                    "type": "string"
+                },
+                "price": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/price.json"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "heading",
+                "price",
+                "calls-to-action"
+            ]
+        },
+        "game": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "game"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "productTitle": {
+                    "type": "string"
+                },
+                "productSubtitle": {
+                    "type": "string"
+                },
+                "rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "productTitle",
+                "rating",
+                "calls-to-action"
+            ]
+        },
+        "movie": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "movie"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "productTitle": {
+                    "type": "string"
+                },
+                "productSubtitle": {
+                    "type": "string"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "productTitle",
+                "productSubtitle",
+                "calls-to-action"
+            ]
+        },
+        "musicAlbum": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "musicAlbum"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "image": {
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string"
+                        },
+                        "alt": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "src",
+                        "alt"
+                    ]
+                },
+                "productTitle": {
+                    "type": "string"
+                },
+                "productSubtitle": {
+                    "type": "string"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "image",
+                "productTitle",
+                "productSubtitle",
+                "calls-to-action"
+            ]
+        },
+        "musicArtist": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "musicArtist"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "productTitle": {
+                    "type": "string"
+                },
+                "productSubtitle": {
+                    "type": "string"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "productTitle",
+                "productSubtitle",
+                "calls-to-action"
+            ]
+        },
+        "software": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "software"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "heading": {
+                    "type": "string"
+                },
+                "subheading": {
+                    "type": "string"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "heading",
+                "calls-to-action"
+            ]
+        },
+        "tvShow": {
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "tvShow"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/backgroundImage"
+                },
+                "productTitle": {
+                    "type": "string"
+                },
+                "productSubtitle": {
+                    "type": "string"
+                },
+                "calls-to-action": {
+                    "$ref": "#/definitions/calls-to-action"
+                }
+            },
+            "required": [
+                "context",
+                "backgroundImage",
+                "productTitle",
+                "productSubtitle",
+                "calls-to-action"
+            ]
+        }
+    }
+}

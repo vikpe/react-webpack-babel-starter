@@ -25,8 +25,12 @@
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "jshint",
     "lint:sass": "stylelint ./src/**/*.scss",
-    "start": "webpack-dev-server",
-    "test": "jest --watch --coverage"
+    "start": "npm run clean && tsc && npm run begin",
+    "begin": "node .\\dist\\Server\\server.js",
+    "test": "jest --watch --coverage",
+    "build:dev": "webpack --config ./webpackConfigs/webpack.dev.config && tsc ",
+    "build:prod": "webpack --config ./webpackConfigs/webpack.prod.config && tsc ",
+    "clean": "rimraf dist && rimraf public"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -36,9 +40,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.3.0",
+    "jade-loader": "^0.8.0",
     "jest": "^20.0.0",
     "jshint": "^2.9.4",
     "node-sass": "^4.5.2",
@@ -51,10 +58,19 @@
     "style-loader": "^0.17.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
+    "ts-loader": "^2.1.0",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-shell-plugin": "^0.5.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/express": "^4.0.35",
+    "@types/webpack-env": "^1.13.0",
+    "express": "^4.15.3",
+    "jade": "^1.11.0"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",

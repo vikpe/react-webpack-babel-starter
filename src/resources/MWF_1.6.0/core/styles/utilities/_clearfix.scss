@@ -1,0 +1,13 @@
+// Clearfix
+// One of the many ways to clearfix. We make it a mixin so you can use it wherever you need it.
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}

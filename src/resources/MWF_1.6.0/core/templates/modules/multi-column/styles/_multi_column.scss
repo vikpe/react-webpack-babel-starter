@@ -1,0 +1,92 @@
+.m-multi-column {
+    > div,
+    > ul {
+        column-gap: 48px;
+
+        // swap padding to Hyperlink
+        > li {
+            padding: 0;
+
+            a.c-hyperlink {
+                padding: 8px 0;
+                display: inline-block;
+            }
+        }
+    }
+
+    // Base selectors and rules
+    $columns: 1, 2, 3, 4;
+
+    @each $column in $columns {
+        &.f-columns-#{$column} {
+            > div,
+            > ul {
+                columns: $column;
+            }
+        }
+    }
+
+    // Modifications per breakpoints
+    // Should be re-factored to be mobile first.
+    @media only screen and (max-width: $vp6-max) {
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 5;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp5-max) {
+        &.f-columns-4,
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 4;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp4-max) {
+        &.f-columns-4,
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 3;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp3-max) {
+        &.f-columns-4,
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 3;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        &.f-columns-3,
+        &.f-columns-4,
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 2;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        &.f-columns-2,
+        &.f-columns-3,
+        &.f-columns-4,
+        &.f-columns-5 {
+            > div,
+            > ul {
+                columns: 1;
+            }
+        }
+    }
+}

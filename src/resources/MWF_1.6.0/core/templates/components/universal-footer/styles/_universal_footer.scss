@@ -1,0 +1,107 @@
+.c-universal-footer {
+    nav {
+        @include clearfix();
+
+        div > div {
+            @include clearfix();
+            box-sizing: border-box;
+            float: $left;
+            min-height: 1px;
+            padding: 0 12px;
+            width: 16.6666666667%;
+            zoom: 1;
+
+            & .c-heading-4,
+            & a.c-hyperlink {
+                color: $color-foreground-60;
+            }
+
+            & ul.c-list {
+                @include apply-type(t9, false, true);
+            }
+        }
+    }
+
+    > section {
+        > a.c-hyperlink {
+            @include apply-type(t9, false, true);
+            display: inline-block;
+            margin-top: 30px;
+            color: $color-foreground-60;
+            float: $left;
+
+            &.c-glyph {
+                @include apply-type(t9, false, true);
+                display: inline-block;
+                margin-top: 30px;
+                color: $color-foreground-60;
+                float: $left;
+
+                &:before {
+                    @include apply-type(t5, false, true);
+                    margin-#{$right}: 10px;
+                    color: $color-foreground-60;
+                    vertical-align: middle;
+                }
+
+                &.glyph-world:before {
+                    content: $glyph-world;
+                }
+            }
+        }
+
+        & ul.c-list {
+            @include apply-type(t9, false, true);
+            margin-#{$left}: -20px;
+            float: $right;
+            margin-top: 25px;
+
+            & li {
+                color: $color-foreground-60;
+                display: inline-block;
+                padding: 8px 20px;
+
+                & a.c-hyperlink {
+                    color: $color-foreground-60;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp2-max) {
+        nav {
+            // wrapping div needed for clearing 3-up
+            div {
+                @include clearfix();
+                > div {
+                    width: 33.33333%;
+                }
+            }
+        }
+
+        > section {
+            & ul.c-list {
+                & li {
+                    padding-#{$left}: 0;
+                    padding-#{$right}: 16px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $vp1-max) {
+        nav {
+            //100% at lowest breakpoint do deal with possible long strings
+            div > div {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        > section {
+            & ul.c-list {
+                float: $left;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Media gallery module",
+    "description": "A MWF Media gallery module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/media-gallery.json",
+    "supportedPartners": [ ],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/carousel.json"
+        }
+    ]
+}

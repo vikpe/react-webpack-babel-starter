@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Product placement module",
+    "description": "A MWF product placement module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/product-placement.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/carousel.json#/definitions/productPlacementCarousel"
+        }
+    ]
+}

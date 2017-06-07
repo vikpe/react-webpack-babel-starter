@@ -1,0 +1,22 @@
+//  ==========================================================================
+//  Define Breakpoints
+//  ==========================================================================
+//
+//  Breakpoints represent the smallest value in a breakpoint range.
+//  eg: vp1 = 320px - 539px, vp2 = 540 - 767px
+//  ==========================================================================
+$vp1: 320px;
+$vp2: 540px;
+$vp3: 768px;
+$vp4: 1084px;
+$vp5: 1400px;
+$vp6: 1779px;
+$vp-min: $vp1;
+$vp-max: 2048px;
+
+$vp1-max: $vp2 - 1px;
+$vp2-max: $vp3 - 1px;
+$vp3-max: $vp4 - 1px;
+$vp4-max: $vp5 - 1px;
+$vp5-max: $vp6 - 1px;
+$vp6-max: $vp-max;

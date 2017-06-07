@@ -1,0 +1,60 @@
+ul.c-breadcrumb {
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 12px;
+}
+
+ul.c-breadcrumb li {
+  display: inline-block;
+  padding-right: 8px;
+}
+
+ul.c-breadcrumb li + li:before {
+  content: "\\";
+  padding-right: 8px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+ul.c-breadcrumb li:last-child a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+ul.c-breadcrumb li a {
+  font-size: 13px;
+  line-height: 16px;
+  color: #0078D7;
+}
+
+.theme-light ul.c-breadcrumb li:last-child a, .theme-dark .theme-light ul.c-breadcrumb li:last-child a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light ul.c-breadcrumb li + li:before, .theme-dark .theme-light ul.c-breadcrumb li + li:before {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light ul.c-breadcrumb li a, .theme-dark .theme-light ul.c-breadcrumb li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.theme-light ul.c-breadcrumb li a:hover, .theme-dark .theme-light ul.c-breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.theme-dark ul.c-breadcrumb li:last-child a, .theme-light .theme-dark ul.c-breadcrumb li:last-child a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark ul.c-breadcrumb li + li:before, .theme-light .theme-dark ul.c-breadcrumb li + li:before {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark ul.c-breadcrumb li a, .theme-light .theme-dark ul.c-breadcrumb li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.theme-dark ul.c-breadcrumb li a:hover, .theme-light .theme-dark ul.c-breadcrumb li a:hover {
+  text-decoration: underline;
+}

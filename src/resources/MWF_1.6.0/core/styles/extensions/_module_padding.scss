@@ -1,0 +1,25 @@
+/* Adding hooks for vertical padding to apply to all modules except hero.
+ * As we get more information on partner layouts this will become specific
+ * to each module and vary based on layout */
+
+[class^="m-"] {
+    //VP1 Default
+    @include left-right-padding($add-12);
+    padding-top: 48px;
+
+    @media only screen and (min-width: $vp2){
+        @include left-right-padding($add-24);
+    }
+
+    @media only screen and (min-width: $vp3){
+        @include left-right-padding($add-36);
+    }
+
+    @media only screen and (min-width: $vp5){
+        @include left-right-padding($add-48);
+    }
+
+    @if $ltie8 {
+        @include left-right-padding($add-36)
+    }
+}

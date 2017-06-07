@@ -1,0 +1,240 @@
+@charset "UTF-8";
+.c-rating span.c-glyph {
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+}
+
+.c-rating span.c-glyph:before, .c-rating span.c-glyph:after {
+  font-size: 12px;
+}
+
+.c-rating button.c-glyph {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+}
+
+.c-rating button.c-glyph:before, .c-rating button.c-glyph:after {
+  font-size: 24px;
+}
+
+.c-rating button.c-glyph:focus {
+  outline: none;
+}
+
+.c-rating button.c-glyph:focus:before {
+  outline: 1px dashed #000;
+}
+
+.c-rating.f-individual {
+  -ms-transform: translateX(-4px);
+      transform: translateX(-4px);
+}
+
+.c-rating.f-individual span.c-glyph {
+  width: 30px;
+  height: 30px;
+}
+
+.c-rating.f-individual span.c-glyph:before, .c-rating.f-individual span.c-glyph:after {
+  font-size: 18px;
+}
+
+.c-rating .c-glyph {
+  position: relative;
+  float: left;
+}
+
+.c-rating .c-glyph:before, .c-rating .c-glyph:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.c-rating .c-glyph:before {
+  font-family: "MWF-MDL2";
+  content: "";
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.c-rating .c-glyph:after {
+  color: #000;
+}
+
+.c-rating form,
+.c-rating div {
+  display: inline-block;
+}
+
+.c-rating form:before, .c-rating form:after,
+.c-rating div:before,
+.c-rating div:after {
+  content: " ";
+  display: table;
+}
+
+.c-rating form:after,
+.c-rating div:after {
+  clear: both;
+}
+
+.c-rating div {
+  -ms-transform: translateX(-2px);
+      transform: translateX(-2px);
+}
+
+.c-rating form {
+  -ms-transform: translateX(-7px);
+      transform: translateX(-7px);
+}
+
+.c-rating form:hover button.c-glyph:before {
+  font-family: "MWF-MDL2";
+  content: "";
+  color: #000;
+}
+
+.c-rating form:hover button.c-glyph:after {
+  display: none;
+}
+
+.c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.c-rating form[disabled] button.c-glyph:hover {
+  cursor: not-allowed;
+}
+
+.c-rating form[disabled] button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.c-rating form[disabled] button.c-glyph:after {
+  display: none;
+}
+
+.c-rating form[disabled] button.c-glyph:before {
+  font-family: "MWF-MDL2";
+  content: "";
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.c-rating.f-community-rated .c-glyph:before {
+  font-family: "MWF-MDL2";
+  content: "";
+}
+
+.c-rating.f-community-rated .f-full:after {
+  font-family: "MWF-MDL2";
+  content: "";
+}
+
+.c-rating.f-community-rated .f-half:after {
+  font-family: "MWF-MDL2";
+  content: "";
+}
+
+.c-rating.f-community-rated.f-user-rated .f-full:after,
+.c-rating.f-community-rated.f-user-rated .f-half:after {
+  color: #0078D7;
+}
+
+.theme-light .c-rating .c-glyph:before, .theme-dark .theme-light .c-rating .c-glyph:before {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light .c-rating .c-glyph:after, .theme-dark .theme-light .c-rating .c-glyph:after {
+  color: #000;
+}
+
+.theme-light .c-rating form button.c-glyph:focus:before, .theme-dark .theme-light .c-rating form button.c-glyph:focus:before {
+  outline-color: #000;
+}
+
+.theme-light .c-rating form button.c-glyph:before, .theme-dark .theme-light .c-rating form button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light .c-rating form button.c-glyph:after, .theme-dark .theme-light .c-rating form button.c-glyph:after {
+  color: #000;
+}
+
+.theme-light .c-rating form:hover button.c-glyph:before, .theme-dark .theme-light .c-rating form:hover button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-light .c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before, .theme-dark .theme-light .c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light .c-rating form[disabled] button.c-glyph:before, .theme-dark .theme-light .c-rating form[disabled] button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .c-rating form[disabled] button.c-glyph:hover ~ button.c-glyph:before, .theme-dark .theme-light .c-rating form[disabled] button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .c-rating.f-community-rated.f-user-rated .f-full:after,
+.theme-light .c-rating.f-community-rated.f-user-rated .f-half:after, .theme-dark .theme-light .c-rating.f-community-rated.f-user-rated .f-full:after,
+.theme-dark .theme-light .c-rating.f-community-rated.f-user-rated .f-half:after {
+  color: #000;
+}
+
+.theme-dark .c-rating .c-glyph:before, .theme-light .theme-dark .c-rating .c-glyph:before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark .c-rating .c-glyph:after, .theme-light .theme-dark .c-rating .c-glyph:after {
+  color: #FFF;
+}
+
+.theme-dark .c-rating form button.c-glyph:focus:before, .theme-light .theme-dark .c-rating form button.c-glyph:focus:before {
+  outline-color: #FFF;
+}
+
+.theme-dark .c-rating form button.c-glyph:before, .theme-light .theme-dark .c-rating form button.c-glyph:before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark .c-rating form button.c-glyph:after, .theme-light .theme-dark .c-rating form button.c-glyph:after {
+  color: #FFF;
+}
+
+.theme-dark .c-rating form:hover button.c-glyph:before, .theme-light .theme-dark .c-rating form:hover button.c-glyph:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-dark .c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before, .theme-light .theme-dark .c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark .c-rating form[disabled] button.c-glyph:before, .theme-light .theme-dark .c-rating form[disabled] button.c-glyph:before {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .c-rating form[disabled] button.c-glyph:hover ~ button.c-glyph:before, .theme-light .theme-dark .c-rating form[disabled] button.c-glyph:hover ~ button.c-glyph:before {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .c-rating.f-community-rated.f-user-rated .f-full:after,
+.theme-dark .c-rating.f-community-rated.f-user-rated .f-half:after, .theme-light .theme-dark .c-rating.f-community-rated.f-user-rated .f-full:after,
+.theme-light .theme-dark .c-rating.f-community-rated.f-user-rated .f-half:after {
+  color: #FFF;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .c-rating form:hover button.c-glyph:hover ~ button.c-glyph:before {
+    font-family: "MWF-MDL2";
+    content: "";
+  }
+  .c-rating.f-community-rated .c-glyph:before {
+    font-family: "MWF-MDL2";
+    content: "";
+  }
+}

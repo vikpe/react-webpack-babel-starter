@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Search results module",
+    "description": "A MWF search results module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/search-results.json",
+    "supportedPartners": [
+        "search"
+    ],
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "link-list"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "type",
+                "id"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://www.getmwf.com/releases/core/schemas/components/hyperlink.json"
+                    }
+                },
+                "see-all": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/hyperlink.json"
+                },
+                "price": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/price.json"
+                }
+            },
+            "required": [
+                "heading",
+                "links",
+                "see-all"
+            ]
+        }
+    }
+}

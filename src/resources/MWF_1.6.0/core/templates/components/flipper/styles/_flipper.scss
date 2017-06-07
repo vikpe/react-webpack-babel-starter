@@ -1,0 +1,95 @@
+//  ==========================================================================
+//  Component: Flipper
+//  ==========================================================================
+
+.c-flipper {
+    display: inline-block;
+    width: 24px;
+    height: 48px;
+    border: 0;
+    padding: 0;
+    background: $color-foreground-10;
+    color: $color-foreground-60;
+    font-family: $font-family-glyphs;
+
+    &:before {
+        // Prevent IE button press effect
+        position: relative;
+        #{$left}: 0;
+        top: 0;
+    }
+
+    /*
+    * Use .f-previous and .f-next
+    * .f-left and f-left deprecated v1.3.0
+    */
+
+    &.f-left,
+    &.f-previous {
+        &:before {
+            content: set-direction-based-value($glyph-chevron-left, $glyph-chevron-right);
+        }
+    }
+
+    &.f-right,
+    &.f-next {
+        &:before {
+            content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+        }
+    }
+
+    &:focus {
+        outline: 1px dashed $color-foreground;
+        background: $color-foreground-15;
+    }
+
+    &:hover {
+        background: $color-foreground-15;
+        color: $color-foreground-80;
+    }
+
+    &:active {
+        background: $color-foreground-20;
+        color: $color-foreground;
+    }
+
+    #{$theme-light} {
+        background: $color-tint-50;
+        color: $color-shade-60;
+
+        &:focus {
+            background: $color-tint-80;
+            outline-color: $color-shade;
+        }
+
+        &:hover {
+            background: $color-tint-40;
+            color: $color-shade-80;
+        }
+
+        &:active {
+            background: $color-tint-20;
+            color: $color-shade;
+        }
+    }
+
+    #{$theme-dark} {
+        background: $color-shade-50;
+        color: $color-tint-60;
+
+        &:focus {
+            background: $color-shade-80;
+            outline-color: $color-tint;
+        }
+
+        &:hover {
+            background: $color-shade-40;
+            color: $color-tint-80;
+        }
+
+        &:active {
+            background: $color-shade-20;
+            color: $color-tint;
+        }
+    }
+}

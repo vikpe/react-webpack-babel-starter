@@ -1,0 +1,95 @@
+//  ==========================================================================
+//  Component: Slider
+//  ==========================================================================
+
+.c-slider {
+    width: 296px;
+
+    input[type="range"] {
+        appearance: slider-horizontal; // Ensure that this displays correctly
+    }
+
+    .no-js & input[type="range"] {
+        display: block;
+    }
+
+    .js & input[type="range"] {
+        display: none;
+    }
+
+    div {
+        position: relative;
+        height: 4px;
+        background: $color-foreground-40;
+        margin-top: 12px;
+
+        button {
+            height: 24px;
+            width: 8px;
+            background: $color-accent;
+            border: 0;
+            padding: 0;
+            border-radius: 4px;
+            position: absolute;
+            top: -10px;
+            outline: none;
+
+            &:focus {
+                outline: 1px dashed $color-foreground;
+            }
+
+            &:hover {
+                background: $color-foreground;
+            }
+
+            &:active {
+                background: flatten-overlay($color-accent, $color-foreground, 40);
+
+                span {
+                    display: block;
+                }
+            }
+
+            span {
+                display: none;
+                position: absolute;
+                min-width: 36px;
+                height: 36px;
+                text-align: center;
+                top: -40px;
+                #{$left}: 4px; // Half of thumb width
+                padding: 8px 8px 10px;
+                background: flatten-overlay($color-background, $color-foreground, 10);
+                border: 1px solid $color-foreground-30;
+                transform: set-direction-based-value(translateX(-50%), translateX(50%));
+            }
+        }
+
+        > span {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: $color-accent;
+        }
+    }
+
+    &.f-disabled {
+        label.c-label {
+            color: $color-foreground-20;
+        }
+
+        input[type="range"][disabled] {
+            & + div {
+                &,
+                button {
+                    background: flatten-overlay($color-background, $color-foreground, 20);
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

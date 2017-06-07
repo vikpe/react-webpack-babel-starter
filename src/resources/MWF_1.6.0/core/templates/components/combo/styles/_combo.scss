@@ -1,0 +1,112 @@
+//  ==========================================================================
+//  Component: Combo
+//  ==========================================================================
+
+.c-combo {
+    position: relative;
+    min-width: 92px;
+    max-width: 296px;
+    height: 38px;
+    margin-top: 20px;
+
+    div {
+        display: block;
+
+        ul {
+            z-index: map-get($z-index, neutral);
+            width: 296px;
+            min-width: 64px;
+            max-width: 368px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid $color-foreground-20;
+            background-clip: padding-box;
+            position: absolute;
+            $left: 0;
+            top: 38px;
+            background: $color-background;
+            overflow-y: auto;
+            max-height: none;
+
+            li span {
+                background: flatten-overlay($color-foreground, $color-background, 95);
+                display: block;
+                padding: 11px 12px 13px;
+                outline: 0;
+                cursor: pointer;
+
+                &.active {
+                    color: $color-brand-neutral-00;
+                    background: $color-brand-blue;
+                }
+
+                &:hover {
+                    color: $color-shade;
+                    background: flatten-overlay($color-foreground, $color-background, 90);
+                }
+            }
+
+            &[aria-hidden="true"] {
+                display: none;
+            }
+        }
+    }
+
+    input[type="text"],
+    button {
+        float: $left;
+        height: 100%;
+        outline: 0;
+        background: $color-background;
+    }
+
+    input[type="text"] {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 7px 10px;
+        padding-#{$right}: 38px;
+        border: 1px solid $color-foreground-60;
+
+        &:hover {
+            border-color: $color-foreground-80;
+        }
+
+        &:active,
+        &:focus {
+            border-color: $color-accent;
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        #{$right}: 0;
+        width: 34px;
+        height: 34px;
+        margin: 2px 1px 1px;
+        padding: 9px;
+        transition: color 0.1s, background-color 0.1s;
+        border: 0;
+
+        &:hover {
+            color: $color-accent;
+        }
+
+        &:active,
+        &:focus {
+            color: $color-background;
+            background: $color-accent;
+        }
+
+        &:before {
+            content: $glyph-chevron-down;
+            text-indent: 0;
+            font-size: 16px;
+        }
+    }
+}

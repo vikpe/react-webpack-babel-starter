@@ -1,0 +1,308 @@
+.c-mosaic-placement {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding-bottom: 19px;
+  width: 100%;
+  height: 100%;
+}
+
+.c-mosaic-placement.f-background-neutral-00 {
+  background: #FFF;
+}
+
+.c-mosaic-placement.f-background-neutral-10 {
+  background: #E3E3E3;
+}
+
+.c-mosaic-placement.f-background-neutral-20 {
+  background: #C8C8C8;
+}
+
+.c-mosaic-placement.f-background-neutral-30 {
+  background: #ACACAC;
+}
+
+.c-mosaic-placement.f-background-neutral-45 {
+  background: #919191;
+}
+
+.c-mosaic-placement.f-background-neutral-55 {
+  background: #767676;
+}
+
+.c-mosaic-placement.f-background-neutral-65 {
+  background: #5E5E5E;
+}
+
+.c-mosaic-placement.f-background-neutral-75 {
+  background: #464646;
+}
+
+.c-mosaic-placement.f-background-neutral-80 {
+  background: #2F2F2F;
+}
+
+.c-mosaic-placement.f-background-neutral-90 {
+  background: #171717;
+}
+
+.c-mosaic-placement.f-background-neutral-100 {
+  background: #000;
+}
+
+.c-mosaic-placement.f-background-accent {
+  background: #0078D7;
+}
+
+.c-mosaic-placement[class*="f-mask"] > picture:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: 1;
+}
+
+.theme-light .c-mosaic-placement.f-mask-10 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-10 > picture:before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .c-mosaic-placement.f-mask-20 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-20 > picture:before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-light .c-mosaic-placement.f-mask-40 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-40 > picture:before {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.theme-light .c-mosaic-placement.f-mask-60 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-60 > picture:before {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.theme-light .c-mosaic-placement.f-mask-80 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-80 > picture:before {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.theme-light .c-mosaic-placement.f-mask-100 > picture:before, .theme-dark .theme-light .c-mosaic-placement.f-mask-100 > picture:before {
+  background: #FFF;
+}
+
+.theme-dark .c-mosaic-placement.f-mask-10 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-10 > picture:before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .c-mosaic-placement.f-mask-20 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-20 > picture:before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .c-mosaic-placement.f-mask-40 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-40 > picture:before {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark .c-mosaic-placement.f-mask-60 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-60 > picture:before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.theme-dark .c-mosaic-placement.f-mask-80 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-80 > picture:before {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.theme-dark .c-mosaic-placement.f-mask-100 > picture:before, .theme-light .theme-dark .c-mosaic-placement.f-mask-100 > picture:before {
+  background: #000;
+}
+
+.c-mosaic-placement .c-video {
+  height: 400px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.c-mosaic-placement .c-video > h1 {
+  display: none;
+}
+
+.c-mosaic-placement .c-video video {
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -2;
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.c-mosaic-placement .c-heading {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 35px 0 5px;
+  font-weight: 200;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 48px;
+  padding-bottom: 1.636px;
+  font-weight: 700;
+}
+
+.c-mosaic-placement .c-subheading {
+  font-size: 20px;
+  line-height: 24px;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 72px;
+  padding-bottom: 1.636px;
+  font-weight: 200;
+}
+
+.c-mosaic-placement a.c-call-to-action {
+  background: transparent;
+  color: #0078D7;
+  border-color: transparent;
+  border-width: 2px;
+  padding: 10px 44px 7px 24px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.c-mosaic-placement a.c-call-to-action:focus, .c-mosaic-placement a.c-call-to-action:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.c-mosaic-placement a.c-call-to-action:active {
+  background: transparent;
+  text-decoration: none;
+}
+
+.c-mosaic-placement a.c-call-to-action span:hover {
+  text-decoration: underline;
+}
+
+.theme-light .c-mosaic-placement a.c-call-to-action, .theme-dark .theme-light .c-mosaic-placement a.c-call-to-action {
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-light .c-mosaic-placement a.c-call-to-action:active, .theme-dark .theme-light .c-mosaic-placement a.c-call-to-action:active {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .c-mosaic-placement a.c-call-to-action:focus, .theme-dark .theme-light .c-mosaic-placement a.c-call-to-action:focus {
+  outline-color: #000;
+}
+
+.theme-dark .c-mosaic-placement a.c-call-to-action, .theme-light .theme-dark .c-mosaic-placement a.c-call-to-action {
+  color: #FFF;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-dark .c-mosaic-placement a.c-call-to-action:active, .theme-light .theme-dark .c-mosaic-placement a.c-call-to-action:active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .c-mosaic-placement a.c-call-to-action:focus, .theme-light .theme-dark .c-mosaic-placement a.c-call-to-action:focus {
+  outline-color: #FFF;
+}
+
+.c-mosaic-placement .c-group,
+.c-mosaic-placement picture,
+.c-mosaic-placement picture:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.c-mosaic-placement picture:after {
+  content: "";
+  display: block;
+}
+
+.c-mosaic-placement .c-group {
+  display: block;
+  top: auto;
+  text-align: center;
+  height: 42px;
+}
+
+.c-mosaic-placement picture {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.c-mosaic-placement picture img {
+  position: absolute;
+  left: calc(50%);
+  top: calc(50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.c-mosaic-placement picture:after {
+  z-index: 1;
+}
+
+.theme-light .c-mosaic-placement picture:after, .theme-dark .theme-light .c-mosaic-placement picture:after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .c-mosaic-placement picture:after, .theme-light .theme-dark .c-mosaic-placement picture:after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.c-mosaic-placement > div {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  text-align: center;
+}
+
+.c-mosaic-placement > div > div {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  text-align: center;
+  height: 42px;
+}
+
+.c-mosaic-placement.f-height-large.f-width-small {
+  padding: 0 12.5% 19px;
+}
+
+.c-mosaic-placement.f-height-large.f-width-large {
+  padding: 0 25% 19px;
+}
+
+.c-mosaic-placement.f-height-medium .c-heading,
+.c-mosaic-placement.f-height-medium .c-subheading {
+  display: none;
+}
+
+.c-mosaic-placement.f-height-medium.f-width-large {
+  padding: 0 12.5% 19px;
+}
+
+.c-mosaic-placement.f-height-medium .c-video {
+  height: 200px;
+}

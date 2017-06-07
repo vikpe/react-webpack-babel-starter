@@ -1,0 +1,192 @@
+// ==========================================================================
+// Component: In-Page navigation
+// ==========================================================================
+
+nav.c-in-page-navigation {
+    border-bottom: 1px solid $color-foreground-20;
+    display: flex;
+
+    h4 {
+        padding: 38px 0 12px;
+        margin: 0 24px;
+    }
+
+    &.f-vertical {
+        border-bottom: 0;
+
+        &  > ul {
+            white-space: normal;
+
+            li {
+                display: block;
+            }
+        }
+    }
+
+    &.f-sticky {
+        position: fixed;
+        top: 0;
+        #{$left}: 0;
+        width: 100%;
+        background: $color-background;
+        z-index: map-get($z-index, over);
+
+        &.f-vertical {
+            width: initial;
+
+            &.f-dropdown {
+                width: 100%;
+                border-bottom: 1px solid $color-foreground-20;
+            }
+        }
+    }
+
+    &.f-hide {
+        height: 0;
+        visibility: hidden;
+    }
+
+    a {
+        &:hover,
+        &:focus,
+        &:active,
+        &.f-active {
+            color: $color-foreground;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+    }
+
+    & .c-select-menu {
+        padding: 2px 0;
+        margin: 0 24px;
+
+        & > a {
+            color: $color-foreground;
+        }
+    }
+
+    &  > ul {
+        white-space: nowrap;
+
+        li {
+            display: inline-block;
+
+            & > a {
+                @include apply-type(t7, true, false);
+                color: $color-foreground-60;
+
+                padding: 12px 0;
+                margin: 0 24px;
+
+                display: inline-block;
+
+                &:hover {
+                    color: $color-foreground-80;
+                }
+
+                &:focus {
+                    color: $color-foreground-80;
+                    outline: 1px dashed $color-foreground-80;
+                }
+
+                &:active {
+                    color: $color-foreground;
+                }
+
+                &.f-active {
+                    color: $color-foreground-80;
+                }
+            }
+        }
+    }
+
+    &.f-dropdown {
+        padding-#{$left}: 20px;
+
+        .f-dropdown-menu {
+            position: relative;
+            width: 100%;
+
+            &.f-border {
+                [aria-expanded] {
+                    margin-#{$left}: 8px;
+                    box-sizing: border-box;
+                    height: 100%;
+                    border: 1px solid $color-foreground-60;
+
+                    &:hover {
+                        border-color: $color-foreground-80;
+                    }
+
+                    &:active,
+                    &:focus {
+                        border-color: $color-accent;
+                    }
+                }
+            }
+
+            .c-menu {
+                position: absolute;
+                top: 100%; //make menu extend from the bottom of the parent
+            }
+
+            @if $migration-select-menu-menu == "" {
+                // Staging does not translate $migration variables
+                [aria-expanded="false"] + .c-menu[aria-hidden="true"] {
+                    display: none;
+                }
+            } @else {
+                [aria-expanded="false"] + #{$migration-select-menu-menu},
+                [aria-expanded="false"] + .c-menu[aria-hidden="true"] {
+                    display: none;
+                }
+            }
+
+            & > a {
+                display: inline-block;
+                color: $color-foreground-60;
+                transform: translateX(set-direction-based-value(-8px, 8px));
+                padding: 12px 0;
+                padding-#{$right}: 24px;
+                margin: 0 24px;
+
+                &:after {
+                    @include apply-glyph($glyph-chevron-down);
+                    position: absolute;
+                    font-size: 9px;
+                    color: $color-foreground;
+                    font-weight: $font-weight-bold;
+                    #{$right}: 8px;
+                    padding-top: 7px;
+                }
+
+                &:focus {
+                    outline: 1px dashed $color-foreground;
+
+                    &:hover {
+                        outline: none;
+                    }
+                }
+            }
+
+            @if $migration-select-menu-menu == "" {
+                .no-js &:hover .c-menu,
+                .js & > [aria-expanded="true"] + .c-menu[aria-hidden="false"],
+                .js & > span[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+                    display: block;
+                }
+            } @else {
+                .no-js &:hover #{$migration-select-menu-menu}
+                .no-js &:hover .c-menu,
+                .js & > [aria-expanded="true"] + #{$migration-select-menu-menu}
+                .js & > [aria-expanded="true"] + .c-menu[aria-hidden="false"],
+                .js & > span[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+                    display: block;
+                }
+            }
+        }
+    }
+}

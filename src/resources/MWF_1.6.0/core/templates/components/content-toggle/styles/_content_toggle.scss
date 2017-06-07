@@ -1,0 +1,34 @@
+//  ==========================================================================
+//  Component: Toggle
+//  ==========================================================================
+
+.c-content-toggle {
+    p {
+        @include apply-type-component(p3);
+
+        &[data-f-expanded="false"] {
+            @include apply-maxlines(3, p3, true);
+        }
+    }
+
+    button {
+        display: inline-block;
+        color: $color-accent;
+        border: 0;
+        background: transparent;
+        padding: 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:active {
+            text-decoration: none;
+            color: flatten-overlay($color-accent, $color-foreground, 10);
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.m-search-help .c-heading-5 {
+  padding: 12px 0 24px;
+}
+
+.m-search-help ul li,
+.m-search-help span {
+  padding: 2px 0;
+}
+
+.m-search-help .f-column {
+  padding-right: 24px;
+}
+
+.m-search-help .c-search {
+  max-width: initial;
+  margin: 46px 0 84px;
+}
+
+@media only screen and (max-width: 539px) {
+  .m-search-help .c-heading-5 {
+    padding: 12px 0 8px;
+  }
+}

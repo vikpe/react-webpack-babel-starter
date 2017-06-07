@@ -1,0 +1,45 @@
+.c-pivot > header {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-pivot > header > a {
+  font-size: 20px;
+  display: inline-block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-weight: 200;
+  white-space: nowrap;
+  padding: 5px 12px 1px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.c-pivot > header > a:first-child {
+  padding-left: 0;
+}
+
+.c-pivot > header > a.f-active {
+  color: #000;
+}
+
+.c-pivot > header > a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.c-pivot > header > a:focus {
+  outline: 1px dashed;
+}
+
+.c-pivot > section[aria-hidden="true"] {
+  display: none;
+  overflow: hidden;
+}
+
+.c-pivot > section[aria-hidden="false"] {
+  display: block;
+}
+
+.c-pivot.f-disabled > header > a {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}

@@ -1,0 +1,22 @@
+//  ==========================================================================
+//  Module: Additional information
+//  ==========================================================================
+
+.m-additional-information {
+    .c-heading-4 + div {
+        margin-top: 24px;
+    }
+
+    [data-grid="col-6"] > [data-grid="col-6"] {
+        margin-bottom: 24px;
+        padding-#{$right}: 12px;
+    }
+
+    .c-list.f-bare.f-lean {
+        margin-bottom: 24px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

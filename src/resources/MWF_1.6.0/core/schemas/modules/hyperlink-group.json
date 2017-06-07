@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Hyperlink group module",
+    "description": "A MWF hyperlink group module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/hyperlink-group.json",
+    "supportedPartners": [],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "title"
+                    ]
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "content": {
+                            "$ref": "http://www.getmwf.com/releases/core/schemas/components/hyperlink.json"
+                        }
+                    },
+                    "required": [
+                        "content"
+                    ]
+                }
+            },
+            "required": [
+                "label",
+                "links"
+            ]
+        }
+    }
+}

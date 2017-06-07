@@ -1,0 +1,33 @@
+.c-content-toggle p {
+  font-size: 15px;
+  line-height: 20px;
+  padding: 24px 0 0;
+  font-weight: 400;
+}
+
+.c-content-toggle p[data-f-expanded="false"] {
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 60px;
+}
+
+.c-content-toggle button {
+  display: inline-block;
+  color: #0078D7;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.c-content-toggle button:hover {
+  text-decoration: underline;
+}
+
+.c-content-toggle button:active {
+  text-decoration: none;
+  color: #006cc2;
+}
+
+.c-content-toggle button:focus {
+  outline: 1px dashed #000;
+}

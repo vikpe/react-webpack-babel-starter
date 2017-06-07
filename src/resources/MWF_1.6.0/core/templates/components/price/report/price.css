@@ -1,0 +1,22 @@
+.c-price:before, .c-price:after {
+  content: " ";
+  display: table;
+}
+
+.c-price:after {
+  clear: both;
+}
+
+.c-price .c-label {
+  font-size: 15px;
+  padding: 0 4px;
+  display: inline;
+  margin: 0;
+  float: left;
+}
+
+.c-price span,
+.c-price meta + span,
+.c-price s {
+  float: left;
+}

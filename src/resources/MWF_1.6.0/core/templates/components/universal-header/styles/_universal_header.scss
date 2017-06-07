@@ -1,0 +1,1406 @@
+//  ==========================================================================
+//  Component: Universal header
+//  ==========================================================================
+
+// default header
+$default-category-nav-config: (
+    bar-background: $color-background,
+    default-text: $color-foreground,
+    trigger-opacity: $color-foreground-10,
+    category-1-underline-behavior: underline,
+    category-1-hover-background: $color-background,
+    category-1-open-background: $color-background,
+    category-2-hover-background: flatten-overlay($color-background, $color-foreground, 5),
+    category-3-background: flatten-overlay($color-background, $color-foreground, 5),
+    category-3-hover-background: flatten-overlay($color-background, $color-foreground, 10)
+);
+
+// brand-neutral
+$gray-category-nav-config: (
+    bar-background: #2F2F2F,
+    default-text: $color-tint,
+    trigger-opacity: $color-tint-10,
+    category-1-hover-background: $color-brand-neutral-75,
+    category-1-open-background: #525252,
+    category-2-hover-background: $color-brand-neutral-65,
+    category-3-background: $color-brand-neutral-55
+);
+
+// brand-blue
+$blue-category-nav-config: (
+    bar-background: $color-brand-blue,
+    default-text: $color-tint,
+    trigger-opacity: $color-tint-10,
+    category-1-hover-background: flatten-overlay($color-brand-blue, $color-shade, 10),
+    category-1-open-background: flatten-overlay($color-brand-blue, $color-shade, 20),
+    category-2-hover-background: flatten-overlay($color-brand-blue, $color-shade, 30),
+    category-3-background: flatten-overlay($color-brand-blue, $color-shade, 40),
+    category-3-hover-background: flatten-overlay($color-brand-blue, $color-shade, 50)
+);
+
+// brand-green
+$green-category-nav-config: (
+    bar-background: $color-brand-green,
+    default-text: $color-tint,
+    trigger-opacity: $color-tint-10,
+    category-1-hover-background: flatten-overlay($color-brand-green, $color-shade, 10),
+    category-1-open-background: flatten-overlay($color-brand-green, $color-shade, 20),
+    category-2-hover-background: flatten-overlay($color-brand-green, $color-shade, 30),
+    category-3-background: flatten-overlay($color-brand-green, $color-shade, 40),
+    category-3-hover-background: flatten-overlay($color-brand-green, $color-shade, 50)
+);
+
+// transparent header
+$transparent-category-nav-config: (
+    bar-background: $color-transparent,
+    default-text: $color-foreground,
+    trigger-opacity: $color-foreground-10,
+    category-1-hover-background: $color-transparent,
+    category-1-open-background: $color-background,
+    category-2-hover-background: flatten-overlay($color-background, $color-foreground, 10),
+    category-3-background: flatten-overlay($color-background, $color-foreground, 10),
+    category-1-underline-behavior: underline
+);
+
+// Global Nav dimensions
+$global-nav: (
+    first-child-height-vp3: 50px,
+    first-child-height: 48px,
+    secondary-height: 70px,
+);
+
+// This mixin sets up the initial Global and Category navs using the
+// above defined nav-configs
+@mixin apply-universal-header-category-theme($nav-config) {
+    background: map-get($nav-config, bar-background);
+
+    .c-hyperlink {
+        color: map-get($nav-config, default-text);
+
+        &:hover,
+        &:focus {
+            color: map-get($nav-config, default-text);
+            background-color: map-get($nav-config, category-1-hover-background);
+            text-decoration: underline;
+        }
+
+        &:active,
+        &:visited {
+            color: map-get($nav-config, default-text);
+            background-color: map-get($nav-config, category-1-open-background);
+        }
+    }
+
+    .c-logo {
+        color: map-get($nav-config, default-text);
+
+        &:hover,
+        &:focus {
+            background: map-get($nav-config, category-1-hover-background);
+            text-decoration: underline;
+        }
+    }
+
+    .c-action-trigger[aria-label] {
+        color: map-get($nav-config, default-text);
+
+        &.glyph-chevron-left {
+            border-#{$right}: 1px solid map-get($nav-config, trigger-opacity);
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &.glyph-chevron-right {
+            border-#{$left}: 1px solid map-get($nav-config, trigger-opacity);
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    // Category 1 Navigation
+    .c-select-menu {
+        a,
+        button {
+            &,
+            &:after {
+                color: map-get($nav-config, default-text);
+            }
+        }
+
+        > a,
+        > button {
+            &:hover,
+            &:focus {
+                background: map-get($nav-config, category-1-hover-background);
+                text-decoration: map-get($nav-config, category-1-underline-behavior);
+            }
+
+            &[aria-expanded="true"] {
+                background: map-get($nav-config, category-1-open-background);
+                text-decoration: none;
+            }
+        }
+
+        // Category 2 navigation container
+        > .c-menu {
+            background: map-get($nav-config, category-1-open-background);
+            border-bottom: 2px solid map-get($nav-config, default-text);
+
+            // Category 2 navigation items
+            > .c-menu-item {
+                > a,
+                > button {
+                    &:hover,
+                    &:focus {
+                        background: map-get($nav-config, category-2-hover-background);
+                    }
+
+                    &[aria-expanded="true"] {
+                        background: map-get($nav-config, category-3-background);
+                        text-decoration: none;
+                    }
+                }
+
+                > button {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                // C3 navigation container
+                > .c-menu {
+                    background: map-get($nav-config, category-3-background);
+                    border-bottom: 2px solid map-get($nav-config, default-text);
+
+                    > .c-menu-item {
+                        > a,
+                        > button {
+                            &:hover,
+                            &:focus {
+                                background: map-get($nav-config, category-3-hover-background);
+                            }
+
+                            &[aria-expanded="true"] {
+                                background: map-get($nav-config, category-3-background);
+                            }
+                        }
+
+                        > button {
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    // C3 mulit-column
+                    &.f-multi-column {
+                        border-bottom: 2px solid map-get($nav-config, default-text);
+
+                        a,
+                        button {
+                            &:hover,
+                            &:focus {
+                                background: map-get($nav-config, category-3-hover-background);
+                            }
+
+                            &[aria-expanded="true"] {
+                                background: map-get($nav-config, category-3-background);
+                            }
+                        }
+
+                        > button {
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.c-universal-header {
+    .c-select-menu {
+        > a,
+        > button {
+            transform: none;
+            margin-top: 1px;
+            padding: set-direction-based-value(14px 27px 10px 24px, 14px 24px 10px 27px);
+
+            &[aria-haspopup="true"] {
+                padding-#{$right}: 45px;
+
+                &:after {
+                    right: 27px;
+                }
+            }
+        }
+
+        .c-menu-item {
+            a,
+            button {
+                // These will apply a BG on hover, but the default color
+                // should come from the .c-menu itself because the height
+                // of the menu may have to be taller than the menu-contents
+                // would make it by default.
+                background: transparent;
+            }
+
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .c-menu {
+        border: 0;
+    }
+
+    .c-menu-item {
+        > a,
+        > button {
+            padding-#{$left}: 24px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        &.f-sub-menu {
+            > a,
+            > button {
+                &:after {
+                    top: 26px;
+                }
+            }
+
+            button {
+                border: 0;
+                display: block;
+                width: 100%;
+                text-align: $left;
+                padding-#{$right}: 12px;
+            }
+        }
+    }
+
+    & > div > div {
+        // Essentially creates grid container
+        @include clearfix();
+        max-width: $max-content-width;
+        height: 100%;
+        margin: 0 5%;
+    }
+
+    // Global Nav
+    > div:first-child {
+        height: map-get($global-nav, first-child-height);
+        background-color: $color-background;
+
+        & > div > div {
+
+            // Container for Search, shopping cart, and ME control
+            float: $right;
+
+            // ME control
+            > .c-me {
+                height: 50px;
+                line-height: 50px;
+                float: $left;
+
+                // Since these target our components
+                // we can leave them in even though
+                // we do not own the ME space
+                > .c-hyperlink {
+                    margin-top: 1px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    color: $color-foreground;
+                    line-height: 50px;
+                    height: 46px;
+                    float: $left;
+                    text-decoration: none;
+                }
+
+                > .c-image {
+                    float: $left;
+                    margin-top: 8px;
+                    margin-#{$left}: 12px;
+                }
+            }
+        }
+
+        .c-action-trigger {
+            margin-top: 0;
+            width: 50px;
+            height: 50px;
+            color: $color-foreground;
+            float: $left;
+
+            &:before {
+                vertical-align: baseline;
+                margin: 0;
+            }
+
+            &.glyph-global-nav-button {
+                font-size: 20px;
+                display: none;
+                margin-#{$left}: -14px;
+
+                &:before {
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 7px;
+                }
+            }
+
+            &.glyph-shopping-cart {
+                margin-#{$right}: 5px;
+                margin-#{$left}: 5px;
+                padding-top: 0;
+                line-height: 50px;
+                height: 46px;
+                margin-top: 1px;
+            }
+        }
+
+        .c-search {
+            margin-top: 6px;
+            float: $left;
+
+            input[type='search'] {
+                background: transparent;
+                border-color: $color-foreground;
+                max-width: 100%;
+                width: 276px;
+            }
+
+            button {
+                background-color: transparent;
+                color: $color-foreground;
+                margin-#{$right}: 2px;
+
+                &:focus {
+                    outline: 1px dashed $color-foreground;
+                }
+            }
+
+            @media only screen and (max-width: $vp3-max) {
+                min-width: 34px;
+                // TODO This will need to animate nicely;
+                input[type='search'] {
+                    border: 0;
+                    padding: 0;
+                    width: 0;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .c-logo {
+            width: 132px;
+            height: 96%;
+            margin-top: 1px;
+            padding: 13px 12px 14px;
+            margin-#{$left}: -12px;
+            float: $left;
+
+            &:focus {
+                outline: 1px dashed $color-foreground;
+            }
+        }
+
+        nav {
+            @include clearfix();
+            height: 50px;
+            float: $left;
+
+            > ul {
+                > li {
+                    float: $left;
+
+                    .c-hyperlink {
+                        color: $color-foreground;
+                        text-decoration: none;
+                        display: inline-block;
+                        transform: none;
+                        margin-top: 1px;
+                        padding: set-direction-based-value(14px 27px 10px 24px, 14px 24px 10px 27px);
+
+                        &:hover,
+                        &:focus {
+                            background: $color-background;
+                            text-decoration: underline;
+                        }
+
+                        &[aria-expanded="true"] {
+                            background: $color-background;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .c-select-menu {
+            float: $left;
+
+            a,
+            button {
+                color: $color-foreground;
+            }
+
+            > a,
+            > button {
+                &:after {
+                    #{$right}: 12px;
+                }
+
+                &:hover,
+                &:focus {
+                    background: $color-background;
+                    text-decoration: underline;
+                }
+
+                &[aria-expanded="true"] {
+                    background: $color-background;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            // G2 Navigation Container
+            > .c-menu {
+                background: $color-background;
+                border-bottom: 2px solid $color-foreground;
+
+                // G2 Navigation Items
+                > .c-menu-item {
+                    > a,
+                    > button {
+                        &:focus,
+                        &:hover,
+                        &[aria-expanded="true"] {
+                            background: flatten-overlay($color-background, $color-foreground, 5);
+                        }
+                    }
+
+                    > button {
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+
+                    // G3 Navigation Container
+                    > .c-menu {
+                        background: flatten-overlay($color-background, $color-foreground, 5);
+                        border-bottom: 2px solid $color-foreground;
+
+                        a,
+                        button {
+                            &:focus,
+                            &:hover {
+                                background: flatten-overlay($color-background, $color-foreground, 10);
+                            }
+                        }
+
+                        > button {
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: $vp2-max) {
+            height: map-get($global-nav, first-child-height);
+
+            .c-action-trigger {
+                width: 48px;
+                height: map-get($global-nav, first-child-height);
+
+                &.glyph-global-nav-button {
+                    display: block;
+                }
+
+                &.glyph-shopping-cart {
+                    margin-#{$right}: -12px;
+                }
+            }
+        }
+    }
+
+    // Category Nav
+    & > div + div {
+        @include apply-universal-header-category-theme($default-category-nav-config);
+        position: relative;
+        height: map-get($global-nav, secondary-height);
+
+        &.brand-blue {
+            @include apply-universal-header-category-theme($blue-category-nav-config);
+        }
+
+        &.brand-green {
+            @include apply-universal-header-category-theme($green-category-nav-config);
+        }
+
+        &.brand-neutral {
+            @include apply-universal-header-category-theme($gray-category-nav-config);
+        }
+
+        &.f-transparent {
+            @include apply-universal-header-category-theme($transparent-category-nav-config);
+        }
+
+        & > div {
+            overflow: hidden;
+            width: calc(100% - 10% + 18px);
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: calc(5% - 18px);
+            margin-right: 5%;
+
+            > .c-hyperlink,
+            > .c-call-to-action {
+                float: $right;
+            }
+
+            > .c-call-to-action {
+                margin-top: 16px;
+            }
+        }
+
+        .c-logo {
+            height: 100%;
+            padding: 18px;
+            float: $left;
+            outline: none;
+
+            img {
+                max-height: 100%;
+            }
+
+            span {
+                @include apply-type(t5, false, true);
+                margin-top: 4px;
+                display: block;
+                font-weight: $font-weight-semilight;
+            }
+        }
+
+        .c-action-trigger[aria-label] {
+            //height: map-get($global-nav, first-child-height);
+            margin: 1px 0 0;
+            padding: 0;
+            height: 66px;
+
+            @media only screen and (min-width: $vp3) {
+                //height: map-get($global-nav, secondary-height);
+            }
+
+            &.glyph-chevron-left {
+                float: $left;
+                top: map-get($global-nav, first-child-height);
+            }
+
+            &.glyph-chevron-right {
+                float: $right;
+                top: map-get($global-nav, first-child-height);
+            }
+
+            &:disabled {
+                display: none;
+            }
+        }
+
+        nav {
+            overflow: hidden;
+            height: 100%;
+            white-space: nowrap;
+
+            > .c-hyperlink {
+                vertical-align: top;
+            }
+
+            a.f-hidden,
+            button.f-hidden {
+                opacity: 0.6;
+            }
+        }
+
+        .c-hyperlink {
+            display: inline-block;
+            padding: 25px 24px;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .c-select-menu {
+            position: static;
+            display: inline-block;
+
+            > a,
+            > button {
+                position: relative;
+                padding-top: 26px;
+                padding-bottom: 24px;
+                margin-top: 0;
+            }
+
+            a,
+            button {
+                outline: none;
+            }
+
+            > .c-menu {
+                > .c-menu-item {
+                    > a,
+                    > button {
+                        background: transparent;
+                    }
+
+                    > .c-menu.f-multi-column {
+                        white-space: nowrap;
+                        max-width: none;
+                        width: auto;
+
+                        // Column Menu Containers
+                        > li {
+                            @include clearfix();
+                            float: $left;
+
+                            > .c-menu-item {
+                                display: inline-block;
+                                vertical-align: top;
+                                float: $left;
+
+                                > a,
+                                > button {
+                                    font-weight: $font-weight-bold;
+
+                                    &:after {
+                                        content: none;
+                                    }
+                                }
+                            }
+
+                            .c-menu {
+                                position: relative;
+                                left: auto;
+                                right: auto;
+                                background: transparent;
+                            }
+
+                            a,
+                            button {
+                                background: transparent;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: $vp2-max) {
+            height: map-get($global-nav, first-child-height);
+
+            &> div {
+                overflow: visible;
+            }
+
+            nav,
+            .c-hyperlink,
+            .c-call-to-action,
+            .c-action-trigger {
+                display: none;
+            }
+
+            .c-logo {
+                padding: 10px;
+                margin-#{$left}: -10px;
+                outline: none;
+
+                span {
+                    @include apply-type(t7, false, true);
+                    margin-top: 5px;
+                    font-weight: $font-weight-normal;
+                }
+            }
+        }
+    }
+
+    // Transparent header
+    // Global Nav
+    &.f-transparent {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: map-get($z-index, nav);
+
+        .c-action-trigger[aria-label] {
+            &.glyph-chevron-left,
+            &.glyph-chevron-right {
+                top: 0;
+            }
+        }
+
+        .f-transparent {
+            position: absolute;
+            width: 100%;
+        }
+
+        .c-select-menu {
+            > .c-menu {
+                top: 100%;
+            }
+        }
+
+        > div {
+            + div {
+                top: map-get($global-nav, first-child-height);
+
+                @media only screen and (min-width: $vp3) {
+                    top: map-get($global-nav, first-child-height-vp3);
+                }
+            }
+        }
+    }
+
+    > div.f-transparent:first-child {
+
+        @media only screen and (min-width: $vp3) {
+            background-color: $color-transparent;
+        }
+
+        .c-action-trigger {
+            color: $color-foreground;
+        }
+
+        .c-logo {
+            &:focus {
+                outline: 1px dashed $color-foreground;
+            }
+        }
+
+        .c-search {
+            input[type="search"],
+            button {
+                background: transparent !important;
+                color: $color-foreground;
+            }
+        }
+
+        nav {
+            > ul {
+                > li {
+                    .c-hyperlink {
+                        background-color: $color-transparent;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $color-transparent;
+                            text-decoration: underline;
+                        }
+
+                        &[aria-expanded="true"] {
+                            background-color: $color-transparent;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .c-select-menu {
+            a,
+            button {
+                color: $color-foreground;
+            }
+
+            > a,
+            > button {
+                &:focus {
+                    background: transparent;
+                    text-decoration: underline;
+                }
+
+                &[aria-expanded="true"] {
+                    background: $color-background;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                &:hover {
+                    background: transparent;
+                    text-decoration: underline;
+
+                    &[aria-expanded="true"] {
+                        background: $color-background;
+                    }
+                }
+            }
+            // G2 Navigation Container
+            > .c-menu {
+                background: $color-background;
+                border-bottom: 2px solid $color-foreground;
+                // G2 Navigation Items
+                > .c-menu-item {
+                    > a,
+                    > button {
+                        &:focus,
+                        &:hover,
+                        &[aria-expanded="true"] {
+                            background: flatten-overlay($color-background, $color-foreground, 5);
+                        }
+                    }
+                    // G3 Navigation Container
+                    > .c-menu {
+                        background: flatten-overlay($color-background, $color-foreground, 5);
+
+                        a,
+                        button {
+                            &:focus,
+                            &:hover {
+                                background: flatten-overlay($color-background, $color-foreground, 10);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Category Nav
+    > div + div.f-transparent {
+        .c-select-menu {
+            > [aria-expanded="true"] {
+                &:hover {
+                    //text-decoration: none;
+                }
+            }
+
+            > .c-menu {
+                border-bottom: 2px solid $color-foreground;
+
+                > .c-menu-item {
+                    > a,
+                    > button {
+                        &:focus,
+                        &:hover,
+                        &[aria-expanded="true"] {
+                            background: flatten-overlay($color-background, $color-foreground, 5);
+                        }
+                    }
+                    // G3 Navigation Container
+                    > .c-menu {
+                        background: flatten-overlay($color-background, $color-foreground, 5);
+
+                        a,
+                        button {
+                            &:focus,
+                            &:hover {
+                                background: flatten-overlay($color-background, $color-foreground, 10);
+                            }
+                        }
+
+                        &.f-multi-column {
+                            > li {
+                                > .c-menu-item {
+                                    > button {
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .f-transparent {
+        a:link,
+        button:link {
+            color: $color-foreground;
+        }
+
+        > div + div {
+            .c-logo {
+                span {
+                    color: $color-foreground;
+                }
+            }
+
+            > div {
+                .c-action-trigger[aria-label] {
+                    color: $color-foreground;
+
+                    &.glyph-chevron-left {
+                        border-right: 1px solid $color-foreground;
+                    }
+                }
+            }
+        }
+
+        .c-select-menu {
+            .c-menu-item {
+                a,
+                button {
+                    &[aria-expanded="true"] {
+                        background: flatten-overlay($color-background, $color-foreground, 5);
+
+                        &:hover {
+                            //text-decoration: none;
+                        }
+                    }
+
+                    &:hover {
+                        //text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Mobile navigation
+    @media only screen and (max-width: $vp2-max) {
+
+        .c-select-menu {
+            > a,
+            > button {
+                margin-top: 0;
+            }
+        }
+
+        // Global Nav
+        > div:first-child {
+            > div {
+                margin: 0 2%;
+            }
+
+            .c-action-trigger {
+                &.glyph-shopping-cart {
+                    display: none;
+                }
+            }
+
+            .c-search {
+                display: none;
+            }
+
+            nav {
+                position: fixed;
+                display: none;
+                top: 96px;
+                width: 100%;
+                height: calc(100vh - 48px);
+                margin-#{$left}: -2%;
+                overflow: auto;
+                background: $color-tint;
+
+                .c-menu-item.f-sub-menu {
+                    > a,
+                    > button {
+                        + .c-menu {
+                            #{$left}: 0;
+                        }
+                    }
+                }
+
+                > ul {
+                    > li {
+                        display: block;
+                        text-align: $left;
+                        height: map-get($global-nav, first-child-height);
+                        float: none;
+                        border-top: 1px solid $color-transparent;
+                        border-bottom: 1px solid $color-shade-10;
+
+                        > .c-hyperlink {
+                            float: none;
+                            display: block;
+                            width: 100%;
+                            padding: 15px;
+                            margin: 0;
+
+                            &:hover {
+                                background: $color-transparent;
+                                font-weight: $font-weight-bold;
+                                text-decoration: none;
+                            }
+                        }
+
+                        > .c-select-menu {
+                            float: none;
+                            display: block;
+
+                            a,
+                            button {
+                                display: block;
+                                width: 100%;
+
+                                &:hover {
+                                    background: $color-transparent;
+                                    font-weight: $font-weight-bold;
+                                }
+
+                                &[aria-haspopup="true"] {
+                                    &:after {
+                                        content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+                                    }
+                                }
+                            }
+
+                            .c-menu[aria-hidden="false"] {
+                                position: fixed;
+                                display: block;
+                                top: 96px;
+                                width: 100%;
+                                max-width: none;
+                                height: calc(100vh - 48px);
+                                padding-#{$left}: -2%;
+                                overflow: auto;
+                                background: flatten-overlay($color-tint, $color-shade, 5);
+
+                                .c-menu-item {
+                                    height: map-get($global-nav, first-child-height);
+
+                                    > a,
+                                    > button {
+                                        padding: 15px;
+                                        height: map-get($global-nav, first-child-height);
+
+                                        &:hover,
+                                        &:focus {
+                                            background: $color-transparent;
+                                        }
+
+                                        &:after {
+                                            top: 20px;
+                                            font-size: 9px;
+                                        }
+
+                                        &[aria-expanded="true"] {
+                                            background: $color-transparent;
+                                        }
+                                    }
+                                }
+                            }
+
+                            > button {
+                                width: 100%;
+                                text-align: $left;
+                            }
+
+                            > a,
+                            > button {
+                                display: block;
+                                color: $color-shade;
+                                padding: 15px;
+                                height: map-get($global-nav, first-child-height);
+
+                                &:after {
+                                    color: $color-shade;
+                                    content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+                                }
+
+                                &:hover {
+                                    background: $color-transparent;
+                                    font-weight: $font-weight-bold;
+                                    text-decoration: none !important;
+                                }
+
+                                &:focus {
+                                    background: $color-transparent;
+                                }
+
+                                &[aria-expanded="true"] {
+                                    background: $color-transparent;
+
+                                    + .c-menu[aria-hidden="false"] {
+                                        position: fixed;
+                                        display: block;
+                                        top: 96px;
+                                        width: 100%;
+                                        max-width: none;
+                                        height: calc(100vh - 48px);
+                                        padding-#{$left}: -2%;
+                                        overflow: auto;
+                                        background: flatten-overlay($color-tint, $color-shade, 5);
+
+                                        .c-menu-item {
+                                            height: map-get($global-nav, first-child-height);
+
+                                            > a,
+                                            > button {
+                                                padding: 15px;
+                                                height: map-get($global-nav, first-child-height);
+
+                                                &:hover,
+                                                &:focus {
+                                                    background: $color-transparent;
+                                                }
+
+                                                &:after {
+                                                    top: 20px;
+                                                    font-size: 9px;
+                                                }
+
+                                                &[aria-expanded="true"] {
+                                                    background: $color-transparent;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .c-logo {
+                float: none;
+                display: block;
+                position: absolute;
+                #{$left}: calc(50% - 60px);
+                height: auto;
+            }
+        }
+
+        // Category Nav
+        & > div + div,
+        & > div + div.brand-blue,
+        & > div + div.brand-green,
+        & > div + div.f-transparent {
+            background: $color-tint;
+            color: $color-shade;
+            height: map-get($global-nav, first-child-height);
+
+            .c-logo {
+                margin: 0;
+                padding: 10px 48px;
+                display: block;
+                border-top: 1px solid $color-shade-10;
+                border-bottom: 1px solid $color-shade-10;
+                color: $color-shade;
+                float: none;
+                text-align: center;
+
+                &:hover,
+                &:focus {
+                    background: $color-transparent;
+                    cursor: default;
+                }
+            }
+
+            .c-action-trigger[aria-label] {
+                height: 48px;
+                margin-top: 0;
+
+                &.glyph-chevron-left,
+                &.glyph-chevron-right {
+                    display: block;
+                    color: $color-shade;
+                    position: absolute;
+                    top: 0;
+                }
+
+                &.glyph-chevron-left {
+                    border-#{$right}: none;
+                    #{$left}: 0;
+                }
+
+                &.glyph-chevron-right {
+                    border-#{$left}: none;
+                    #{$right}: 0;
+                }
+            }
+
+            .c-select-menu {
+                > button {
+                    width: 100%;
+                    text-align: $left;
+                }
+
+                > .c-menu {
+                    > .c-menu-item {
+                        .c-menu.f-multi-column[aria-hidden="false"] {
+                            position: fixed;
+                            display: block;
+                            top: 96px;
+                            width: 100% !important;
+                            height: calc(100vh - 48px);
+                            #{$left}: 0;
+                            overflow: auto;
+                            background: flatten-overlay($color-tint, $color-shade, 5);
+
+                            a,
+                            button {
+                                &[aria-expanded="true"] {
+                                    background: $color-transparent;
+                                }
+                            }
+
+                            > li {
+                                float: none;
+
+                                .c-menu-item.f-sub-menu {
+                                    display: block;
+                                    float: none;
+                                    height: inherit;
+                                }
+
+                                .c-menu {
+                                    height: inherit;
+                                    top: 0;
+                                }
+                            }
+                        }
+
+                        > .c-menu {
+                            .c-menu-item {
+                                > a,
+                                > button {
+                                    &:hover,
+                                    &:focus {
+                                        background: $color-transparent;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .c-menu-item.f-sub-menu {
+                > a,
+                > button {
+                    + .c-menu {
+                        #{$left}: 0;
+                    }
+
+                    &[aria-expaneded="true"] {
+                        background: $color-transparent;
+                    }
+                }
+            }
+
+            & > div {
+                margin: 0 auto;
+                padding: 0;
+                width: 100%;
+
+                nav {
+                    position: fixed;
+                    display: none;
+                    top: 96px;
+                    width: 100%;
+                    height: calc(100vh - 48px);
+                    overflow: auto;
+                    background: flatten-overlay($color-tint, $color-shade, 5);
+
+                    .c-select-menu {
+                        display: block;
+                        text-align: $left;
+                        height: map-get($global-nav, first-child-height);
+
+                        > a,
+                        > button {
+                            display: block;
+                            color: $color-shade;
+                            padding: 15px;
+                            height: map-get($global-nav, first-child-height);
+
+                            &:after {
+                                color: $color-shade;
+                                content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+                                #{$right}: 12px;
+                            }
+
+                            &:hover {
+                                background: $color-transparent;
+                                font-weight: $font-weight-bold;
+                                text-decoration: none !important;
+                            }
+
+                            &:focus {
+                                background: $color-transparent;
+                            }
+
+                            &[aria-expanded="true"] {
+                                background: $color-transparent;
+                            }
+                        }
+
+                        .c-menu[aria-hidden="false"] {
+                            position: fixed;
+                            display: block;
+                            top: 96px;
+                            width: 100%;
+                            max-width: none;
+                            height: calc(100vh - 48px);
+                            overflow: auto;
+                            background: flatten-overlay($color-tint, $color-shade, 5);
+                            border-bottom: 0;
+                            color: $color-shade;
+
+                            a,
+                            button {
+                                display: block;
+                                color: $color-shade;
+                                padding: 15px;
+                                height: map-get($global-nav, first-child-height);
+
+                                &:hover,
+                                &:focus {
+                                    background: $color-transparent;
+                                    font-weight: $font-weight-bold;
+                                    text-decoration: none !important;
+                                }
+
+                                &[aria-expanded="true"] {
+                                    background: $color-transparent;
+                                }
+
+                                &:after {
+                                    color: $color-shade;
+                                    top: 20px;
+                                    font-size: 9px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.m-search-results > div:last-child {
+  padding: 24px 0;
+}
+
+.m-search-results .c-hyperlink {
+  display: block;
+}
+
+.m-search-results .f-result-item,
+.m-search-results .f-result-item-details {
+  padding-top: 24px;
+}
+
+.m-search-results .f-result-item-details {
+  padding-left: 24px;
+}
+
+.m-search-results .f-hyperlink {
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.m-search-results h3.f-hyperlink {
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 0;
+  font-weight: 200;
+}
+
+@media (max-width: 767px) {
+  .m-search-results h3.f-hyperlink {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.m-search-results span.f-hyperlink .c-hyperlink {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 24px;
+  padding-bottom: 1.636px;
+  color: #107C10;
+}
+
+.m-search-results p {
+  color: rgba(0, 0, 0, 0.6);
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 539px) {
+  .m-search-results .f-result-item-details {
+    padding: 0;
+  }
+}

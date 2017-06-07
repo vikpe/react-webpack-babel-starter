@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Feature module",
+    "description": "A MWF feature module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/feature.json",
+    "supportedPartners": [],
+    "oneOf": [
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/feature.json#/definitions/left"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/feature.json#/definitions/center"
+        },
+        {
+            "$ref": "http://www.getmwf.com/releases/core/schemas/components/feature.json#/definitions/right"
+        }
+    ]
+}

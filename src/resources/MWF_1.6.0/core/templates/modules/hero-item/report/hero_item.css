@@ -1,0 +1,688 @@
+/*  .c-hero depricated as of v.1.6, use .m-hero
+    TODO: Remove .c-hero references as of v.2.0 */
+.m-hero-item,
+.c-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 0 5%;
+  height: 600px;
+}
+
+.m-hero-item picture,
+.c-hero picture {
+  display: block;
+}
+
+.m-hero-item > picture,
+.c-hero > picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.m-hero-item > picture img,
+.c-hero > picture img {
+  position: absolute;
+}
+
+.m-hero-item > picture:after,
+.c-hero > picture:after {
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.m-hero-item > div,
+.c-hero > div {
+  width: 100%;
+  height: 100%;
+  max-width: 1600px;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.m-hero-item > div > div,
+.c-hero > div > div {
+  position: absolute;
+  z-index: 1;
+  width: 520px;
+}
+
+.m-hero-item > div > div > div,
+.c-hero > div > div > div {
+  margin-top: 24px;
+}
+
+.m-hero-item .c-heading,
+.c-hero .c-heading {
+  font-size: 34px;
+  line-height: 40px;
+  padding: 38px 0 2px;
+  font-weight: 100;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 80px;
+}
+
+.m-hero-item .c-subheading,
+.c-hero .c-subheading {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 8px 0 4px;
+  font-weight: 200;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 48px;
+}
+
+.m-hero-item .c-paragraph,
+.c-hero .c-paragraph {
+  font-size: 15px;
+  line-height: 20px;
+  padding: 24px 0 0;
+  font-weight: 400;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 80px;
+}
+
+.m-hero-item .c-product-title,
+.m-hero-item .c-product-subtitle,
+.c-hero .c-product-title,
+.c-hero .c-product-subtitle {
+  font-size: 24px;
+  overflow: hidden;
+  box-sizing: content-box;
+  max-height: 56px;
+  line-height: 32px;
+  max-height: 64px;
+  padding: 0;
+}
+
+.m-hero-item .c-product-title,
+.c-hero .c-product-title {
+  font-weight: 700;
+}
+
+.m-hero-item .c-product-subtitle,
+.c-hero .c-product-subtitle {
+  font-weight: 100;
+}
+
+.m-hero-item .c-price,
+.c-hero .c-price {
+  font-size: 20px;
+  line-height: 24px;
+  display: inline-block;
+}
+
+.m-hero-item .c-rating,
+.c-hero .c-rating {
+  margin-top: 12px;
+}
+
+.m-hero-item .c-group,
+.c-hero .c-group {
+  display: block;
+  overflow: visible;
+}
+
+.m-hero-item .c-group > .c-call-to-action,
+.c-hero .c-group > .c-call-to-action {
+  margin-right: 24px;
+}
+
+.m-hero-item .c-group > .c-call-to-action + .c-call-to-action,
+.c-hero .c-group > .c-call-to-action + .c-call-to-action {
+  background: transparent;
+  color: #0078D7;
+  border-color: transparent;
+  border-width: 2px;
+  padding: 10px 44px 7px 24px;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 10px 43px 7px 25px;
+}
+
+.m-hero-item .c-group > .c-call-to-action + .c-call-to-action:focus, .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:hover,
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:focus,
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.m-hero-item .c-group > .c-call-to-action + .c-call-to-action:active,
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:active {
+  background: transparent;
+  text-decoration: none;
+}
+
+.m-hero-item .c-group > .c-call-to-action + .c-call-to-action span:hover,
+.c-hero .c-group > .c-call-to-action + .c-call-to-action span:hover {
+  text-decoration: underline;
+}
+
+.theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action, .theme-dark .theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action, .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action, .theme-dark .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action {
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:active, .theme-dark .theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:active, .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:active, .theme-dark .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:active {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-dark .theme-light .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-dark .theme-light
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:focus {
+  outline-color: #000;
+}
+
+.theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action, .theme-light .theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action, .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action, .theme-light .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action {
+  color: #FFF;
+  background: transparent;
+  border-color: transparent;
+}
+
+.theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:active, .theme-light .theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:active, .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:active, .theme-light .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-light .theme-dark .m-hero-item .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:focus, .theme-light .theme-dark
+.c-hero .c-group > .c-call-to-action + .c-call-to-action:focus {
+  outline-color: #FFF;
+}
+
+.m-hero-item.theme-dark .c-group > .c-call-to-action + .c-call-to-action,
+.c-hero.theme-dark .c-group > .c-call-to-action + .c-call-to-action {
+  color: #FFF;
+}
+
+.m-hero-item.theme-light .c-group > .c-call-to-action + .c-call-to-action,
+.c-hero.theme-light .c-group > .c-call-to-action + .c-call-to-action {
+  color: #000;
+}
+
+.m-hero-item.theme-light .c-group.f-accent > .c-call-to-action, .m-hero-item.theme-dark .c-group.f-accent > .c-call-to-action,
+.c-hero.theme-light .c-group.f-accent > .c-call-to-action,
+.c-hero.theme-dark .c-group.f-accent > .c-call-to-action {
+  margin-right: 24px;
+}
+
+.m-hero-item.theme-light .c-group.f-accent > .c-call-to-action + .c-call-to-action, .m-hero-item.theme-dark .c-group.f-accent > .c-call-to-action + .c-call-to-action,
+.c-hero.theme-light .c-group.f-accent > .c-call-to-action + .c-call-to-action,
+.c-hero.theme-dark .c-group.f-accent > .c-call-to-action + .c-call-to-action {
+  color: #0078D7;
+}
+
+.m-hero-item .c-logo,
+.c-hero .c-logo {
+  margin-top: 12px;
+}
+
+.m-hero-item.context-app .c-heading,
+.c-hero.context-app .c-heading {
+  font-size: 24px;
+  line-height: 28px;
+  padding: 36px 0 4px;
+  font-weight: 200;
+  white-space: nowrap;
+  max-height: 28px;
+}
+
+.m-hero-item.context-app .c-subheading,
+.c-hero.context-app .c-subheading {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 9px 0 3px;
+  font-weight: 200;
+  max-height: 48px;
+}
+
+.m-hero-item.context-article .c-heading,
+.c-hero.context-article .c-heading {
+  font-size: 24px;
+  line-height: 28px;
+  padding: 36px 0 4px;
+  font-weight: 200;
+  max-height: 56px;
+}
+
+.m-hero-item.context-game .c-rating,
+.c-hero.context-game .c-rating {
+  margin-top: 60px;
+}
+
+.m-hero-item.context-music-album .c-product-title,
+.c-hero.context-music-album .c-product-title {
+  margin-top: 12px;
+}
+
+.m-hero-item.context-device > div > div > div, .m-hero-item.context-accessory > div > div > div, .m-hero-item.context-article > div > div > div, .m-hero-item.context-game > div > div > div,
+.c-hero.context-device > div > div > div,
+.c-hero.context-accessory > div > div > div,
+.c-hero.context-article > div > div > div,
+.c-hero.context-game > div > div > div {
+  margin-top: 12px;
+}
+
+.m-hero-item.f-x-left > div > div,
+.c-hero.f-x-left > div > div {
+  left: 0;
+}
+
+.m-hero-item.f-x-left > picture img,
+.c-hero.f-x-left > picture img {
+  right: 0;
+}
+
+.m-hero-item.f-x-center,
+.c-hero.f-x-center {
+  text-align: center;
+}
+
+.m-hero-item.f-x-center .c-group,
+.c-hero.f-x-center .c-group {
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.m-hero-item.f-x-center > div > div,
+.c-hero.f-x-center > div > div {
+  left: 30%;
+  left: calc(50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+}
+
+.m-hero-item.f-x-center > div > div .c-image,
+.c-hero.f-x-center > div > div .c-image {
+  margin: 0 auto;
+}
+
+.m-hero-item.f-x-center > picture img,
+.c-hero.f-x-center > picture img {
+  left: calc(50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+}
+
+.m-hero-item.f-x-right > div > div,
+.c-hero.f-x-right > div > div {
+  right: 0;
+}
+
+.m-hero-item.f-x-right > picture img,
+.c-hero.f-x-right > picture img {
+  left: 0;
+}
+
+.m-hero-item.f-y-top > div > div,
+.c-hero.f-y-top > div > div {
+  top: 60px;
+}
+
+.m-hero-item.f-y-top > picture img,
+.c-hero.f-y-top > picture img {
+  top: 0;
+}
+
+.m-hero-item.f-y-center .c-heading:first-child,
+.c-hero.f-y-center .c-heading:first-child {
+  padding-top: 0;
+}
+
+.m-hero-item.f-y-center > div > div,
+.c-hero.f-y-center > div > div {
+  top: 120px;
+  top: calc(50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.m-hero-item.f-y-center > picture img,
+.c-hero.f-y-center > picture img {
+  top: calc(50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.m-hero-item.f-y-center.f-x-center > div > div,
+.c-hero.f-y-center.f-x-center > div > div {
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.m-hero-item.f-y-center.f-x-center > picture img,
+.c-hero.f-y-center.f-x-center > picture img {
+  top: calc(50%);
+  left: calc(50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.m-hero-item.f-y-bottom > div > div,
+.c-hero.f-y-bottom > div > div {
+  bottom: 60px;
+}
+
+.m-hero-item.f-y-bottom > picture img,
+.c-hero.f-y-bottom > picture img {
+  bottom: 0;
+}
+
+.m-hero-item[class*="f-mask"].theme-light > picture:after,
+.c-hero[class*="f-mask"].theme-light > picture:after {
+  background: #FFF;
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-left.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-left.f-y-top > picture:after {
+  background: radial-gradient(circle at top left, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-left.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-left.f-y-center > picture:after {
+  background: radial-gradient(circle at center left, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-left.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-left.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom left, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-center.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-center.f-y-top > picture:after {
+  background: radial-gradient(circle at top center, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-center.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-center.f-y-center > picture:after {
+  background: radial-gradient(circle at center center, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-center.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-center.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom center, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-right.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-right.f-y-top > picture:after {
+  background: radial-gradient(circle at top right, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-right.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-right.f-y-center > picture:after {
+  background: radial-gradient(circle at center right, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-light.f-x-right.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-light.f-x-right.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom right, #FFF, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark > picture:after,
+.c-hero[class*="f-mask"].theme-dark > picture:after {
+  background: #000;
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-left.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-left.f-y-top > picture:after {
+  background: radial-gradient(circle at top left, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-left.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-left.f-y-center > picture:after {
+  background: radial-gradient(circle at center left, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-left.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-left.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom left, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-center.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-center.f-y-top > picture:after {
+  background: radial-gradient(circle at top center, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-center.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-center.f-y-center > picture:after {
+  background: radial-gradient(circle at center center, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-center.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-center.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom center, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-right.f-y-top > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-right.f-y-top > picture:after {
+  background: radial-gradient(circle at top right, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-right.f-y-center > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-right.f-y-center > picture:after {
+  background: radial-gradient(circle at center right, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item[class*="f-mask"].theme-dark.f-x-right.f-y-bottom > picture:after,
+.c-hero[class*="f-mask"].theme-dark.f-x-right.f-y-bottom > picture:after {
+  background: radial-gradient(circle at bottom right, #000, rgba(255, 255, 255, 0) 80%);
+}
+
+.m-hero-item.f-mask-20 > picture:after,
+.c-hero.f-mask-20 > picture:after {
+  opacity: 0.2;
+}
+
+.m-hero-item.f-mask-40 > picture:after,
+.c-hero.f-mask-40 > picture:after {
+  opacity: 0.4;
+}
+
+.m-hero-item.f-mask-60 > picture:after,
+.c-hero.f-mask-60 > picture:after {
+  opacity: 0.6;
+}
+
+.m-hero-item.f-mask-80 > picture:after,
+.c-hero.f-mask-80 > picture:after {
+  opacity: 0.8;
+}
+
+.m-hero-item.f-mask-100 > picture:after,
+.c-hero.f-mask-100 > picture:after {
+  opacity: 1;
+}
+
+.m-hero-item .c-video,
+.c-hero .c-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  left: 0;
+}
+
+.m-hero-item .c-video > h1,
+.c-hero .c-video > h1 {
+  display: none;
+}
+
+.m-hero-item .c-video video,
+.c-hero .c-video video {
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -2;
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media only screen and (max-width: 1083px) {
+  .m-hero-item,
+  .c-hero {
+    height: 500px;
+  }
+  .m-hero-item > div > div,
+  .c-hero > div > div {
+    width: 440px;
+  }
+  .m-hero-item .c-heading,
+  .c-hero .c-heading {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 36px 0 4px;
+    font-weight: 200;
+    max-height: 56px;
+    padding-top: 0;
+  }
+  .m-hero-item .c-subheading,
+  .c-hero .c-subheading {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 9px 0 3px;
+    font-weight: 200;
+    max-height: 72px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .m-hero-item,
+  .c-hero {
+    height: auto;
+    padding: 0;
+    text-align: center;
+  }
+  .m-hero-item[class*="f-x"][class*="f-y"] > picture img,
+  .c-hero[class*="f-x"][class*="f-y"] > picture img {
+    top: 0;
+    left: 0;
+    left: calc(50%);
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+  }
+  .m-hero-item[class*="f-x"][class*="f-y"] > picture:after,
+  .c-hero[class*="f-x"][class*="f-y"] > picture:after {
+    display: none;
+  }
+  .m-hero-item[class*="f-x"][class*="f-y"] > div > div,
+  .c-hero[class*="f-x"][class*="f-y"] > div > div {
+    position: relative;
+    width: auto;
+    left: 0;
+    top: 0;
+    top: calc(50%);
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+  }
+  .m-hero-item > picture,
+  .c-hero > picture {
+    position: relative;
+    height: 400px;
+  }
+  .m-hero-item > div,
+  .c-hero > div {
+    padding: 12px;
+    height: 280px;
+  }
+  .m-hero-item > div picture,
+  .c-hero > div picture {
+    display: none;
+  }
+  .m-hero-item .c-paragraph,
+  .c-hero .c-paragraph {
+    max-height: 40px;
+  }
+  .m-hero-item .c-heading,
+  .m-hero-item.context-article .c-heading,
+  .c-hero .c-heading,
+  .c-hero.context-article .c-heading {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 35px 0 5px;
+    font-weight: 200;
+    max-height: 120px;
+  }
+  .m-hero-item .c-heading,
+  .m-hero-item.context-app .c-heading,
+  .m-hero-item.context-article .c-heading,
+  .c-hero .c-heading,
+  .c-hero.context-app .c-heading,
+  .c-hero.context-article .c-heading {
+    padding-top: 0;
+  }
+  .m-hero-item > div > div > div,
+  .c-hero > div > div > div {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .m-hero-item .c-group > .c-call-to-action,
+  .c-hero .c-group > .c-call-to-action {
+    margin: 0;
+  }
+  .m-hero-item .c-group > .c-call-to-action + .c-call-to-action,
+  .c-hero .c-group > .c-call-to-action + .c-call-to-action {
+    margin: 0;
+  }
+  .m-hero-item.theme-light .c-group.f-accent > .c-call-to-action, .m-hero-item.theme-dark .c-group.f-accent > .c-call-to-action,
+  .c-hero.theme-light .c-group.f-accent > .c-call-to-action,
+  .c-hero.theme-dark .c-group.f-accent > .c-call-to-action {
+    margin: 0;
+  }
+  .m-hero-item.theme-light .c-group.f-accent > .c-call-to-action + .c-call-to-action, .m-hero-item.theme-dark .c-group.f-accent > .c-call-to-action + .c-call-to-action,
+  .c-hero.theme-light .c-group.f-accent > .c-call-to-action + .c-call-to-action,
+  .c-hero.theme-dark .c-group.f-accent > .c-call-to-action + .c-call-to-action {
+    margin: 0;
+  }
+  .m-hero-item .c-subheading,
+  .c-hero .c-subheading {
+    display: none;
+  }
+  .m-hero-item.context-game .c-rating,
+  .c-hero.context-game .c-rating {
+    margin-top: 12px;
+  }
+  .m-hero-item.context-music-album .c-product-title,
+  .c-hero.context-music-album .c-product-title {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .m-hero-item > picture,
+  .c-hero > picture {
+    height: 300px;
+  }
+  .m-hero-item .c-price,
+  .m-hero-item .c-rating,
+  .m-hero-item .c-paragraph,
+  .c-hero .c-price,
+  .c-hero .c-rating,
+  .c-hero .c-paragraph {
+    display: none;
+  }
+}

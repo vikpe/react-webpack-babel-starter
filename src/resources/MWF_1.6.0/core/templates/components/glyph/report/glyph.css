@@ -1,0 +1,15 @@
+
+.c-glyph:before,
+.c-glyph:after {
+  font-family: "MWF-MDL2";
+  display: inline-block;
+  text-decoration: underline;
+}
+
+
+.c-glyph:before,
+.c-glyph:after,
+.c-glyph:hover:before,
+.c-glyph:hover:after {
+  text-decoration: none;
+}

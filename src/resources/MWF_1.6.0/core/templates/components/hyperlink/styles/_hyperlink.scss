@@ -1,0 +1,74 @@
+//  ==========================================================================
+//  Component: Hyperlink
+//  ==========================================================================
+
+a.c-hyperlink {
+    text-decoration: none;
+    color: $color-accent;
+
+    &:visited,
+    &:hover {
+        color: $color-accent;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: 1px dashed $color-foreground;
+
+        &:active {
+            // Prevent outline from appearing when a user clicks a hyperlink
+            outline-style: none;
+        }
+    }
+
+    &:active {
+        color: $color-accent;
+        text-decoration: none;
+    }
+
+    #{$theme-light} {
+        text-decoration: underline;
+        color: $color-shade;
+
+        &:focus {
+            text-decoration: none;
+            color: $color-shade;
+        }
+
+        &:visited {
+            color: $color-shade-40;
+
+        }
+
+        &:hover {
+            color: $color-shade-80;
+        }
+
+        &:active {
+            color: $color-shade-60;
+        }
+    }
+
+    #{$theme-dark} {
+        text-decoration: underline;
+        color: $color-tint;
+
+        &:focus {
+            text-decoration: none;
+            outline-color: $color-tint;
+        }
+
+        &:visited {
+            color: $color-tint-40;
+
+        }
+
+        &:hover {
+            color: $color-tint-80;
+        }
+
+        &:active {
+            color: $color-tint-60;
+        }
+    }
+}

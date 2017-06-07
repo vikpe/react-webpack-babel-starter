@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.c-pagination {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+  padding: 0;
+  margin-top: 24px;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+
+.c-pagination li {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+
+.c-pagination li > a,
+.c-pagination li > span {
+  display: inline-block;
+  padding: 5px 11px;
+  outline: 1px solid transparent;
+  white-space: nowrap;
+}
+
+
+.c-pagination li > a:focus,
+.c-pagination li > span:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: 1px dashed #000;
+}
+
+
+.c-pagination li > a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.c-pagination li > a:active {
+  background-color: rgba(0, 0, 0, 0.3);
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.c-pagination li
+.c-pagination li.f-active > a,
+.c-pagination li
+.c-pagination li.f-active > span {
+  outline-color: #0078D7;
+}
+
+
+.c-pagination li.f-hide {
+  display: none;
+}
+
+
+.c-pagination li:first-child .c-glyph:before {
+  content: "";
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+
+
+.c-pagination li:last-child .c-glyph:after {
+  content: "";
+  vertical-align: -2px;
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 539px) {
+  
+  .c-pagination li:first-child a,
+  .c-pagination li:last-child a {
+    position: relative;
+    text-indent: -9999px;
+  }
+  
+  .c-pagination li:first-child .c-glyph:before,
+  .c-pagination li:first-child .c-glyph:after,
+  .c-pagination li:last-child .c-glyph:before,
+  .c-pagination li:last-child .c-glyph:after {
+    position: absolute;
+    top: 8px;
+    left: 9999px;
+  }
+}

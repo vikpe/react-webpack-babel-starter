@@ -1,0 +1,19 @@
+// Language settings
+
+@function set-direction-based-value($ltr-val, $rtl-val) {
+    // replace with 2nd param if RTL
+    @if $dir == "ltr" {
+        @return $ltr-val;
+    } @elseif $dir == "rtl" {
+        @return $rtl-val;
+    }
+
+    @error "$dir is not a valid value. Ensure $dir is set to either `ltr` or `rtl`";
+}
+
+@mixin flip-direction() {
+    // flip horizontal if RTL
+    @if $dir == "rtl" {
+        transform: scaleX(-1);
+    }
+}

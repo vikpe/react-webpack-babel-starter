@@ -1,0 +1,152 @@
+//  ==========================================================================
+//  Component: Action trigger
+//  ==========================================================================
+
+button.c-action-trigger,
+a.c-action-trigger {
+    @include apply-type(t7);
+    max-width: 374px;
+    min-width: 36px;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 0 8px;
+    color: $color-accent;
+    border: solid 1px transparent;
+    background: none;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    outline: 1px dashed transparent;
+
+    &:focus,
+    &:hover {
+        color: $color-foreground-60;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: 1px dashed $color-foreground-60;
+    }
+
+    &:active {
+        color: $color-shade;
+        outline: 1px solid transparent;
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        color: $color-foreground-20;
+        cursor: not-allowed;
+    }
+
+    &.c-glyph {
+        min-width: 120px;
+        padding-right: 10px;
+
+        &:before {
+            width: 16px;
+            height: 16px;
+            margin-#{$left}: 10px;
+            margin-#{$right}: 10px;
+            vertical-align: middle;
+        }
+
+        &.glyph-edit:before {
+            content: $glyph-edit;
+        }
+
+        &.glyph-cancel:before {
+            content: $glyph-cancel;
+        }
+
+        &.glyph-global-nav-button:before {
+            content: $glyph-global-nav-button;
+        }
+
+        &.glyph-shopping-cart:before {
+            content: $glyph-shopping-cart;
+        }
+
+        &.glyph-chevron-left:before {
+            content: set-direction-based-value($glyph-chevron-left, $glyph-chevron-right);
+        }
+
+        &.glyph-chevron-right:before {
+            content: set-direction-based-value($glyph-chevron-right, $glyph-chevron-left);
+        }
+
+        &.glyph-arrow-htmllegacy-mirrored:before {
+            content: set-direction-based-value($glyph-arrow-htmllegacy-mirrored, $glyph-arrow-htmllegacy);
+        }
+
+        &.glyph-arrow-htmllegacy:before {
+            content: set-direction-based-value($glyph-arrow-htmllegacy, $glyph-arrow-htmllegacy-mirrored);
+        }
+
+        &.glyph-play:before {
+            content: $glyph-play;
+        }
+
+        &.glyph-info:before {
+            content: $glyph-info;
+        }
+
+        &[aria-label] {
+            min-width: 0;
+            margin-#{$right}: 10px;
+            padding-#{$right}: 0;
+        }
+    }
+
+    #{$theme-light} {
+        color: $color-shade;
+        background: transparent;
+
+        &:focus,
+        &:hover {
+            color: $color-foreground-60;
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground-60;
+        }
+
+        &:active {
+            color: $color-shade;
+            outline: 1px solid transparent;
+            text-decoration: none;
+        }
+
+        &[disabled] {
+            color: $color-foreground-20;
+            cursor: not-allowed;
+        }
+    }
+
+    #{$theme-dark} {
+        color: $color-tint;
+        background: transparent;
+
+        &:focus,
+        &:hover {
+            color: $color-tint-80;
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-tint;
+        }
+
+        &:active {
+            color: $color-tint;
+            outline: 1px solid transparent;
+            text-decoration: none;
+        }
+
+        &[disabled] {
+            color: $color-tint-60;
+            cursor: not-allowed;
+        }
+    }
+}

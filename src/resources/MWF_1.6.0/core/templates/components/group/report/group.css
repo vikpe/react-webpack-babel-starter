@@ -1,0 +1,68 @@
+
+.c-group {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: hidden;
+  padding: 1px;
+}
+
+
+.c-group.f-wrap-items {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /** .c-product-placement deprecated on v1.6.0 **/
+  /*  use .m-product-placement-item
+            TODO: remove c- in v.2.0 */
+}
+
+@media only screen and (max-width: 539px) {
+  
+  .c-group.f-wrap-items .m-product-placement-item.f-orientation-vertical.f-size-medium,
+  .c-group.f-wrap-items .c-product-placement.f-orientation-vertical.f-size-medium {
+    width: calc(50% - 24px);
+  }
+  
+  .c-group.f-wrap-items .m-product-placement-item.f-orientation-vertical.f-size-medium picture img,
+  .c-group.f-wrap-items .c-product-placement.f-orientation-vertical.f-size-medium picture img {
+    width: 100%;
+  }
+}
+
+
+.c-group .c-call-to-action {
+  margin-right: 4px;
+}
+
+
+.c-group .c-action-trigger {
+  padding-right: 24px;
+}
+
+
+.c-group .c-action-trigger:last-child {
+  padding-right: 0;
+}
+
+
+.c-group .c-select-button {
+  margin-top: 8px;
+}
+
+@media only screen and (min-width: 320px) {
+  
+  .c-group button.c-button,
+  .c-group a.c-button[role="button"] {
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  
+  .c-group button.c-button,
+  .c-group a.c-button[role="button"] {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,34 @@
+.c-file {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-file .c-button {
+  margin-top: 20px;
+}
+
+.c-file input[type="file"] {
+  float: left;
+  visibility: hidden;
+  width: 0;
+}
+
+.c-file input.c-text-field[type="text"] {
+  margin-right: 8px;
+}
+
+.c-file input.c-text-field[type="text"]::-ms-clear {
+  display: none;
+}
+
+.c-file input.c-text-field[type="text"][readonly] {
+  background: #FFF;
+}
+
+.c-file input.c-text-field[type="text"][readonly]:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.c-file input.c-text-field[type="text"][readonly]:active, .c-file input.c-text-field[type="text"][readonly]:focus {
+  border-color: #0078D7;
+}

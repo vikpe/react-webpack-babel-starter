@@ -1,0 +1,102 @@
+//  ==========================================================================
+//  Brand Palette
+//  ==========================================================================
+$color-brand-blue:                        #0078D7;
+$color-brand-purple:                      #5C2D91;
+$color-brand-magenta:                     #B4009E;
+$color-brand-red:                         #E81123;
+$color-brand-orange:                      #D83B01;
+$color-brand-yellow:                      #FFB900;
+$color-brand-green:                       #107C10;
+$color-brand-teal:                        #008272;
+
+//  ==========================================================================
+//  Brand Neutral Palette
+//  ==========================================================================
+$color-brand-neutral-00:                  #FFF;
+$color-brand-neutral-10:                  #E3E3E3;
+$color-brand-neutral-20:                  #C8C8C8;
+$color-brand-neutral-30:                  #ACACAC;
+$color-brand-neutral-45:                  #919191;
+$color-brand-neutral-55:                  #767676;
+$color-brand-neutral-65:                  #5E5E5E;
+$color-brand-neutral-75:                  #464646;
+$color-brand-neutral-80:                  #2F2F2F;
+$color-brand-neutral-90:                  #171717;
+$color-brand-neutral-100:                 #000;
+
+//  ==========================================================================
+//  Neutral Palette:
+//    Shade colors are always derived from a black color
+//    Tint colors are always derived from a white color
+//    These colors should be used for defining light and dark themes, as well
+//    as for elments that should not change between default and alt colors
+//  ==========================================================================
+$color-shade:                       #000;
+$color-shade-05:                    RGBa($color-shade, 0.05);
+$color-shade-10:                    RGBa($color-shade, 0.1);
+$color-shade-15:                    RGBa($color-shade, 0.15);
+$color-shade-20:                    RGBa($color-shade, 0.2);
+$color-shade-30:                    RGBa($color-shade, 0.3);
+$color-shade-40:                    RGBa($color-shade, 0.4);
+$color-shade-50:                    RGBa($color-shade, 0.5);
+$color-shade-60:                    RGBa($color-shade, 0.6);
+$color-shade-80:                    RGBa($color-shade, 0.8);
+$color-shade-90:                    RGBa($color-shade, 0.9);
+
+//  Tints are placeholders.  As it stands both design language and marketing sites
+//  do not believe they will need this.  They believe they can achieve everything
+//  right now through shades
+$color-tint:                        #FFF;
+$color-tint-05:                     RGBa($color-tint, 0.05);
+$color-tint-10:                     RGBa($color-tint, 0.1);
+$color-tint-15:                     RGBa($color-tint, 0.15);
+$color-tint-20:                     RGBa($color-tint, 0.2);
+$color-tint-30:                     RGBa($color-tint, 0.3);
+$color-tint-40:                     RGBa($color-tint, 0.4);
+$color-tint-50:                     RGBa($color-tint, 0.5);
+$color-tint-60:                     RGBa($color-tint, 0.6);
+$color-tint-80:                     RGBa($color-tint, 0.8);
+$color-tint-90:                     RGBa($color-tint, 0.9);
+
+//  ==========================================================================
+//  Default and Alt Themeing colors:
+//     These colors will be inverted between "default" and "alt" themes
+//  ==========================================================================
+$color-foreground:                  $color-shade !default;
+$color-foreground-05:               RGBa($color-foreground, 0.05);
+$color-foreground-10:               RGBa($color-foreground, 0.1);
+$color-foreground-15:               RGBa($color-foreground, 0.15);
+$color-foreground-20:               RGBa($color-foreground, 0.2);
+$color-foreground-30:               RGBa($color-foreground, 0.3);
+$color-foreground-40:               RGBa($color-foreground, 0.4);
+$color-foreground-60:               RGBa($color-foreground, 0.6);
+$color-foreground-80:               RGBa($color-foreground, 0.8);
+
+$color-background:                  $color-tint !default;
+$color-background-05:               RGBa($color-background, 0.05);
+$color-background-10:               RGBa($color-background, 0.1);
+$color-background-15:               RGBa($color-background, 0.15);
+$color-background-20:               RGBa($color-background, 0.2);
+$color-background-30:               RGBa($color-background, 0.3);
+$color-background-40:               RGBa($color-background, 0.4);
+$color-background-60:               RGBa($color-background, 0.6);
+$color-background-80:               RGBa($color-background, 0.8);
+
+//  ==========================================================================
+//  Brand Accent Colors
+//  ==========================================================================
+$color-accent:                      $color-brand-blue !default;
+$color-accent-05:                   RGBa($color-accent, 0.05);
+$color-accent-10:                   RGBa($color-accent, 0.1);
+$color-accent-15:                   RGBa($color-accent, 0.15);
+$color-accent-20:                   RGBa($color-accent, 0.2);
+$color-accent-30:                   RGBa($color-accent, 0.3);
+$color-accent-40:                   RGBa($color-accent, 0.4);
+$color-accent-60:                   RGBa($color-accent, 0.6);
+$color-accent-80:                   RGBa($color-accent, 0.8);
+
+//  ==========================================================================
+//  Utility Colors
+//  ==========================================================================
+$color-transparent:               RGBa($color-background, 0);

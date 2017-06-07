@@ -1,0 +1,41 @@
+.m-product-placement {
+  padding-top: 12px;
+}
+
+.m-product-placement .c-hyperlink[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.m-product-placement.f-artist a > div {
+  height: inherit;
+}
+
+.m-product-placement .c-carousel .c-flipper {
+  /*
+            * Use .f-previous and .f-next
+            * .f-left and f-right deprecated v1.3.0
+            */
+}
+
+.m-product-placement .c-carousel .c-flipper.f-left, .m-product-placement .c-carousel .c-flipper.f-previous {
+  left: -24px;
+}
+
+.m-product-placement .c-carousel .c-flipper.f-right, .m-product-placement .c-carousel .c-flipper.f-next {
+  right: -24px;
+}
+
+@media only screen and (max-width: 767px) {
+  .m-product-placement .c-carousel .c-flipper {
+    /*
+                * Use .f-previous and .f-next
+                * .f-left and f-right deprecated v1.3.0
+                */
+  }
+  .m-product-placement .c-carousel .c-flipper.f-left, .m-product-placement .c-carousel .c-flipper.f-previous {
+    background-color: transparent;
+  }
+  .m-product-placement .c-carousel .c-flipper.f-right, .m-product-placement .c-carousel .c-flipper.f-next {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,224 @@
+// ==========================================================================
+// Define foundational styles / document setup
+// ==========================================================================
+// Configure: fonts, font faces and ramp
+// ==========================================================================
+
+// Create all fonts, typeramp, and type object classes
+@font-face {
+    font-family: "MWF-MDL2";
+    @if $ltie8 == true {
+        src: url('../fonts/MWFMDL2.eot');
+        src: url('../fonts/MWFMDL2.eot?#ie8fix') format('embedded-opentype');
+    } @else {
+        src: url('../fonts/MWFMDL2.woff') format('woff'),
+             url('../fonts/MWFMDL2.ttf') format('truetype'),
+             url('../fonts/MWFMDL2.svg') format('svg');
+    }
+}
+
+@include build-fonts($font-group);
+@include create-typography-classes();
+
+$mark-color: #FFF100;
+
+//  Configure: global elements
+//  ==========================================================================
+html {
+    box-sizing: border-box;
+}
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    @include apply-type(t7);
+    font-family: $font-family-normal;
+    min-width: $min-content-width;
+    color: $color-foreground;
+    background-color: $color-background;
+}
+
+#{$theme-light-selector} {
+    color: $color-shade;
+    background-color: flatten-overlay($color-tint, $color-shade, 10);
+}
+
+#{$theme-dark-selector} {
+    color: $color-tint;
+    background-color: flatten-overlay($color-tint, $color-shade, 80);
+}
+//  Configure: Block elements
+//  ==========================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+address {
+    font: inherit;
+}
+
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+dl {
+    margin: 0;
+}
+
+dd {
+    margin: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+figure {
+    margin: 0;
+}
+
+// Configure: Inline elements
+// ===========================================================================
+// Anchor tags are used in a lot of places, so this removes default styling from them
+a:link,
+a:focus,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+q,
+em,
+i,
+var {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: $font-weight-semibold;
+}
+
+mark {
+    background-color: $mark-color;
+    padding: 1px 4px 2px;
+
+    @media screen and (-ms-high-contrast: active) {
+        //omitting outline color for this scenario.  We want all high contrast themes to use default color.
+        outline: 1px solid;
+        color: inherit;
+    }
+}
+
+del,
+s {
+    color: $color-foreground-60;
+
+    #{$theme-light} {
+        color: $color-shade-60;
+    }
+
+    #{$theme-dark} {
+        color: $color-tint-60;
+    }
+}
+
+u,
+ins {
+    text-decoration: none;
+    border-bottom: 1px solid $color-foreground-60;
+
+    #{$theme-light} {
+        border-bottom: 1px solid $color-shade-60;
+    }
+
+    #{$theme-dark} {
+        border-bottom: 1px solid $color-tint-60;
+    }
+}
+
+small,
+sub,
+sup {
+    font-size: 0.8em;
+}
+
+abbr,
+dfn {
+    font-style: normal;
+    border-bottom: 1px dotted $color-foreground-60;
+
+    #{$theme-light} {
+        border-bottom: 1px dotted $color-shade-60;
+    }
+
+    #{$theme-dark} {
+        border-bottom: 1px dotted $color-tint-60;
+    }
+}
+
+cite,
+time {
+    font-style: normal;
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: $font-family-monospace;
+}
+
+kbd {
+    border-radius: 2px;
+    padding: 1px 4px 2px;
+    background-color: $color-foreground-60;
+    color: $color-background;
+
+    kbd {
+        padding: 0;
+    }
+
+    #{$theme-light} {
+        background-color: $color-shade-60;
+        color: $color-tint;
+    }
+
+    #{$theme-dark} {
+        background-color: $color-tint-60;
+        color: $color-shade;
+    }
+}
+
+bdo {
+    direction: $rtl;
+}
+
+//input[type="search"] required to overwrite rule set in _normalize.scss
+input,
+input[type="search"] {
+    border-radius: 0;
+    appearance: none;
+}

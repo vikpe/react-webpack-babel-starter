@@ -1,0 +1,650 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Mosaic",
+    "description": "A MWF mosaic component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/mosaic.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/pattern-one"
+        },
+        {
+            "$ref": "#/definitions/pattern-two"
+        },
+        {
+            "$ref": "#/definitions/pattern-three"
+        },
+        {
+            "$ref": "#/definitions/pattern-four"
+        },
+        {
+            "$ref": "#/definitions/pattern-five"
+        },
+        {
+            "$ref": "#/definitions/pattern-six"
+        },
+        {
+            "$ref": "#/definitions/pattern-seven"
+        },
+        {
+            "$ref": "#/definitions/pattern-eight"
+        },
+        {
+            "$ref": "#/definitions/pattern-nine"
+        },
+        {
+            "$ref": "#/definitions/pattern-ten"
+        }
+    ],
+    "definitions": {
+        "theme": {
+            "type": "object",
+            "properties": {
+                "theme": {
+                    "type": "string",
+                    "enum": [
+                        "light",
+                        "dark"
+                    ]
+                }
+            },
+            "required": [
+                "theme"
+            ]
+        },
+        "placement": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "$ref": "#/definitions/theme"
+                },
+                "content": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic-placement.json"
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-one": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                1
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-two": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                2
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-three": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                3
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "five": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "six": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "seven": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four",
+                                "five",
+                                "six",
+                                "seven"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-four": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                4
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "five": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "six": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four",
+                                "five",
+                                "six"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-five": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                5
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "five": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "six": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "seven": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "eight": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four",
+                                "five",
+                                "six",
+                                "seven",
+                                "eight"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config"
+            ]
+        },
+        "pattern-six": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                6
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "five": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "six": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "seven": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "eight": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "nine": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four",
+                                "five",
+                                "six",
+                                "seven",
+                                "eight",
+                                "nine"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        },
+        "pattern-seven": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "pattern": {
+                            "type": "integer",
+                            "enum": [
+                                7
+                            ]
+                        }
+                    },
+                    "required": [
+                        "pattern"
+                    ]
+                },
+                "content": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "one": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "two": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "three": {
+                                    "$ref": "#/definitions/placement"
+                                },
+                                "four": {
+                                    "$ref": "#/definitions/placement"
+                                }
+                            },
+                            "required": [
+                                "one",
+                                "two",
+                                "three",
+                                "four"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "items"
+                    ]
+                }
+            },
+            "required": [
+                "config",
+                "content"
+            ]
+        }
+    },
+    "pattern-eight": {
+        "type": "object",
+        "properties": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "pattern": {
+                        "type": "integer",
+                        "enum": [
+                            8
+                        ]
+                    }
+                },
+                "required": [
+                    "pattern"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "one": {
+                                "$ref": "#/definitions/placement"
+                            },
+                            "two": {
+                                "$ref": "#/definitions/placement"
+                            },
+                            "three": {
+                                "$ref": "#/definitions/placement"
+                            }
+                        },
+                        "required": [
+                            "one",
+                            "two",
+                            "three"
+                        ]
+                    }
+                },
+                "required": [
+                    "items"
+                ]
+            }
+        },
+        "required": [
+            "config",
+            "content"
+        ]
+    },
+    "pattern-nine": {
+        "type": "object",
+        "properties": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "pattern": {
+                        "type": "integer",
+                        "enum": [
+                            9
+                        ]
+                    }
+                },
+                "required": [
+                    "pattern"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "one": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/components/mosaic-placement.json"
+                            },
+                            "two": {
+                                "$ref": "#/definitions/placement"
+                            },
+                            "three": {
+                                "$ref": "#/definitions/placement"
+                            }
+                        },
+                        "required": [
+                            "one",
+                            "two",
+                            "three"
+                        ]
+                    }
+                },
+                "required": [
+                    "items"
+                ]
+            }
+        },
+        "required": [
+            "config",
+            "content"
+        ]
+    },
+    "pattern-ten": {
+        "type": "object",
+        "properties": {
+            "config": {
+                "type": "object",
+                "properties": {
+                    "pattern": {
+                        "type": "integer",
+                        "enum": [
+                            10
+                        ]
+                    }
+                },
+                "required": [
+                    "pattern"
+                ]
+            },
+            "content": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "one": {
+                                "$ref": "http://www.getmwf.com/releases/core/schemas/modules/hyperlink-group.json"
+                            },
+                            "two": {
+                                "$ref": "#/definitions/placement"
+                            },
+                            "three": {
+                                "$ref": "#/definitions/placement"
+                            },
+                            "four": {
+                                "$ref": "#/definitions/placement"
+                            }
+                        },
+                        "required": [
+                            "one",
+                            "two",
+                            "three",
+                            "four"
+                        ]
+                    }
+                },
+                "required": [
+                    "items"
+                ]
+            }
+        },
+        "required": [
+            "config",
+            "content"
+        ]
+    }
+}

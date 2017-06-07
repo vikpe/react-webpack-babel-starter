@@ -1,0 +1,24 @@
+// ==========================================================================
+// Configure environment variables
+// ==========================================================================
+
+$ltie8:             {{ltie8}};
+$dir:               {{dir}};
+$font-group:        {{font-group}};
+$color-background:  {{color-background}};
+$color-foreground:  {{color-foreground}};
+
+$bootstrap-migration: true;
+$webcore-migration: false;
+
+// ==========================================================================
+// Import framework core
+// ==========================================================================
+@import "../../core/styles/mwf_core";
+
+// ==========================================================================
+// Import partner core (if applicable)
+// @import "../../partners/{0}/styles/{0}-core";
+// ==========================================================================
+// scss-lint:disable FinalNewline
+{{partner-stylesheet}}

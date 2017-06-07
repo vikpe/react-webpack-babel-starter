@@ -1,0 +1,42 @@
+.m-feature {
+    padding-top: 48px;
+
+    .c-feature {
+        @media only screen and (min-width: $vp3-max){
+            &.f-align-left {
+                > div {
+                    padding-#{$left}: 0;
+                }
+            }
+
+            &.f-align-right {
+                > div {
+                    #{$left}: 50%;
+                    padding-#{$right}: 0;
+                }
+            }
+        }
+    }
+
+    + .m-feature {
+        padding-top: 0;
+    }
+
+    &[data-grid~="container"] {
+        @include left-right-padding($add-12);
+        max-width: 100%;
+        clear: both;
+
+        @media only screen and (min-width: $vp2){
+            @include left-right-padding($add-24);
+        }
+
+        @media only screen and (min-width: $vp3){
+            @include left-right-padding($add-36);
+        }
+
+        @media only screen and (min-width: $vp5){
+            @include left-right-padding($add-48);
+        }
+    }
+}

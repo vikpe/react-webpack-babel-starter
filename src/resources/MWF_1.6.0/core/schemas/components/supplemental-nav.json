@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Supplemental navigation",
+    "description": "A MWF supplemental navigation component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/supplemental-nav.json",
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "config": {
+                                "type": "object",
+                                "properties": {
+                                    "state": {
+                                        "type": "string",
+                                        "enum": [
+                                            "collapsed",
+                                            "expanded"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "state"
+                                ]
+                            },
+                            "content": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "links": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "config": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "active": {
+                                                            "type": "boolean"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "active"
+                                                    ]
+                                                },
+                                                "content": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "text": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "text"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "config",
+                                                "content"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "text",
+                                    "links"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "config",
+                            "content"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "links"
+            ]
+        }
+    }
+}

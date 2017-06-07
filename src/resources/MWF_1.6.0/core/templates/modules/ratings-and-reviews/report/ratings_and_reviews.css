@@ -1,0 +1,175 @@
+@charset "UTF-8";
+.m-ratings-and-reviews .context-filter,
+.m-ratings-and-reviews .context-sort {
+  padding-right: 24px;
+}
+
+.m-ratings-and-reviews .context-response {
+  padding-top: 24px;
+}
+
+.m-ratings-and-reviews .context-response > div {
+  position: relative;
+  padding-left: 24px;
+}
+
+.m-ratings-and-reviews .context-response > div:before {
+  font-family: "MWF-MDL2";
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.m-ratings-and-reviews .context-response > div .c-content-toggle p {
+  padding-top: 10px;
+}
+
+.m-ratings-and-reviews .context-helpful-select {
+  padding-top: 24px;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-meta-text {
+  padding-right: 13px;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-group {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-group button {
+  display: inline-block;
+  color: #0078D7;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  min-width: inherit;
+  margin: 0 13px;
+  vertical-align: inherit;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-group button:hover {
+  text-decoration: underline;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-group button:active {
+  text-decoration: none;
+  color: #006cc2;
+}
+
+.m-ratings-and-reviews .context-helpful-select .c-group button:focus {
+  outline: 1px dashed #000;
+}
+
+.m-ratings-and-reviews .c-histogram {
+  padding-top: 22px;
+}
+
+.m-ratings-and-reviews .c-divider {
+  margin-top: 48px;
+}
+
+.m-ratings-and-reviews .c-divider + span {
+  padding: 8px 0;
+  padding-left: 8px;
+  float: right;
+}
+
+.m-ratings-and-reviews .c-heading-4 {
+  padding-top: 48px;
+}
+
+.m-ratings-and-reviews [data-grid="col-3"] .c-rating {
+  padding-top: 18px;
+}
+
+.m-ratings-and-reviews [data-grid="col-3"] .c-paragraph-3 {
+  padding: 0;
+}
+
+.m-ratings-and-reviews [data-grid="col-3"] .c-paragraph-3 + .c-paragraph-3 {
+  padding: 8px 0 0;
+}
+
+.m-ratings-and-reviews [data-grid="col-3"] .c-meta-text {
+  padding-top: 8px;
+}
+
+.m-ratings-and-reviews [data-grid="col-9"] .c-heading-6 {
+  font-weight: 400;
+  padding: 22px 0 5px;
+}
+
+.m-ratings-and-reviews [data-grid="col-9"] .c-heading-6 + .c-content-toggle p {
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 539px) {
+  .m-ratings-and-reviews .c-histogram {
+    padding-top: 8px;
+  }
+  .m-ratings-and-reviews button + [data-grid="col-12"] .c-heading-4 {
+    padding-top: 48px;
+  }
+  .m-ratings-and-reviews .c-heading-4 {
+    padding-top: 28px;
+  }
+  .m-ratings-and-reviews .context-filter,
+  .m-ratings-and-reviews .c-select-menu {
+    display: block;
+  }
+  .m-ratings-and-reviews .context-sort + .c-select-menu {
+    display: inline-block;
+  }
+  .m-ratings-and-reviews .c-divider {
+    margin-top: 28px;
+  }
+  .m-ratings-and-reviews .c-divider + span {
+    float: none;
+    display: block;
+    padding: 8px 0;
+    padding-right: 8px;
+  }
+  .m-ratings-and-reviews .context-filter {
+    padding: 12px 0 8px;
+  }
+  .m-ratings-and-reviews .context-helpful-select .c-meta-text {
+    display: block;
+  }
+  .m-ratings-and-reviews .context-helpful-select .c-group button:first-child {
+    margin-left: 0;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .c-heading-6 {
+    padding: 14px 0 4px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .c-content-toggle p {
+    padding: 0;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .c-meta-text {
+    padding: 20px 0 24px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-helpful-select .c-meta-text {
+    padding: 20px 0 14px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-response {
+    padding-top: 24px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-response > div {
+    position: relative;
+    padding-left: 24px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-response > div span {
+    display: block;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-response > div .c-content-toggle p {
+    padding-top: 12px;
+  }
+  .m-ratings-and-reviews [data-grid="col-9"] .context-response > div:before {
+    font-family: "MWF-MDL2";
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

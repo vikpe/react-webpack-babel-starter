@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Choice summary",
+    "description": "A MWF choice summary component's schema definition",
+    "type": "array",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/choice-summary.json",
+    "items": {
+        "type": "object",
+        "properties": {
+            "content": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "text"
+                ]
+            }
+        },
+        "required": [
+            "content"
+        ]
+    }
+}

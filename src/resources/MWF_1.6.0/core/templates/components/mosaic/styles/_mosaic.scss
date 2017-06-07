@@ -1,0 +1,140 @@
+//  ==========================================================================
+//  Component: Mosaic
+//  ==========================================================================
+
+.c-mosaic {
+    max-width: $vp-max;
+    margin: 0 auto;
+
+    [data-f-mosaic] {
+        > picture {
+            z-index: map-get($z-index, default);
+            position: relative;
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+
+            img {
+                position: absolute;
+                left: calc(50%);
+                top: calc(50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &,
+    [data-f-mosaic*="f-vp"] {
+        @include clearfix();
+    }
+
+    [data-f-mosaic*="f-vp"] {
+        float: $left;
+    }
+    // Width classes
+    [data-f-mosaic~="f-vp1-whole"] {
+        width: 100%;
+    }
+
+    [data-f-mosaic~="f-vp1-half"] {
+        width: 50%;
+    }
+    // Height Classes
+    [data-f-mosaic~="f-height-small"] {
+        height: 150px;
+    }
+
+    [data-f-mosaic~="f-height-medium"] {
+        height: 300px;
+    }
+
+    [data-f-mosaic~="f-height-large"] {
+        height: 300px;
+    }
+
+    @if not $ltie8 {
+        @media only screen and (min-width: $vp2) {
+            [data-f-mosaic~="f-vp2-whole"] {
+                width: 100%;
+            }
+
+            [data-f-mosaic~="f-vp2-half"] {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (min-width: $vp3) {
+            [data-f-mosaic~="f-vp3-whole"] {
+                width: 100%;
+            }
+
+            [data-f-mosaic~="f-vp3-half"] {
+                width: 50%;
+            }
+
+            [data-f-mosaic~="f-height-small"] {
+                height: 200px;
+            }
+
+            [data-f-mosaic~="f-height-medium"] {
+                height: 400px;
+            }
+
+            [data-f-mosaic~="f-height-large"] {
+                height: 400px;
+            }
+        }
+
+        @media only screen and (min-width: $vp4) {
+            [data-f-mosaic~="f-vp4-whole"] {
+                width: 100%;
+            }
+
+            [data-f-mosaic~="f-vp4-half"] {
+                width: 50%;
+            }
+
+            [data-f-mosaic~="f-height-large"] {
+                height: 800px;
+            }
+        }
+    } @else {
+        // Define IE8 styles outside of media queries
+        [data-f-mosaic~="f-height-small"] {
+            height: 200px;
+        }
+
+        [data-f-mosaic~="f-height-medium"] {
+            height: 400px;
+        }
+
+        [data-f-mosaic~="f-height-large"] {
+            height: 800px;
+        }
+
+        [data-f-mosaic~="f-vp2-whole"] {
+            width: 100%;
+        }
+
+        [data-f-mosaic~="f-vp2-half"] {
+            width: 50%;
+        }
+
+        [data-f-mosaic~="f-vp3-whole"] {
+            width: 100%;
+        }
+
+        [data-f-mosaic~="f-vp3-half"] {
+            width: 50%;
+        }
+        // Duplicate these selectors for ltie8 so that IE8 gets desktop layout
+        [data-f-mosaic~="f-vp4-whole"] {
+            width: 100%;
+        }
+
+        [data-f-mosaic~="f-vp4-half"] {
+            width: 50%;
+        }
+    }
+}

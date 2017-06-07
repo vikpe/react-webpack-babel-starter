@@ -1,0 +1,7 @@
+.c-explicit {
+    @include apply-type(t9);
+    line-height: 1;
+    margin: 0 5px;
+    padding: 0 3px;
+    border: 1px solid $color-brand-neutral-100;
+}

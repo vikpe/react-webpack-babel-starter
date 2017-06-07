@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/** .c-social deprecated v.1.6.0 - use m-social **/
+/** TODO: Remove c-social in v.2.0 **/
+.m-social {
+  padding: 0;
+}
+
+.m-social,
+.c-social {
+  display: block;
+  margin-top: 48px;
+}
+
+.m-social.f-facebook > div, .m-social.f-pinterest > div, .m-social.f-twitter > div,
+.c-social.f-facebook > div,
+.c-social.f-pinterest > div,
+.c-social.f-twitter > div {
+  display: inline-block;
+  margin-right: 24px;
+}
+
+.m-social > span,
+.c-social > span {
+  font-size: 11px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.m-social > a,
+.c-social > a {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.m-social > a:hover:before,
+.c-social > a:hover:before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.m-social > a:focus,
+.c-social > a:focus {
+  outline: 1px dashed #000;
+}
+
+.m-social > a:before,
+.c-social > a:before {
+  background: none;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.m-social > a > img,
+.c-social > a > img {
+  width: 32px;
+  height: 32px;
+}
+
+.m-social.f-share > a:hover:before, .m-social.f-follow > a:hover:before,
+.c-social.f-share > a:hover:before,
+.c-social.f-follow > a:hover:before {
+  background: rgba(255, 255, 255, 0);
+}
+
+.m-social.f-share > a:active, .m-social.f-follow > a:active,
+.c-social.f-share > a:active,
+.c-social.f-follow > a:active {
+  outline: none;
+}
+
+.m-social.f-share > a > img, .m-social.f-follow > a > img,
+.c-social.f-share > a > img,
+.c-social.f-follow > a > img {
+  opacity: 0.6;
+}
+
+.m-social.f-share > a > img:hover, .m-social.f-share > a > img:focus, .m-social.f-follow > a > img:hover, .m-social.f-follow > a > img:focus,
+.c-social.f-share > a > img:hover,
+.c-social.f-share > a > img:focus,
+.c-social.f-follow > a > img:hover,
+.c-social.f-follow > a > img:focus {
+  opacity: 0.8;
+}
+
+.m-social.f-share > a > img:active, .m-social.f-follow > a > img:active,
+.c-social.f-share > a > img:active,
+.c-social.f-follow > a > img:active {
+  opacity: 1;
+}
+
+.m-social button,
+.c-social button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+  vertical-align: middle;
+}
+
+.m-social button[aria-hidden="true"],
+.c-social button[aria-hidden="true"] {
+  display: none;
+}
+
+.m-social button:focus,
+.c-social button:focus {
+  outline: 1px dashed #000;
+}
+
+.m-social .f-hide,
+.c-social .f-hide {
+  display: none !important;
+}
+
+.m-social.f-horizontal > a,
+.c-social.f-horizontal > a {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.m-social.f-horizontal button[aria-hidden="false"],
+.c-social.f-horizontal button[aria-hidden="false"] {
+  display: inline-block;
+}
+
+.m-social.f-horizontal button.c-glyph[aria-expanded="false"]:after,
+.c-social.f-horizontal button.c-glyph[aria-expanded="false"]:after {
+  content: "";
+}
+
+.m-social.f-horizontal button.c-glyph[aria-expanded="true"]:after,
+.c-social.f-horizontal button.c-glyph[aria-expanded="true"]:after {
+  content: "";
+}
+
+.m-social.f-vertical > a,
+.c-social.f-vertical > a {
+  display: block;
+  margin-bottom: 12px;
+  margin-right: 0;
+}
+
+.m-social.f-vertical button[aria-hidden="false"],
+.c-social.f-vertical button[aria-hidden="false"] {
+  display: block;
+}
+
+.m-social.f-vertical button.c-glyph[aria-expanded="false"]:after,
+.c-social.f-vertical button.c-glyph[aria-expanded="false"]:after {
+  font-family: "MWF-MDL2";
+  content: "";
+}
+
+.m-social.f-vertical button.c-glyph[aria-expanded="true"]:after,
+.c-social.f-vertical button.c-glyph[aria-expanded="true"]:after {
+  font-family: "MWF-MDL2";
+  content: "";
+}
+
+@media only screen and (max-width: 767px) {
+  .m-social,
+  .c-social {
+    margin-top: 36px;
+  }
+}

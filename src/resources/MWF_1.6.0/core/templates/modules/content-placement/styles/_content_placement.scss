@@ -1,0 +1,21 @@
+.m-content-placement {
+    @include left-right-padding($add-0);
+    padding-top: 0;
+
+    @media only screen and (min-width: $vp2){
+        @include left-right-padding($add-12);
+    }
+
+    @media only screen and (min-width: $vp3){
+        @include left-right-padding($add-24);
+        padding-top: 48px;
+
+        .c-content-placement {
+            margin-top: 0;
+        }
+    }
+
+    @media only screen and (min-width: $vp5){
+        @include left-right-padding($add-36);
+    }
+}

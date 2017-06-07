@@ -1,0 +1,93 @@
+//  ==========================================================================
+//  Component: Toggle
+//  ==========================================================================
+
+div.c-toggle {
+    button {
+        display: inline-block;
+        position: relative;
+        width: 44px;
+        height: 20px;
+        background: transparent;
+        border: 1px solid $color-foreground;
+        border-radius: 20px;
+        margin-top: 42px;
+
+        &:after {
+            position: absolute;
+            #{$left}: 4px;
+            top: 4px;
+            transition: all 0.1s ease;
+            background: $color-foreground;
+            content: "";
+            border-radius: 10px;
+            width: 10px;
+            height: 10px;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &[aria-checked='true'] {
+            background: $color-accent;
+            border-color: $color-accent;
+
+            &:hover {
+                background: $color-accent-80;
+                border-color: $color-accent-80;
+            }
+
+            &:after {
+                #{$left}: 28px;
+                background: $color-brand-neutral-00;
+            }
+
+            &:disabled {
+                background: $color-foreground-20;
+                border-color: transparent;
+
+                &:after {
+                    background: $color-foreground-20;
+                }
+            }
+        }
+
+        &[aria-checked='false'] {
+            background: transparent;
+            border-color: $color-foreground;
+        }
+
+        &:disabled {
+            background: transparent;
+            border-color: $color-foreground-20;
+
+            &:after {
+                background: $color-foreground-20;
+            }
+        }
+    }
+
+    label {
+        margin-top: 32px;
+
+        & + button {
+            margin-top: 0;
+        }
+    }
+
+    span {
+        @include apply-type(t8);
+
+        display: inline-block;
+        margin-top: 0;
+        padding-#{$left}: 12px;
+        padding-bottom: 0;
+        cursor: pointer;
+        line-height: 19px;
+    }
+
+    &.f-disabled {
+        color: $color-foreground-20;
+    }
+}

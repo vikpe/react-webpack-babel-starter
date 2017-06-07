@@ -1,0 +1,43 @@
+//  ==========================================================================
+//  Component: File upload
+//  ==========================================================================
+
+.c-file {
+    display: flex;
+
+    .c-button {
+        margin-top: 20px;
+    }
+
+    input[type="file"] {
+        float: #{$left};
+        visibility: hidden;
+        width: 0;
+    }
+
+    input.c-text-field[type="text"] {
+        margin-#{$right}: 8px;
+
+        @if $ltie8 == true {
+            float: #{$left};
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        // restore styles canceled out by [readonly] on text-field component
+        &[readonly] {
+            background: $color-background;
+
+            &:hover {
+                border-color: $color-foreground-80;
+            }
+
+            &:active,
+            &:focus {
+                border-color: $color-accent;
+            }
+        }
+    }
+}

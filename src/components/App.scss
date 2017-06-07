@@ -7,3 +7,13 @@
     background-color: yellow;
   }
 }
+
+@font-face {
+  font-family: 'MWFMDL2';
+  src: url('../resources/MWF_1.6.0/core/fonts/MWFMDL2.eot'); /* IE9 Compat Modes */
+  src:
+    url('../resources/MWF_1.6.0/core/fonts/MWFMDL2.eot?#iefix')   format('embedded-opentype'),
+    url('../resources/MWF_1.6.0/core/fonts/MWFMDL2.woff')    format('woff'),
+    url('../resources/MWF_1.6.0/core/fonts/MWFMDL2.ttf')    format('truetype'),
+    url('../resources/MWF_1.6.0/core/fonts/MWFMDL2.svg')    format('svg');
+}

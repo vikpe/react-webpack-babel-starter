@@ -1,0 +1,340 @@
+// ==========================================================================
+// Component: Date time picker
+// ==========================================================================
+@mixin flexColumns($flex, $width:false, $align:false) {
+    float: $left;
+    flex: $flex $flex auto;
+    @if $width != false {
+        width: $width;
+    }
+    @if $align != false {
+        text-align: $align;
+    }
+}
+
+@mixin ie8FlexCol() {
+    display: inline;
+    float: $left;
+    position: relative;
+}
+
+@mixin verticalScrollButtons($firstWidth) {
+    & button {
+        position: absolute;
+        left: $firstWidth;
+        height: 22px;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        z-index: map-get($z-index, above);
+
+        &:first-of-type {
+            top: 0;
+        }
+
+        &:last-of-type {
+            top: 330px;
+        }
+    }
+}
+
+.c-date-time-picker {
+    box-shadow: 0 0 0 1px $color-foreground-60 inset;
+    @if $ltie8 {
+        height: 38px;
+        border: 1px solid $color-foreground-60;
+    }
+    outline: 0;
+    background: $color-foreground-05;
+    position: relative;
+    float: $left;
+
+    button {
+        @include apply-type(t7, false, true);
+        font-weight: $font-weight-normal;
+        background: transparent;
+        height: 36px;
+        border: 0;
+        border-#{$right}: 1px solid $color-foreground-60;
+
+        &:focus {
+            outline: 1px dotted $color-foreground-60;
+        }
+    }
+
+    &:hover {
+        background: $color-foreground-20;
+    }
+
+    &:active {
+        background: $color-foreground-40;
+    }
+
+    &[data-date-time-picker="date"] {
+        width: 296px;
+        @if $ltie8 {
+            width: 258px;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & [data-date-time-picker="month"] {
+            @include flexColumns(0, 135px, $left);
+        }
+
+        & [data-date-time-picker="day"] {
+            @include flexColumns(1);
+        }
+
+        & [data-date-time-picker="year"] {
+            @include flexColumns(0, 80px);
+        }
+    }
+
+    &[data-date-time-picker="time"] {
+        width: 240px;
+        @if $ltie8 {
+            width: 250px;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & [data-date-time-picker="hour"] {
+            @include flexColumns(0, 80px);
+        }
+
+        & [data-date-time-picker="minute"] {
+            @include flexColumns(0, 80px);
+        }
+
+        & [data-date-time-picker="ampm"] {
+            @include flexColumns(0, 80px);
+        }
+    }
+
+    &[data-date-time-picker="time24"] {
+        width: 160px;
+        @if $ltie8 {
+            width: 166px;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & [data-date-time-picker="hour24"] {
+            @include flexColumns(0, 80px);
+        }
+
+        & [data-date-time-picker="minute24"] {
+            @include flexColumns(0, 80px);
+        }
+    }
+
+    & [data-date-time-picker="date-selector"],
+    & [data-date-time-picker="time-selector12"],
+    & [data-date-time-picker="time-selector24"] {
+        width: 100%;
+        background: flatten-overlay($color-tint, $color-foreground, 5%);
+        position: absolute;
+        top: -157px;
+        #{$left}: 0;
+        height: 396px;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        text-align: center;
+        z-index: map-get($z-index, over);
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        &[aria-hidden="false"] {
+            display: flex;
+            @if $ltie8 {
+                display: block;
+            }
+        }
+
+        // Middle of selector highlight row
+        & > span {
+            position: absolute;
+            z-index: map-get($z-index, default);
+            top: 154px;
+            #{$left}: 0;
+            height: 44px;
+            width: 100%;
+            background: $color-accent;
+        }
+
+        [data-date-time-picker="ampm"] {
+            @include flexColumns(0, 80px);
+            @include verticalScrollButtons(80px);
+            z-index: map-get($z-index, neutral);
+            @if $ltie8 {
+                @include ie8FlexCol();
+            }
+
+            top: 0;
+            height: 352px;
+
+            & ul {
+                top: 154px;
+
+                &.f-js-pm {
+                    top: 110px;
+                }
+            }
+        }
+
+        // Columns in selector, month/day/year/hour/minute/ampm
+        & > div {
+            @include apply-type(t7, false, true);
+            font-weight: $font-weight-normal;
+            color: $color-foreground-60;
+            align-self: flex-start;
+            background-clip: content-box;
+            border-#{$right}: 1px solid $color-foreground-60;
+            float: $left;
+            position: relative;
+            z-index: map-get($z-index, neutral);
+
+            &:first-of-type button {
+                #{$left}: 0;
+                width: inherit;
+            }
+
+            &:last-of-type {
+                border-#{$right}: 0;
+
+                & button {
+                    #{$left}: auto;
+                    #{$right}: 0;
+                    width: inherit;
+                }
+            }
+
+            & ul {
+                position: relative;
+                top: -66px;
+            }
+
+            // Actual items in list ex. Month names
+            & li {
+                height: 44px;
+                padding: 12px 6px 3px;
+
+                &[aria-checked="true"] {
+                    color: $color-background;
+
+                    &:hover {
+                        background: transparent;
+                    }
+
+                    &:focus {
+                        outline: 1px dotted $color-foreground-60;
+                    }
+                }
+
+                &.f-js-last {
+                    border-bottom: 1px solid $color-foreground-60;
+                }
+
+                &:hover {
+                    background: flatten-overlay($color-tint, $color-foreground, 20%);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        & > button {
+            width: 50%;
+            height: 44px;
+            background: flatten-overlay($color-tint, $color-foreground, 5%);
+            border: 0;
+            border-top: 1px solid $color-foreground-60;
+            position: absolute;
+            bottom: 0;
+            z-index: map-get($z-index, above);
+
+            &:focus {
+                outline: 1px dotted $color-foreground-60;
+            }
+
+            &.glyph-accept {
+                &:before {
+                    color: $color-foreground-60;
+                    content: $glyph-accept;
+                }
+            }
+
+            &.glyph-cancel {
+                &:before {
+                    color: $color-foreground-60;
+                    content: $glyph-cancel;
+                }
+            }
+
+            &:hover {
+                background: flatten-overlay($color-tint, $color-foreground, 20%);
+            }
+
+            &[data-date-time-picker="apply"] {
+                #{$left}: 0;
+            }
+
+            &[data-date-time-picker="cancel"] {
+                #{$right}: 0;
+            }
+        }
+    }
+
+    [data-date-time-picker="month"] {
+        @include flexColumns(0, 135px, $left);
+        @include verticalScrollButtons(0);
+        z-index: map-get($z-index, neutral);
+        @if $ltie8 {
+            @include ie8FlexCol();
+        }
+    }
+
+    [data-date-time-picker="day"] {
+        @include flexColumns(1);
+        @include verticalScrollButtons(0);
+        z-index: map-get($z-index, neutral);
+        @if $ltie8 {
+            @include ie8FlexCol();
+        }
+    }
+
+    [data-date-time-picker="year"] {
+        @include flexColumns(0, 80px);
+        @include verticalScrollButtons(135px);
+        z-index: map-get($z-index, neutral);
+        @if $ltie8 {
+            @include ie8FlexCol();
+        }
+    }
+
+    [data-date-time-picker="hour"],
+    [data-date-time-picker="hour24"] {
+        @include flexColumns(0, 80px);
+        @include verticalScrollButtons(0);
+        z-index: map-get($z-index, neutral);
+        @if $ltie8 {
+            @include ie8FlexCol();
+        }
+    }
+
+    [data-date-time-picker="minute"],
+    [data-date-time-picker="minute24"] {
+        @include flexColumns(0, 80px);
+        @include verticalScrollButtons(0);
+        z-index: map-get($z-index, neutral);
+        @if $ltie8 {
+            @include ie8FlexCol();
+        }
+    }
+}

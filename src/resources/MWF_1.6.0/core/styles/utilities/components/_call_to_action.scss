@@ -1,0 +1,54 @@
+@mixin c-call-to-action-lightweight {
+    background: transparent;
+    color: $color-accent;
+    border-color: transparent;
+    border-width: 2px;
+    padding: set-direction-based-value(10px 44px 7px 24px, 10px 24px 7px 44px);
+    margin-#{$left}: -24px;
+    margin-#{$right}: -24px;
+
+    &:focus,
+    &:hover {
+        background: transparent;
+        border-color: transparent;
+    }
+
+    &:active {
+        background: transparent;
+        text-decoration: none;
+    }
+
+    span {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    #{$theme-light} {
+        color: $color-shade;
+        background: transparent;
+        border-color: transparent;
+
+        &:active {
+            color: $color-shade-60;
+        }
+
+        &:focus {
+            outline-color: $color-shade;
+        }
+    }
+
+    #{$theme-dark} {
+        color: $color-tint;
+        background: transparent;
+        border-color: transparent;
+
+        &:active {
+            color: $color-tint-60;
+        }
+
+        &:focus {
+            outline-color: $color-tint;
+        }
+    }
+}

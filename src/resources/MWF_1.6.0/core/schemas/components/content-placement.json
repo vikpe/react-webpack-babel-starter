@@ -1,0 +1,162 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Content placement",
+    "description": "A MWF content placement component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/content-placement.json",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/two-up"
+        },
+        {
+            "$ref": "#/definitions/three-up"
+        },
+        {
+            "$ref": "#/definitions/four-up"
+        }
+    ],
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "enum": [
+                        "article"
+                    ]
+                }
+            },
+            "required": [
+                "context"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "type": "object",
+                    "properties": {
+                        "content": {
+                            "level": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 6
+                            },
+                            "text": "string"
+                        }
+                    },
+                    "required": [
+                        "level",
+                        "text"
+                    ]
+                },
+                "paragraph": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/paragraph.json"
+                },
+                "call-to-action": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/call-to-action.json"
+                },
+                "featured-image": {
+                    "type": "object",
+                    "properties": {
+                        "vp6": {
+                            "type": "string"
+                        },
+                        "vp5": {
+                            "type": "string"
+                        },
+                        "vp4": {
+                            "type": "string"
+                        },
+                        "vp3": {
+                            "type": "string"
+                        },
+                        "vp2": {
+                            "type": "string"
+                        },
+                        "vp1": {
+                            "type": "string"
+                        },
+                        "alt": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "vp1",
+                        "vp2",
+                        "vp3",
+                        "vp4",
+                        "vp5",
+                        "vp6",
+                        "alt"
+                    ]
+                }
+            },
+            "required": [
+                "heading",
+                "paragraph",
+                "call-to-action"
+            ]
+        }
+    },
+    "definitions": {
+        "two-up": {
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "type": "string",
+                            "enum": [
+                                "large"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "size"
+                    ]
+                }
+            }
+        },
+        "three-up": {
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "type": "string",
+                            "enum": [
+                                "medium"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "size"
+                    ]
+                }
+            }
+        },
+        "four-up": {
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "type": "string",
+                            "enum": [
+                                "medium"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "size"
+                    ]
+                }
+            }
+        }
+    }
+}

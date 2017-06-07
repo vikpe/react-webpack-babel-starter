@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Subheading",
+    "description": "A MWF subheading component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/subheading.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "level" : {
+                    "type": "string",
+                    "enum":[
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ]
+                }
+            },
+                "tag": {
+                    "type": "string",
+                    "enum": [
+                        "h",
+                        "p"
+                    ]
+                }
+            },
+            "required": [
+                "tag",
+                "level"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text"
+            ]
+        }
+    }
+}

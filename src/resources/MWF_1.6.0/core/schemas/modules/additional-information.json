@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Additional Information module",
+    "description": "An MWF additional information module's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/modules/additional-information.json",
+    "supportedPartners": [
+        "store"
+    ],
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/heading.json"
+                },
+                "publisher-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "release-date-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "approximate-size-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "age-rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/age-rating.json"
+                },
+                "content-toggle": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/content-toggle.json"
+                },
+                "multiplayer-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "coop-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "in-app-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "installation-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "languages-list": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "terms-text": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/list.json"
+                },
+                "terms-hyperlink": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/hyperlink.json"
+                },
+                "report-hyperlink": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "heading",
+                "age-rating",
+                "content-toggle"
+            ]
+        }
+    }
+}

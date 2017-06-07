@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Histogram",
+    "description": "A MWF histogram component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/histogram.json",
+    "required": [
+        "content"
+    ],
+    "properties": {
+        "content": {
+            "type": "object",
+            "properties": {
+                "review-count-by-star": {
+                    "type": "object",
+                    "properties": {
+                        "one": {
+                            "type": "integer"
+                        },
+                        "two": {
+                            "type": "integer"
+                        },
+                        "three": {
+                            "type": "integer"
+                        },
+                        "four": {
+                            "type": "integer"
+                        },
+                        "five": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "one",
+                        "two",
+                        "three",
+                        "four",
+                        "five"
+                    ]
+                },
+                "rating": {
+                    "$ref": "http://www.getmwf.com/releases/core/schemas/components/rating.json"
+                }
+            },
+            "required": [
+                "review-count-by-star",
+                "rating"
+            ]
+        }
+    }
+}

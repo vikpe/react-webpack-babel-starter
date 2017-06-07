@@ -1,0 +1,36 @@
+// Get values from a map within a map
+// Thanks to Hugo Giraudel https://css-tricks.com/snippets/sass/deep-getset-maps/
+@function map-deep-get($map, $keys...) {
+    $value: $map;
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+    @return $value;
+}
+
+// Set css properties defined as key => value pairs
+// Example:
+// $map: (
+//     padding: 25px 0,
+//     color: #FFF,
+//     box-sizing: border-box
+// )
+// @include set-properties($map);
+
+@mixin set-properties($property-set) {
+    @if (type-of($property-set) == map) {
+        @each $property in $property-set {
+            @if (length($property == 2)) {
+                $css-property: nth($property, 1);
+                $value: nth($property, 2);
+
+                // Set CSS property
+                #{$css-property}: $value;
+            } @else {
+                @error $property-set + "set-properties failed. The value passed was not formatted correctly.";
+            }
+        }
+    } @else {
+        @error $property + "set-properties failed. The value passed is not a map.";
+    }
+}

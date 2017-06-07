@@ -1,0 +1,70 @@
+//  ==========================================================================
+//  Component: Menu item
+//  ==========================================================================
+
+#{$migration-select-menu-menu-item}
+.c-menu-item {
+    a,
+    span,
+    button {
+        display: block;
+        background: $color-foreground-05;
+        padding: 11px 12px 13px;
+        outline: 0;
+        cursor: pointer;
+        white-space: normal;
+
+        &:hover,
+        &:focus, {
+            background: $color-foreground-10;
+        }
+
+        &:focus {
+            outline: 1px dashed $color-foreground;
+        }
+
+        &:active {
+            background: $color-foreground-30;
+        }
+
+        &[role="menuitemradio"][aria-checked="true"] {
+            background: $color-accent;
+            color: $color-background;
+        }
+    }
+
+    &.f-sub-menu {
+        > a,
+        > button {
+            position: relative;
+
+            &:after {
+                @include apply-glyph(set-direction-based-value($glyph-chevron-right, $glyph-chevron-left));
+                position: absolute;
+                font-size: 6px;
+                #{$right}: 12px;
+                top: 19px;
+            }
+
+            & + .c-menu {
+                display: none;
+                position: absolute;
+                #{$left}: 100%;
+                top: 0;
+
+                // Helper class for js to flip menu
+                // when it reaches window bounds
+                &.f-flip {
+                    #{$left}: -100%;
+                }
+            }
+
+            .no-js &:focus + .c-menu,
+            .no-js &:hover + .c-menu,
+            .js &[aria-expanded="true"] + .c-menu[aria-hidden="false"] {
+                display: block;
+                animation: fadeIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+        }
+    }
+}

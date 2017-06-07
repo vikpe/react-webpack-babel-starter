@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Drawer",
+    "description": "An MWF drawer component's schema definition.",
+    "type": "object",
+    "id": "http://www.getmwf.com/releases/core/schemas/components/drawer.json",
+    "required": [
+        "config",
+        "content"
+    ],
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties": {
+                "content-type": {
+                    "type": "string"
+                },
+                "expanded": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "responsive": {
+                    "type": "boolean"
+                },
+                "header": {
+                    "type": "boolean"
+                },
+                "nav": {
+                    "type": "boolean"
+                },
+                "radiogroup": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "content": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "refine-items": {
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "config": {
+                                "type": "object",
+                                "properties": {
+                                    "radio": {
+                                        "type": "boolean"
+                                    },
+                                    "selected": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": [
+                                    "selected"
+                                ]
+                            },
+                            "content": {
+                                "type": "object",
+                                "properties": {
+                                    "text": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "text"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "config",
+                            "content"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "heading"
+            ]
+        }
+    }
+}

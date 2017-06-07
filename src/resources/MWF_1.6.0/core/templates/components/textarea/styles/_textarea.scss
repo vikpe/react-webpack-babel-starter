@@ -1,0 +1,65 @@
+//  ==========================================================================
+//  Component: Textarea
+//  ==========================================================================
+
+.c-textarea {
+    label.c-label {
+        margin-top: 16px;
+        padding-bottom: 6px;
+    }
+
+    textarea {
+        @include apply-type(t7, false, true);
+        min-width: 276px;
+        min-height: 36px;
+        background: $color-background;
+        border: 1px solid  $color-foreground-60;
+        outline: 0;
+        padding: 7px 12px;
+        color: $color-foreground;
+
+        &:active,
+        &:focus {
+            border-color: $color-accent;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: $color-foreground-20;
+            border-color: $color-foreground-20;
+        }
+
+        &[readonly] {
+            border: 1px solid $color-foreground-60;
+            background-color: flatten-overlay($color-background, $color-foreground, 10%);
+        }
+
+        &.f-resize {
+            resize: both;
+        }
+
+        &.f-no-resize {
+            resize: none;
+        }
+
+        &.f-scroll {
+            overflow-y: scroll;
+        }
+    }
+
+    #{$theme-light} {
+        textarea {
+            background: $color-tint-60;
+            border: 1px solid $color-shade;
+            color: $color-shade;
+        }
+    }
+
+    #{$theme-dark} {
+        textarea {
+            background: $color-tint-60;
+            border-color: $color-tint;
+            color: $color-shade;
+        }
+    }
+}
