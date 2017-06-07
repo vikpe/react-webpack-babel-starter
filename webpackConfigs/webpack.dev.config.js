@@ -1,12 +1,12 @@
-const webpack         = require("webpack");
-const {resolve}       = require("path");
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack            = require("webpack");
+const {resolve}          = require("path");
+const StyleLintPlugin    = require('stylelint-webpack-plugin');
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
 
-const FileListPlugin = require('./plugins/FileListPlugin');
+const FileListPlugin     = require('./plugins/FileListPlugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
-const styles = require('./rules/stylesRules');
-var stylesRules = styles.rules;
+const rules              = require('./rules/index');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 
 module.exports = {
     resolve: {
@@ -33,24 +33,13 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test:    /\.(js|jsx)$/,
-                use:     ["babel-loader"],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
-                exclude: /node_modules/,
-            },
-            { 
-                test: /\.jade$/, 
-                loader: 'jade-loader' 
-            },
-            //stylesRules.bakStyle,
-            stylesRules.fonts,
-            stylesRules.cssExtractTextPlugin,
-            stylesRules.scssExtractTextPlugin
+            rules.imageRules.images,
+            rules.fontRules.fonts,
+            rules.jadeRules.jade,
+            rules.stylesRules.cssExtractTextPlugin,
+            rules.stylesRules.scssExtractTextPlugin,
+            rules.jsRules.reactJs,
+            rules.jsRules.ts,
         ],
     },
 
@@ -71,7 +60,7 @@ module.exports = {
         }),
         new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"']}),
         // 
-        styles.ExtractTextPlugin
+        new ExtractTextPlugin("style.css")
     ],
     performance: {
         hints: false
