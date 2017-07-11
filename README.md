@@ -3,7 +3,7 @@ Minimal starter kit with hot module replacement for fast development.
 
 **Main features**
 * [React](https://facebook.github.io/react/) (15.x)
-* [Webpack](https://webpack.js.org/) (2.x)
+* [Webpack](https://webpack.js.org/) (3.x)
 * [Babel](http://babeljs.io/) (6.x)
 * [Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/) using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (3.x)
 * [SASS](http://sass-lang.com/)
@@ -26,7 +26,7 @@ Minimal starter kit with hot module replacement for fast development.
 
 * Compiles the app
 * Starts a web server hosting the app @ `http://localhost:8080`
-* Watches for changes and injects them without reloading the browser
+* Watches for changes and injects them using hot module replacement (without reloading the browser)
 
 **Other commands**
 * `npm run lint` - Run JavaScript and SASS linter
