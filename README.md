@@ -1,43 +1,45 @@
 # React Webpack Babel Starter
-Minimal starter kit with hot module replacement for fast development.
+Minimal starter kit with hot module replacement (HMR) for rapid development.
 
-**Main features**
-* [React](https://facebook.github.io/react/) (15.x)
-* [Webpack](https://webpack.js.org/) (3.x)
-* [Babel](http://babeljs.io/) (6.x)
-* [Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/) using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (3.x)
+* **[React](https://facebook.github.io/react/)** (15.x)
+* **[Webpack](https://webpack.js.org/)** (3.x)
+* **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (3.x)
+* **[Babel](http://babeljs.io/)** (6.x)
 * [SASS](http://sass-lang.com/)
 * [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
-
-**Additional features**
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
-* Code quality (linting)
-  * JavaScript - [JSHint](http://jshint.com/docs/)
-  * SASS/CSS - [stylelint](http://stylelint.io/) (rules: [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard))
+* Code quality (linting) for JavaScript and SASS/CSS.
 
 ## Installation
 1. Clone/download repo
 2. `npm install`
 
 ## Usage
-**General**
+**Development**
 
-`npm start`
+`npm run start-dev`
 
-* Compiles the app
-* Starts a web server hosting the app @ `http://localhost:8080`
-* Watches for changes and injects them using hot module replacement (without reloading the browser)
+* Build app continously (HMR enabled)
+* App served @ `http://localhost:8080` 
 
-**Other commands**
-* `npm run lint` - Run JavaScript and SASS linter
-* `npm run lint:js` - Run JavaScript linter
-* `npm run lint:sass` - Run SASS linter
-* `npm run test` - Run tests (Jest)
+**Production**
 
-## TODO
-* [ ] Build script
-  * [ ] Asset revisioning / cache bursting
-* [ ] React router
+`npm run start-prod`
 
-## Resources
-* [Create React App (by FaceBook)](https://github.com/facebookincubator/create-react-app) - Good starting point when learning React
+* Build app once (HMR disabled)
+* App served @ `http://localhost:3000`
+
+---
+
+**All commands**
+
+Command | Description
+--- | ---
+`npm run start-dev` | Build app continously (HMR enabled) and serve @ `http://localhost:8080`
+`npm run start-prod` | Build app once (HMR disabled) and serve @ `http://localhost:3000`
+`npm run build` | Build app to `/dist/bundle.min.js` 
+`npm run test` | Run tests
+`npm run lint` | Run JavaScript and SASS linter
+`npm run lint:js` | Run JavaScript linter
+`npm run lint:sass` | Run SASS linter
+`npm run start` | (alias of `npm run start-dev`)
