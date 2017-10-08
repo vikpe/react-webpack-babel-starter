@@ -1,7 +1,7 @@
 # React Webpack Babel Starter
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
-* **[React](https://facebook.github.io/react/)** (15.x)
+* **[React](https://facebook.github.io/react/)** (16.x)
 * **[Webpack](https://webpack.js.org/)** (3.x)
 * **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (3.x)
 * **[Babel](http://babeljs.io/)** (6.x)
