@@ -1,13 +1,12 @@
 // shared config (dev and prod)
-const webpack         = require('webpack');
 const {resolve}       = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.webpack.js', '.web.js', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
-  context: resolve(__dirname, 'src'),
+  context: resolve(__dirname, '../../src'),
   module: {
     rules: [
       {
