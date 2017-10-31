@@ -1,12 +1,18 @@
 // shared config (dev and prod)
-const {resolve}       = require('path');
+const {resolve} = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   context: resolve(__dirname, '../../src'),
+  output: {
+    filename: 'bundle.min.js',
+    path: resolve(__dirname, '../../dist'),
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
@@ -24,7 +30,8 @@ module.exports = {
           'style-loader',
           'css-loader?modules',
           'postcss-loader',
-          'sass-loader'],
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -37,6 +44,7 @@ module.exports = {
   },
   plugins: [
     new StyleLintPlugin(),
+    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
   ],
   externals: {
     'react': 'React',

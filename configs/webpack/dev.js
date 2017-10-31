@@ -1,11 +1,11 @@
 // development config
-const merge     = require('webpack-merge');
-const webpack   = require('webpack');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 const {resolve} = require('path');
 
 const commonConfig = require('./common');
-const outputPath   = resolve(__dirname, '../../public');
-const publicPath   = '/';
+const outputPath = resolve(__dirname, '../../public');
+const publicPath = '/';
 
 module.exports = merge(commonConfig, {
   entry: [
@@ -14,15 +14,10 @@ module.exports = merge(commonConfig, {
     'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
     './index.js' // the entry point of our app
   ],
-  output: {
-    filename: 'bundle.js',
-    path: outputPath,
-    publicPath: publicPath
-  },
   devServer: {
     hot: true, // enable HMR on the server
     contentBase: outputPath,
-    publicPath: publicPath
+    publicPath: publicPath,
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [
