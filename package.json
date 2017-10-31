@@ -86,6 +86,9 @@
     "globals": {
       "DEVELOPMENT": false,
       "FAKE_SERVER": false
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/configs/jest/shim.js"
+    ]
   }
 }
