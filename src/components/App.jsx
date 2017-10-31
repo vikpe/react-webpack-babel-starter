@@ -8,7 +8,7 @@ class App extends React.PureComponent {
         <div className="app">
           <h1>Hello World!</h1>
           <p>Foo to the bar</p>
-          <img src={reactLogo}/>
+          <img src={reactLogo} height="480"/>
         </div>
     );
   }
