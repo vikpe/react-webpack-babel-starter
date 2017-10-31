@@ -8,11 +8,6 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   context: resolve(__dirname, '../../src'),
-  output: {
-    filename: 'bundle.min.js',
-    path: resolve(__dirname, '../../dist'),
-    publicPath: '/',
-  },
   module: {
     rules: [
       {

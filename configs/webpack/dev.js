@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const {resolve} = require('path');
 
 const commonConfig = require('./common');
-const outputPath = resolve(__dirname, '../../public');
+const outputPath = resolve(__dirname, '../../dist');
 const publicPath = '/';
 
 module.exports = merge(commonConfig, {
