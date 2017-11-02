@@ -17,13 +17,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules', 'postcss-loader',],
+        use: ['style-loader', {loader: 'css-loader', options: {importLoaders: 1}}, 'postcss-loader',],
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          'css-loader?modules',
+          {loader: 'css-loader', options: {importLoaders: 1}},
           'postcss-loader',
           'sass-loader',
         ],

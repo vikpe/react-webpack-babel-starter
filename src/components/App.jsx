@@ -1,5 +1,5 @@
 import React from 'react';
-import '!style-loader!css-loader!sass-loader!./../assets/scss/App.scss';
+import './../assets/scss/App.scss';
 import reactLogo from './../assets/img/react_logo.svg';
 
 class App extends React.PureComponent {
