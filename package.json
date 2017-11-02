@@ -29,7 +29,7 @@
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node express.js",
-    "test": "jest --watch --coverage"
+    "test": "jest --watch --coverage --config=configs/jest.json"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -64,31 +64,5 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {},
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/configs/jest/jest.preprocessor.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "testRegex": "/__tests__/.*\\.(js|jsx)$",
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "identity-obj-proxy",
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/configs/jest/fileMock.js"
-    },
-    "globals": {
-      "DEVELOPMENT": false,
-      "FAKE_SERVER": false
-    },
-    "setupFiles": [
-      "<rootDir>/configs/jest/shim.js"
-    ]
-  }
+  "postcss": {}
 }
