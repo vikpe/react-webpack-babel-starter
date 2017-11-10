@@ -47,12 +47,12 @@
     "image-webpack-loader": "^3.4.2",
     "jest": "^21.2.1",
     "jshint": "^2.9.5",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.6.0",
     "postcss-loader": "^2.0.8",
-    "react": "^16.0.0",
+    "react": "^16.1.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.0.0",
-    "react-hot-loader": "^3.1.1",
+    "react-dom": "^16.1.0",
+    "react-hot-loader": "^3.1.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "stylelint": "^8.2.0",
@@ -60,8 +60,8 @@
     "stylelint-webpack-plugin": "^0.9.0",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-dev-server": "^2.9.3",
-    "webpack-merge": "^4.1.0"
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {},
   "postcss": {}
