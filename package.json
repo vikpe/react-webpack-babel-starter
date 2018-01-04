@@ -50,7 +50,7 @@
     "jest": "^22.0.4",
     "jshint": "^2.9.5",
     "node-sass": "^4.7.2",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.0.10",
     "react": "^16.2.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
