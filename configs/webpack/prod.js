@@ -5,6 +5,7 @@ const {resolve} = require('path');
 const commonConfig = require('./common');
 
 module.exports = merge(commonConfig, {
+  mode: 'production',
   entry: './index.js',
   devtool: 'source-map',
   output: {
