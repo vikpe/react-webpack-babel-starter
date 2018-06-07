@@ -14,7 +14,7 @@
   },
   "moduleFileExtensions": ["js", "jsx"],
   "transformIgnorePatterns": [
-    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    "/node_modules/"
   ],
   "testRegex": "/tests/.*\\.test\\.(js|jsx)$",
   "moduleDirectories": [
