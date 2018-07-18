@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
   "scripts": {
-    "build": "npm run clean-dist && webpack -p --config=configs/webpack/prod",
+    "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
-    "start": "npm run start-dev",
     "prettier-write": "prettier --write \"{src,tests}/**/*.{js,jsx}\"",
     "prettier-check": "prettier --list-different \"{src,tests}/**/*.{js,jsx}\"",
+    "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
-    "start-prod": "npm run build && node express.js",
+    "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
   "devDependencies": {
