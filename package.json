@@ -24,8 +24,8 @@
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
-    "prettier-write": "prettier --write \"{src,tests}/**/*.{js,jsx}\"",
-    "prettier-check": "prettier --list-different \"{src,tests}/**/*.{js,jsx}\"",
+    "prettier-write": "prettier --write \"{src,tests}/**/*.{js,jsx,css,scss}\"",
+    "prettier-check": "prettier --list-different \"{src,tests}/**/*.{js,jsx,css,scss}\"",
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "yarn run build && node express.js",
