@@ -12,9 +12,9 @@ class App extends React.PureComponent {
           <nav>
             <Link to="/">Home</Link> | <Link to="/about">About</Link>
           </nav>
-          <hr/>
-          <Route exact path="/" component={WelcomePage}/>
-          <Route path="/about" component={AboutPage}/>
+          <hr />
+          <Route exact path="/" component={WelcomePage} />
+          <Route path="/about" component={AboutPage} />
         </div>
       </BrowserRouter>
     );
