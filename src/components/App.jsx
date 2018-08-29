@@ -1,15 +1,22 @@
 import React from 'react';
 import 'assets/scss/App.scss';
-import reactLogo from 'assets/img/react_logo.svg';
+import AboutPage from 'components/AboutPage';
+import WelcomePage from 'components/WelcomePage';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class App extends React.PureComponent {
   render() {
     return (
-      <div className="app">
-        <h1>Hello World!</h1>
-        <p>Foo to the bar</p>
-        <img src={reactLogo} height="480" />
-      </div>
+      <BrowserRouter>
+        <div className="app">
+          <nav>
+            <Link to="/">Home</Link> | <Link to="/about">About</Link>
+          </nav>
+          <hr/>
+          <Route exact path="/" component={WelcomePage}/>
+          <Route path="/about" component={AboutPage}/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
