@@ -43,7 +43,7 @@ Command | Description
 `yarn run prettier-check` | Prints the filenames of files that are different from Prettier formatting
 `yarn run start` | (alias of `yarn run start-dev`)
 
-**Note**: replace `yarn` with `npm` if you use npm.
+**Note**: replace `yarn` with `npm` in the `package.json` file if you use npm.
 
 ## See also
 * [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
