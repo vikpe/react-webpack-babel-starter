@@ -23,7 +23,7 @@
   "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod",
-    "clean-dist": "rm -f -r -d dist",
+    "clean-dist": "rimraf dist/*",
     "prettier-write": "prettier --write \"{src,tests}/**/*.{js,jsx,css,scss}\"",
     "prettier-check": "prettier --list-different \"{src,tests}/**/*.{js,jsx,css,scss}\"",
     "start": "yarn run start-dev",
@@ -56,6 +56,7 @@
     "react-hot-loader": "^4.12.10",
     "react-router-dom": "^5.0.1",
     "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.38.0",
