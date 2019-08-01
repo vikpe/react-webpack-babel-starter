@@ -27,7 +27,7 @@
 `yarn run start-prod`
 
 * Build app once (HMR disabled) to `/dist/`
-* App served @ `http://localhost:3000`
+* App served at the specified port from the envrionment variable `PORT`, otherwise @ `http://localhost:3000`
 
 ---
 
@@ -36,14 +36,14 @@
 Command | Description
 --- | ---
 `yarn run start-dev` | Build app continously (HMR enabled) and serve @ `http://localhost:8080`
-`yarn run start-prod` | Build app once (HMR disabled) to `/dist/` and serve @ `http://localhost:3000`
+`yarn run start-prod` | Build app once (HMR disabled) to `/dist/` and served at the specified port from the envrionment variable `PORT`, otherwise @ `http://localhost:3000`
 `yarn run build` | Build app to `/dist/`
 `yarn run test` | Run tests
 `yarn run prettier-write` | Format code and write changes
 `yarn run prettier-check` | Prints the filenames of files that are different from Prettier formatting
 `yarn run start` | (alias of `yarn run start-dev`)
 
-**Note**: replace `yarn` with `npm` if you use npm.
+**Note**: replace `yarn` with `npm` in the `package.json` file if you use npm.
 
 ## See also
 * [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
