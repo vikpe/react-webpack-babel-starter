@@ -32,10 +32,10 @@
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -53,7 +53,7 @@
     "prettier": "^1.18.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-hot-loader": "^4.12.15",
+    "react-hot-loader": "^4.12.16",
     "react-router-dom": "^5.1.2",
     "react-test-renderer": "^16.11.0",
     "rimraf": "^3.0.0",
