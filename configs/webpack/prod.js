@@ -14,4 +14,8 @@ module.exports = merge(commonConfig, {
     publicPath: '/',
   },
   plugins: [],
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+  },
 });
