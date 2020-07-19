@@ -50,3 +50,4 @@ Command | Description
 ## See also
 * [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
 * [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)
+* [Snowpack](https://github.com/pikapkg/snowpack)
