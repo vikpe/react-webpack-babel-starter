@@ -2,7 +2,7 @@ import React from 'react';
 import App from '../src/components/App';
 import Enzyme from 'enzyme';
 import { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('App', () => {
