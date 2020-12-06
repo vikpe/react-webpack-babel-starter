@@ -5,7 +5,7 @@ import AboutPage from 'components/AboutPage';
 import WelcomePage from 'components/WelcomePage';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-class App extends React.PureComponent {
+class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
