@@ -16,27 +16,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'sass-loader',
-        ],
+        test: /\.(scss|sass)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
+        use: [
+          'file-loader?hash=sha512&digest=hex&name=img/[contenthash].[ext]',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       },
     ],
+  },
+  optimization: {
+    moduleIds: 'named',
   },
   plugins: [new HtmlWebpackPlugin({ template: 'index.html.ejs' })],
   performance: {
