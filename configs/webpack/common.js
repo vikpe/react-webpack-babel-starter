@@ -1,5 +1,5 @@
 // shared config (dev and prod)
-const {resolve} = require('path');
+const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -18,14 +18,14 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}}
+          { loader: 'css-loader', options: { importLoaders: 1 } },
         ],
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}},
+          { loader: 'css-loader', options: { importLoaders: 1 } },
           'sass-loader',
         ],
       },
@@ -38,9 +38,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: 'index.html.ejs' })],
   performance: {
     hints: false,
   },
