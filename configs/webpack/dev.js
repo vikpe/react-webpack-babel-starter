@@ -1,6 +1,5 @@
 // development config
 const { merge } = require('webpack-merge');
-const webpack = require('webpack');
 const commonConfig = require('./common');
 
 module.exports = merge(commonConfig, {
@@ -20,9 +19,7 @@ module.exports = merge(commonConfig, {
     hot: true, // enable HMR on the server
   },
   devtool: 'cheap-module-source-map',
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(), // enable HMR globally
-  ],
+  plugins: [],
   externals: {
     react: 'React',
   },
