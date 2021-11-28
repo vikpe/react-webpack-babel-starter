@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@hot-loader/react-dom": "^17.0.1",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
@@ -51,7 +51,7 @@
     "image-webpack-loader": "^8.0.1",
     "jest": "^27.3.1",
     "node-sass": "^6.0.1",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
@@ -60,10 +60,10 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.64.0",
+    "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-middleware": "^5.2.1",
-    "webpack-dev-server": "^4.5.0",
+    "webpack-dev-middleware": "^5.2.2",
+    "webpack-dev-server": "^4.6.0",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
