@@ -42,7 +42,6 @@
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.4",
     "babel-plugin-module-resolver": "^4.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
