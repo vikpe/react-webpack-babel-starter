@@ -3,7 +3,7 @@
 
 * **[React](https://facebook.github.io/react/)** (18.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
-* **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hot-module-replacement/)** + [Fast Refresh](https://github.com/pmmmwh/react-refresh-webpack-plugin)
+* **[Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement/)** + [Fast Refresh](https://github.com/pmmmwh/react-refresh-webpack-plugin)
 * **[Babel](http://babeljs.io/)** (7.x)
 * [SASS](http://sass-lang.com/)
 * [Jest](https://facebook.github.io/jest/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) - Testing frameworks for React applications
