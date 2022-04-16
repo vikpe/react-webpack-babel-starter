@@ -11,7 +11,7 @@
     ]
   ],
   "env": {
-    "dev": {
+    "development": {
       "plugins": ["react-refresh/babel"]
     },
     "test": {
