@@ -10,11 +10,6 @@ module.exports = merge(commonConfig, {
     'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
     './index.js', // the entry point of our app
   ],
-  resolve: {
-    alias: {
-      // 'react-dom': '@hot-loader/react-dom',
-    },
-  },
   devServer: {
     hot: true, // enable HMR on the server
   },
