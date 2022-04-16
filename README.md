@@ -1,12 +1,12 @@
 # React Webpack Babel Starter
 > Minimal starter with hot module replacement (HMR) for rapid development.
 
-* **[React](https://facebook.github.io/react/)** (17.x)
+* **[React](https://facebook.github.io/react/)** (18.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
 * **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hot-module-replacement/)** using [Fast Refresh](https://github.com/pmmmwh/react-refresh-webpack-plugin)
 * **[Babel](http://babeljs.io/)** (7.x)
 * [SASS](http://sass-lang.com/)
-* [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
+* [Jest](https://facebook.github.io/jest/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) - Testing frameworks for React applications
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
 * Code formatting using [Prettier](https://github.com/prettier/prettier).
 
