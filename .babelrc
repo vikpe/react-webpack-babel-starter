@@ -4,17 +4,21 @@
     "@babel/preset-react" // Transpile React components to JavaScript
   ],
   "plugins": [
-    "react-hot-loader/babel", // Enables React code to work with HMR.
     [
       "module-resolver", {
-      "root": ["./src"]
-    }
+        "root": ["./src"]
+      }
     ]
   ],
   "env": {
+    "dev": {
+      "plugins": ["react-refresh/babel"]
+    },
     "test": {
       "presets": ["@babel/preset-env", "@babel/preset-react"],
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
     }
   }
 }

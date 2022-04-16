@@ -1,5 +1,4 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import 'assets/scss/App.scss';
 import AboutPage from 'components/AboutPage';
 import WelcomePage from 'components/WelcomePage';
@@ -24,4 +23,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(module)(App);
+export default App;
