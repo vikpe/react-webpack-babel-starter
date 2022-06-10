@@ -49,5 +49,7 @@ Command | Description
 
 ## See also
 * [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
-* [Snowpack](https://github.com/snowpackjs/snowpack)
 * [Create React App](https://github.com/facebook/create-react-app)
+* [Vite](https://vitejs.dev/)
+* [Parsel](https://parceljs.org/)
+
