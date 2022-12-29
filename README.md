@@ -4,7 +4,7 @@
 * **[React](https://facebook.github.io/react/)** (18.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
 * **[Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement/)** + [Fast Refresh](https://github.com/pmmmwh/react-refresh-webpack-plugin)
-* Image support ([Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader))
+* Image support
 * [SASS](http://sass-lang.com/) support
 * Production build script
 * Code formatting ([Prettier](https://github.com/prettier/prettier))
