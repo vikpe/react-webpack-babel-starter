@@ -1,5 +1,4 @@
 import React from 'react';
-import 'assets/scss/App.scss';
 import reactLogo from 'assets/img/react_logo.svg';
 
 class WelcomePage extends React.PureComponent {

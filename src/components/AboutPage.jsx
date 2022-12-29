@@ -1,5 +1,4 @@
 import React from 'react';
-import 'assets/scss/App.scss';
 
 class AboutPage extends React.PureComponent {
   render() {

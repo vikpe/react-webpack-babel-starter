@@ -1,5 +1,4 @@
 import React from 'react';
-import 'assets/scss/App.scss';
 import AboutPage from 'components/AboutPage';
 import WelcomePage from 'components/WelcomePage';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
